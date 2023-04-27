@@ -212,6 +212,7 @@
         ]);
 
         public GoToPage = (navIcon: iNavIcon) => {
+            if (this.MenuOpen()) { this.OpenCloseMenu(); }
             this.Navigate(navIcon.Url);
         }
 

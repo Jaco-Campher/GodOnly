@@ -318,6 +318,7 @@ sup {
 **********************************/
 h1 {  /*Page Title*/
     color:#e2e2e2;
+    line-height: 1em;
 }
 
 h2, h3 {  /*h2 = Dialog Title, h3 = Accordion Title & Section Heading*/
@@ -533,11 +534,16 @@ go-dialog .box:after {
 
 .settings-list li {
     list-style: none;
-    padding: 5px 15px;
     display: grid;
-    grid-template: auto / minmax(250px, 1fr) 50px;
+    grid-template: auto / minmax(180px, 1fr) 50px;
     grid-gap: 15px;
     padding: 5px 15px;
+}
+
+@media (max-width:400px) {
+    .settings-list li {
+        padding: 5px;
+    }
 }
 
 
@@ -556,12 +562,18 @@ go-dialog .box:after {
 
 .help .settings-list li .heading {
     display: grid;
-    grid-template: auto / minmax(250px, 1fr) 50px;
+    grid-template: auto / minmax(160px, 1fr) 50px;
     grid-gap: 15px;
 }
 
 .help .settings-list .description {
     padding: 0 0 30px 20px;
+}
+
+@media (max-width:400px) {
+    .help .settings-list .description {
+        padding: 0 0 30px 10px;
+    }
 }
 
 .help .settings-list .description p:first-child {
@@ -634,6 +646,15 @@ go-dialog .box:after {
     /*grid-template-rows: 100px 100px;*/
 }
 
+@media (max-width:400px) {
+    .home-landing {
+        grid-template-areas:
+            "main"
+            "intro";
+        grid-template-columns: 1fr;
+    }
+}
+
 .home-landing .main {
     grid-area:main;
     margin:0 0 15px;
@@ -674,6 +695,18 @@ go-dialog .box:after {
         'img description';
     grid-gap:16px;
     height:130px;
+}
+
+@media (max-width:400px) {
+    .img-link .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            'title'
+            'img'
+            'description';
+        height:auto;
+    }
 }
 
 .img-link h3 {
@@ -747,6 +780,8 @@ button:hover {
 
 .btn-x {
     width:auto;
+    min-height: 37px;
+    height: auto;
 }
 
 .btn-icon{
@@ -1166,7 +1201,7 @@ go-bible-ref:first-child {
 
 .verses-container {
     display: grid;
-    grid-template: 27px auto / auto 100px;
+    grid-template: auto / auto 100px;
 }
 
 go-bible-ref h4 {

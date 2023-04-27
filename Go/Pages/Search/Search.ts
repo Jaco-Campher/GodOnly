@@ -382,6 +382,8 @@
                         }
                     }
             }
+
+            window.scrollTo({ top: 0 });
         }
 
         NextPage = () => {
@@ -403,7 +405,7 @@
                     this.CurrentPageIndex(this.CurrentPageIndex() + 1);
             }
 
-
+            window.scrollTo({ top: 0 });
         }
 
     }

@@ -41,6 +41,9 @@ var GO;
                 { ID: 'go-basic-page-about', Title: 'About', Url: '/about' }
             ]);
             this.GoToPage = (navIcon) => {
+                if (this.MenuOpen()) {
+                    this.OpenCloseMenu();
+                }
                 this.Navigate(navIcon.Url);
             };
             this.ImageLinkClicked = (imageLink) => {
