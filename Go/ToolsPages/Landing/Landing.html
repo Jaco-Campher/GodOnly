@@ -1,0 +1,16 @@
+﻿<div class="tor-landing grid-layout">
+    <div class="box">
+        <h1>Study Tools</h1>
+    </div>
+    <div class="box">
+        <div class="img-link-grid" data-bind="foreach: ImageLinks">
+            <a href="#" class="img-link select" data-bind="click: $root.ImageLinkClicked, attr: { href: Url }">
+                <div class="container">
+                    <img src="" data-bind="attr: { src: ImageFileName }" />
+                    <h3 data-bind="text: Title"></h3>
+                    <div class="description" data-bind="text: Description"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

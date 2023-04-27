@@ -1,0 +1,42 @@
+﻿<h2>Old Testament</h2>
+<hr />
+<div class="books" data-bind="foreach:OldTestamentBookNames">
+    <a class="btn-s" data-bind="text:Abbr, class:Type, click:$component.SelectedFunc, attr: { 'href' : '/bible/' + Abbr }"></a>
+</div>
+
+<h2>Apocrypha</h2>
+<go-info params="{ Title: 'Apocrypha'}">
+    <p>Apocrypha are books that was in the 1611 King James Bible but removed in the 1800s. You can read more about the history on <a href="https://en.wikipedia.org/wiki/Biblical_apocrypha" target="_blank">Wikipedia</a>.</p>
+</go-info>
+<hr />
+<div class="books" data-bind="foreach:ApocryphaBookNames">
+    <a class="btn-s" data-bind="text:Abbr, class:Type, click:$component.SelectedFunc, attr: { 'href' : '/bible/' + Abbr }"></a>
+</div>
+
+<h2>New Testament</h2>
+<hr />
+<div class="books" data-bind="foreach:NewTestamentBookNames">
+    <a class="btn-s" data-bind="text:Abbr, class:Type, click:$component.SelectedFunc, attr: { 'href' : '/bible/' + Abbr }"></a>
+</div>
+
+<h2>Other Scriptures</h2>
+<go-info params="{ Title: 'Other Scriptures'}">
+    <p>To better understand, it is recommended to read the complete book of 2 Esdras. But the short version is that after the Temple was destroyed with Jerusalem, all the books in the Temple were destroyed as well. In the verses below, Ezra is asking that God sends the Holy Spirit so that the books might be preserved.</p>
+    <go-bible-ref params="{ Ref: '2Es 14:21-25', Bold: [{From:285, To:311}, {From:322, To:361}] }"></go-bible-ref>
+    <go-bible-ref params="{ Ref: '2Es 14:44-48', Bold: [{From:14, To:50}, {From:230, To:254}] }"></go-bible-ref>
+    <p>This shows that some of the books were meant to be hidden and we also see that some of these books are meant for people living in the "latter days". In Enoch we see the same:</p>
+    <go-bible-ref params="{ Ref: 'Enoch 1:2', Bold: [{From:239, To:308}] }"></go-bible-ref>
+    <p>If you want to know more about some of these books, the <a href="https://www.cepher.net/" target="_blank">Cepher Publishing Group</a> has a very good <a href="https://www.cepher.net/Userfiles/Look-Inside/Preface-Millennium-Edition.pdf" target="_blank">PDF on their website</a> that gives some more details. It starts on page five if you want to skip the names section.</p>
+    <p>In some of these books there are one or two verses that can seemingly contradict the Bible, but then everything else fits perfectly. Keep in mind that these books are not meant for everyone, and one way to keep them out of the Bible would be to include one or two "mistakes".</p>
+</go-info>
+<div class="other-books headings">
+    <div>Abbreviation</div>
+    <div>Full Name</div>
+</div>
+<hr />
+<div data-bind="foreach: OtherBookNames">
+    <a class="other-books hover" data-bind="click:$component.SelectedFunc, attr: { 'href' : '/bible/' + Abbr }">
+        <div class="name" data-bind="text:Abbr"></div>
+        <div class="title" data-bind="text:Full"></div>
+    </a>
+</div>

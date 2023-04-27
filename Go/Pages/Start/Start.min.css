@@ -1,0 +1,186 @@
+﻿/* https://www.materialui.co/icon/close */
+/*********************************************************************
+    Main
+*********************************************************************/
+/* Content
+**********************************/
+html,
+body {
+    height: 100%;
+}
+
+body {
+    color: #eee;
+    background: #333;
+    margin: 0;
+    font-family: Arial;
+    font-size: 12px;
+}
+
+/* Content
+**********************************/
+h2, h3 {
+    color: #ccc;
+}
+
+a,
+a:hover,
+a:visited {
+    color: #eee;
+    text-decoration: none;
+}
+
+/*********************************************************************
+    Application Layouts
+*********************************************************************/
+
+
+/*********************************************************************
+    Dialog
+*********************************************************************/
+.bt-dialog-back {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    display: none;
+}
+
+.bt-dialog {
+    background: #333;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    /*border: 1px solid #ddd;*/
+    border-radius: 1px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.7);
+}
+
+    .bt-dialog h2 {
+        padding: 8px 9px;
+        font-weight: 500;
+        font-size: 16px;
+    }
+
+    .bt-dialog button {
+        min-width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        border: none;
+    }
+
+    .bt-dialog .bt-dialog-content {
+        overflow-y: auto;
+        height: calc(100% - 36px);
+        padding: 0 9px;
+    }
+
+/*********************************************************************
+    Page Styles
+*********************************************************************/
+
+
+/*********************************************************************
+    Custom Control Styles
+*********************************************************************/
+/* Buttons
+**********************************/
+.button-holder {
+    text-align: right;
+    margin-top: 15px
+}
+
+.ex .btn-xs,
+.ex .btn-s,
+.ex .btn-l,
+input[type=button] {
+    background: #555;
+    padding: 7px 9px;
+    /*width: 21px;*/
+    text-align: center;
+    margin: 2px;
+    cursor: pointer;
+    font-size: 15px;
+    display: inline-block;
+    border-radius: 1px;
+    color: #eee;
+    border: none;
+}
+
+    .ex .btn-xs:hover,
+    .ex .btn-s:hover,
+    .ex .btn-l:hover,
+    input[type=button]:hover {
+        background: #444;
+    }
+
+.ex .btn-s {
+    width: 45px;
+}
+
+.ex .btn-l {
+    width: 220px;
+}
+
+
+
+/* Slider Checkbox
+**********************************/
+.ex input[type=checkbox] {
+    margin: 0 0 0 5px;
+    width: 41px;
+    height: 19px;
+}
+
+    .ex input[type=checkbox]:before,
+    .ex input[type=checkbox]:after {
+        content: '';
+        display: block;
+        border-radius: 50px;
+        position: relative;
+    }
+
+    .ex input[type=checkbox]:before {
+        width: 41px;
+        height: 19px;
+        background: #333;
+        left: 0;
+    }
+
+    .ex input[type=checkbox]:after {
+        width: 13px;
+        height: 13px;
+        top: -16px;
+        left: 4px;
+        transition: all .2s;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+        background: linear-gradient(#ffe, #abb);
+    }
+
+    .ex input[type=checkbox]:disabled:after {
+        background: linear-gradient(#554, #344)
+    }
+
+    .ex input[type=checkbox]:checked:before {
+        background: #77a;
+    }
+
+    .ex input[type=checkbox]:disabled:before {
+        background: #333;
+    }
+
+    .ex input[type=checkbox]:checked:after {
+        margin-left: 21px;
+    }
+
+    .ex input[type=checkbox] + label {
+        vertical-align: top;
+        margin: 2px 0 0 5px;
+        display: inline-block;
+    }

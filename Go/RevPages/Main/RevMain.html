@@ -1,0 +1,47 @@
+﻿<link rel="Stylesheet" type="text/css" href="../revpages/main/revmain.css" />
+
+<div class="rev-main">
+
+    <!-- ko foreach: Item -->
+    <div class="item" data-bind="class: CSSClass, attr: { style: Location }">
+        <h4 data-bind="text: SubTitle"></h4>
+        <h3 data-bind="text: Title"></h3>
+        <hr />
+        <div class="ref" data-bind="text: Ref"></div>
+        <div class="line" data-bind="text: Line1"></div>
+        <div class="line" data-bind="text: Line2"></div>
+    </div>
+    <!-- /ko -->
+    <!-- ko foreach: Item -->
+    <div class="link" data-bind="class: CSSClass"></div>
+    <!-- /ko -->
+
+    <div class="seal" style="grid-area: seal-1">Seal 1</div>
+    <div class="seal" style="grid-area: seal-2">Seal 2</div>
+    <div class="seal" style="grid-area: seal-3">Seal 3</div>
+    <div class="seal" style="grid-area: seal-4">Seal 4</div>
+    <div class="seal" style="grid-area: seal-5">Seal 5</div>
+    <div class="seal" style="grid-area: seal-6">Seal 6</div>
+    <div class="seal" style="grid-area: seal-7">
+        <h3>Seal 7</h3>
+
+    </div>
+
+    <div class="trump" style="grid-area: trump-1">
+        <h4>Earth</h4>
+        <h3>Trumpet 1</h3>
+        <h5>Rev 8:6-7</h5>
+        <p>
+            Hail<br />
+            Fire<br />
+            Blood
+        </p>
+    </div>
+    <div class="trump" style="grid-area: trump-2">Trumpet 2</div>
+    <div class="trump" style="grid-area: trump-3">Trumpet 3</div>
+    <div class="trump" style="grid-area: trump-4">Trumpet 4</div>
+    <div class="trump" style="grid-area: trump-5">Trumpet 5</div>
+    <div class="trump" style="grid-area: trump-6">Trumpet 6</div>
+    <div class="trump" style="grid-area: trump-7">Trumpet 7</div>
+
+</div>

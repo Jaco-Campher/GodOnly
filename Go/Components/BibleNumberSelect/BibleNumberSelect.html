@@ -1,0 +1,8 @@
+﻿<style>
+    go-bible-number-select{display:block}
+    go-bible-number-select .numbers{display:flex;flex-wrap:wrap;grid-gap:8px;margin:15px 0}
+</style>
+
+<div class="numbers" data-bind="foreach:Numbers">
+    <div class="btn-s" data-bind="text:$data, click:$parent.Select"></div>
+</div>

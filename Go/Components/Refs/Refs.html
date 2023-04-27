@@ -1,0 +1,8 @@
+﻿<div class="refs" data-bind="foreach: Refs">
+    <!-- ko if: Ref == ''-->
+    <div data-bind="html: Html"></div>
+    <!-- /ko -->
+    <!-- ko if: Ref != ''-->
+    <go-bible-ref params="{ Data:$data }"></go-bible-ref>
+    <!-- /ko -->
+</div>

@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=400, initial-scale=1.0">
+    <title>God Only</title>
+
+    <link rel="Stylesheet" type="text/css" href="/pages/start/start.css" />
+
+    <script type="text/javascript" src="../../Scripts/3rdParty/knockout-3.5.1.js"></script>
+    <script type="text/javascript" src="../../Scripts/3rdParty/knockout-postbox.js"></script>
+    <script type="text/javascript" src="../../Scripts/3rdParty/jszip.js"></script>
+
+    <script type="text/javascript" src="../../Scripts/Helpers/GO.js"></script>
+    <script type="text/javascript" src="../../Scripts/Helpers/KO.ComponentLoader.js"></script>
+    <script type="text/javascript" src="../../Scripts/Helpers/Router.js"></script>
+
+    <script type="text/javascript" src="../../Scripts/Bible/Bible.js"></script>
+    <script type="text/javascript" src="../../Scripts/Bible/Book.js"></script>
+    <script type="text/javascript" src="../../Scripts/Bible/Chapter.js"></script>
+    <script type="text/javascript" src="../../Scripts/Bible/Verse.js"></script>
+
+    <script type="text/javascript" src="/pages/Start/start.js"></script>
+
+    
+</head>
+<body id="main" class="theme-dark" data-bind="css: { 'no-transparency': DisableTransparency }">
+    <header>
+        <a href="/" data-bind="click: function() { Navigate('/'); }">God Only</a>
+        <div></div>
+        <button class="mobile-nav" aria-controls="nav" data-bind="click: OpenCloseMenu, attr: { 'aria-expanded' : MenuOpen() ? 'true' : 'false' }" title="Menu">☰</button>
+
+        <nav id="nav" data-bind="foreach: NavIcons, css: { open: MenuOpen }">
+            <div class="bib"></div>
+            <a href="#" data-bind="text: Title, attr: { 'href': Url }, click: $root.GoToPage"></a>
+        </nav>
+        <!-- ko if: HasHelp -->
+        <button class="btn-round btn-help" data-bind="click: ShowHideHelp">?</button>
+        <!-- /ko -->
+    </header>
+
+    <!-- ko if: ActivePage() == '' -->
+    <div class="page-area loading-holder"><div class="loading"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+    <!-- /ko -->
+    <!-- ko if: ActivePage() != '' -->
+    <div class="page-area" data-bind="component: ActivePage, descendantsComplete: PageLoadCompleted"></div>
+    <!-- /ko -->
+
+    <footer class="copyright">
+        <div class="box">
+            <a href="/copyright" data-bind="click: function() { Navigate('/copyright'); }">© Copyright and Credits</a>
+        </div>
+    </footer>
+
+    <go-dialog params="{ Title: 'Page Help', Show: ShowHelp }">
+        <div class="help" data-bind="template: { name: 'PageHelp', data: $parent.componentLoader.LastPageViewModel }"></div>
+    </go-dialog>
+
+    <!--<button class="btn-round btn-global-settings" data-bind="click: ShowHideGlobalSettings">
+        <svg viewBox="0 0 24 24"><path d="M20.89,9.78h-.65a1.16,1.16,0,0,1-1-.74V9a1.13,1.13,0,0,1,.22-1.26l.46-.46a1.13,1.13,0,0,0,0-1.58L18.29,4.14a1.13,1.13,0,0,0-1.58,0l-.46.46A1.13,1.13,0,0,1,15,4.82h0a1.16,1.16,0,0,1-.74-1V3.11A1.11,1.11,0,0,0,13.11,2H10.89A1.11,1.11,0,0,0,9.78,3.11v.65a1.16,1.16,0,0,1-.74,1H9A1.13,1.13,0,0,1,7.75,4.6l-.46-.46a1.13,1.13,0,0,0-1.58,0L4.14,5.71a1.13,1.13,0,0,0,0,1.58l.46.46A1.13,1.13,0,0,1,4.82,9V9a1.16,1.16,0,0,1-1,.74H3.11A1.11,1.11,0,0,0,2,10.89v2.22a1.11,1.11,0,0,0,1.11,1.11h.65a1.16,1.16,0,0,1,1,.74v0a1.13,1.13,0,0,1-.22,1.26l-.46.46a1.13,1.13,0,0,0,0,1.58l1.57,1.57a1.13,1.13,0,0,0,1.58,0l.46-.46A1.13,1.13,0,0,1,9,19.18H9a1.16,1.16,0,0,1,.74,1v.65A1.11,1.11,0,0,0,10.89,22h2.22a1.11,1.11,0,0,0,1.11-1.11v-.65a1.16,1.16,0,0,1,.74-1h0a1.13,1.13,0,0,1,1.26.22l.46.46a1.13,1.13,0,0,0,1.58,0l1.57-1.57a1.13,1.13,0,0,0,0-1.58l-.46-.46A1.13,1.13,0,0,1,19.18,15v0a1.16,1.16,0,0,1,1-.74h.65A1.11,1.11,0,0,0,22,13.11V10.89A1.11,1.11,0,0,0,20.89,9.78ZM12,16a4,4,0,1,1,4-4A4,4,0,0,1,12,16Z"></path></svg>
+    </button>
+    <go-dialog params="{ Title: 'Settings', Show: ShowGlobalSettings }">
+        <div class="settings-holder">
+            <div class="settings-group">
+                <h6>Display Settings</h6>
+                <hr />
+                <ul class="settings-list content">
+                    <li>
+                        <label for="DisableTransparency">Disable Transparency</label>
+                        <input type="checkbox" id="DisableTransparency" data-bind="checked: $root.DisableTransparency" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </go-dialog>-->
+
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MW3JWTX')</script>
+</body>
+</html>

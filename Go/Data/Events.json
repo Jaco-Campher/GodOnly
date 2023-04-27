@@ -1,0 +1,866 @@
+{
+  "The Beginning": {
+    "AddYears": 0,
+    "Book": "Gen",
+    "Refs": [
+      {
+        "Ref": "Gen 1:1",
+        "Html": "1. <b>In the beginning</b> God created the heaven and the earth."
+      }
+    ]
+  },
+  "Adam Died": {
+    "AddYears": 930,
+    "Book": "Gen",
+    "Refs": [
+      {
+        "Ref": "Gen 5:5",
+        "Html": "5. And all the days that <b>Adam</b> lived were <b>nine hundred and thirty years</b>: and he died."
+      }
+    ]
+  },
+  "Seth Born": {
+    "AddYears": 130,
+    "Book": "Gen",
+    "Refs": [
+      {
+        "Ref": "Gen 5:3",
+        "Html": "3. And Adam lived an <b>hundred and thirty years</b>, and begat a son in his own likeness, after his image; and called his name <b>Seth</b>:"
+      }
+    ]
+  },
+  "Seth Died": {
+    "AddYears": 912,
+    "Book": "Gen",
+    "Refs": [
+      {
+        "Ref": "Gen 5:8",
+        "Html": "8. And all the days of <b>Seth</b> were <b>nine hundred and twelve years</b>: and he died."
+      }
+    ],
+    "AddFrom": "Seth Born"
+  },
+  "Enos Born": {
+    "AddYears": 105,
+    "Book": "Gen",
+    "Refs": [
+      {
+        "Ref": "Gen 5:6",
+        "Html": "6. And Seth lived an <b>hundred and five years</b>, and begat <b>Enos</b>:"
+      }
+    ],
+    "AddFrom": "Seth Born"
+  },
+  "Enos Died": {
+    "AddYears": 905,
+    "Book": "Gen",
+    "Refs": [
+      {
+        "Ref": "Gen 5:11",
+        "Html": "11. And all the days of <b>Enos</b> were <b>nine hundred and five years</b>: and he died."
+      }
+    ],
+    "AddFrom": "Enos Born"
+  },
+  "Cainan Born": {
+    "AddYears": 90,
+    "Book": "Gen",
+    "Ref": "Gen 5:9",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Enos Born"
+  },
+  "Cainan Died": {
+    "AddYears": 910,
+    "Book": "Gen",
+    "Ref": "Gen 5:14",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Cainan Born"
+  },
+  "Mahalaleel Born": {
+    "AddYears": 70,
+    "Book": "Gen",
+    "Ref": "Gen 5:12",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Cainan Born"
+  },
+  "Mahalaleel Died": {
+    "AddYears": 895,
+    "Book": "Gen",
+    "Ref": "Gen 5:17",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Mahalaleel Born"
+  },
+  "Jared Born": {
+    "AddYears": 65,
+    "Book": "Gen",
+    "Ref": "Gen 5:15",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Mahalaleel Born"
+  },
+  "Jared Died": {
+    "AddYears": 962,
+    "Book": "Gen",
+    "Ref": "Gen 5:20",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Jared Born"
+  },
+  "Enoch Born": {
+    "AddYears": 162,
+    "Book": "Gen",
+    "Ref": "Gen 5:18",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Jared Born"
+  },
+  "Enoch Taken": {
+    "AddYears": 365,
+    "Book": "Gen",
+    "Ref": "Gen 5:23",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Enoch Born"
+  },
+  "Methuselah Born": {
+    "AddYears": 65,
+    "Book": "Gen",
+    "Ref": "Gen 5:21",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Enoch Born"
+  },
+  "Methuselah Died": {
+    "AddYears": 969,
+    "Book": "Gen",
+    "Ref": "Gen 5:27",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Methuselah Born"
+  },
+  "Lamech Born": {
+    "AddYears": 187,
+    "Book": "Gen",
+    "Ref": "Gen 5:28",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Methuselah Born"
+  },
+  "Lamech Died": {
+    "AddYears": 777,
+    "Book": "Gen",
+    "Ref": "Gen 5:31",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Lamech Born"
+  },
+  "Noah Born": {
+    "AddYears": 182,
+    "Book": "Gen",
+    "Ref": "Gen 1:1",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Lamech Born"
+  },
+  "Flood": {
+    "AddYears": 600,
+    "Book": "Gen",
+    "Ref": "Gen 7:6",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Noah Born"
+  },
+  "Earth Dry": {
+    "AddYears": 601,
+    "Book": "Gen",
+    "Ref": "Gen 8:14",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Noah Born"
+  },
+  "Noah Died": {
+    "AddYears": 950,
+    "Book": "Gen",
+    "Ref": "Gen 9:29",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Noah Born"
+  },
+  "Arphaxad Born": {
+    "AddYears": 2,
+    "Book": "Gen",
+    "Ref": "Gen 11:10",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Flood"
+  },
+  "Shem Born": {
+    "AddYears": -100,
+    "Book": "Gen",
+    "Ref": "Gen 9:29",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Arphaxad Born"
+  },
+  "Shem Died": {
+    "AddYears": 500,
+    "Book": "Gen",
+    "Ref": "Gen 11:11",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Arphaxad Born"
+  },
+  "Salah Born": {
+    "AddYears": 35,
+    "Book": "Gen",
+    "Ref": "Gen 10:12",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Arphaxad Born"
+  },
+  "Arphaxad Died": {
+    "AddYears": 403,
+    "Book": "Gen",
+    "Ref": "Gen 11:13",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Salah Born"
+  },
+  "Eber Born": {
+    "AddYears": 30,
+    "Book": "Gen",
+    "Ref": "Gen 10:14",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Salah Born"
+  },
+  "Salah Died": {
+    "AddYears": 403,
+    "Book": "Gen",
+    "Ref": "Gen 10:15",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Eber Born"
+  },
+  "Peleg Born": {
+    "AddYears": 34,
+    "Book": "Gen",
+    "Ref": "Gen 11:16",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Eber Born"
+  },
+  "Eber Died": {
+    "AddYears": 430,
+    "Book": "Gen",
+    "Ref": "Gen 11:17",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Peleg Born"
+  },
+  "Reu Born": {
+    "AddYears": 30,
+    "Book": "Gen",
+    "Ref": "Gen 11:18",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Peleg Born"
+  },
+  "Peleg Died": {
+    "AddYears": 209,
+    "Book": "Gen",
+    "Ref": "Gen 11:19",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Reu Born"
+  },
+  "Serug Born": {
+    "AddYears": 32,
+    "Book": "Gen",
+    "Ref": "Gen 11:20",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Reu Born"
+  },
+  "Reu Died": {
+    "AddYears": 207,
+    "Book": "Gen",
+    "Ref": "Gen 11:21",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Serug Born"
+  },
+  "Nahor Born": {
+    "AddYears": 30,
+    "Book": "Gen",
+    "Ref": "Gen 11:22",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Serug Born"
+  },
+  "Serug Died": {
+    "AddYears": 200,
+    "Book": "Gen",
+    "Ref": "Gen 11:23",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Nahor Born"
+  },
+  "Terah Born": {
+    "AddYears": 99,
+    "Book": "Gen",
+    "Ref": "Gen 11:24",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Nahor Born"
+  },
+  "Nahor Died": {
+    "AddYears": 119,
+    "Book": "Gen",
+    "Ref": "Gen 11:32",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Terah Born"
+  },
+  "Terah Died": {
+    "AddYears": 205,
+    "Book": "Gen",
+    "Ref": "Gen 11:24",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Terah Born"
+  },
+  "Abram Born": {
+    "AddYears": 70,
+    "Book": "Gen",
+    "Ref": "Gen 11:26",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Terah Born"
+  },
+  "Ishmael Born": {
+    "AddYears": 86,
+    "Book": "Gen",
+    "Ref": "Gen 16:16",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Abram Born"
+  },
+  "Ishmael Died": {
+    "AddYears": 137,
+    "Book": "Gen",
+    "Ref": "Gen 25:17",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Ishmael Born"
+  },
+  "Abram Departed out of Haran": {
+    "AddYears": 75,
+    "Book": "Gen",
+    "Ref": "Gen 11:26",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Abram Born"
+  },
+  "Abram Takes Hagar as Wife": {
+    "AddYears": 10,
+    "Book": "Gen",
+    "Ref": "Gen 16:3",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Abram Departed out of Haran"
+  },
+  "Abram Circumcised": {
+    "AddYears": 99,
+    "Book": "Gen",
+    "Ref": "Gen 17:1-24",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Abram Born"
+  },
+  "Sodom and Gomorrah Destroyed": {
+    "AddYears": 99,
+    "Book": "Gen",
+    "Ref": "Gen 19",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Abram Born",
+    "YearsSpan": 1
+  },
+  "Isaac Born": {
+    "AddYears": 100,
+    "Book": "Gen",
+    "Ref": "Gen 21:5",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Abram Born"
+  },
+  "Isaac Takes Rebekah as Wife": {
+    "AddYears": 40,
+    "Book": "Gen",
+    "Ref": "Gen 25:20",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Isaac Born"
+  },
+  "Isaac Died": {
+    "AddYears": 180,
+    "Book": "Gen",
+    "Ref": "Gen 35:28",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Isaac Born"
+  },
+  "Abraham Died": {
+    "AddYears": 175,
+    "Book": "Gen",
+    "Ref": "Gen 25:7",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Abram Born"
+  },
+  "Esau and Jacob Born": {
+    "AddYears": 60,
+    "Book": "Gen",
+    "Ref": "Gen 25:20",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Isaac Born"
+  },
+  "Esau Takes Judith as Wife": {
+    "AddYears": 40,
+    "Book": "Gen",
+    "Ref": "Gen 25:20",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Esau and Jacob Born"
+  },
+  "5 Years of Famine Remaining": {
+    "AddYears": 130,
+    "Book": "Gen",
+    "Ref": "Gen 45:6, 47:9",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Esau and Jacob Born",
+    "YearsSpan": 1
+  },
+  "Jacob Goes to Egypt": {
+    "AddYears": 130,
+    "Book": "Gen",
+    "Ref": "Gen 47:9",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Esau and Jacob Born"
+  },
+  "7 Year Famine Start": {
+    "AddYears": -2,
+    "Book": "Gen",
+    "Ref": "Gen 45:11",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Jacob Goes to Egypt",
+    "YearsSpan": 1
+  },
+  "7 Year Famine End": {
+    "AddYears": 5,
+    "Book": "Gen",
+    "Ref": "Gen 45:11",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Jacob Goes to Egypt",
+    "YearsSpan": 1
+  },
+  "Joseph Made Ruler in Egypt": {
+    "AddYears": -7,
+    "Book": "Gen",
+    "Ref": "Gen 41:46",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "7 Year Famine Start",
+    "YearsSpan": 1
+  },
+  "Joseph Interprets 2 Dreams": {
+    "AddYears": -2,
+    "Book": "Gen",
+    "Ref": "Gen 40",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Joseph Made Ruler in Egypt",
+    "YearsSpan": 1
+  },
+  "Jacob Died": {
+    "AddYears": 147,
+    "Book": "Gen",
+    "Ref": "Gen 47:29",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Esau and Jacob Born"
+  },
+  "Joseph Died": {
+    "AddYears": 80,
+    "Book": "Gen",
+    "Ref": "Gen 41:46, 50:26",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Joseph Made Ruler in Egypt"
+  },
+  "Israel Leaves Egypt": {
+    "AddYears": 430,
+    "Book": "Exo",
+    "Ref": "Exo 12:40",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Jacob Goes to Egypt",
+    "CSS": "egypt-exit"
+  },
+  "Moses Born": {
+    "AddYears": -80,
+    "Book": "Exo",
+    "Ref": "",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Israel Leaves Egypt"
+  },
+  "Moses Spake to Pharo": {
+    "AddYears": 80,
+    "Book": "Exo",
+    "Ref": "Exo 7:7",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Moses Born"
+  },
+  "Aaron Born": {
+    "AddYears": -83,
+    "Book": "Exo",
+    "Ref": "",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Israel Leaves Egypt"
+  },
+
+  "Israel came unto the borders of the land of Canaan": {
+    "AddYears": 40,
+    "Book": "Exo",
+    "Ref": "Exo 12:41, Num 14:33-34, 32:13",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Israel Leaves Egypt"
+  },
+  "12 Spies Sent": {
+    "AddYears": -38,
+    "Book": "Exo",
+    "Ref": "Deut 1:19, 2:14",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Israel came unto the borders of the land of Canaan"
+  },
+  "Caleb 40": {
+    "AddYears": 0,
+    "Book": "Exo",
+    "Ref": "Jos 14:7",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "12 Spies Sent"
+  },
+  "Moses Died": {
+    "AddYears": 120,
+    "Book": "Deut",
+    "Ref": "",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Moses Born"
+  },
+  "Aaron Died": {
+    "AddYears": 123,
+    "Book": "Num",
+    "Ref": "",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Aaron Born"
+  },
+  "Israel Enters Promised Land": {
+    "AddYears": 120,
+    "Book": "Jos",
+    "Ref": "",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Moses Born"
+  },
+  "Caleb 85": {
+    "AddYears": 45,
+    "Book": "Jos",
+    "Ref": "Jos 14:10",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": ""
+      }
+    ],
+    "AddFrom": "Caleb 40"
+  }
+
+}

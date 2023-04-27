@@ -1,0 +1,389 @@
+{
+  "Babylon": {
+    "Meaning": "Great Whore",
+    "Refs": [
+      {
+        "Ref": "Rev 17:1-2",
+        "Bold": [{"From":157, "To":167}, {"From":213, "To":257}, {"From":323, "To":345}]
+      },
+      {
+        "Ref": "Rev 18:2-3",
+        "Bold":  [{"From":51, "To":57}, {"From":245, "To":280}, {"From":291, "To":344}]
+      }
+    ]
+  },
+  "Beast": {
+    "Meaning": "King / Kingdom",
+    "Refs": [
+      {
+        "Ref": "Dan 7:17",
+        "Bold": [{"From":12, "To":17}, {"From":45, "To":49}],
+        "Strongs": [{ "Strong": "H2423", "Meaning": "" }]
+      },
+      {
+        "Ref": "Dan 7:23",
+        "Bold": [{"From":25, "To":29}, {"From":51, "To":57}],
+        "Strongs": [{ "Strong": "H2423", "Meaning": "" }]
+      }
+    ]
+  },
+  "Beasts": {
+    "Meaning": "Kings / Kingdoms",
+    "Lookup": "Beast"
+  },
+  "Candlestick": {
+    "Meaning": "Churches",
+    "Lookup": "Candlesticks"
+  },
+  "Candlesticks": {
+    "Meaning": "Churches",
+    "Refs": [
+      {
+        "Ref": "Rev 1:20",
+        "Bold": [{"From":170, "To":182}, {"From":215, "To":223}]
+      }
+    ]
+  },
+  "Chariot": {
+    "Meaning": "Angel",
+    "Lookup": "Chariots"
+  },
+  "Chariots": {
+    "Meaning": "Angels",
+    "Refs": [
+      {
+        "Ref": "Psa 68:17",
+        "Bold": [{"From":4, "To":11}, {"From":59, "To":64}]
+      }
+    ]
+  },
+  "dragon": {
+    "Meaning": "devil / satan",
+    "Refs": [
+      {
+        "Ref": "Rev 12:9",
+        "Bold": [{"From":14, "To":19}, {"From":44, "To":50}, {"From":64, "To":68}, {"From":75, "To":79}]
+      }
+    ]
+  },
+  "dragons": {
+    "Meaning": "devils",
+    "Lookup": "dragon"
+  },
+  "Eagle": {
+    "Meaning": "Kingdom",
+    "Refs": [
+      {
+        "Ref": "2Es 12:11",
+        "Bold": [{"From":4, "To":8}, {"From":57, "To":63}]
+      }
+    ]
+  },
+  "Eagles": {
+    "Meaning": "Kingdoms",
+    "Lookup": "Eagle"
+  },
+  "Eagle's'": {
+    "Meaning": "Kingdom",
+    "Lookup": "Eagle"
+  },
+  "Eye": {
+    "Meaning": "Spirit",
+    "Lookup": "Eyes"
+  },
+  "Eyes": {
+    "Meaning": "Spirits",
+    "Refs": [
+      {
+        "Ref": "Rev 5:6",
+        "Bold": [{"From":170, "To":173}, {"From":196, "To":202}]
+      }
+    ]
+  },
+  "Fire": {
+    "Meaning": "Torah (Law)",
+    "Refs": [
+      {
+        "Ref": "2Es 13:38",
+        "Bold": [{"From":185, "To":187}, {"From":208, "To":211}]
+      }
+    ]
+  },
+  "Flame": {
+    "Meaning": "Torment",
+    "Lookup": "Flames"
+  },
+  "Flames": {
+    "Meaning": "Torments",
+    "Refs": [
+      {
+        "Ref": "2Es 13:38",
+        "Bold": [{"From":55, "To":62}, {"From":97, "To":105}, {"From":130, "To":134}]
+      }
+    ]
+  },
+  "Feather": {
+    "Meaning": "King",
+    "Lookup": "Feathers"
+  },
+  "Feathers": {
+    "Meaning": "Kings",
+    "Refs": [
+      {
+        "Ref": "2Es 12:19-20",
+        "Bold": [{"From":46, "To":53}, {"From":141, "To":146}]
+      }
+    ]
+  },
+  "Forest": {
+    "Meaning": "Kingdom",
+    "Refs": [
+      {
+        "Ref": "Jos 17:18",
+        "Bold": [{"From":8, "To":15}, {"From":45, "To":48}],
+        "Strongs": [{ "Strong": "H3293", "Meaning": "Forest" }]
+      },
+      {
+        "Ref": "Rev 17:9",
+        "Bold": [{"From":50, "To":54}, {"From":66, "To":74}]
+      },
+      {
+        "Ref": "2Es 12:22-23",
+        "Bold": [{"From":30, "To":34}, {"From":124, "To":132}]
+      },
+      {
+        "Ref": "",
+        "Html": "<p>Forest = Mountain = Head = Kingdom</p>"
+      }
+    ]
+  },
+  "Forests": {
+    "Meaning": "Kingdoms",
+    "Lookup": "Forest"
+  },
+  "Goat": {
+    "Meaning": "King",
+    "Refs": [
+      {
+        "Ref": "Dan 8:21",
+        "Bold": [{"From":14, "To":17}, {"From":26, "To":29}]
+      }
+    ]
+  },
+  "Goats": {
+    "Meaning": "Kings",
+    "Lookup": "Goat"
+  },
+  "Great Whore": {
+    "Meaning": "Babylon",
+    "Refs": [
+      {
+        "Ref": "Rev 17:1-2",
+        "Bold": [{"From":157, "To":167}, {"From":213, "To":257}, {"From":323, "To":345}]
+      },
+      {
+        "Ref": "Rev 18:2-3",
+        "Bold":  [{"From":51, "To":57}, {"From":245, "To":280}, {"From":291, "To":344}]
+      }
+    ]
+  },
+  "Grass": {
+    "Meaning": "People",
+    "Refs": [
+      {
+        "Ref": "Isa 40:6-7",
+        "Bold": [{"From":52, "To":69}, {"From":232, "To":247}]
+      }
+    ]
+  },
+  "Head": {
+    "Meaning": "Kingdom",
+    "Lookup": "Heads"
+  },
+  "Heads": {
+    "Meaning": "Kingdoms",
+    "Refs": [
+      {
+        "Ref": "2Es 12:22-23",
+        "Bold": [{"From":30, "To":34}, {"From":124, "To":132}]
+      }
+    ]
+  },
+  "Hill": {
+    "Meaning": "City",
+    "Lookup": "Hills"
+  },
+  "Hills": {
+    "Meaning": "Cities",
+    "Refs": [
+      {
+        "Ref": "Psa 43:3",
+        "Bold": [{"From":81, "To":89}, {"From":99, "To":113}]
+      },
+      {
+        "Ref": "Psa 46:4",
+        "Bold": [{"From":58, "To":68}, {"From":93, "To":120}]
+      },
+      {
+        "Ref": "",
+        "Html": "<p>Hill = Tabernacle = City</p>"
+      }
+    ]
+  },
+  "Horn": {
+    "Meaning": "King",
+    "Refs": [
+      {
+        "Ref": "Dan 7:24",
+        "Bold": [{"From":12, "To":16}, {"From":46, "To":50}]
+      },
+      {
+        "Ref": "Dan 8:21",
+        "Bold": [{"From":56, "To":59}, {"From":98, "To":102}]
+      }
+    ]
+  },
+  "Horns": {
+    "Meaning": "Kings",
+    "Lookup": "Horn"
+  },
+  "leviathan": {
+    "Meaning": "devil / satan",
+    "Refs": [
+      {
+        "Ref": "Isa 27:1",
+        "Bold": [{"From":75, "To":84}, {"From":98, "To":105}, {"From":112, "To":121}, {"From":135, "To":142}, {"From":166, "To":172}]
+      },{
+        "Ref": "Rev 12:9",
+        "Bold": [{"From":14, "To":19}, {"From":44, "To":50}, {"From":64, "To":68}, {"From":75, "To":79}]
+      },
+      {
+        "Ref": "",
+        "Html": "<p>leviathan = serpent = devil</p>"
+      }
+    ]
+  },
+  "Mountain": {
+    "Meaning": "Kingdom",
+    "Lookup": "Mountains"
+  },
+  "Mountains": {
+    "Meaning": "Kingdoms",
+    "Refs": [
+      {
+        "Ref": "Rev 17:9",
+        "Bold": [{"From":50, "To":54}, {"From":66, "To":74}]
+      },
+      {
+        "Ref": "2Es 12:22-23",
+        "Bold": [{"From":30, "To":34}, {"From":124, "To":132}]
+      },
+      {
+        "Ref": "",
+        "Html": "<p>Mountain = Head = Kingdom</p>"
+      }
+    ]
+  },
+  "serpent": {
+    "Meaning": "devil / satan",
+    "Refs": [
+      {
+        "Ref": "Rev 12:9",
+        "Bold": [{"From":14, "To":19}, {"From":44, "To":50}, {"From":64, "To":68}, {"From":75, "To":79}]
+      }
+    ]
+  },
+  "Star": {
+    "Meaning": "Angel",
+    "Refs": [
+      {
+        "Ref": "Rev 1:20",
+        "Bold": [{"From":112, "To":117}, {"From":126, "To":132}]
+      }
+    ]
+  },
+  "Stars": {
+    "Meaning": "Angels",
+    "Lookup": "Star"
+  },
+  "Tabernacle": {
+    "Meaning": "City",
+    "Refs": [
+      {
+        "Ref": "Isa 33:20",
+        "Bold": [{"From":10, "To":42}, {"From":66, "To":74}, {"From":96, "To":107}]
+      },
+      {
+        "Ref": "Rev 21:2-3",
+        "Bold": [{"From":19, "To":42}, {"From":181, "To":201}]
+      }
+    ]
+  },
+  "Tabernacles": {
+    "Meaning": "New Jerusalem",
+    "Lookup": "Tabernacle"
+  },
+  "Waters": {
+    "Meaning": "Peoples",
+    "Refs": [
+      {
+        "Ref": "Rev 17:15",
+        "Bold": [{"From":26, "To":31}, {"From":81, "To":87}, {"From":94, "To":103}, {"From":110, "To":116}, {"From":123, "To":129}]
+      }
+    ]
+  },
+  "white horse: and he that sat on him": {
+    "Case": "Fixed",
+    "Meaning": "Yahusha",
+    "Refs": [
+      {
+        "Ref": "Rev 19:11-16",
+        "Bold": [{"From":38, "To":74}, {"From":110, "To":139}, {"From":337, "To":370}, {"From":740, "To":771}]
+      }
+    ]
+  },
+  "Wing": {
+    "Meaning": "King",
+    "Lookup": "Wings"
+  },
+  "Wings": {
+    "Meaning": "Kings",
+    "Refs": [
+      {
+        "Ref": "2Es 12:14-16",
+        "Bold": [{"From":18, "To":29}, {"From":163, "To":174}]
+      }
+    ]
+  },
+  "Woman": {
+    "Meaning": "City",
+    "Refs": [
+      {
+        "Ref": "Rev 17:18",
+        "Bold": [{"From":8, "To":12}, {"From":46, "To":49}]
+      }
+    ]
+  },
+  "Women": {
+    "Meaning": "Cities",
+    "Lookup": "Woman"
+  },
+  "Worm": {
+    "Meaning": "Man",
+    "Refs": [
+      {
+        "Ref": "Job 25:6",
+        "Bold": [{"From":14, "To":16}, {"From":29, "To":32}]
+      }
+    ]
+  },
+  "Zion": {
+    "Meaning": "Jerusalem",
+    "Refs": [
+      {
+        "Ref": "Isa 52:1",
+        "Bold": [{"From":35, "To":99}]
+      }
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+﻿.page-area > div > .bible {
+    padding: 0 0 40vh
+}
+
+.book-details {
+    text-align: center
+}
+
+.bible .bible-nav {
+    position: sticky;
+    bottom: 15px;
+    padding: 8px;
+    display: grid;
+    grid: auto/59px 1fr 59px;
+}
+
+.bible .bible-nav .btn-s {
+    background: rgba(5,5,15,0.7)
+}
+
+.bible .bible-nav .btn-s:hover {
+    background: rgba(15,15,25,0.7)
+}
+
+.bible .bible-nav svg {
+    fill: #eee;
+    height: 24px;
+    width: 24px;
+    vertical-align: middle
+}
+
+.bible .bible-nav .right {
+    grid-column: 3
+}
+
+.bible .btn-l {
+    margin: 2px auto;
+    display: block
+}
+
+
+.bible .close {
+    position:absolute;
+    top: -12px;
+    right: -15px;
+    box-shadow: 5px 5px 15px #000;
+}
+
+/*.bible .close-svg:hover {
+    stroke: #aaa;
+}*/
+
+/* Settings
+**********************************/
+.settings-holder {
+    grid-column: span 2;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search-holder {
+    display: grid;
+    grid-template: auto / 1fr 50px;
+    grid-gap: 0 15px;
+}
+
+.search-holder .btn-icon {
+    height:32px;
+    padding:0;
+}
+
+.search-holder .btn-icon svg {
+    fill: #ccc;
+    height: 25px;
+    width: 32px;
+}

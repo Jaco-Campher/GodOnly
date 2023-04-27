@@ -1,0 +1,8 @@
+﻿<h3 data-bind="click: ShowHide, attr: { 'id': ID, 'aria-expanded' : Show() ? 'true' : 'false' }, css: { show: Show }">
+    <span data-bind="text: Title"></span>
+    <svg viewBox="0 0 24 24"><path d="M5 12l9 -9h5l-9 9l9 9h-5z" /></svg>
+    <hr />
+</h3>
+<!-- ko if: Show -->
+<div class="accordion-content" data-bind="template: { nodes: $componentTemplateNodes }"></div>
+<!-- /ko -->

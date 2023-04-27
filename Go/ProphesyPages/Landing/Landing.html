@@ -1,0 +1,19 @@
+﻿<div class="tor-landing">
+    <div class="box">
+        <h1>Prophecy Studies</h1>
+    </div>
+    <div class="box">
+        <h2>Introduction</h2>
+        <p>As with other studies in scripture, if you want to understand prophecy, you must do your own studies.</p>
+
+        <go-bible-ref params="{ Ref: '2Pe 1:19-21', Bold: [{From:20, To:126}, {From:212, To:272}] }"></go-bible-ref>
+
+        <p>If you have not seen it yet, Prophesy Legend is a good place to start. It can be found under Tools > Prophesy Legend.</p>
+    </div>
+    <div class="box">
+        <h2>Studies</h2>
+        <!-- ko foreach: Studies -->
+        <go-link-study params="{ Title: Title, Url: Url }"></go-link-study>
+        <!-- /ko -->
+    </div>
+</div>

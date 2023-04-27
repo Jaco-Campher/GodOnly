@@ -1,0 +1,38 @@
+﻿<link rel="Stylesheet" type="text/css" href="../toolspages/texttohtml/texttohtml.css" />
+
+<div class="input-main grid-layout">
+
+    <div class="box">
+        <div class="grid-layout grid-form">
+            <label>Output</label>
+            <select data-bind="value: Output">
+                <option value="Html">Html</option>
+                <option value="USFM">USFM</option>
+                <option value="USFM Verses Only">USFM Verses Only</option>
+            </select>
+            <label>Book</label>
+            <input type="text" data-bind="value: Book" />
+            <label>Chapter</label>
+            <input type="text" data-bind="value: Chapter" />
+            <label>Text to Convert</label>
+            <textarea data-bind="value: Text"></textarea>
+        </div>
+    </div>
+
+    <div class="box right">
+        <input type="button" data-bind="click: Parse" value="OK" />
+    </div>
+
+    <div class="box">
+        <div class="grid-layout grid-form">
+            <label>Verse Text</label>
+            <textarea data-bind="value: Text"></textarea>
+            <input type="button" data-bind="click: FindFromTo" value="Add" />
+            <input type="button" data-bind="click: ClearFromTo" value="Clear" />
+            <br />
+            <label data-bind="text: OutputText1"></label><br />
+            <label data-bind="text: OutputText2"></label>
+        </div>
+    </div>
+
+</div>

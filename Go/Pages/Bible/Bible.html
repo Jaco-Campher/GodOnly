@@ -1,0 +1,137 @@
+﻿<link rel="Stylesheet" type="text/css" href="../pages/bible/bible.css" />
+
+<div class="bible">
+
+    <div class="box search-holder">
+        <go-search params="{SearchMode:'Manual', SearchFunc:SearchChanged, SyncWith:'BibleRefs', PlaceHolder: 'e.g. gen 1, deu 4:4-7'}"></go-search>
+        <button class="btn-icon" data-bind="click: ShowHideSettings">
+            <svg viewBox="0 0 512 512"><path d="M64,144H290.75a48,48,0,0,0,90.5,0H448a16,16,0,0,0,0-32H381.25a48,48,0,0,0-90.5,0H64a16,16,0,0,0,0,32Z" /><path d="M448,368H381.25a48,48,0,0,0-90.5,0H64a16,16,0,0,0,0,32H290.75a48,48,0,0,0,90.5,0H448a16,16,0,0,0,0-32Z" /><path d="M448,240H221.25a48,48,0,0,0-90.5,0H64a16,16,0,0,0,0,32h66.75a48,48,0,0,0,90.5,0H448a16,16,0,0,0,0-32Z" /></svg>
+        </button>
+        <!-- ko if: ShowSettings -->
+        <div class="settings-holder">
+            <div class="settings-group">
+                <h6>Show</h6>
+                <hr />
+                <ul class="settings-list content">
+                    <li>
+                        <label for="ShowStrongs">Selected Strong / Lexicon</label>
+                        <input type="checkbox" id="ShowStrongs" data-bind="checked: ShowStrongs" />
+                    </li>
+                    <li>
+                        <label for="ShowProphecy">Prophecy Legends</label>
+                        <input type="checkbox" id="ShowProphecy" data-bind="checked: ShowProphecy" />
+                    </li>
+                    <!--<li>
+                        <label>Uncommon Word Meaning</label>
+                        <input type="checkbox" disabled="disabled" data-bind="checked: ShowWordMeaning" />
+                    </li>-->
+                    <li>
+                        <label for="ShowAllStrongs">All Strongs</label>
+                        <input type="checkbox" id="ShowAllStrongs" data-bind="checked: ShowAllStrongs" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /ko -->
+    </div>
+
+    <div class="ref-sections" data-bind="foreach:Sections">
+        <div class="box">
+            <button class="btn-round close" data-bind="click:$parent.ClearSection">X</button>
+            
+            
+            <div class="book-details" data-bind="if:Book">
+                <button class="btn-x" data-bind="text:Book().Title, click:SelectBook"></button>
+                <!-- ko if:ChapterNo() != -1 -->
+                <button class="btn-s" data-bind="text:ChapterNo, click:SelectChapter"></button>
+                <!-- /ko -->
+            </div>
+
+            <!-- ko if:ShowComponent()=='BookSelect' -->
+            <go-bible-book-select params="{ SelectedFunc: BookSelected }"></go-bible-book-select>
+            <!-- /ko -->
+            <!-- ko if:ShowComponent()=='ChapterSelect' -->
+            <go-bible-number-select params="{StartNumber:FirstChapterNo, EndNumber:TotalChapters, SelectedFunc:ChapterSelected}"></go-bible-number-select>
+            <!-- /ko -->
+            <!-- ko if:ShowComponent()=='Content' -->
+            <go-bible-ref params="{ Ref: Ref, Show: $parent.ShowLegendType }"></go-bible-ref>
+
+            <!--<div class="bible-nav">
+                <div class="btn-s left" data-bind="enabled:function() {return ChapterNo() > 1}, click:Prev">
+                    <svg viewBox="0 0 24 24"><path d="M5 12l9 -9h5l-9 9l9 9h-5z" /></svg>
+                </div>
+                <div class="btn-s right" data-bind="enabled:ChapterNo() != TotalChapters, click:Next">
+                    <svg viewBox="0 0 24 24"><path d="M19 12l-9 -9h-5l9 9l-9 9h5z" /></svg>
+                </div>
+            </div>-->
+            <!-- /ko -->
+
+        </div>
+    </div>
+
+    <button class="btn-icon" data-bind="click: AddSection">
+        <svg viewBox="0 0 16 16"><path d="M8,0C3.6,0,0,3.6,0,8s3.6,8,8,8s8-3.6,8-8S12.4,0,8,0z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6 S11.3,14,8,14z" /><polygon points="9,4 7,4 7,7 4,7 4,9 7,9 7,12 9,12 9,9 12,9 12,7 9,7" /></svg>
+        New Section
+    </button>
+
+</div>
+
+<template id="PageHelp">
+    <p>The Old Testament, Apocrypha, and the New Testament is from the 1769 KJV. Other books are from various sources. Please see <a href="/copyright" data-bind="click: function() { go.Navigate('/copyright'); }">Copyright and Credits</a> for more information.</p>
+    
+    <h3>Formatting</h3>
+    <p>Added words in both the Old and New Testaments will be shown as <span class="a">italic and darker</span>. In the Apocrypha and most other books, this is not available. Some of the Other books will sometimes use [ ] or [[ ]] to indicate added words, but this is dependent on how it was translated.</p>
+
+    <h3>Settings</h3>
+
+    <div class="settings-holder">
+        <div class="settings-group">
+            <h6>Show</h6>
+            <hr />
+            <ul class="settings-list content">
+                <li>
+                    <div class="heading">
+                        <label for="ShowStrongsHelp">Selected Strong / Lexicon</label>
+                        <input type="checkbox" id="ShowStrongsHelp" data-bind="checked: ShowStrongs" />
+                    </div>
+                    <div class="description">
+                        <p>Highlights words that might have an alternate or at least a more consistent translation. Mostly used to show an alternative meaning in prophecy or because of a study that was done that involved a specific word. But can also be shown simply to highlight words that is translated differently.</p>
+                        <b>Examples:</b><br/>
+                        <go-strongs params="{ Strongs: 'G999', Alt: ''}">Original word</go-strongs><br/>
+                        <go-strongs params="{ Strongs: 'G999', Alt: 'Other possible translation'}">Original word</go-strongs>
+                    </div>
+                </li>
+                <li>
+                    <div class="heading">
+                        <label for="ShowProphecyHelp">Prophecy Legends</label>
+                        <input type="checkbox" id="ShowProphecyHelp" data-bind="checked: ShowProphecy" />
+                    </div>
+                    <div class="description">
+                        <p>The Prophecy Legend is a list of words that has been found in scripture that can have other meanings in prophecy. When reading scripture, the words from the Prophecy Legend will be displayed when matches are found. Clicking on the highlighted section will display the details.</p>
+                        <b>Example:</b><br />
+                        <div>
+                            <div data-bind="click:ShowHideProphecyLegendInfo" class="legend">Original word <span class="div leg"></span> Meaning in prophecy</div>
+                            <go-dialog params="{ Title: 'Prophecy Legend', Show: ShowProphecyLegendInfo }">
+                                <p>This is just an example verse below, but normally it will show the verse or verses of scripture that shows how we know a specific word or phrase means something else in prophecy.</p>
+                                <go-bible-ref params="{ Ref: '2Pe 1:20-21', Bold: [{From:20, To:85}] }"></go-bible-ref>
+                            </go-dialog>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="heading">
+                        <label for="ShowAllStrongsHelp">All Strongs</label>
+                        <input type="checkbox" id="ShowAllStrongsHelp" data-bind="checked: ShowAllStrongs" />
+                    </div>
+                    <div class="description">
+                        <p>Show all the strong numbers.</p>
+                        <p class="note">Strong numbers are only available for the Old and New Testament.</p>
+                        <b>Example:</b><br />
+                        <go-bible-ref params="{ Ref: '2Pe 1:20', Show: GO.eRefTypeShow.AllStrongs }"></go-bible-ref>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</template>

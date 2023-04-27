@@ -1,0 +1,44 @@
+﻿<link rel="Stylesheet" type="text/css" href="../toolspages/legend/legend.css" />
+
+<div class="legend-main grid-layout">
+
+    <div class="box">
+        <h1>Prophesy Legend</h1>
+        <go-bible-ref params="{ Ref: '2Pe 1:20-21', Bold: [{From:20, To:85}] }"></go-bible-ref>
+        <p>The Prophesy Legend is a list of words that has been found in scripture that can have other meanings in prophesy. One of the functions of this site is to share what has been found and to make it easier to see in the context of scripture.</p>
+        <p>When reading scripture on this site, the words from the Prophesy Legend will be displayed when matches are found.</p>
+    </div>
+
+    <div class="box">
+        <div class="legend-item headings">
+            <div>Word</div>
+            <div>Meaning</div>
+            <div>References</div>
+        </div>
+        <hr />
+        <div data-bind="foreach: Ledgends">
+            <div class="legend-item hover">
+                <div class="name" data-bind="text:Name"></div>
+                <div class="meaning" data-bind="text:Meaning"></div>
+                <div class="refs" data-bind="foreach: Refs">
+                    <!-- ko if: Ref == ''-->
+                    <div data-bind="html: Html"></div>
+                    <!-- /ko -->
+                    <!-- ko if: Ref != ''-->
+                    <go-bible-ref params="{ Ref: Ref, Bold: Bold, Strongs: Strongs }"></go-bible-ref>
+                    <!-- /ko -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <template id="PageHelp">
+        <p>The Prophesy Legend is a list of words that has been found in scripture that can have other meanings in prophesy. One of the functions of this site is to share what has been found and to make it easier to see in the context of scripture.</p>
+        <p>When reading scripture, the words from the Prophesy Legend will be displayed when matches are found. The verse below is an example of this.</p>
+        <go-bible-ref params="{ Ref: 'Rev 17:3', Show: GO.eRefTypeShow.Prophesy }"></go-bible-ref>
+        <p>Clicking on the word will open a dialog to show the verse or verses in scripture that makes this known. This helps in keeping with the idea that scripture should interpret scripture.</p>
+        <p>Please bear in mind that this is intended for prophesy and will not work everywhere in scripture, even though it will be displayed everywhere. Sometime the words can make no sense in a given verse, but other times it can reveal hidden prophecy.</p>
+        <p>This function can be turned off if not desired in the options on the <a href="/bible" data-bind="click: function() { go.Navigate('/bible'); ShowHide(); }">Bible</a> and <a href="/search" data-bind="click: function() { go.Navigate('/search'); ShowHide(); }">Search</a> pages.</p>
+    </template>
+
+</div>

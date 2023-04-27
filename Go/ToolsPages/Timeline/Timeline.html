@@ -1,0 +1,16 @@
+﻿<link rel="Stylesheet" type="text/css" href="../toolspages/timeline/timeline.css" />
+
+<div class="timeline-main grid-layout">
+
+    <div class="box timeline">
+        <!-- ko foreach: Events -->
+        <div class="event hover">
+            <div class="year" data-bind="text: YearsDisplay"></div>
+            <div class="line"><div></div></div>
+            <go-accordion params="Title: Title">
+                <go-refs params="{ Refs: $parent.Refs }"></go-refs>
+            </go-accordion>
+        </div>
+        <!-- /ko -->
+    </div>
+</div>

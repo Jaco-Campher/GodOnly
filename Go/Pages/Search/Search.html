@@ -1,0 +1,257 @@
+﻿<link rel="Stylesheet" type="text/css" href="../pages/search/search.css" />
+
+<div class="bible">
+
+    <div class="box search-holder">
+        <go-search params="{SearchMode:'Manual', SearchFunc:SearchChanged, SyncWith:'BibleSearch', PlaceHolder: 'e.g. day of the Lord'}"></go-search>
+        <button class="btn-icon" data-bind="click: ShowHideSettings">
+            <svg viewBox="0 0 512 512"><path d="M64,144H290.75a48,48,0,0,0,90.5,0H448a16,16,0,0,0,0-32H381.25a48,48,0,0,0-90.5,0H64a16,16,0,0,0,0,32Z" /><path d="M448,368H381.25a48,48,0,0,0-90.5,0H64a16,16,0,0,0,0,32H290.75a48,48,0,0,0,90.5,0H448a16,16,0,0,0,0-32Z" /><path d="M448,240H221.25a48,48,0,0,0-90.5,0H64a16,16,0,0,0,0,32h66.75a48,48,0,0,0,90.5,0H448a16,16,0,0,0,0-32Z" /></svg>
+        </button>
+        <!-- ko if: ShowSettings -->
+        <div class="settings-holder">
+            <div class="settings-group">
+                <h6>Search Settings</h6>
+                <hr />
+                <ul class="settings-list content">
+                    <li>
+                        <label for="MatchCompleteWordsOnly">Match Complete Words Only</label>
+                        <input type="checkbox" id="MatchCompleteWordsOnly" data-bind="checked: MatchCompleteWordsOnly" />
+                    </li>
+                    <li>
+                        <label for="MatchPartials">Include Partial Matches</label>
+                        <input type="checkbox" id="MatchPartials" data-bind="checked: MatchPartials" />
+                    </li>
+                </ul>
+            </div>
+            <div class="settings-group">
+                <h6>Search In</h6>
+                <hr />
+                <ul class="settings-list content">
+                    <li>
+                        <label for="SearchInOldTestament">Old Testament</label>
+                        <input type="checkbox" id="SearchInOldTestament" data-bind="checked: SearchInOldTestament" />
+                    </li>
+                    <li>
+                        <label for="SearchInApocrypha">Apocrypha</label>
+                        <input type="checkbox" id="SearchInApocrypha" data-bind="checked: SearchInApocrypha" />
+                    </li>
+                    <li>
+                        <label for="SearchInNewTestament">New Testament</label>
+                        <input type="checkbox" id="SearchInNewTestament" data-bind="checked: SearchInNewTestament" />
+                    </li>
+                    <li>
+                    </li>
+                    <li>
+                        <label for="SearchInOtherBooks">Other Books</label>
+                        <input type="checkbox" id="SearchInOtherBooks" data-bind="checked: SearchInOtherBooks" />
+                    </li>
+                </ul>
+            </div>
+            <div class="settings-group">
+                <h6>Show</h6>
+                <hr />
+                <ul class="settings-list content">
+                    <li>
+                        <label for="ShowStrongs">Selected Strong / Lexicon</label>
+                        <input type="checkbox" id="ShowStrongs" data-bind="checked: ShowStrongs" />
+                    </li>
+                    <li>
+                        <label for="ShowProphecy">Prophecy Legends</label>
+                        <input type="checkbox" id="ShowProphecy" data-bind="checked: ShowProphecy" />
+                    </li>
+                    <!--<li>
+                        <label>Uncommon Word Meaning</label>
+                        <input type="checkbox" disabled="disabled" data-bind="checked: ShowWordMeaning" />
+                    </li>-->
+                    <li>
+                    </li>
+                    <li>
+                        <label for="ShowAllStrongs">All Strongs</label>
+                        <input type="checkbox" id="ShowAllStrongs" data-bind="checked: ShowAllStrongs" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /ko -->
+    </div>
+
+    <!-- ko if: ExactMatchesCount() + PartialMatchesCount() == 0 -->
+    <div class="search-info-holder">
+        <p data-bind="text: NotFoundText"></p>
+    </div>
+    <!-- /ko -->
+
+    <!-- ko if: ExactMatchesCount() + PartialMatchesCount() != 0 -->
+    <div class="search-info-holder">
+        <p>Found <span data-bind="text:ExactMatchesCount"></span> exact matches and <span data-bind="text:PartialMatchesCount"></span> partial matches.</p>
+    </div>
+
+    <div class="seach-results-holder">
+        <div class="ref-sections" data-bind="foreach:ItemsCurrentPage">
+            <div class="box">
+                <go-bible-ref params="{ Ref: Ref, Bold: Bold, Show: $parent.ShowLegendType }"></go-bible-ref>
+            </div>
+        </div>
+
+        <div class="box pages-holder">
+            <div class="prev-next">
+                <button class="btn-icon" data-bind="click: PrevPage">
+                    <svg viewBox="0 0 12 12"><polygon points="8.15,12 2.15,6 8.15,0 8.85,0.71 3.56,6 8.85,11.29" /></svg>
+                </button>
+                <div></div>
+                <button class="btn-icon" data-bind="click: NextPage">
+                    <svg viewBox="0 0 12 12"><polygon points="3.85,12 3.14,11.29 8.44,6 3.15,0.71 3.85,0 9.85,6" /></svg>
+                </button>
+            </div>
+
+            <!-- ko if: ExactMatchesCount() > 0 -->
+            <h3>Exact Match</h3>
+
+            <div class="pages" data-bind="foreach: ExactPages">
+                <a class="btn-x" href="#" data-bind="html: TypeHtml, click: function() { $parent.UpdatePageIndex(Index, 'Exact') }, css: { selected: Index == $parent.CurrentPageIndex() && $parent.CurrentPageType() == 'Exact' }"></a>
+            </div>
+            <!-- /ko -->
+
+            <!-- ko if: ExactMatchesCount() > 0 && PartialMatchesCount() > 0 -->
+            <hr />
+            <!-- /ko -->
+
+            <!-- ko if: PartialMatchesCount() > 0 -->
+            <h3>Partial Match</h3>
+            <div class="pages" data-bind="foreach: PartialPages">
+                <a class="btn-x" href="#" data-bind="html: TypeHtml, click: function() { $parent.UpdatePageIndex(Index, 'Partial') }, css: { selected: Index == $parent.CurrentPageIndex() && $parent.CurrentPageType() == 'Partial' }"></a>
+            </div>
+            <!-- /ko -->
+
+        </div>
+    </div>
+    <!-- /ko -->
+
+</div>
+
+<template id="PageHelp">
+
+    <h3>Formatting</h3>
+    <p>Added words in both the Old and New Testaments will be shown as <span class="a">italic and darker</span>. In the Apocrypha and other books, this is not available. Some of the Other books will sometimes use [ ] or [[ ]] to indicate added words, but this is dependent on how it was translated.</p>
+
+    <h3>Settings</h3>
+
+    <div class="settings-holder">
+        <div class="settings-group">
+            <h6>Search Settings</h6>
+            <hr />
+            <ul class="settings-list content">
+                <li>
+                    <div class="heading">
+                        <label for="MatchCompleteWordsOnlyHelp">Match Complete Words Only</label>
+                        <input type="checkbox" id="MatchCompleteWordsOnlyHelp" data-bind="checked: MatchCompleteWordsOnly" />
+                    </div>
+                    <div class="description">
+                        <p>If this setting is on, only complete word matches will be returned.</p>
+                        <p><b>On Example:</b>"Year" will only match the word "Year".</p>
+                        <p><b>Off Example:</b>“Year” will match "Year", "Years", "Yearly", etc.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="heading">
+                        <label for="MatchPartialsHelp">Include Partial Matches</label>
+                        <input type="checkbox" id="MatchPartialsHelp" data-bind="checked: MatchPartials" />
+                    </div>
+                    <div class="description">
+                        <p>For an exact match all the search word must match and must be in sequence. Including partial matches will also show the verses that includes all the words even if they are not in sequence.</p>
+                        <p class="note">Partial matches are shown after exact matches.</p>
+                    </div>
+                </li>
+            </ul>
+
+            <h6>Search In</h6>
+            <hr />
+            <ul class="settings-list content">
+                <li>
+                    <div class="heading">
+                        <label for="SearchInOldTestamentHelp">Old Testament</label>
+                        <input type="checkbox" id="SearchInOldTestamentHelp" data-bind="checked: SearchInOldTestament" />
+                    </div>
+                    <div class="description">
+                        <p>Include search results from the Old Testament.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="heading">
+                        <label for="SearchInApocryphaHelp">Apocrypha</label>
+                        <input type="checkbox" id="SearchInApocryphaHelp" data-bind="checked: SearchInApocrypha" />
+                    </div>
+                    <div class="description">
+                        <p>Include search results from the Apocrypha.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="heading">
+                        <label for="SearchInNewTestamentHelp">New Testament</label>
+                        <input type="checkbox" id="SearchInNewTestamentHelp" data-bind="checked: SearchInNewTestament" />
+                    </div>
+                    <div class="description">
+                        <p>Include search results from the New Testament.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="heading">
+                        <label for="SearchInOtherBooksHelp">Other Books</label>
+                        <input type="checkbox" id="SearchInOtherBooksHelp" data-bind="checked: SearchInOtherBooks" />
+                    </div>
+                    <div class="description">
+                        <p>Include search results from the Other Books.</p>
+                    </div>
+                </li>
+            </ul>
+
+            <h6>Show</h6>
+            <hr />
+            <ul class="settings-list content">
+                <li>
+                    <div class="heading">
+                        <label for="ShowStrongsHelp">Selected Strong / Lexicon</label>
+                        <input type="checkbox" id="ShowStrongsHelp" data-bind="checked: ShowStrongs" />
+                    </div>
+                    <div class="description">
+                        <p>Highlights words that might have an alternate or at least a more consistent translation. Mostly used to show an alternative meaning in prophecy or because of a study that was done that involved a specific word. But can also be shown simply to highlight words that is translated differently.</p>
+                        <p class="note">Please note: The Studies section is not available yet, but Father willing, it will be added in the future.</p>
+                        <b>Examples:</b><br />
+                        <go-strongs params="{ Strongs: 'G999', Alt: ''}">Original word</go-strongs><br />
+                        <go-strongs params="{ Strongs: 'G999', Alt: 'Other possible translation'}">Original word</go-strongs>
+                    </div>
+                </li>
+                <li>
+                    <div class="heading">
+                        <label for="ShowProphecyHelp">Prophecy Legends</label>
+                        <input type="checkbox" id="ShowProphecyHelp" data-bind="checked: ShowProphecy" />
+                    </div>
+                    <div class="description">
+                        <p>The Prophecy Legend is a list of words that has been found in scripture that can have other meanings in prophecy. When reading scripture, the words from the Prophecy Legend will be displayed when matches are found. Clicking on the highlighted section will display the details.</p>
+                        <b>Example:</b><br />
+                        <div>
+                            <div data-bind="click:ShowHideProphecyLegendInfo" class="legend">Original word <span class="div leg"></span> Meaning in prophecy</div>
+                            <go-dialog params="{ Title: 'Prophecy Legend', Show: ShowProphecyLegendInfo }">
+                                <p>This is just an example verse below, but normally it will show the verse or verses of scripture that shows how we know a specific word or phrase means something else in prophecy.</p>
+                                <go-bible-ref params="{ Ref: '2Pe 1:20-21', Bold: [{From:20, To:85}] }"></go-bible-ref>
+                            </go-dialog>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="heading">
+                        <label for="ShowAllStrongsHelp">All Strongs</label>
+                        <input type="checkbox" id="ShowAllStrongsHelp" data-bind="checked: ShowAllStrongs" />
+                    </div>
+                    <div class="description">
+                        <p>Show all the strong numbers.</p>
+                        <p class="note">Strong numbers are only available for the Old and New Testaments.</p>
+                        <b>Example:</b><br />
+                        <go-bible-ref params="{ Ref: '2Pe 1:20', Show: GO.eRefTypeShow.AllStrongs }"></go-bible-ref>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</template>

@@ -1,0 +1,22 @@
+﻿<div class="study-landing">
+    <div class="box">
+        <h1>Study</h1>
+    </div>
+    <div class="box">
+        <h2>Introduction</h2>
+        <p>When listening to a study or sermon on a topic that you have not done your own study on, it is easy for it to make sense. By isolating a verse or even a section of a verse, you can make scripture say or mean anything. You can listen to a study now and agree with what is says. Then 6 weeks later you hear another teaching on the same topic and it can also make sense, even though it teaches something different.</p>
+        <p>The only way to truly know what scripture teaches on any topic, is to do your own studies.</p>
+
+        <go-bible-ref params="{ Ref: 'Mat 22:29', Bold: [{From:35, To: 72}] }"></go-bible-ref>
+        <go-bible-ref params="{ Ref: '2Ti 3:16-17', Bold: [{From:50, To:138}] }"></go-bible-ref>
+    </div>
+    <div class="box">
+        <h2>Studies</h2>
+        <!-- ko foreach: Studies -->
+        <go-link-study params="{ Title: Title, Url: Url }"></go-link-study>
+        <!-- /ko -->
+    </div>
+    <div class="box">
+        <p>This section contains more general studies about scripture, please see the <a href="/torah-study" onclick="go.Navigate('torah-study')">Torah</a> and <a href="/prophecy-study" onclick="go.Navigate('prophesy-study')">Prophecy</a> sections for more specialized studies.</p>
+    </div>
+</div>

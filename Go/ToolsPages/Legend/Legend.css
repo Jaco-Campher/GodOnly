@@ -1,0 +1,50 @@
+﻿.legend-main .legend-item {
+    display: grid;
+    grid: auto/minmax(100px, 130px) minmax(100px, 150px) 4fr;
+    padding:8px;
+    grid-gap: 15px
+}
+
+@media (max-width:700px) {
+    .legend-main .legend-item {
+        grid: auto/1fr 1fr;
+    }
+
+    .legend-main .legend-item .refs {
+        grid-column: span 2;
+    }
+
+    .legend-main .legend-item.headings {
+        padding: 13px 8px 8px;
+        margin: 0px -10px;
+        
+    }
+
+    .legend-main .legend-item.headings + hr {
+        top: calc(var(--top-nav-height) + 72px);
+    }
+}
+
+.legend-main .legend-item .name,
+.legend-main .legend-item .meaning {
+    padding: 5px 0;
+}
+
+.legend-main .legend-item.headings {
+    font-weight:bold;
+    color:#eee;
+    position: sticky;
+    top: var(--top-nav-height);
+    padding: 20px 8px 8px;
+    z-index: 100;
+    backdrop-filter: blur(25px);
+}
+
+.legend-main .legend-item.headings + hr {
+        position: sticky;
+        top: calc(var(--top-nav-height) + 46px);
+    }
+
+.legend-main .refs .ref-container {
+    margin:0 0 10px;
+}

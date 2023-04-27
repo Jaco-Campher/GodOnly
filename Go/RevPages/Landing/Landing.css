@@ -1,0 +1,19 @@
+﻿.rev-landing {
+    grid-template-areas:
+        "seq seq lookup"
+        "seq seq read";
+    grid-template-columns: 5fr minmax(100px, 1fr) minmax(100px, 1fr);
+    grid-template-rows: 100px 100px;
+}
+
+.rev-landing .seq {
+    grid-area:seq;
+}
+
+.rev-landing .lookup {
+    grid-area:lookup;
+}
+
+.rev-landing .read {
+    grid-area:read;
+}
