@@ -133,6 +133,8 @@ namespace GO {
 
                 //console.log('Route', route);
                 ko.postbox.publish('NavChanged');
+                GO.ScrollToTop();
+
                 return;
             }
 

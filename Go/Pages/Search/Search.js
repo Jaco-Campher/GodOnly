@@ -173,6 +173,7 @@ var GO;
                 this.UpdatePageIndex = (index, type) => {
                     this.CurrentPageType(type);
                     this.CurrentPageIndex(index);
+                    GO.ScrollToTop();
                 };
                 this.PrevPage = () => {
                     switch (this.CurrentPageType()) {
@@ -195,7 +196,7 @@ var GO;
                                 }
                             }
                     }
-                    window.scrollTo({ top: 0 });
+                    GO.ScrollToTop();
                 };
                 this.NextPage = () => {
                     let maxPageIndex = Math.ceil(ko.unwrap(this.Items[this.CurrentPageType()]).length / this.PageSize()) - 1;
@@ -215,7 +216,7 @@ var GO;
                             } //Already on the last page.
                             this.CurrentPageIndex(this.CurrentPageIndex() + 1);
                     }
-                    window.scrollTo({ top: 0 });
+                    GO.ScrollToTop();
                 };
                 this.NavChanged();
                 ko.postbox.subscribe('NavChanged', this.NavChanged, this);

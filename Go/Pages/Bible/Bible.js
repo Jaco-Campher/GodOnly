@@ -36,7 +36,7 @@ var GO;
                 //****************************************************************************
                 this.NavChanged = () => {
                     let state = history.state;
-                    console.log('state', state);
+                    //console.log('state', state);
                     if (state && state.Hashes && state.Hashes['ref']) {
                         let refsString = this.GetFromHash(state.Hashes['ref']);
                         this.SearchChanged(refsString, false);
@@ -86,12 +86,6 @@ var GO;
                 this.GetFromHash = (hashString) => {
                     return hashString.replace(/_/g, ' ').replace(/\|/g, ':').replace(/\+/g, ',');
                 };
-                //Prev = () => {
-                //    this.ChapterSelected(this.ChapterNo() - 1);
-                //}
-                //Next = () => {
-                //    this.ChapterSelected(this.ChapterNo() + 1);
-                //}
                 this.ShowHideSettings = () => {
                     this.ShowSettings(!this.ShowSettings());
                 };
@@ -138,6 +132,14 @@ var GO;
                     this.Ref(`${this.Book().Abbr} ${num}`);
                     this.ShowComponent('Content');
                     ko.postbox.publish('RefsSectionsChanged', new Date()); //Publish a new random value to trigger the RefsSectionsChanged function.
+                };
+                this.Prev = (a, event, c, d) => {
+                    this.ChapterSelected(this.ChapterNo() - 1);
+                    GO.ScrollToTop();
+                };
+                this.Next = () => {
+                    this.ChapterSelected(this.ChapterNo() + 1);
+                    GO.ScrollToTop();
                 };
                 if (ref == undefined) {
                     this.ShowComponent('BookSelect');

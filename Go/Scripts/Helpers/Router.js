@@ -47,6 +47,7 @@ var GO;
                     this.PushPageViewTag(url);
                     //console.log('Route', route);
                     ko.postbox.publish('NavChanged');
+                    GO.ScrollToTop();
                     return;
                 }
                 console.error('Route not found.', url);

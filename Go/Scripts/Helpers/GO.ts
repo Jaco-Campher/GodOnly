@@ -21,6 +21,10 @@
         /in/.test(document.readyState) ? setTimeout(() => { GO.DomReady(functionToExecute) }, 9) : functionToExecute();
     }
 
+    export function ScrollToTop() {
+        window.scrollTo({ top: 0 });
+    }
+
     //#endregion
     
     //****************************************************************************

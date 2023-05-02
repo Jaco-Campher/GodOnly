@@ -56,14 +56,14 @@
             <!-- ko if:ShowComponent()=='Content' -->
             <go-bible-ref params="{ Ref: Ref, Show: $parent.ShowLegendType }"></go-bible-ref>
 
-            <!--<div class="bible-nav">
-                <div class="btn-s left" data-bind="enabled:function() {return ChapterNo() > 1}, click:Prev">
-                    <svg viewBox="0 0 24 24"><path d="M5 12l9 -9h5l-9 9l9 9h-5z" /></svg>
-                </div>
-                <div class="btn-s right" data-bind="enabled:ChapterNo() != TotalChapters, click:Next">
-                    <svg viewBox="0 0 24 24"><path d="M19 12l-9 -9h-5l9 9l-9 9h5z" /></svg>
-                </div>
-            </div>-->
+            <div class="bible-nav" data-bind="if:Book">
+                <button class="btn-icon" data-bind="enabled:function() {return ChapterNo() > 1}, click:Prev">
+                    <svg viewBox="0 0 12 12"><polygon points="8.15,12 2.15,6 8.15,0 8.85,0.71 3.56,6 8.85,11.29" /></svg>
+                </button>
+                <button class="btn-icon right" data-bind="enabled:ChapterNo() != TotalChapters, click:Next">
+                    <svg viewBox="0 0 12 12"><polygon points="3.85,12 3.14,11.29 8.44,6 3.15,0.71 3.85,0 9.85,6" /></svg>
+                </button>
+            </div>
             <!-- /ko -->
 
         </div>

@@ -44,6 +44,12 @@ body {
     height:100vh;
 }
 
+@media (max-width:500px) {
+    body {
+        padding: var(--top-nav-height) 5px 0;
+    }
+}
+
 /* Loading
 **********************************/
 .loading-holder {
@@ -433,11 +439,11 @@ textarea {
     box-shadow: 0 0 25px #0009;
 }
 
-/*@media (max-width:800px) {
+@media (max-width:800px) {
     .box {
-        padding:10px;
+        padding:15px 7px;
     }
-}*/
+}
 
 .box:before {
     content: "";
@@ -465,7 +471,7 @@ go-dialog .box:before {
     position: absolute;
     inset: 0;
     background: url(/Images/Background/ReflectiveGlow.jpg) 0 var(--bk-scroll-pos, 50%) repeat fixed;
-    background-size: 100%;
+    background-size: cover;
     opacity: 0.04;
     z-index: -1;
 }
@@ -540,7 +546,7 @@ go-dialog .box:after {
     padding: 5px 15px;
 }
 
-@media (max-width:400px) {
+@media (max-width:450px) {
     .settings-list li {
         padding: 5px;
     }
@@ -570,7 +576,7 @@ go-dialog .box:after {
     padding: 0 0 30px 20px;
 }
 
-@media (max-width:400px) {
+@media (max-width:450px) {
     .help .settings-list .description {
         padding: 0 0 30px 10px;
     }
@@ -642,11 +648,11 @@ go-dialog .box:after {
 .home-landing {
     grid-template-areas:
         "main intro";
-    grid-template-columns: 5fr minmax(200px, 2fr);
+    grid-template-columns: 5fr minmax(190px, 2fr);
     /*grid-template-rows: 100px 100px;*/
 }
 
-@media (max-width:400px) {
+@media (max-width:600px) {
     .home-landing {
         grid-template-areas:
             "main"
@@ -697,7 +703,7 @@ go-dialog .box:after {
     height:130px;
 }
 
-@media (max-width:400px) {
+@media (max-width:450px) {
     .img-link .container {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;

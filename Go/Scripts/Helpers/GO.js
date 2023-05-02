@@ -12,6 +12,10 @@ var GO;
         /in/.test(document.readyState) ? setTimeout(() => { GO.DomReady(functionToExecute); }, 9) : functionToExecute();
     }
     GO.DomReady = DomReady;
+    function ScrollToTop() {
+        window.scrollTo({ top: 0 });
+    }
+    GO.ScrollToTop = ScrollToTop;
     let loadedFilePromise = {};
     /**
     * Loads and returns the data contained in a file.

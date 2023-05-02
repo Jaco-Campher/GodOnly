@@ -359,6 +359,8 @@
         UpdatePageIndex = (index: number, type: IndexType) => {
             this.CurrentPageType(type);
             this.CurrentPageIndex(index);
+
+            GO.ScrollToTop();
         }
 
         PrevPage = () => {
@@ -383,7 +385,7 @@
                     }
             }
 
-            window.scrollTo({ top: 0 });
+            GO.ScrollToTop();
         }
 
         NextPage = () => {
@@ -405,7 +407,7 @@
                     this.CurrentPageIndex(this.CurrentPageIndex() + 1);
             }
 
-            window.scrollTo({ top: 0 });
+            GO.ScrollToTop();
         }
 
     }

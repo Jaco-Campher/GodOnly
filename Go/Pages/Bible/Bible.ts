@@ -53,7 +53,7 @@
 
         NavChanged = () => {
             let state: iBibleHistoryState = history.state;
-            console.log('state', state);
+            //console.log('state', state);
             
             if (state && state.Hashes && state.Hashes['ref']) {
                 let refsString: string = this.GetFromHash(state.Hashes['ref']);
@@ -113,14 +113,6 @@
             return hashString.replace(/_/g, ' ').replace(/\|/g, ':').replace(/\+/g, ',');
         }
 
-        //Prev = () => {
-        //    this.ChapterSelected(this.ChapterNo() - 1);
-        //}
-
-        //Next = () => {
-        //    this.ChapterSelected(this.ChapterNo() + 1);
-        //}
-
         ShowHideSettings = () => {
             this.ShowSettings(!this.ShowSettings());
         }
@@ -178,10 +170,20 @@
 
         ChapterSelected = (num: number) => {
             this.ChapterNo(Number(num));
-            this.Ref(`${this.Book()!.Abbr} ${num}`)
+            this.Ref(`${this.Book()!.Abbr} ${num}`);
             this.ShowComponent('Content');
             
             ko.postbox.publish('RefsSectionsChanged', new Date()); //Publish a new random value to trigger the RefsSectionsChanged function.
+        }
+
+        Prev = (a, event: any, c, d) => {
+            this.ChapterSelected(this.ChapterNo() - 1);
+            GO.ScrollToTop();
+        }
+
+        Next = () => {
+            this.ChapterSelected(this.ChapterNo() + 1);
+            GO.ScrollToTop();
         }
     }
 }

@@ -11,7 +11,7 @@
     bottom: 15px;
     padding: 8px;
     display: grid;
-    grid: auto/59px 1fr 59px;
+    grid: auto/50px 1fr 50px;
 }
 
 .bible .bible-nav .btn-s {
@@ -23,14 +23,14 @@
 }
 
 .bible .bible-nav svg {
-    fill: #eee;
-    height: 24px;
-    width: 24px;
-    vertical-align: middle
+    fill: #ccc;
+    height: 19px;
+    width: 25px;
 }
 
 .bible .bible-nav .right {
-    grid-column: 3
+    grid-column: 3;
+    text-align:center;
 }
 
 .bible .btn-l {
@@ -44,6 +44,12 @@
     top: -12px;
     right: -15px;
     box-shadow: 5px 5px 15px #000;
+}
+
+@media (max-width:500px) {
+    .bible .close {
+        right: -5px;
+    }
 }
 
 /*.bible .close-svg:hover {
