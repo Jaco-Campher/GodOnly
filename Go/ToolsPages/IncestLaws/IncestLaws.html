@@ -1,0 +1,93 @@
+﻿<link rel="Stylesheet" type="text/css" href="../toolspages/incestlaws/incestlaws.css" />
+
+<div class="fam-main">
+    <div class="tree-holder" data-bind="css: { dim: Dim }">
+        <div class="person you">
+            <h4 data-bind="text: Gender"></h4>
+            <hr />
+        </div>
+        <!-- ko foreach: People -->
+        <div class="person" data-bind="class: CSSClass, attr: { style: Location }">
+            <h4 data-bind="text: Name"></h4>
+            <!-- ko if: Refs.length != 0 -->
+                <go-info params="{ Title: 'Conditional' }">
+                    <div class="refs" data-bind="foreach: $parent.Refs">
+                        <!-- ko if: Ref == ''-->
+                        <div data-bind="html: Html"></div>
+                        <!-- /ko -->
+                        <!-- ko if: Ref != ''-->
+                        <go-bible-ref params="{ Ref: Ref, Show: GO.eRefTypeShow.None }"></go-bible-ref>
+                        <!-- /ko -->
+                    </div>      
+                </go-info>
+            <!-- /ko -->
+            <hr />
+            <div class="ref" data-bind="text: Vers1"></div>
+            <div class="ref" data-bind="text: Vers2"></div>
+        </div>
+        <!-- /ko -->
+        <!-- ko foreach: Links -->
+        <div class="link" data-bind="attr: { style: Location }">
+            <!-- ko if: Top --><div class="t" data-bind="css: { highlight: HighlightTop }"></div><!-- /ko -->
+            <!-- ko if: Left --><div class="l" data-bind="css: { highlight: HighlightLeft }"></div><!-- /ko -->
+            <div class="m" data-bind="css: { highlight: HighlightMiddle }"></div>
+            <!-- ko if: Right --><div class="r" data-bind="css: { highlight: HighlightRight }"></div><!-- /ko -->
+            <!-- ko if: Bottom --><div class="b" data-bind="css: { highlight: HighlightBottom }"></div><!-- /ko -->
+        </div>
+        <!-- /ko -->
+    </div>
+</div>
+
+<div class="controls-holder">
+    <div class="box gender-controls">
+        <input type="radio" name="gender" value="Both" data-bind="checked: Gender" id="both" />
+        <label for="both">Both</label>
+        <input type="radio" name="gender" value="Man" data-bind="checked: Gender" id="man" />
+        <label for="man">Man</label>
+        <input type="radio" name="gender" value="Woman" data-bind="checked: Gender" id="woman" />
+        <label for="woman">Woman</label>
+    </div>
+    <div class="box verses-box">
+        <div class="verses-holder" data-bind="foreach: Verses">
+            <div class="verse select" data-bind="click: $parent.Highlight, class: CSSClass">
+                <go-bible-ref params="{ Ref: Ref }"></go-bible-ref>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<template id="PageHelp">
+
+    <h3>Color Coding</h3>
+    <div class="grid-layout color-code-grid">
+        <div class="person you">
+            <h4>Starting / Ending</h4>
+            <hr />
+        </div>
+        <p class="ref">This is the center point where all the other verses will link to or from. If we try to show all the possible relationships between all the possible family members, everything will just show red as some relationship or another will not be allowed. So, to make the tool usable, we only focus on one person and then show all the relationships in relation to this one person.</p>
+
+        <div class="person red">
+            <h4>Not Allowed</h4>
+            <hr />
+        </div>
+        <p>Not allowed as per the verses referenced.</p>
+
+        <div class="person conditional">
+            <h4>Conditional</h4>
+            <hr />
+        </div>
+        <p>Allowed under certain circumstances and not under others. Please see the referenced verses or click on the ‘I’ to show more information.</p>
+
+        <div class="person">
+            <h4>No Laws</h4>
+            <hr />
+        </div>
+        <p>There are no laws covering this relationship.</p>
+
+    </div>
+
+    <h3>General</h3>
+    <p>To use the tool, just click on any of the verses on the right-hand side. It will highlight the relationships that the verse applies to.</p>
+    <p>Then at the top you can select to show how it applies to man, woman, or both. It is recommended to switch between man and woman as you go through the verses, as the laws for each is very different.</p>
+</template>

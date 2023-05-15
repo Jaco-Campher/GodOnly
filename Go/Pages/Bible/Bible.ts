@@ -176,7 +176,7 @@
             ko.postbox.publish('RefsSectionsChanged', new Date()); //Publish a new random value to trigger the RefsSectionsChanged function.
         }
 
-        Prev = (a, event: any, c, d) => {
+        Prev = () => {
             this.ChapterSelected(this.ChapterNo() - 1);
             GO.ScrollToTop();
         }

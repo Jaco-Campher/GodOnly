@@ -34,7 +34,7 @@ body {
     grid-template-rows: 1fr 48px;
     color: var(--text-color);
     background: #0f0f0f;
-    background: linear-gradient(45deg, #181012 20%, #0f0f0f, #121018 75%);
+    background: linear-gradient(45deg, #181012 20%, #0f0f0f, #14101c 75%);
     background-attachment:fixed;
     margin: 0;
     padding: var(--top-nav-height) 15px 0;
@@ -350,6 +350,10 @@ h2, h3 {  /*h2 = Dialog Title, h3 = Accordion Title & Section Heading*/
     margin: 40px 0 10px;
     padding: 0 0 5px;
     text-align:left;
+}
+
+.help h3:first-child {
+    margin: 15px 0 10px;
 }
 
 h4 { /* Refs */
@@ -690,6 +694,7 @@ go-dialog .box:after {
 .img-link {
     display: inline-block;
     position:relative;
+    text-decoration: none;
 }
 
 .img-link .container {
@@ -700,7 +705,6 @@ go-dialog .box:after {
         'img title'
         'img description';
     grid-gap:16px;
-    height:130px;
 }
 
 @media (max-width:450px) {
@@ -723,6 +727,10 @@ go-dialog .box:after {
 
 .img-link .description {
     grid-area:description;
+}
+
+.img-link .description p:first-child {
+    margin-top: 0;
 }
 
 .img-link img {
@@ -1284,7 +1292,7 @@ go-strongs .strongs,
 .legend .div {
     display: inline-block;
     width: 1px;
-    height: 16px;
+    height: 15px;
     margin: 0 2px -3px;
     background: #a0f;
     box-shadow: 0 0 5px #d3f, 0 0 7px #d3f, 0 0 20px #d3f;

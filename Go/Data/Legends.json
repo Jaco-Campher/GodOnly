@@ -240,6 +240,10 @@
       {
         "Ref": "Dan 8:21",
         "Bold": [{"From":56, "To":59}, {"From":98, "To":102}]
+      },
+      {
+        "Ref": "Rev 17:12",
+        "Bold": [{"From":12, "To":16}, {"From":44, "To":48}]
       }
     ]
   },
@@ -292,6 +296,10 @@
         "Bold": [{"From":14, "To":19}, {"From":44, "To":50}, {"From":64, "To":68}, {"From":75, "To":79}]
       }
     ]
+  },
+  "serpents": {
+    "Meaning": "devils",
+    "Lookup": "serpent"
   },
   "Star": {
     "Meaning": "Angel",

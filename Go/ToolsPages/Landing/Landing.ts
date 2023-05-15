@@ -21,8 +21,8 @@
         }
 
         SetupImageLinks() {
-            this.ImageLinks.push(new GO.ImageLink('Prophecy Legend', '',  '/tools/legend', 'MapCompass.jpg'));
-            //this.ImageLinks.push(new GO.ImageLink('Sexual Relations Between Family Members', '', '/tools/sexfamily', 'SexFamily.jpg'));
+            this.ImageLinks.push(new GO.ImageLink('Incest Laws', 'Helps to visually show the how the Torah affects a family tree.', '/tools/incestlaws', 'IncestLaws.jpg'));
+            this.ImageLinks.push(new GO.ImageLink('Prophecy Legend', '<p>The Prophesy Legend is a list of words that has been found in Scripture that can have other meanings in prophesy. One of the functions of this site is to share what has been found and to make it easier to see in the context of Scripture. When reading Scripture on this site, the words from the Prophesy Legend will be displayed when matches are found.</p>', '/tools/legend', 'MapCompass.jpg'));
             //this.ImageLinks.push(new GO.ImageLink('Text to HTML', '', '/tools/texttohtml'));
             //this.ImageLinks.push(new GO.ImageLink('Timeline', '', '/tools/timeline'));
         }
@@ -34,11 +34,7 @@
         public NavChanged = () => {
             let state: iToolsHistoryState = history.state;
 
-            console.log('1');
-
             if (state && state.Parameters.page) {
-
-                console.log('2', state);
 
                 switch (state.Parameters.page) {
                     case 'legend':
@@ -46,8 +42,8 @@
                         go.ActivePage('go-tools-legend');
                         return;
 
-                    case 'sexfamily':
-                        return go.ActivePage('go-tools-sexFamily');
+                    case 'incestlaws':
+                        return go.ActivePage('go-tools-incestLaws');
 
                     case 'texttohtml':
                         return go.ActivePage('go-tools-textToHtml');

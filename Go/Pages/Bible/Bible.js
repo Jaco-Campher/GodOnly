@@ -1,3 +1,4 @@
+"use strict";
 var GO;
 (function (GO) {
     var Pages;
@@ -133,7 +134,7 @@ var GO;
                     this.ShowComponent('Content');
                     ko.postbox.publish('RefsSectionsChanged', new Date()); //Publish a new random value to trigger the RefsSectionsChanged function.
                 };
-                this.Prev = (a, event, c, d) => {
+                this.Prev = () => {
                     this.ChapterSelected(this.ChapterNo() - 1);
                     GO.ScrollToTop();
                 };

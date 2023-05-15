@@ -126,6 +126,7 @@
     <Content Include="Components\Dialog\Dialog.js" />
     <Content Include="Images\Background\ReflectiveGlow.jpg" />
     <Content Include="Images\Controlls\Context-Icon.png" />
+    <Content Include="Images\ImgLinks\IncestLaws.jpg" />
     <Content Include="Images\ImgLinks\MapCompass.jpg" />
     <Content Include="Pages\About\About.html" />
     <Content Include="Pages\Bible\Bible.css" />
@@ -181,9 +182,9 @@
     <Content Include="ToolsPages\Timeline\Timeline.css" />
     <Content Include="ToolsPages\Timeline\Timeline.html" />
     <Content Include="ToolsPages\Timeline\Timeline.js" />
-    <Content Include="ToolsPages\SexFamily\SexFamily.css" />
-    <Content Include="ToolsPages\SexFamily\SexFamily.html" />
-    <Content Include="ToolsPages\SexFamily\SexFamily.js" />
+    <Content Include="ToolsPages\IncestLaws\IncestLaws.css" />
+    <Content Include="ToolsPages\IncestLaws\IncestLaws.html" />
+    <Content Include="ToolsPages\IncestLaws\IncestLaws.js" />
     <Content Include="TorahPages\Landing\Landing.html" />
     <Content Include="TorahPages\Landing\Landing.js" />
     <Content Include="Web.config" />
@@ -243,7 +244,7 @@
     <TypeScriptCompile Include="ToolsPages\Legend\Legend.ts" />
     <TypeScriptCompile Include="ToolsPages\TextToHtml\TextToHtml.ts" />
     <TypeScriptCompile Include="ToolsPages\Timeline\Timeline.ts" />
-    <TypeScriptCompile Include="ToolsPages\SexFamily\SexFamily.ts" />
+    <TypeScriptCompile Include="ToolsPages\IncestLaws\IncestLaws.ts" />
     <TypeScriptCompile Include="TorahPages\Landing\Landing.ts" />
   </ItemGroup>
   <ItemGroup>

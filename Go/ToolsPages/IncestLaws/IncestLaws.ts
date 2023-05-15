@@ -2,7 +2,6 @@
 
     interface Verse {
         Ref: string;
-        Text: string;
 
         Locations: Array<string>;
         Links: Array<Array<string>>;
@@ -16,7 +15,7 @@
         CSSClass: KnockoutObservable<string>;
     }
 
-    export class SexFamilyViewModel {
+    export class IncestLawsViewModel {
 
         Links: KnockoutObservableArray<Link> = ko.observableArray<Link>([]);
         People: KnockoutObservableArray<Person> = ko.observableArray<Person>([]);
@@ -259,6 +258,7 @@
 
             let sisterInLaw2: Person = new Person('Sister In Law', 'F', 'sister-law2', 'Lev 18:16a', '');
             sisterInLaw2.IsConditional(true);
+            sisterInLaw2.Refs = [{ Ref: 'Deu 25:5-10' }];
             this.People.push(sisterInLaw2);
             this.People.push(new Person('Brother In Law', 'M', 'brother-law2', '', ''));
             this.People.push(new Person('Sister', 'F', 'sister2', 'Lev 18:9a, 11', 'Lev 20:17'));
@@ -277,9 +277,9 @@
 
             let sisterInLaw1: Person = new Person('Sister In Law', 'F', 'sister-law1', 'Lev 18:16a', 'Lev 20:21a');
             sisterInLaw1.IsConditional(true);
-            sisterInLaw1.Info(`<h2>Testing</h2>
-Some other text goes here.`);
+            sisterInLaw1.Refs = [{ Ref: 'Deu 25:5-10' }];
             this.People.push(sisterInLaw1);
+
             this.People.push(new Person('Brother', 'M', 'brother1', 'Lev 18:16b', 'Lev 20:17, 21b'));
 
             this.People.push(new Person('Sister', 'F', 'sister6', 'Lev 18:9', 'Lev 20:17'));
@@ -287,6 +287,7 @@ Some other text goes here.`);
 
             let sisterInLaw5: Person = new Person('Sister In Law', 'F', 'sister-law5', 'Lev 18:16a', '');
             sisterInLaw5.IsConditional(true);
+            sisterInLaw5.Refs = [{ Ref: 'Deu 25:5-10' }];
             this.People.push(sisterInLaw5);
             this.People.push(new Person('Brother', 'M', 'brother5', 'Lev 18:9, 16b', 'Lev 20:17'));
 
@@ -435,7 +436,6 @@ Some other text goes here.`);
             //Lev 18
             this.Verses.push({
                 Ref: 'Lev 18:7',
-                Text: `The nakedness of thy father, or the nakedness of thy mother, shalt thou not uncover: she is thy mother; thou shalt not uncover her nakedness.`,
                 Locations: ['dad', 'mother', 'son', 'daughter'],
                 Links: [['l37', 'b r'], ['l100', 'l t'], ['l15', 'a'], ['l44', 'a'], ['l56', 'a'], ['l57', 'a'], ['l58', 'a']],
                 ManLocations: [],
@@ -447,7 +447,6 @@ Some other text goes here.`);
 
             this.Verses.push({
                 Ref: 'Lev 18:8',
-                Text: `The nakedness of thy father's wife shalt thou not uncover: it is thy father's nakedness.`,
                 Locations: ['dad', 'dad-wife'],
                 Links: [['l37', 'b r'], ['l100', 'l t'], ['l15', 'l b'], ['l11', 'l r'], ['l91', 'l r'], ['l90', 'l r']],
                 ManLocations: [],
@@ -459,19 +458,17 @@ Some other text goes here.`);
 
             this.Verses.push({
                 Ref: 'Lev 18:9',
-                Text: `The nakedness of thy sister, the daughter of thy father, or daughter of thy mother, whether she be born at home, or born abroad, even their nakedness thou shalt not uncover.`,
                 Locations: ['sister1', 'sister2', 'sister6'],
                 Links: [['l37', 'a'], ['l100', 'a'], ['l38', 'a'], ['l39', 'l b'], ['l15', 'a'], ['l101', 'a'], ['l17', 'l b'], ['l81', 't r'], ['l82', 'a'], ['l11', 'a'], ['l91', 'r b'], ['l35', 't r'], ['l36', 'a']],
                 ManLocations: [],
                 ManLinks: [],
-                WomanLocations: ['brother1', 'brother2', 'brother5'],
-                WomanLinks: [['l40', 'a'], ['l41', 'a'], ['l39', 'r'], ['l34', 'a'], ['l35', 'l'], ['l80', 'a'], ['l81', 'l']],
+                WomanLocations: [],
+                WomanLinks: [],
                 CSSClass: ko.observable('')
             });
 
             this.Verses.push({
                 Ref: 'Lev 18:10',
-                Text: `The nakedness of thy son's daughter, or of thy daughter's daughter, even their nakedness thou shalt not uncover: for theirs is thine own nakedness.`,
                 Locations: ['grand-daughter1', 'grand-daughter2'],
                 Links: [['l44', 'l b'], ['l56', 'a'], ['l57', 'a'], ['l58', 'a'], ['l70', 'r b'], ['l71', 'l b'], ['l73', 't r'], ['l74', 'a'], ['l76', 't r'], ['l77', 'a']],
                 ManLocations: [],
@@ -483,7 +480,6 @@ Some other text goes here.`);
 
             this.Verses.push({
                 Ref: 'Lev 18:11',
-                Text: `The nakedness of thy father's wife's daughter, begotten of thy father, she is thy sister, thou shalt not uncover her nakedness.`,
                 Locations: ['sister2'],
                 Links: [['l37', 'b r'], ['l100', 'l t'], ['l15', 'l b'], ['l11', 'a'], ['l91', 'r b'], ['l35', 't r'], ['l36', 'a']],
                 ManLocations: [],
@@ -495,7 +491,6 @@ Some other text goes here.`);
 
             this.Verses.push({
                 Ref: 'Lev 18:12',
-                Text: `Thou shalt not uncover the nakedness of thy father's sister: she is thy father's near kinswoman.`,
                 Locations: ['aunt2'],
                 Links: [['l37', 'a'], ['l100', 'l t'], ['l15', 'l b'], ['l6', 'a'], ['l3', 'r b'], ['l4', 'a']],
                 ManLocations: [],
@@ -509,7 +504,6 @@ Some other text goes here.`);
 
             this.Verses.push({
                 Ref: 'Lev 18:13',
-                Text: `Thou shalt not uncover the nakedness of thy mother's sister: for she is thy mother's near kinswoman.`,
                 Locations: ['aunt4'],
                 Links: [['l37', 'b r'], ['l100', 'l t'], ['l15', 'r b'], ['l23', 'a'], ['l20', 'r b'], ['l21', 'a']],
                 ManLocations: [],
@@ -523,7 +517,6 @@ Some other text goes here.`);
 
             this.Verses.push({
                 Ref: 'Lev 18:14',
-                Text: `Thou shalt not uncover the nakedness of thy father's brother, thou shalt not approach to his wife: she is thine aunt.`,
                 Locations: ['aunt1', 'uncle1'],
                 Links: [['l37', 'b r'], ['l100', 'l t'], ['l15', 'l b'], ['l6', 'a'], ['l3', 'l b'], ['l2', 'a'], ['l5', 'l r']],
                 ManLocations: ['nephew1', 'niece1', 'nephew4', 'niece4', 'nephew5', 'niece5'],
@@ -537,7 +530,6 @@ Some other text goes here.`);
 
             this.Verses.push({
                 Ref: 'Lev 18:15',
-                Text: `Thou shalt not uncover the nakedness of thy daughter in law: she is thy son's wife; thou shalt not uncover her nakedness.`,
                 Locations: ['daughter-law'],
                 Links: [['l44', 'l b'], ['l57', 't l'], ['l56', 'a'], ['l70', 'l r']],
                 ManLocations: [],
@@ -548,13 +540,12 @@ Some other text goes here.`);
             });
 
             this.Verses.push({
-                Ref: 'Lev 18:16', //TODO: Deut 25:5-10
-                Text: `Thou shalt not uncover the nakedness of thy brother's wife: it is thy brother's nakedness.`,
-                Locations: [],
-                Links: [],
-                ManLocations: ['brother1', 'sister-law1', 'brother2', 'sister-law2', 'brother5', 'sister-law5'],
-                ManLinks: [['l37', 'a'], ['l100', 'a'], ['l38', 'a'], ['l39', 'l r'], ['l40', 'a'], ['l41', 'a'], ['l46', 'l r'], ['l15', 'a'], ['l11', 'a'], ['l91', 'r b'],
+                Ref: 'Lev 18:16', //TODO: Deu 25:5-10
+                Locations: ['brother1', 'sister-law1', 'brother2', 'sister-law2', 'brother5', 'sister-law5'],
+                Links: [['l37', 'a'], ['l100', 'a'], ['l38', 'a'], ['l39', 'l r'], ['l40', 'a'], ['l41', 'a'], ['l46', 'l r'], ['l15', 'a'], ['l11', 'a'], ['l91', 'r b'],
                     ['l35', 't l'], ['l34', 'a'], ['l42', 'l r'], ['l101', 'a'], ['l17', 'l b'], ['l81', 't l'], ['l80', 'a'], ['l110', 'l r']],
+                ManLocations: [],
+                ManLinks: [],
                 WomanLocations: [],
                 WomanLinks: [],
                 CSSClass: ko.observable('')
@@ -562,7 +553,6 @@ Some other text goes here.`);
 
             this.Verses.push({
                 Ref: 'Lev 18:17',
-                Text: `Thou shalt not uncover the nakedness of a woman and her daughter, neither shalt thou take her son's daughter, or her daughter's daughter, to uncover her nakedness; for they are her near kinswomen: it is wickedness.`,
                 Locations: ['daughter', 'grand-daughter1', 'grand-daughter2'],
                 Links: [['l44', 'l b'], ['l57', 'a'], ['l58', 'a'], ['l71', 'l b'], ['l76', 't r'], ['l77', 'a'], ['l56', 'a'], ['l70', 'r b'], ['l73', 't r'], ['l74', 'a']],
                 ManLocations: [],
@@ -574,7 +564,6 @@ Some other text goes here.`);
 
             this.Verses.push({
                 Ref: 'Lev 18:18', //TODO: Vex her. Conditional.
-                Text: `Neither shalt thou take a wife to her sister, to vex her, to uncover her nakedness, beside the other in her life time.`,
                 Locations: ['wife-sister'],
                 Links: [['l120', 'a']],
                 ManLocations: [],
@@ -586,7 +575,6 @@ Some other text goes here.`);
 
             this.Verses.push({
                 Ref: 'Lev 18:22',
-                Text: `Thou shalt not lie with mankind, as with womankind: it is abomination.`,
                 Locations: [],
                 Links: [],
                 ManLocations: ['M'],
@@ -599,7 +587,6 @@ Some other text goes here.`);
             //Lev 20
             this.Verses.push({
                 Ref: 'Lev 20:11',
-                Text: `And the man that lieth with his father's wife hath uncovered his father's nakedness: both of them shall surely be put to death; their blood shall be upon them.`,
                 Locations: [],
                 Links: [],
                 ManLocations: ['dad', 'dad-wife'],
@@ -611,7 +598,6 @@ Some other text goes here.`);
 
             this.Verses.push({
                 Ref: 'Lev 20:12',
-                Text: `And if a man lie with his daughter in law, both of them shall surely be put to death: they have wrought confusion; their blood shall be upon them.`,
                 Locations: [],
                 Links: [],
                 ManLocations: ['daughter-law'],
@@ -623,7 +609,6 @@ Some other text goes here.`);
 
             this.Verses.push({
                 Ref: 'Lev 20:13',
-                Text: `If a man also lie with mankind, as he lieth with a woman, both of them have committed an abomination: they shall surely be put to death; their blood shall be upon them.`,
                 Locations: [],
                 Links: [],
                 ManLocations: ['M'],
@@ -635,7 +620,6 @@ Some other text goes here.`);
 
             this.Verses.push({
                 Ref: 'Lev 20:14',
-                Text: `And if a man take a wife and her mother, it is wickedness: they shall be burnt with fire, both he and they; that there be no wickedness among you.`,
                 Locations: [],
                 Links: [],
                 ManLocations: [],
@@ -646,8 +630,7 @@ Some other text goes here.`);
             });
 
             this.Verses.push({
-                Ref: 'Lev 20.17',
-                Text: `And if a man shall take his sister, his father's daughter, or his mother's daughter, and see her nakedness, and she see his nakedness; it is a wicked thing; and they shall be cut off in the sight of their people: he hath uncovered his sister's nakedness; he shall bear his iniquity.`,
+                Ref: 'Lev 20:17',
                 Locations: [],
                 Links: [],
                 ManLocations: ['sister1', 'sister2', 'sister6'],
@@ -658,12 +641,45 @@ Some other text goes here.`);
             });
 
             this.Verses.push({
-                Ref: 'Deu 22:30',
-                Text: `A man shall not take his father's wife, nor discover his father's skirt.`,
-                Locations: [],
-                Links: [],
+                Ref: 'Lev 20:19',
+                Locations: ['aunt2', 'aunt4'],
+                Links: [['l37', 'a'], ['l100', 'l t'], ['l15', 'a'], ['l23', 'a'], ['l20', 'r b'], ['l21', 'a'], ['l6', 'a'], ['l3', 'b r'], ['l4', 'a']],
                 ManLocations: [],
                 ManLinks: [],
+                WomanLocations: [],
+                WomanLinks: [],
+                CSSClass: ko.observable('')
+            });
+
+            this.Verses.push({
+                Ref: 'Lev 20:20',
+                Locations: [],
+                Links: [],
+                ManLocations: ['aunt1', 'aunt3', 'uncle1', 'uncle3'],
+                ManLinks: [['l37', 'a'], ['l100', 'l t'], ['l15', 'a'], ['l23', 'a'], ['l20', 'l b'], ['l19', 'a'], ['l6', 'a'], ['l3', 'l b'], ['l2', 'a'], ['l5', 'l r'], ['l22', 'l r']],
+                WomanLocations: [],
+                WomanLinks: [],
+                CSSClass: ko.observable('')
+            });
+
+            this.Verses.push({
+                Ref: 'Lev 20:21',
+                Locations: [],
+                Links: [],
+                ManLocations: ['brother1', 'sister-law1', 'brother2', 'sister-law2', 'brother5', 'sister-law5'],
+                ManLinks: [['l37', 'a'], ['l100', 'a'], ['l38', 'a'], ['l39', 'l r'], ['l40', 'a'], ['l41', 'a'], ['l46', 'l r'], ['l15', 'a'], ['l11', 'a'], ['l91', 'r b'],
+                    ['l35', 't l'], ['l34', 'a'], ['l42', 'l r'], ['l101', 'a'], ['l17', 'l b'], ['l81', 't l'], ['l80', 'a'], ['l110', 'l r']],
+                WomanLocations: [],
+                WomanLinks: [],
+                CSSClass: ko.observable('')
+            });
+
+            this.Verses.push({
+                Ref: 'Deu 22:30',
+                Locations: [],
+                Links: [],
+                ManLocations: ['dad', 'dad-wife'],
+                ManLinks: [['l37', 'b r'], ['l100', 'l t'], ['l15', 'l b'], ['l11', 'l r'], ['l91', 'l r'], ['l90', 'l r']],
                 WomanLocations: [],
                 WomanLinks: [],
                 CSSClass: ko.observable('')
@@ -766,7 +782,9 @@ Some other text goes here.`);
         IsAllowed: KnockoutObservable<boolean> = ko.observable(true);
         IsConditional: KnockoutObservable<boolean> = ko.observable(false);
         Highlight: KnockoutObservable<boolean> = ko.observable(false);
-        Info: KnockoutObservable<string> = ko.observable('');
+        //Info: KnockoutObservable<string> = ko.observable('');
+
+        Refs: Array<iRef> = [];
 
         Location: string;
 

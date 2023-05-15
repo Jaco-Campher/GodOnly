@@ -1,32 +1,40 @@
 ﻿:root {
     --width: auto;
-    --person-bg: linear-gradient(45deg, #0000 0, #0000 var(--corner-cut), #0005 var(--corner-cut), #0007 calc(100% - var(--corner-cut)), #0000 calc(100% - var(--corner-cut)), #0000 100%);
+    --person-bg: linear-gradient(45deg, #0000 0, #0000 var(--corner-cut), #000 var(--corner-cut), #000 calc(100% - var(--corner-cut)), #0000 calc(100% - var(--corner-cut)), #0000 100%);
     --person-bg-dim: linear-gradient(45deg, #0000 0, #0000 var(--corner-cut), #0002 var(--corner-cut), #0005 calc(100% - var(--corner-cut)), #0000 calc(100% - var(--corner-cut)), #0000 100%);
     --person-bg-highlight: linear-gradient(45deg, #0000 0, #0000 var(--corner-cut), #0007 var(--corner-cut), #0009 calc(100% - var(--corner-cut)), #0000 calc(100% - var(--corner-cut)), #0000 100%);
 }
 
-.fam-main {
-    /*display:grid;
-    grid-template-columns: 4fr minmax(100px, 1fr);
-    grid-template-rows: 100vh;
-    row-gap: 10px;*/
-    overflow: auto;
-    height: 100%;
+body {
+    overflow:hidden;
+    padding: var(--top-nav-height) 0 0;
+}
 
-    
+.fam-main {
+    overflow: auto;
 }
 
 .page-area {
     display: grid;
-    grid-template-columns: auto minmax(300px, 10%);
-    grid-template-rows: calc(100vh - var(--top-nav-height) - 10px);
+    grid-template-columns: auto minmax(310px, 10%);
+    grid-template-rows: calc(100vh - var(--top-nav-height));
     grid-gap: 10px;
+    margin:0;
+    padding:0;
 }
+
+footer {
+    display:none;
+}
+
+/*.box {
+    margin:0;
+}*/
 
 .tree-holder {
     display:inline-grid;
     grid-template-columns: repeat(18, 150px 42px);
-    grid-template-rows: repeat(6, 75px 42px) 75px;
+    grid-template-rows: repeat(6, 90px 42px) 90px;
     padding:30px;
     grid-column: 1;
     grid-row:1;
@@ -48,6 +56,9 @@
 ;
 }
 
+
+/* Link
+**********************************/
 .link {
     display:grid;
     grid-template-columns: 1fr 1px 1fr;
@@ -99,12 +110,19 @@
     box-shadow:0 0 3px #f00, 0 0 5px #f00, 0 0 10px #f00;
 }
 
+
+/* Person
+**********************************/
 .person {
-    text-align: center;
     padding: 5px;
     background: var(--person-bg);
     transition: background-color 100ms linear;
     position:relative;
+}
+
+.person > h4 {
+    margin: 4px 0 0;
+    text-align: center;
 }
 
 .person go-info {
@@ -113,13 +131,16 @@
     right:3px;
 }
 
-.person hr {
+.person > hr {
     transition: box-shadow 100ms linear, background 100ms linear;
+    background: #f7f7f7;
+    box-shadow: 0 0 5px #fff, 0 0 7px #fff;
 }
 
 .person .ref {
     text-align:left;
-    padding: 1px 10px;
+    padding: 0 12px;
+    font-size:14px;
 }
 
 .dim .person {
@@ -127,7 +148,7 @@
     color:#eee7;
 }
 
-.dim .person hr {
+.dim .person > hr {
     background: #eee7;
     box-shadow: 0 0 3px #eee7, 0 0 5px #eee7, 0 0 10px #eee7;
 }
@@ -138,10 +159,10 @@
     background: var(--person-bg-highlight);
 }
 
-.person.you hr,
-.dim .person.you hr{
-    background:#00fe;
-    box-shadow: 0 0 3px #00f, 0 0 5px #00f, 0 0 10px #00f, 0 0 10px #00f, 0 0 10px #00f;
+.person.you > hr,
+.dim .person.you > hr{
+    background: #09f;
+    box-shadow: 0 0 5px #3bf, 0 0 7px #3bf, 0 0 10px #3bf;
 }
 
 .dim .person.highlight {
@@ -151,58 +172,59 @@
 
 
 /* Red */
-.person.red hr {
-    background: #f00e;
-    box-shadow: 0 0 3px #f00, 0 0 5px #f00, 0 0 10px #f00, 0 0 10px #f00, 0 0 10px #f00;
+.person.red > hr {
+    background: #f00;
+    box-shadow: 0 0 5px #f00, 0 0 7px #f00, 0 0 10px #f00;
 }
 
-.dim .person.red hr {
+.dim .person.red > hr {
     background: #f009;
     box-shadow: 0 0 3px #f00, 0 0 5px #f00, 0 0 10px #f00;
 }
 
-.dim .person.red.highlight hr {
-    background: #fffe;
+.dim .person.red.highlight > hr {
+    background: #fff;
     box-shadow: 0 0 3px #f00, 0 0 5px #f00, 0 0 10px #f00, 0 0 10px #f00, 0 0 10px #f00;
 }
 
 /* Conditional */
-.person.conditional hr {
-    background: #f70e;
-    box-shadow: 0 0 3px #f70, 0 0 5px #f70, 0 0 10px #f70, 0 0 10px #f70, 0 0 10px #f70;
+.person.conditional > hr {
+    background: #f70;
+    box-shadow: 0 0 5px #f70, 0 0 7px #f70, 0 0 10px #f70;
 }
 
-.dim .person.conditional hr {
+.dim .person.conditional > hr {
     background: #f709;
     box-shadow: 0 0 3px #f70, 0 0 5px #f70, 0 0 10px #f70;
 }
 
-.dim .person.conditional.highlight hr {
-    background: #fffe;
+.dim .person.conditional.highlight > hr {
+    background: #fff;
     box-shadow: 0 0 3px #f70, 0 0 5px #f70, 0 0 10px #f70, 0 0 10px #f70, 0 0 10px #f70;
 }
 
 
+/* Controls
+**********************************/
+go-bible-ref {
+    padding:15px;
+}
+
 .controls-holder {
     display:grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 50px 1fr;
-    padding:0;
+    grid-template-rows: 85px 1fr;
+    padding:10px 10px 10px 0;
 }
 
-.controls {
+.gender-controls {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10%, 1fr));
-    /*grid-template-rows: 34px;*/
-    grid-gap: 3px;
-    background: linear-gradient(45deg, #3337 0, #3339 100%);
-    padding: 3px;
-    margin: 5px;
-    clip-path: var(--clip-corner);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
 }
 
-.controls label {
-    background: linear-gradient(45deg, #0007 0, #0009 100%);
+.gender-controls label {
+    background: linear-gradient(45deg, #000 0, #111 100%);
     padding: 10px 15px;
     cursor: pointer;
     text-align:center;
@@ -210,34 +232,36 @@
     transition: background-color 100ms linear;
 }
 
-.controls label:hover,
-.controls input[type="radio"]:checked + label {
+.gender-controls label:hover,
+.gender-controls input[type="radio"]:checked + label {
     background: linear-gradient(45deg, #7777 0, #7779 100%);
 }
 
-.controls input[type="radio"] {
+.gender-controls input[type="radio"] {
     display:none;
 }
 
-.verses {
+.verses-box {
+    margin:0;
+    padding: 10px 0 10px;
+}
+
+.verses-holder {
     overflow-y:auto;
+    height: calc(100vh - 120px - var(--top-nav-height));
 }
 
-.verse {
-    padding:8px 15px;
-    margin:0 0 10px;
-    /*cursor:pointer;
-    border-top: 1px solid transparent;
-    border-bottom: 1px solid transparent;*/
+
+/* Help
+**********************************/
+.dialog-content .color-code-grid {
+    grid: auto/ 150px 1fr;
 }
 
-/*.verse:hover,
-.verse.highlight {
-    background: #ccc7;
-    border-top: 1px solid #fff7;
-    border-bottom: 1px solid #fff7;
-}*/
+.dialog-content .person {
+    height:90px;
+}
 
-.verse h4 {
-    margin: 0;
+.dialog-content .person.you {
+    grid-area: unset;
 }

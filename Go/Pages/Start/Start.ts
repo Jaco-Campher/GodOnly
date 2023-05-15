@@ -32,7 +32,7 @@
         Bold?: Array<iRefBold>;
         Strongs?: Array<iRefStrong>;
         Html?: KnockoutObservable<string> | string;
-}
+    }
 
     export interface iRefBold {
         From: number,
