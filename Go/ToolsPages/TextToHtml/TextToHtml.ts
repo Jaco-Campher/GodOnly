@@ -180,6 +180,8 @@
 
                 let ver: string = verse.trim();
 
+                ver = ver.replace(/“/g, '"').replace(/”/g, '"').replace(/‘/g, "'").replace(/’/g, "'");
+
                 //Enoch
                 //() Indicated added words.
                 ver = ver.replace(/\(/g, '\\add (').replace(/\)/g, ')\\add*')
