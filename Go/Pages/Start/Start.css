@@ -367,6 +367,12 @@ p.note {
     font-style: italic;
 }
 
+p.update {
+    background: #f902;
+    padding: 10px;
+    font-style: italic;
+}
+
 .center {
     text-align:center;
 }
