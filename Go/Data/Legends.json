@@ -31,8 +31,17 @@
     "Meaning": "Kings / Kingdoms",
     "Lookup": "Beast"
   },
+  "Candle": {
+    "Meaning": "Spirit",
+    "Refs": [
+      {
+        "Ref": "Pro 20:27",
+        "Bold": [{"From":4, "To":30}]
+      }
+    ]
+  },
   "Candlestick": {
-    "Meaning": "Churches",
+    "Meaning": "Churche",
     "Lookup": "Candlesticks"
   },
   "Candlesticks": {
@@ -340,7 +349,7 @@
       }
     ]
   },
-  "white horse: and he that sat on him": {
+  "White horse: and He that sat on him": {
     "Case": "Fixed",
     "Meaning": "Yahshua",
     "Refs": [
