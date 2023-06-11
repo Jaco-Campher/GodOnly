@@ -16,17 +16,7 @@
             <go-strongs params="{ Strongs: Html, Alt: Meaning}"><span data-bind="html:$parent.Match"></span></go-strongs>
             <!-- /ko -->
             <!-- ko if: Type == 2 -->
-            <div class="legend" data-bind="click:OpenClose"><span data-bind="html:Match"></span> <span class="div leg"></span> <span data-bind="html:Meaning"></span></div>
-            <go-dialog params="{ Title: 'Prophecy Legend', Show: Show }">
-                <div class="refs" data-bind="foreach: $parent.Refs">
-                    <!-- ko if: Ref == ''-->
-                    <div data-bind="html: Html"></div>
-                    <!-- /ko -->
-                    <!-- ko if: Ref != ''-->
-                    <go-bible-ref params="{ Ref: Ref, Bold: Bold, Strongs: Strongs, Show: GO.eRefTypeShow.None }"></go-bible-ref>
-                    <!-- /ko -->
-                </div>
-            </go-dialog>
+            <go-legend params="{ Original: Match, Meaning: Meaning, Refs: Refs }"></go-legend>
             <!-- /ko -->
         </div>
     </div>

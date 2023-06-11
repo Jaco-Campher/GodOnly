@@ -131,7 +131,7 @@
             this.componentLoader.AddPageDetails('go-tools-', '/ToolsPages', 'GO.Tools');
             this.componentLoader.AddPageDetails('go-torah-', '/TorahPages', 'GO.Torah');
             this.componentLoader.AddPageDetails('go-torahpage-', '/TorahPages');
-            //this.componentLoader.AddPageDetails('go-rev-', '/RevPages', 'GO.Rev');
+            this.componentLoader.AddPageDetails('go-rev-', '/RevPages', 'GO.Rev');
 
             this.componentLoader.AddComponentDetails('go-s-', '/components', '');
             this.componentLoader.AddComponentDetails('go-', '/components', 'GO.Compnents');
@@ -189,7 +189,9 @@
             //Other
             this.AddRoute('/introduction', 'Introduction', 'go-basic-page-introduction');
             this.AddRoute('/copyright', 'Copyright', 'go-basic-page-copyright');
-            
+
+
+            this.AddRoute('/rev', 'Torah', 'go-rev-rev-main');
             //TODO: Route multi folder level _ > /
         }
 

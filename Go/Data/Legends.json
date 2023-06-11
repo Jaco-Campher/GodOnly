@@ -205,6 +205,15 @@
       }
     ]
   },
+  "Harvest": {
+    "Meaning": "End of the world",
+    "Refs": [
+      {
+        "Ref": "Mat 13:39",
+        "Bold": [{"From":40, "To":75}]
+      }
+    ]
+  },
   "Head": {
     "Meaning": "Kingdom",
     "Lookup": "Heads"

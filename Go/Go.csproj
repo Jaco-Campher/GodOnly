@@ -104,6 +104,8 @@
     <Content Include="Components\BibleRef\BibleRef.js" />
     <Content Include="Components\Info\Info.html" />
     <Content Include="Components\Info\Info.js" />
+    <Content Include="Components\Legend\Legend.html" />
+    <Content Include="Components\Legend\Legend.js" />
     <Content Include="Components\Refs\Refs.html" />
     <Content Include="Components\Refs\Refs.js" />
     <Content Include="Components\Ref\Ref.html" />
@@ -145,9 +147,9 @@
     <Content Include="RevPages\Landing\Landing.css" />
     <Content Include="RevPages\Landing\Landing.html" />
     <Content Include="RevPages\Landing\Landing.js" />
-    <Content Include="RevPages\Main\RevMain.js" />
-    <Content Include="RevPages\Main\RevMain.css" />
-    <Content Include="RevPages\Main\RevMain.html" />
+    <Content Include="RevPages\RevMain\RevMain.js" />
+    <Content Include="RevPages\RevMain\RevMain.css" />
+    <Content Include="RevPages\RevMain\RevMain.html" />
     <Content Include="Pages\Start\Start.css" />
     <Content Include="Pages\Start\Start.html" />
     <Content Include="Pages\Start\Start.js" />
@@ -215,6 +217,7 @@
     <TypeScriptCompile Include="Components\BibleRef\BibleRef.ts" />
     <TypeScriptCompile Include="Components\Dialog\Dialog.ts" />
     <TypeScriptCompile Include="Components\Info\Info.ts" />
+    <TypeScriptCompile Include="Components\Legend\Legend.ts" />
     <TypeScriptCompile Include="Components\Refs\Refs.ts" />
     <TypeScriptCompile Include="Components\Ref\Ref.ts" />
     <TypeScriptCompile Include="Components\Search\Search.ts" />
@@ -224,7 +227,7 @@
     <TypeScriptCompile Include="Pages\Search\Search.ts" />
     <TypeScriptCompile Include="ProphesyPages\Landing\Landing.ts" />
     <TypeScriptCompile Include="RevPages\Landing\Landing.ts" />
-    <TypeScriptCompile Include="RevPages\Main\RevMain.ts" />
+    <TypeScriptCompile Include="RevPages\RevMain\RevMain.ts" />
     <TypeScriptCompile Include="Pages\Start\Start.ts" />
     <TypeScriptCompile Include="Scripts\Bible\Bible.ts" />
     <TypeScriptCompile Include="Scripts\Bible\Book.ts" />
@@ -250,6 +253,7 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -1,13 +1,28 @@
-﻿
+﻿:root {
+    --width: auto;
+}
+
+body {
+    overflow:hidden;
+    padding: var(--top-nav-height) 0 0;
+}
 
 .rev-main {
-    display:grid;
+    overflow: auto;
+}
+
+footer {
+    display:none;
+}
+
+.rev-main {
+    /*display:grid;
     grid-template-columns: repeat(15, 250px);
     grid-template-rows: repeat(2, 23px);
     row-gap: 20px;
     grid-template-areas:
         "seal-1 seal-2 seal-3 seal-4 seal-5 seal-6 xx seal-7 seal-7 seal-7 seal-7 seal-7 seal-7 seal-7 seal-7"
-        ". . . . . . . trump-1 trump-2 trump-3 trump-4 angel-woe trump-5 trump-6 trump-7";
+        ". . . . . . . trump-1 trump-2 trump-3 trump-4 angel-woe trump-5 trump-6 trump-7";*/
 
 }
 
