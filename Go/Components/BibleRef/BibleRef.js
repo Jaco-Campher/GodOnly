@@ -1,3 +1,4 @@
+"use strict";
 var GO;
 (function (GO) {
     var Compnents;
@@ -270,13 +271,11 @@ var GO;
                 this.Type = type;
                 switch (this.Type) {
                     case GO.eRefTypeShow.Prophesy:
-                        this.TypeClass = 'leg';
                         break;
                     case GO.eRefTypeShow.Strongs:
-                        this.TypeClass = 'sto';
                         break;
                     //case eRefTypeShow.WordMeaning:
-                    default: this.TypeClass = 'mea';
+                    default:
                 }
             }
             OpenClose() {

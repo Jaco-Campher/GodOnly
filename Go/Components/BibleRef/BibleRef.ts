@@ -321,7 +321,6 @@
     class Section {
         Html: string;
         Type: eRefTypeShow;
-        TypeClass: string;
 
         Match?: string;
         Meaning?: string;
@@ -336,13 +335,11 @@
 
             switch (this.Type) {
                 case eRefTypeShow.Prophesy:
-                    this.TypeClass = 'leg';
                     break;
                 case eRefTypeShow.Strongs:
-                    this.TypeClass = 'sto';
                     break;
                 //case eRefTypeShow.WordMeaning:
-                default: this.TypeClass = 'mea';
+                default: 
             }
         }
 

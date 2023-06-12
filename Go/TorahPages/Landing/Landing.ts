@@ -23,7 +23,7 @@
         }
 
         SetupLinks() {
-            //this.Studies.push(new StudyLink('Do we still need to keep the law?', '/torah-study/Do-we-still-need-to-keep-the-law'));
+            this.Studies.push(new StudyLink('Sunday Worship', '/torah-study/sundayworship'));
         }
 
         //****************************************************************************
