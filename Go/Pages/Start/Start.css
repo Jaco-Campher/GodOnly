@@ -877,7 +877,7 @@ button:hover {
     background: url(/Images/Controlls/Context-Icon.png);
     height: 18px;
     width: 18px;
-    background-size: 72px 36px;
+    background-size: auto 36px;
 }
 
 .controls button:hover {

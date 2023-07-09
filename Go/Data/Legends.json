@@ -332,6 +332,10 @@
     "Meaning": "Angels",
     "Lookup": "Star"
   },
+  "Tabernacles": {
+    "Meaning": "New Jerusalem",
+    "Lookup": "Tabernacle"
+  },
   "Tabernacle": {
     "Meaning": "City",
     "Refs": [
@@ -345,9 +349,18 @@
       }
     ]
   },
-  "Tabernacles": {
-    "Meaning": "New Jerusalem",
-    "Lookup": "Tabernacle"
+  "Tails": {
+    "Meaning": "Prophets that teacheth lies",
+    "Lookup": "Tail"
+  },
+  "Tail": {
+    "Meaning": "Prophet that teacheth lies",
+    "Refs": [
+      {
+        "Ref": "Isa 9:15",
+        "Bold": [{"From":48, "To":93}]
+      }
+    ]
   },
   "Waters": {
     "Meaning": "Peoples",

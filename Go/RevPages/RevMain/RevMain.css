@@ -1,5 +1,12 @@
 ﻿:root {
     --width: auto;
+
+    --heading-1-height: 24px;
+    --heading-2-height: 22px;
+
+
+    --rev6: #271a41;
+    --rev7: #271a41;
 }
 
 body {
@@ -26,35 +33,79 @@ footer {
 
 }
 
-.rev-main h3 {
-    font-size: 12px;
-    margin: 0;
-    color: #eee;
-    background: rgba(123,67,233,0.5);
-    border:1px solid rgba(255,255,255,0.5);
-    padding:4px 5px;
-    text-align: center;
+.rev-main .grid {
+    display:grid;
+    grid-template-columns: minmax(100px, auto);
+    grid-template-rows: repeat(6, 115px 30px);
+    row-gap:5px;
+    grid-template-areas:
+". . . seal-1 seal-2 seal-3 seal-4 seal-5 seal-6 j-1 seal-7 seal-7 seal-7 seal-7 seal-7 seal-7 seal-7 seal-7"
+". . . . . l-1s . . . . . . . . . . . ."
+". . . . . . . . . . trump-1 trump-2 trump-3 trump-4 angel-woe trump-5 trump-6 trump-7"
+". . . . . l-1e . . . . . . . . . . . ."
+". . . . j-2 test-1 test-2 j-3 . . . . . . . . . ."
+;
 }
 
 .rev-main h4 {
+    height: var(--heading-1-height);
+    font-size: 16px;
     margin: 0;
-    color: #999;
-    background-color: rgba(123,67,233,0.2);
-    padding: 3px;
+    color: #eee;
+    background: #472a80;
+    border:1px solid #777;
     text-align: center;
 }
 
+.rev-main .first h4 {
+    border-left:2px solid;
+}
+
+.rev-main .last h4 {
+    border-right:2px solid;
+}
+
 .rev-main h5 {
-    font-size: 10px;
+    height:var(--heading-2-height);
     margin: 0;
-    font-weight: normal;
-    padding: 2px 6px;
+    color: #999;
+    background-color: #271a41;
+    text-align: center;
+    border-right: 1px solid #333;
 }
 
-.rev-main p {
-    margin:2px 6px;
+.rev-main h5 {
+
 }
 
+.rev-main .ref {
+    font-size:14px;
+}
+
+.rev-main .line {
+    font-size:14px;
+}
+
+.rev-main .join {
+    height: var(--heading-1-height);
+    margin:var(--heading-2-height) 0 0;
+    background: #271a41;
+}
+
+.rev-main .join.first {
+    background: linear-gradient(90deg, #0000, #271a41);
+}
+
+.rev-main .link {
+    justify-self: center;
+    background:#4f4f51;
+    width:1px;
+    z-index:-1;
+}
+
+.rev-main .link.highlight {
+    z-index:0;
+}
 
 .rev-main .heaven td {
     height: 100px;
@@ -66,7 +117,3 @@ footer {
     background:rgb(80,40,0);
 }
 
-
-.rev-main .seal {
-    
-}
