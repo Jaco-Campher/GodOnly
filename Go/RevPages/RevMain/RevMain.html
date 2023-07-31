@@ -9,11 +9,12 @@
     <div class="grid">
         <!-- ko foreach: Items -->
         <div class="item" data-bind="class: CSSClass, attr: { style: Location }">
-            <h5 data-bind="text: SubTitle"></h5>
-            <h4 data-bind="text: Title"></h4>
+
+            <h5 data-bind="html: SubTitle"></h5>
+            <h4 data-bind="html: Title"></h4>
             <div class="ref" data-bind="text: Ref"></div>
-            <div class="line" data-bind="text: Line1"></div>
-            <div class="line" data-bind="text: Line2"></div>
+            <div class="line" data-bind="html: Line1"></div>
+            <div class="line" data-bind="html: Line2"></div>
         </div>
         <!-- /ko -->
         <!-- ko foreach: Joins -->

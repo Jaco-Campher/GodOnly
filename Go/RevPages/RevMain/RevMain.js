@@ -28,22 +28,39 @@ var GO;
             LoadItems() {
                 let item;
                 //Seals
-                item = new Item(Color.Rev6, 'seal-1', 'Seal 1', 'Subtitle', 'Rev 6:12a', 'Rev 6:12', 'Line 1', 'Line 2', FirstLast.First);
-                item.TitleLink = '';
+                item = new Item(Color.Rev6, 'seal-1', 'Seal 1', 'White Horse', 'Rev 6:1-2', 'Rev 6:1-2', 'white horse: and he that sat on him', '', FirstLast.First);
                 this.Items.push(item);
-                this.Items.push(new Item(Color.Rev6, 'seal-2', 'Seal 2', 'Subtitle', 'Rev 6:', 'Rev 6:', 'Tormented with fire and brimstone warning.', 'Line 2'));
-                this.Items.push(new Item(Color.Rev6, 'seal-3', 'Seal 3', 'Subtitle', 'Rev 6:', 'Rev 6:', 'Line 1', 'Line 2'));
-                this.Items.push(new Item(Color.Rev6, 'seal-4', 'Seal 4', 'Subtitle', 'Rev 6:', 'Rev 6:', 'Line 1', 'Line 2'));
-                this.Items.push(new Item(Color.Rev6, 'seal-5', 'Seal 5', 'Subtitle', 'Rev 6:', 'Rev 6:', 'Line 1', 'Line 2'));
-                this.Items.push(new Item(Color.Rev6, 'seal-6', 'Seal 6', 'Subtitle', 'Rev 6:', 'Rev 6:', 'Line 1', 'Line 2'));
-                this.Joins.push(new Join(Color.Rev6, 'j-1', FirstLast.Last));
+                item = new Item(Color.Rev6, 'seal-2', 'Seal 2', 'Red Horse', 'Rev 6:3-4', 'Rev 6:3-4', '', '');
+                this.Items.push(item);
+                item = new Item(Color.Rev6, 'seal-3', 'Seal 3', 'Black Horse', 'Rev 6:5-6', 'Rev 6:5-6', '', '');
+                this.Items.push(item);
+                item = new Item(Color.Rev6, 'seal-4', 'Seal 4', 'Green Horse', 'Rev 6:7-8', 'Rev 6:7-8', '', '');
+                this.Items.push(item);
+                item = new Item(Color.Rev6, 'seal-5', 'Seal 5', '', 'Rev 6:9-11', 'Rev 6:9-11', '', '');
+                this.Items.push(item);
+                this.Joins.push(new Join(Color.Rev6, 'j-rev6-11'));
+                item = new Item(Color.Rev6, 'seal-6-1', 'Seal 6', 'Sun Became Black as Sackcloth of Hair', 'Rev 6:12', 'Rev 6:12', 'and the moon became as blood;', '');
+                this.Items.push(item);
+                item = new Item(Color.Rev6, 'seal-6-2', 'Seal 6', 'Stars (Angels) of Heaven Fell Unto the Earth', 'Rev 6:13', 'Rev 6:13', 'Even as a fig tree casteth her untimely figs,', ' when she is shaken of a mighty wind.');
+                this.Items.push(item);
+                item = new Item(Color.Rev6, 'seal-6-3', 'Seal 6', 'Heaven Departed as a Scroll', 'Rev 6:14', 'Rev 6:14', 'every mountain (kingdom) and island', ' were moved out of their places.');
+                this.Items.push(item);
+                item = new Item(Color.Rev6, 'seal-6-4', 'Seal 6', 'Kings and Men Hid Themselves', 'Rev 6:15', 'Rev 6:15', '', '');
+                this.Items.push(item);
+                this.Joins.push(new Join(Color.Rev6, 'j-rev6-15'));
+                item = new Item(Color.Rev6, 'seal-6-5', 'Seal 6', '', 'Rev 6:16a', 'Rev 6:16', 'And said to the mountains (kingdoms)', ' and rocks, fall on us,');
+                this.Items.push(item);
+                item = new Item(Color.Rev6, 'seal-6-6', 'Seal 6', '', 'Rev 6:16b', 'Rev 6:16', 'and hide us from the face of him', 'that sitteth on the throne,');
+                this.Items.push(item);
+                item = new Item(Color.Rev6, 'seal-6-7', 'Seal 6', 'Great Day of His Wrath is Come', 'Rev 6:17', 'Rev 6:17', 'and who shall be able to stand?', '', FirstLast.Last);
+                this.Items.push(item);
+                //Matt
+                //Mark
+                //Luke
+                //Songs
+                //1 Thess
                 //Trumpets
                 this.Items.push(new Item(Color.Rev6, 'trump-1', 'Trump 1', 'Subtitle', 'Rev 6:', 'Rev 6:', 'Line 1', 'Line 2', FirstLast.First));
-                //Testing
-                this.Joins.push(new Join(Color.Rev7, 'j-2', FirstLast.First));
-                this.Items.push(new Item(Color.Rev7, 'test-1', 'Test 1', 'Subtitle', 'Rev 6:', 'Rev 6:', 'Line 1', 'Line 2'));
-                this.Items.push(new Item(Color.Rev7, 'test-2', 'Test 2', 'Subtitle', 'Rev 6:', 'Rev 6:', 'Line 1', 'Line 2'));
-                this.Joins.push(new Join(Color.Rev7, 'j-3'));
             }
             LoadLinks() {
                 this.Links.push(new Link('|', 'l-1s', 'l-1e'));
@@ -52,6 +69,10 @@ var GO;
         Rev.RevMainViewModel = RevMainViewModel;
         class Item {
             constructor(color, location, title, subTitle, ref, refDisplay, line1, line2, firstLast = FirstLast.Default) {
+                this.TitleLink = '';
+                this.SubTitleLink = '';
+                this.Line1Link = '';
+                this.Line2Link = '';
                 this.Color = ko.observable(Color.Default);
                 this.Highlight = ko.observable(false);
                 this.CSSClass = ko.computed(() => {
@@ -62,6 +83,7 @@ var GO;
                 this.Title = title;
                 this.SubTitle = subTitle;
                 this.Ref = ref;
+                this.RefDisplay = refDisplay;
                 this.Line1 = line1;
                 this.Line2 = line2;
                 this.Color(color);

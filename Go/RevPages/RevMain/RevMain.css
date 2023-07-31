@@ -14,37 +14,47 @@ body {
     padding: var(--top-nav-height) 0 0;
 }
 
+.page-area {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: calc(100vh - var(--top-nav-height));
+    grid-gap: 10px;
+    margin:0;
+    padding:0;
+}
+
 .rev-main {
     overflow: auto;
+    padding:30px;
 }
 
 footer {
     display:none;
 }
 
-.rev-main {
-    /*display:grid;
-    grid-template-columns: repeat(15, 250px);
-    grid-template-rows: repeat(2, 23px);
-    row-gap: 20px;
-    grid-template-areas:
-        "seal-1 seal-2 seal-3 seal-4 seal-5 seal-6 xx seal-7 seal-7 seal-7 seal-7 seal-7 seal-7 seal-7 seal-7"
-        ". . . . . . . trump-1 trump-2 trump-3 trump-4 angel-woe trump-5 trump-6 trump-7";*/
-
-}
-
 .rev-main .grid {
     display:grid;
-    grid-template-columns: minmax(100px, auto);
+    grid-template-columns: repeat(20, max-content);
     grid-template-rows: repeat(6, 115px 30px);
     row-gap:5px;
     grid-template-areas:
-". . . seal-1 seal-2 seal-3 seal-4 seal-5 seal-6 j-1 seal-7 seal-7 seal-7 seal-7 seal-7 seal-7 seal-7 seal-7"
-". . . . . l-1s . . . . . . . . . . . ."
-". . . . . . . . . . trump-1 trump-2 trump-3 trump-4 angel-woe trump-5 trump-6 trump-7"
-". . . . . l-1e . . . . . . . . . . . ."
-". . . . j-2 test-1 test-2 j-3 . . . . . . . . . ."
+". . . seal-1 seal-2 seal-3 seal-4 seal-5 j-rev6-11 seal-6-1 seal-6-2 seal-6-3 seal-6-4 j-rev6-15 seal-6-5 seal-6-6 seal-6-7 . . ."
+". . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . mat-24-29a mat-24-29b mat-24-29c j-mat-24-29c j-mat-24-29c mat-24-29d mat-24-30a mat-24-30b j-mat-24-30b mat-24-31a mat-24-31b j-mat-24-31b-e"
+". . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . mark-13-24a mark-13-24b mark-13-25a j-mark-13-25a j-mark-13-25a mark-13-25b j-mark-13-25b mark-13-26 j-mark-13-26 mark-13-27a mark-13-27b j-mark-13-27b-e"
+". . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . j-luke-21-25-s luke-21-25a luke-21-25b luke-21-25c luke-21-26a luke-21-26b j-luke-21-26b luke-21-27 j-luke-21-27-e . . ."
+". . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . . j-song-2-13-start song-2-13 j-song-2-13-e . . . . . . . ."
+". . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . . . . . . . j-1thess-4-16a-s 1thess-4-16a j-1thess-4-16a 1thess-4-16b 1thess-4-17 j-1thess-4-17-e"
 ;
+}
+
+.rev-main .item,
+.rev-main .join {
+    min-width:150px;
 }
 
 .rev-main h4 {
@@ -55,6 +65,7 @@ footer {
     background: #472a80;
     border:1px solid #777;
     text-align: center;
+    padding: 0 20px;
 }
 
 .rev-main .first h4 {
@@ -72,18 +83,17 @@ footer {
     background-color: #271a41;
     text-align: center;
     border-right: 1px solid #333;
-}
-
-.rev-main h5 {
-
+    padding: 0 20px;
 }
 
 .rev-main .ref {
     font-size:14px;
+    padding: 0 5px;
 }
 
 .rev-main .line {
     font-size:14px;
+    padding: 0 10px;
 }
 
 .rev-main .join {

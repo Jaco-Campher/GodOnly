@@ -268,14 +268,14 @@ var GO;
                 this.Show = ko.observable(false);
                 this.Html = html;
                 this.Type = type;
-                switch (this.Type) {
-                    case GO.eRefTypeShow.Prophesy:
-                        break;
-                    case GO.eRefTypeShow.Strongs:
-                        break;
-                    //case eRefTypeShow.WordMeaning:
-                    default:
-                }
+                //switch (this.Type) {
+                //    case eRefTypeShow.Prophesy:
+                //        break;
+                //    case eRefTypeShow.Strongs:
+                //        break;
+                //    //case eRefTypeShow.WordMeaning:
+                //    default: 
+                //}
             }
             OpenClose() {
                 this.Show(!this.Show());
