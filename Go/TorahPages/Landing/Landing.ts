@@ -23,6 +23,7 @@
         }
 
         SetupLinks() {
+            this.Studies.push(new StudyLink('Simple Laws', '/torah-study/simplelaws'));
             this.Studies.push(new StudyLink('Sunday Worship', '/torah-study/sundayworship'));
         }
 
