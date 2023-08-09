@@ -1366,3 +1366,11 @@ go-strongs .strongs,
     background: #1c0;
     box-shadow: 0 0 5px #4f3, 0 0 7px #4f3;
 }
+
+
+/*********************************************
+    Ref Text
+**********************************************/
+go-ref-text {
+    display:block;
+}

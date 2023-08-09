@@ -106,6 +106,8 @@
     <Content Include="Components\Info\Info.js" />
     <Content Include="Components\Legend\Legend.html" />
     <Content Include="Components\Legend\Legend.js" />
+    <Content Include="Components\RefText\RefText.html" />
+    <Content Include="Components\RefText\RefText.js" />
     <Content Include="Components\Refs\Refs.html" />
     <Content Include="Components\Refs\Refs.js" />
     <Content Include="Components\Ref\Ref.html" />
@@ -219,6 +221,7 @@
     <TypeScriptCompile Include="Components\Dialog\Dialog.ts" />
     <TypeScriptCompile Include="Components\Info\Info.ts" />
     <TypeScriptCompile Include="Components\Legend\Legend.ts" />
+    <TypeScriptCompile Include="Components\RefText\RefText.ts" />
     <TypeScriptCompile Include="Components\Refs\Refs.ts" />
     <TypeScriptCompile Include="Components\Ref\Ref.ts" />
     <TypeScriptCompile Include="Components\Search\Search.ts" />

@@ -273,7 +273,7 @@
 
 
         //****************************************************************************
-        //#region Legend Functions
+        //#region Load Functions
         //****************************************************************************
 
         private LoadDataFiles = async () => {
@@ -308,6 +308,75 @@
         }
 
         //#endregion
+
+
+        //****************************************************************************
+        //#region Legend Functions
+        //****************************************************************************
+
+
+        //********************************
+        //#region Legend Functions
+
+        AddLegend(inputSections: Array<Section>): Array<Section> {
+            let newSections: Array<Section> = [];
+            let found: boolean = false;
+
+            for (let inputSection of inputSections) {
+                if (inputSection.Type != eRefTypeShow.None) {
+                    newSections.push(inputSection);
+                    continue;
+                }
+
+                for (let legendName in go.LegendsObject) {
+                    let reg: RegExp = new RegExp(`(?<=\\W)(${legendName})(?=\\W)`, 'gi');
+                    let htmlSections: Array<string> = inputSection.Html.split(reg);
+
+
+                    if (htmlSections.length > 1) {
+                        found = true;
+
+                        for (let htmlSection of htmlSections) {
+                            if (htmlSection.toLowerCase() != legendName.toLowerCase()) {
+                                //Other text, add as is.
+                                newSections.push(new Section(htmlSection));
+                                continue;
+                            }
+
+                            let legend: GO.iLegend = go.LegendsObject[legendName];
+
+                            let section: Section = new Section('', eRefTypeShow.Prophesy);
+                            section.Original = htmlSection;
+                            if (legend.Case) {
+                                section.Meaning = legend.Meaning;
+                            }
+                            else {
+                                section.Meaning = htmlSection == htmlSection.toLowerCase() ? legend.Meaning.toLowerCase() : legend.Meaning;
+                            }
+                            section.Refs = legend.Lookup == undefined ? legend.Refs : go.LegendsObject[legend.Lookup].Refs;
+                            newSections.push(section);
+                        }
+
+                        break;
+                    }
+                }
+
+                if (found) {
+                    found = false;
+                }
+                else {
+                    //No match found, add as is.
+                    newSections.push(inputSection);
+                }
+
+            }
+
+            return newSections;
+        }
+
+        //#endregion
+
+        //#endregion
     }
 
 
@@ -322,6 +391,27 @@
             this.Description = description;
             this.Url = url;
             if (imageFileName != undefined) { this.ImageFileName = `../../Images/ImgLinks/${imageFileName}`; }
+        }
+    }
+
+    export class Section {
+        Html: string;
+        Type: eRefTypeShow;
+
+        Original?: string;
+        Meaning?: string;
+
+        Refs?: Array<iRef>;
+
+        Show: KnockoutObservable<boolean> = ko.observable(false);
+
+        constructor(html: string, type: eRefTypeShow = eRefTypeShow.None) {
+            this.Html = html;
+            this.Type = type;
+        }
+
+        OpenClose() {
+            this.Show(!this.Show());
         }
     }
 }

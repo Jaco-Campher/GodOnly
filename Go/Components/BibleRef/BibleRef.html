@@ -8,16 +8,6 @@
     </div>
     <div class="verses" data-bind="foreach:Verses">
         <sup data-bind="text: VerseNo, css: { 'dim': Dim }"></sup>
-        <div class="content" data-bind="foreach: Sections, css: { 'dim': Dim }">
-            <!-- ko if: Type == 0 -->
-            <span data-bind="html: Html"></span>
-            <!-- /ko -->
-            <!-- ko if: Type == 1 -->
-            <go-strongs params="{ Strongs: Html, Alt: Meaning}"><span data-bind="html:$parent.Match"></span></go-strongs>
-            <!-- /ko -->
-            <!-- ko if: Type == 2 -->
-            <go-legend params="{ Original: Match, Meaning: Meaning, Refs: Refs }"></go-legend>
-            <!-- /ko -->
-        </div>
+        <div class="content" data-bind="template: { name: $parent.TemplateType, foreach: Sections }, css: { 'dim': Dim }"></div>
     </div>
 </div>

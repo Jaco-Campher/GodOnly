@@ -57,7 +57,7 @@ footer {
     min-width:150px;
 }
 
-.rev-main h4 {
+.rev-main .item > h4 {
     height: var(--heading-1-height);
     font-size: 16px;
     margin: 0;
@@ -68,15 +68,15 @@ footer {
     padding: 0 20px;
 }
 
-.rev-main .first h4 {
+.rev-main .item.first > h4 {
     border-left:2px solid;
 }
 
-.rev-main .last h4 {
+.rev-main .item.last > h4 {
     border-right:2px solid;
 }
 
-.rev-main h5 {
+.rev-main .item > h5 {
     height:var(--heading-2-height);
     margin: 0;
     color: #999;

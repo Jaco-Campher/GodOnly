@@ -72,11 +72,27 @@
         </div>
     </go-dialog>-->
 
+
+    <template id="T0">
+        <span data-bind="html: Html"></span>
+    </template>
+    <template id="T1">
+        <go-strongs params="{ Strongs: Html, Alt: Meaning}"><span data-bind="html:$parent.Original"></span></go-strongs>
+    </template>
+    <template id="T2">
+        <go-legend params="{ Original: Original, Meaning: Meaning, Refs: Refs }"></go-legend>
+    </template>
+
+
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MW3JWTX')</script>
+    <script>
+    (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MW3JWTX')</script>
 </body>
 </html>

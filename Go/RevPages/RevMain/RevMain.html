@@ -13,8 +13,8 @@
             <h5 data-bind="html: SubTitle"></h5>
             <h4 data-bind="html: Title"></h4>
             <div class="ref" data-bind="text: Ref"></div>
-            <div class="line" data-bind="html: Line1"></div>
-            <div class="line" data-bind="html: Line2"></div>
+            <go-ref-text class="line" params="{ Text: Line1}"></go-ref-text>
+            <go-ref-text class="line" params="{ Text: Line2}"></go-ref-text>
         </div>
         <!-- /ko -->
         <!-- ko foreach: Joins -->

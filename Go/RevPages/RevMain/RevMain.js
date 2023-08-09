@@ -1,3 +1,4 @@
+"use strict";
 var GO;
 (function (GO) {
     var Rev;
@@ -28,7 +29,7 @@ var GO;
             LoadItems() {
                 let item;
                 //Seals
-                item = new Item(Color.Rev6, 'seal-1', 'Seal 1', 'White Horse', 'Rev 6:1-2', 'Rev 6:1-2', 'white horse: and he that sat on him', '', FirstLast.First);
+                item = new Item(Color.Rev6, 'seal-1', 'Seal 1', 'White Horse', 'Rev 6:1-2', 'Rev 6:1-2', ' White horse: and He that sat on him ', 'the face of the waters (TEMP)', FirstLast.First);
                 this.Items.push(item);
                 item = new Item(Color.Rev6, 'seal-2', 'Seal 2', 'Red Horse', 'Rev 6:3-4', 'Rev 6:3-4', '', '');
                 this.Items.push(item);

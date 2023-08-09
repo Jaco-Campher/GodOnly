@@ -1,3 +1,4 @@
+"use strict";
 var GO;
 (function (GO) {
     var Compnents;
@@ -16,6 +17,9 @@ var GO;
                 this.StrongsManual = false;
                 this.FullChapter = ko.observable(false); //Set to true to hide the context controls.
                 this.DisplayContext = ko.observable('SelectedOnly');
+                this.TemplateType = (section) => {
+                    return `T${section.Type}`;
+                };
                 //****************************************************************************
                 //#region Load
                 //****************************************************************************
@@ -83,7 +87,7 @@ var GO;
                 //#region Basic Functions
                 this.AddNotFound = () => {
                     let verseHolder = new VerseHolder();
-                    verseHolder.Sections.push(new Section('Not Found', GO.eRefTypeShow.None));
+                    verseHolder.Sections.push(new GO.Section('Not Found', GO.eRefTypeShow.None));
                     this.RefDisplay(this.RefString().trim());
                     this.Verses([verseHolder]);
                 };
@@ -122,7 +126,7 @@ var GO;
             //****************************************************************************
             AddRefShow(verses, show) {
                 if (show & GO.eRefTypeShow.Prophesy) {
-                    verses = this.AddLegend(verses);
+                    verses = this.AddVerseLegend(verses);
                 }
                 this.Verses(verses);
             }
@@ -180,18 +184,18 @@ var GO;
                         }
                         else {
                             if (html != '') { //Add existing none strongs section.
-                                verseHolder.Sections.push(new Section(html, GO.eRefTypeShow.None));
+                                verseHolder.Sections.push(new GO.Section(html, GO.eRefTypeShow.None));
                                 html = '';
                             }
-                            let section = new Section(strongNo, GO.eRefTypeShow.Strongs);
-                            section.Match = wordText;
+                            let section = new GO.Section(strongNo, GO.eRefTypeShow.Strongs);
+                            section.Original = wordText;
                             section.Meaning = strongMeaning;
                             verseHolder.Sections.push(section);
                         }
                     }
                 }
                 if (html != '') {
-                    verseHolder.Sections.push(new Section(html, GO.eRefTypeShow.None));
+                    verseHolder.Sections.push(new GO.Section(html, GO.eRefTypeShow.None));
                 }
                 return verseHolder;
             }
@@ -216,41 +220,42 @@ var GO;
             //#endregion
             //********************************
             //#region Legend Functions
-            AddLegend(inputVerses) {
+            AddVerseLegend(inputVerses) {
                 for (let verseHolder of inputVerses) {
-                    for (let legendName in go.LegendsObject) {
-                        let newSections = [];
-                        for (let inputSection of verseHolder.Sections()) {
-                            if (inputSection.Type != GO.eRefTypeShow.None) {
-                                newSections.push(inputSection);
-                                continue;
-                            }
-                            let reg = new RegExp(`(?<=\\W)(${legendName})(?=\\W)`, 'gi');
-                            let htmlSections = inputSection.Html.split(reg);
-                            if (htmlSections.length == 1) {
-                                newSections.push(inputSection);
-                                continue;
-                            }
-                            for (let htmlSection of htmlSections) {
-                                if (htmlSection.toLowerCase() != legendName.toLowerCase()) {
-                                    newSections.push(new Section(htmlSection));
-                                    continue;
-                                }
-                                let legend = go.LegendsObject[legendName];
-                                let section = new Section('', GO.eRefTypeShow.Prophesy);
-                                section.Match = htmlSection;
-                                if (legend.Case) {
-                                    section.Meaning = legend.Meaning;
-                                }
-                                else {
-                                    section.Meaning = htmlSection == htmlSection.toLowerCase() ? legend.Meaning.toLowerCase() : legend.Meaning;
-                                }
-                                section.Refs = legend.Lookup == undefined ? legend.Refs : go.LegendsObject[legend.Lookup].Refs;
-                                newSections.push(section);
-                            }
-                        }
-                        verseHolder.Sections(newSections);
-                    }
+                    verseHolder.Sections(go.AddLegend(verseHolder.Sections()));
+                    //for (let legendName in go.LegendsObject) {
+                    //    let newSections: Array<Section> = [];
+                    //    for (let inputSection of verseHolder.Sections()) {
+                    //        if (inputSection.Type != eRefTypeShow.None) {
+                    //            newSections.push(inputSection);
+                    //            continue;
+                    //        }
+                    //        let reg: RegExp = new RegExp(`(?<=\\W)(${legendName})(?=\\W)`, 'gi');
+                    //        let htmlSections: Array<string> = inputSection.Html.split(reg);
+                    //        if (htmlSections.length == 1) {
+                    //            newSections.push(inputSection);
+                    //            continue;
+                    //        }
+                    //        for (let htmlSection of htmlSections) {
+                    //            if (htmlSection.toLowerCase() != legendName.toLowerCase()) {
+                    //                newSections.push(new Section(htmlSection));
+                    //                continue;
+                    //            }
+                    //            let legend: GO.iLegend = go.LegendsObject[legendName];
+                    //            let section: Section = new Section('', eRefTypeShow.Prophesy);
+                    //            section.Original = htmlSection;
+                    //            if (legend.Case) {
+                    //                section.Meaning = legend.Meaning;
+                    //            }
+                    //            else {
+                    //                section.Meaning = htmlSection == htmlSection.toLowerCase() ? legend.Meaning.toLowerCase() : legend.Meaning;
+                    //            }
+                    //            section.Refs = legend.Lookup == undefined ? legend.Refs : go.LegendsObject[legend.Lookup].Refs;
+                    //            newSections.push(section);
+                    //        }
+                    //    }
+                    //    verseHolder.Sections(newSections);
+                    //}
                 }
                 return inputVerses;
             }
@@ -263,23 +268,28 @@ var GO;
                 this.Dim = dim;
             }
         }
-        class Section {
-            constructor(html, type = GO.eRefTypeShow.None) {
-                this.Show = ko.observable(false);
-                this.Html = html;
-                this.Type = type;
-                //switch (this.Type) {
-                //    case eRefTypeShow.Prophesy:
-                //        break;
-                //    case eRefTypeShow.Strongs:
-                //        break;
-                //    //case eRefTypeShow.WordMeaning:
-                //    default: 
-                //}
-            }
-            OpenClose() {
-                this.Show(!this.Show());
-            }
-        }
+        //class Section {
+        //    Html: string;
+        //    Type: eRefTypeShow;
+        //    Original?: string;
+        //    Meaning?: string;
+        //    Refs?: Array<iRef>;
+        //    Show: KnockoutObservable<boolean> = ko.observable(false);
+        //    constructor(html: string, type: eRefTypeShow = eRefTypeShow.None) {
+        //        this.Html = html;
+        //        this.Type = type;
+        //        //switch (this.Type) {
+        //        //    case eRefTypeShow.Prophesy:
+        //        //        break;
+        //        //    case eRefTypeShow.Strongs:
+        //        //        break;
+        //        //    //case eRefTypeShow.WordMeaning:
+        //        //    default: 
+        //        //}
+        //    }
+        //    OpenClose() {
+        //        this.Show(!this.Show());
+        //    }
+        //}
     })(Compnents = GO.Compnents || (GO.Compnents = {}));
 })(GO || (GO = {}));
