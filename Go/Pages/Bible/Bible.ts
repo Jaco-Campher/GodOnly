@@ -134,6 +134,14 @@
         Book: KnockoutObservable<Book | null> = ko.observable();
         ChapterNo: KnockoutObservable<number> = ko.observable(-1);
 
+        ShowPrev: KnockoutComputed<boolean> = ko.computed((): boolean => {
+            return this.ChapterNo() > 1;
+        }, this);
+
+        ShowNext: KnockoutComputed<boolean> = ko.computed((): boolean => {
+            return this.ChapterNo() < this.TotalChapters();
+        }, this);
+
         constructor(ref?: string) {
             if (ref == undefined) {
                 this.ShowComponent('BookSelect');
@@ -141,6 +149,15 @@
             else
             {
                 this.Ref(ref);
+
+                //Needed to show the prev next buttons.
+                let bibleRef: iBibleRef | null = go.Bible.GetBibleReference(ref.trim());
+                if (bibleRef != null && bibleRef.Verses == undefined) {
+                    this.Book(go.Bible.Book(bibleRef.BookAbbr));
+                    this.ChapterNo(bibleRef.Chapter);
+                    this.TotalChapters(this.Book().ChapterCount);
+                }
+
                 this.ShowComponent('Content');
             }
         }
