@@ -1,3 +1,4 @@
+"use strict";
 var GO;
 (function (GO) {
     var Prophesy;
@@ -28,6 +29,7 @@ var GO;
             }
             SetupLinks() {
                 this.Studies.push(new StudyLink('Day of the LORD', '/prophesy-study/dayofthelord'));
+                this.Studies.push(new StudyLink('Tribulation', '/prophesy-study/tribulation'));
             }
         }
         Prophesy.LandingViewModel = LandingViewModel;

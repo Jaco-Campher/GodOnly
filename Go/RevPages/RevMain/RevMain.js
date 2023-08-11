@@ -1,3 +1,4 @@
+"use strict";
 var GO;
 (function (GO) {
     var Rev;
@@ -52,6 +53,16 @@ var GO;
         Rev.RevMainViewModel = RevMainViewModel;
         class Item {
             constructor(color, location, title, subTitle, ref, refDisplay, line1, line2, firstLast = FirstLast.Default) {
+                this.Title = '';
+                this.SubTitle = '';
+                this.Ref = '';
+                this.RefDisplay = '';
+                this.Line1 = '';
+                this.Line2 = '';
+                this.TitleLink = '';
+                this.SubTitleLink = '';
+                this.Line1Link = '';
+                this.Line2Link = '';
                 this.Color = ko.observable(Color.Default);
                 this.Highlight = ko.observable(false);
                 this.CSSClass = ko.computed(() => {

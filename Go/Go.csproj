@@ -144,6 +144,7 @@
     <Content Include="Pages\Search\Search.js" />
     <Content Include="ProphesyPages\Landing\Landing.html" />
     <Content Include="ProphesyPages\Landing\Landing.js" />
+    <Content Include="ProphesyPages\Tribulation\Tribulation.html" />
     <Content Include="RevPages\Landing\Landing.css" />
     <Content Include="RevPages\Landing\Landing.html" />
     <Content Include="RevPages\Landing\Landing.js" />
