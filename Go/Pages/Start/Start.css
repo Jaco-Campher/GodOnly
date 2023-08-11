@@ -892,6 +892,10 @@ button:hover {
     background-position-x: -36px;
 }
 
+.controls button.all-strongs {
+    background-position-x: -54px;
+}
+
 .controls .group button.selected {
 
 }

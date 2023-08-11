@@ -1,4 +1,3 @@
-"use strict";
 var GO;
 (function (GO) {
     var Compnents;
@@ -9,6 +8,7 @@ var GO;
                 this.Verses = ko.observableArray([]);
                 this.RefString = ko.observable();
                 this.RefDisplay = ko.observable('');
+                this.AllStrongs = ko.observable(false);
                 this.BookType = ko.observable('');
                 this.Bold = [];
                 this.BoldOffset = 0; //The index to process from.
@@ -80,6 +80,10 @@ var GO;
                     this.DisplayContext(displayContext);
                     this.LoadVerses();
                 };
+                this.ToggleAllStrongs = () => {
+                    this.AllStrongs(!this.AllStrongs());
+                    this.LoadVerses();
+                };
                 //********************************
                 //#region Basic Functions
                 this.AddNotFound = () => {
@@ -116,6 +120,7 @@ var GO;
                 this.RefString = ko.isObservable(params.Ref) ? params.Ref : ko.observable(params.Ref);
                 this.LoadVerses();
                 this.RefString.subscribe(this.LoadVerses);
+                //this.AllStrongs.subscribe(this.LoadVerses);
             }
             //#endregion
             //****************************************************************************
@@ -163,7 +168,7 @@ var GO;
                             }
                         }
                         if (strongMeaning == '?') {
-                            if (this.params.Show() & GO.eRefTypeShow.AllStrongs) {
+                            if (this.params.Show() & GO.eRefTypeShow.AllStrongs || this.AllStrongs()) {
                                 for (let strong of word.Strongs) {
                                     strongNo += strong;
                                     wordText += `<sup><a href="https://www.blueletterbible.org/lang/lexicon/lexicon.cfm?t=kjv&strongs=${strong}" target="blank">${strong}</a> </sup>`;
@@ -269,14 +274,14 @@ var GO;
                 this.Show = ko.observable(false);
                 this.Html = html;
                 this.Type = type;
-                switch (this.Type) {
-                    case GO.eRefTypeShow.Prophesy:
-                        break;
-                    case GO.eRefTypeShow.Strongs:
-                        break;
-                    //case eRefTypeShow.WordMeaning:
-                    default:
-                }
+                //switch (this.Type) {
+                //    case eRefTypeShow.Prophesy:
+                //        break;
+                //    case eRefTypeShow.Strongs:
+                //        break;
+                //    //case eRefTypeShow.WordMeaning:
+                //    default: 
+                //}
             }
             OpenClose() {
                 this.Show(!this.Show());

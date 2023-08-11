@@ -16,6 +16,7 @@
         Verses: KnockoutObservableArray<VerseHolder> = ko.observableArray<VerseHolder>([]);
         RefString: KnockoutObservable<string> = ko.observable();
         RefDisplay: KnockoutObservable<string> = ko.observable('');
+        AllStrongs: KnockoutObservable<boolean> = ko.observable(false);
         BookType: KnockoutObservable<string> = ko.observable<string>('');
 
         Bold: Array<iRefBold> = [];
@@ -55,6 +56,7 @@
             this.RefString = ko.isObservable(params.Ref) ? params.Ref : ko.observable(params.Ref as string);
             this.LoadVerses();
             this.RefString.subscribe(this.LoadVerses);
+            //this.AllStrongs.subscribe(this.LoadVerses);
         }
 
         //****************************************************************************
@@ -126,6 +128,11 @@
             this.LoadVerses();
         }
 
+        ToggleAllStrongs = () => {
+            this.AllStrongs(!this.AllStrongs());
+            this.LoadVerses();
+        }
+
         //#endregion
 
         //****************************************************************************
@@ -193,7 +200,7 @@
                     }
 
                     if (strongMeaning == '?') {
-                        if (this.params.Show() & eRefTypeShow.AllStrongs) {
+                        if (this.params.Show() & eRefTypeShow.AllStrongs || this.AllStrongs()) {
                             for (let strong of word.Strongs) {
                                 strongNo += strong;
                                 wordText += `<sup><a href="https://www.blueletterbible.org/lang/lexicon/lexicon.cfm?t=kjv&strongs=${strong}" target="blank">${strong}</a> </sup>`
@@ -333,14 +340,14 @@
             this.Html = html;
             this.Type = type;
 
-            switch (this.Type) {
-                case eRefTypeShow.Prophesy:
-                    break;
-                case eRefTypeShow.Strongs:
-                    break;
-                //case eRefTypeShow.WordMeaning:
-                default: 
-            }
+            //switch (this.Type) {
+            //    case eRefTypeShow.Prophesy:
+            //        break;
+            //    case eRefTypeShow.Strongs:
+            //        break;
+            //    //case eRefTypeShow.WordMeaning:
+            //    default: 
+            //}
         }
 
         OpenClose() {
