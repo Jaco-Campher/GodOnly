@@ -155,7 +155,7 @@
                 if (bibleRef != null && bibleRef.Verses == undefined) {
                     this.Book(go.Bible.Book(bibleRef.BookAbbr));
                     this.ChapterNo(bibleRef.Chapter);
-                    this.TotalChapters(this.Book().ChapterCount);
+                    this.TotalChapters(this.Book()!.ChapterCount);
                 }
 
                 this.ShowComponent('Content');
