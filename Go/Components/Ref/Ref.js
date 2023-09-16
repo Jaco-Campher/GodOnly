@@ -1,4 +1,3 @@
-"use strict";
 var GO;
 (function (GO) {
     var Compnents;
