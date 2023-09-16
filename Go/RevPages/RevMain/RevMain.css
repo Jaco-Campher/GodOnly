@@ -1,11 +1,18 @@
 ﻿:root {
     --width: auto;
 
-    --heading-1-height: 24px;
-    --heading-2-height: 22px;
+    --heading-1-height: 23px;
+    --heading-2-height: 23px;
 
 
-    --rev6: #271a41;
+    /* Book - Chapter Colors */
+    --luk21: #65e7d2;
+
+    --mar13: #6ad792; /*#3f955e;*/
+
+    --mat24: #e189f7; /*#b654ce;*/
+
+    --rev6: #49b3ff; /*#1052B3;*/
     --rev7: #271a41;
 }
 
@@ -32,80 +39,340 @@ footer {
     display:none;
 }
 
-.rev-main .grid {
+
+/*********************************************************************
+    Tabs
+*********************************************************************/
+.rev-main .tabs {
     display:grid;
-    grid-template-columns: repeat(20, max-content);
-    grid-template-rows: repeat(6, 115px 30px);
-    row-gap:5px;
+    align-content: stretch;
+    grid-template-columns: repeat(20, max-content 30px);
+    grid-template-rows: 44px repeat(11, 138px);
+    row-gap:10px;
     grid-template-areas:
-". . . seal-1 seal-2 seal-3 seal-4 seal-5 j-rev6-11 seal-6-1 seal-6-2 seal-6-3 seal-6-4 j-rev6-15 seal-6-5 seal-6-6 seal-6-7 . . ."
-". . . . . . . . . . . . . . . . . . . ."
-". . . . . . . . mat-24-29a mat-24-29b mat-24-29c j-mat-24-29c j-mat-24-29c mat-24-29d mat-24-30a mat-24-30b j-mat-24-30b mat-24-31a mat-24-31b j-mat-24-31b-e"
-". . . . . . . . . . . . . . . . . . . ."
-". . . . . . . . mark-13-24a mark-13-24b mark-13-25a j-mark-13-25a j-mark-13-25a mark-13-25b j-mark-13-25b mark-13-26 j-mark-13-26 mark-13-27a mark-13-27b j-mark-13-27b-e"
-". . . . . . . . . . . . . . . . . . . ."
-". . . . . . . . j-luke-21-25-s luke-21-25a luke-21-25b luke-21-25c luke-21-26a luke-21-26b j-luke-21-26b luke-21-27 j-luke-21-27-e . . ."
-". . . . . . . . . . . . . . . . . . . ."
-". . . . . . . . . j-song-2-13-start song-2-13 j-song-2-13-e . . . . . . . ."
-". . . . . . . . . . . . . . . . . . . ."
-". . . . . . . . . . . . . . j-1thess-4-16a-s 1thess-4-16a j-1thess-4-16a 1thess-4-16b 1thess-4-17 j-1thess-4-17-e"
+". . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 ."
+". . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 ."
+". . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 ."
+". . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 ."
+". . tab-seal-1 tj-seal-1 tab-seal-2 tj-seal-2 tab-seal-3 tj-seal-3 tab-seal-4 tj-seal-4 tab-seal-5 tj-seal-5 tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 ."
+". . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 tj-mat-24-30b tab-rapture . tab-144 . tab-seal-7 ."
+". . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 tj-mark-13-26 tab-rapture . tab-144 . tab-seal-7 ."
+". . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 ."
+". . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 ."
+". . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 ."
+". . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 ."
 ;
 }
 
-.rev-main .item,
-.rev-main .join {
+.rev-main .tab {
+    min-width:180px;
+    border-left: 3px solid #fff1;
+    border-right: 3px solid #fff1;
+    background: linear-gradient(0deg, #120f10 0%, #121017 100%);
+    grid-row-end: span 12;
+}
+
+.rev-main .tab.dim {
+    border-left: 3px solid #121212;
+    border-right: 3px solid #121212;
+    box-shadow: none !important;
+}
+
+.rev-main .tab > h2 {
+    text-align:center;
+}
+
+
+/*********************************************************************
+    Items
+*********************************************************************/
+.rev-main .item {
     min-width:150px;
+    background: #000;
+    border-left: 1px solid #aaa;
+    border-right: 1px solid #aaa;
+    margin: 0 0 0 -1px;
 }
 
 .rev-main .item > h4 {
     height: var(--heading-1-height);
-    font-size: 16px;
+    font-size: 1em;
     margin: 0;
-    color: #eee;
-    background: #472a80;
-    border:1px solid #777;
+    color: #000;
     text-align: center;
-    padding: 0 20px;
+    padding: 2px 12px;
 }
 
-.rev-main .item.first > h4 {
-    border-left:2px solid;
+.rev-main .item > h4 .legend {
+    color:#eee;
+    font-weight:normal;
+    background:#1113;
+    border:none;
 }
 
-.rev-main .item.last > h4 {
-    border-right:2px solid;
+.rev-main .item.first {
+    border-left:2px solid #eee;
+}
+
+.rev-main .item.last {
+    border-right:2px solid #eee;
 }
 
 .rev-main .item > h5 {
     height:var(--heading-2-height);
     margin: 0;
-    color: #999;
-    background-color: #271a41;
+    color: #eee;
     text-align: center;
-    border-right: 1px solid #333;
-    padding: 0 20px;
+    padding: 1px 20px;
+    font-size: 14px;
+    font-weight:normal;
+}
+
+.rev-main .item > h5 .legend {
+    border: 1px solid #555;
 }
 
 .rev-main .ref {
-    font-size:14px;
     padding: 0 5px;
+    font-size: 0.83em;
 }
 
 .rev-main .line {
-    font-size:14px;
     padding: 0 10px;
+    font-size: 0.9em;
+}
+
+
+/*********************************************************************
+    Joins
+*********************************************************************/
+.rev-main .tab-join {
+    width:87px;
+    height: var(--heading-1-height);
+    margin:var(--heading-2-height) 0 0 -30px;
+    background: #f00;
 }
 
 .rev-main .join {
+    min-width:150px;
     height: var(--heading-1-height);
-    margin:var(--heading-2-height) 0 0;
-    background: #271a41;
+    margin:var(--heading-2-height) 1px 0 -1px;
+    background: #f00;
 }
 
 .rev-main .join.first {
     background: linear-gradient(90deg, #0000, #271a41);
 }
 
+
+
+
+
+
+/* Seals
+**********************************/
+.rev-main .tab.seal {
+    background: linear-gradient(0deg, #1f1d3a 0%, #674cff 100%);
+    box-shadow: 0 0 20px #674cff99;
+    /*background: linear-gradient(0deg, #777 0%, #eee 100%);   WHITE  */
+}
+
+.rev-main .tab.dim.seal {
+    background:linear-gradient(0deg, #0d0c18 0%, #211852 100%);
+}
+
+
+/* Rapture
+**********************************/
+.rev-main .rapture {
+    background: linear-gradient(0deg, #38380e 0%, #d1be3b 100%);
+    box-shadow: 0 0 20px #d1be3b99;
+}
+
+/* 144K
+**********************************/
+.rev-main .k144 {
+    background: linear-gradient(0deg, #0e2536 0%, #4282e1 100%);
+    box-shadow: 0 0 20px #4282e199;
+}
+
+/* Seal 7
+**********************************/
+.rev-main .tab-seal-7 {
+    grid-area: tab-seal-7;
+    background: linear-gradient(0deg, #222 0%, #444 100%);
+}
+
+
+
+/*********************************************************************
+    Tabs Content
+*********************************************************************/
+.rev-main .grid {
+    display:grid;
+    grid-template-columns: repeat(20, max-content);
+    grid-template-rows: repeat(6, 108px 30px);
+    row-gap:5px;
+    margin:0 25px;
+}
+
+/* Seal 1
+**********************************/
+.rev-main .tab-seal-1 .grid {
+    grid-template-areas:
+"."
+"."
+"."
+"."
+"."
+"."
+"seal-1"
+;
+}
+
+/* Seal 2
+**********************************/
+.rev-main .tab-seal-2 .grid {
+    grid-template-areas:
+"."
+"."
+"."
+"."
+"."
+"."
+"seal-2"
+;
+}
+
+/* Seal 3
+**********************************/
+.rev-main .tab-seal-3 .grid {
+    grid-template-areas:
+"."
+"."
+"."
+"."
+"."
+"."
+"seal-3"
+;
+}
+
+/* Seal 4
+**********************************/
+.rev-main .tab-seal-4 .grid {
+    grid-template-areas:
+"."
+"."
+"."
+"."
+"."
+"."
+"seal-4"
+;
+}
+
+/* Seal 5
+**********************************/
+.rev-main .tab-seal-5 .grid {
+    grid-template-areas:
+"."
+"."
+"."
+"."
+"."
+"."
+"seal-5"
+;
+}
+
+
+/* Seal 6
+**********************************/
+.rev-main .tab-seal-6 .grid {
+    grid-template-areas:
+". . . . . . . . . ."
+". . . . . . . . . ."
+". . . . . . . . . ."
+". . . . . . . . . ."
+". . . . . . . . . ."
+". . . . . . . . . ."
+"j-rev6-11 j-rev6-11 seal-6-1 seal-6-2 seal-6-3 seal-6-4 j-rev6-15 seal-6-5 seal-6-6 seal-6-7"
+". . . . . . . . . ."
+"j-mat-24-29a-s mat-24-29a mat-24-29b mat-24-29c j-mat-24-29c j-mat-24-29c mat-24-29d mat-24-30a mat-24-30b j-mat-24-30b"
+". . . . . . . . . ."
+"j-mark-13-24a-s mark-13-24a mark-13-24b mark-13-25a j-mark-13-25a j-mark-13-25a mark-13-25b j-mark-13-25b mark-13-26 j-mark-13-26"
+". . . . . . . . . ."
+". j-luke-21-25-s luke-21-25a luke-21-25b luke-21-25c luke-21-26a luke-21-26b j-luke-21-26b luke-21-27 j-luke-21-27-e"
+". . . . . . . . . ."
+". . j-song-2-13-s song-2-13 j-song-2-13-e . . . . ."
+". . . . . . . . . ."
+". . . . . . . j-1thess-4-16a-s 1thess-4-16a j-1thess-4-16a"
+;
+}
+
+/* Seal 5
+**********************************/
+.rev-main .tab-rapture .grid {
+    grid-template-areas:
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+"mat-24-31a mat-24-31b j-mat-24-31b-e"
+". . ."
+"mark-13-27a mark-13-27b j-mark-13-27b-e"
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+"1thess-4-16b 1thess-4-17 j-1thess-4-17-e"
+;
+}
+
+
+
+/*********************************************************************
+    Book - Chapter Colors
+*********************************************************************/
+.rev-main .luk21 > h4,
+.rev-main .join.luk21,
+.rev-main .tab-join.luk21 {
+    background: var(--luk21);
+}
+
+.rev-main .mar13 > h4,
+.rev-main .join.mar13,
+.rev-main .tab-join.mar13 {
+    background: var(--mar13);
+}
+
+.rev-main .mat24 > h4,
+.rev-main .join.mat24,
+.rev-main .tab-join.mat24 {
+    background: var(--mat24);
+}
+
+.rev-main .rev6 > h4,
+.rev-main .join.rev6,
+.rev-main .tab-join.rev6 {
+    background: var(--rev6);
+}
+
+.rev-main .rev7 > h4,
+.rev-main .tab-join.rev7  {
+    background: var(--rev7);
+}
+
+
+/*********************************************************************
+    Links
+*********************************************************************/
 .rev-main .link {
     justify-self: center;
     background:#4f4f51;

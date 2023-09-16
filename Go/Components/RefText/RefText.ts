@@ -11,7 +11,7 @@
 
         constructor(private params: iRefTextParams) {
             this.Text = params.Text;
-            console.log('Text', this.Text);
+            //console.log('Text', this.Text);
 
             if (params.Show == undefined) {
                 params.Show = ko.observable<eRefTypeShow>(eRefTypeShow.Most);
@@ -39,7 +39,7 @@
 
             if (this.params.Show() & eRefTypeShow.Prophesy) { newSections = go.AddLegend(newSections); }
 
-            console.log(newSections);
+            //console.log(newSections);
             this.Sections(newSections);
         }
 

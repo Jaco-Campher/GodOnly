@@ -6,29 +6,39 @@
 
     </template>
 
-    <div class="grid">
-        <!-- ko foreach: Items -->
-        <div class="item" data-bind="class: CSSClass, attr: { style: Location }">
-
-            <h5 data-bind="html: SubTitle"></h5>
-            <h4 data-bind="html: Title"></h4>
-            <div class="ref" data-bind="text: Ref"></div>
-            <go-ref-text class="line" params="{ Text: Line1}"></go-ref-text>
-            <go-ref-text class="line" params="{ Text: Line2}"></go-ref-text>
+    <div class="tabs">
+        <!-- ko foreach: Tabs -->
+        <div class="tab" data-bind="class: CSSClass, attr: { style: Location }">
+            <h2 data-bind="text:Name, click: OpenClose"></h2>
+            <div class="grid" data-bind="if: Expanded">
+                <!-- ko foreach: Items -->
+                <div class="item" data-bind="class: CSSClass, attr: { style: Location }">
+                    <h5><go-ref-text params="{ Text: SubTitle}"></go-ref-text></h5>
+                    <h4><go-ref-text params="{ Text: Title}"></go-ref-text></h4>
+                    <div class="ref" data-bind="text: RefDisplay"></div>
+                    <go-ref-text class="line" params="{ Text: Line1}"></go-ref-text>
+                    <go-ref-text class="line" params="{ Text: Line2}"></go-ref-text>
+                </div>
+                <!-- /ko -->
+                <!-- ko foreach: Joins -->
+                <div class="join" data-bind="class: CSSClass, attr: { style: Style }"></div>
+                <!-- /ko -->
+            </div>
         </div>
         <!-- /ko -->
-        <!-- ko foreach: Joins -->
-        <div class="join" data-bind="class: CSSClass, attr: { style: Style }"></div>
-        <!-- /ko -->
-        <!-- ko foreach: Links -->
-        <div class="link" data-bind="attr: { style: Location }">
-            <!-- ko if: Top --><div class="t" data-bind="css: { highlight: HighlightTop }"></div><!-- /ko -->
-            <!-- ko if: Left --><div class="l" data-bind="css: { highlight: HighlightLeft }"></div><!-- /ko -->
-            <div class="m" data-bind="css: { highlight: HighlightMiddle }"></div>
-            <!-- ko if: Right --><div class="r" data-bind="css: { highlight: HighlightRight }"></div><!-- /ko -->
-            <!-- ko if: Bottom --><div class="b" data-bind="css: { highlight: HighlightBottom }"></div><!-- /ko -->
-        </div>
+        <!-- ko foreach: TabJoins -->
+        <div class="tab-join" data-bind="class: CSSClass, attr: { style: Style }"></div>
         <!-- /ko -->
     </div>
+
+    <!-- tempko foreach: Links -->
+    <!--<div class="link" data-bind="attr: { style: Location }">-->
+    <!-- tempko if: Top --><!--<div class="t" data-bind="css: { highlight: HighlightTop }"></div>--><!-- temp/ko -->
+    <!-- tempko if: Left --><!--<div class="l" data-bind="css: { highlight: HighlightLeft }"></div>--><!-- temp/ko -->
+    <!--<div class="m" data-bind="css: { highlight: HighlightMiddle }"></div>-->
+    <!-- tempko if: Right --><!--<div class="r" data-bind="css: { highlight: HighlightRight }"></div>--><!-- temp/ko -->
+    <!-- tempko if: Bottom --><!--<div class="b" data-bind="css: { highlight: HighlightBottom }"></div>--><!-- temp/ko -->
+    <!--</div>-->
+    <!-- temp/ko -->
 
 </div>

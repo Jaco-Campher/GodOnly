@@ -1,4 +1,3 @@
-"use strict";
 var GO;
 (function (GO) {
     var Compnents;
@@ -11,7 +10,7 @@ var GO;
                     return `T${section.Type}`;
                 };
                 this.Text = params.Text;
-                console.log('Text', this.Text);
+                //console.log('Text', this.Text);
                 if (params.Show == undefined) {
                     params.Show = ko.observable(GO.eRefTypeShow.Most);
                 }
@@ -32,7 +31,7 @@ var GO;
                 if (this.params.Show() & GO.eRefTypeShow.Prophesy) {
                     newSections = go.AddLegend(newSections);
                 }
-                console.log(newSections);
+                //console.log(newSections);
                 this.Sections(newSections);
             }
         }

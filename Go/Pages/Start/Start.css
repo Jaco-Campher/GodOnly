@@ -4,6 +4,7 @@
 *********************************************************************/
 :root {
     --text-color: #dfdfdf;
+    --text-size: 14px;
     --bg: linear-gradient(45deg, #1117 0, #2237 100%);
     --clip-bg: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px));
 
@@ -39,7 +40,7 @@ body {
     margin: 0;
     padding: var(--top-nav-height) 15px 0;
     font-family: Arial;
-    font-size: 16px;
+    font-size: var(--text-size);
     line-height: 1.4em;
     height:100vh;
 
@@ -177,6 +178,7 @@ header:before {
 header a {
     padding:10px;
     text-decoration: none;
+    font-size: 16px;
 }
 
 header .btn-help {
@@ -192,6 +194,7 @@ header .btn-help {
 nav a {
     display: inline-block;
     vertical-align:top;
+    font-size: 15px;
 }
 
 nav a:hover {
@@ -1138,6 +1141,7 @@ go-chapter {
     padding: 14px 0;
     font-size: 18px;
     margin: 0;
+    text-align:left;
 }
 
 .dialog-backgound .dialog > .close {
@@ -1156,6 +1160,9 @@ go-chapter {
     overflow-y: auto;
     padding: 0 10px 0 0;
     margin: 5px 0 0;
+    color:var(--text-color);
+    text-align:left;
+    font-weight:normal;
 }
 
 
@@ -1214,6 +1221,7 @@ go-bible-ref {
     display:grid;
     grid: auto/10px 1fr;
     padding:15px 0 15px 15px;
+    font-size: 14px;
 }
 
 go-bible-ref:first-child {
