@@ -1,3 +1,4 @@
+"use strict";
 var GO;
 (function (GO) {
     /**

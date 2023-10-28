@@ -6,18 +6,26 @@
 
 
     /* Book - Chapter Colors */
-    --luk21: #65e7d2;
+    --es2: #377254;
+    --es5: #725a37;
+    --es15: #33766c;
 
-    --mar13: #6ad792; /*#3f955e;*/
+    --luk21: #327e72;
 
-    --mat24: #e189f7; /*#b654ce;*/
+    --mar13: #3f955e;
 
-    --rev6: #49b3ff; /*#1052B3;*/
+    --mat24: #b654ce;
+
+    --rev6: #1052B3;
     --rev7: #271a41;
+
+    --song2: #563772;
+
+    --thess4: #537237;
 }
 
 body {
-    overflow:hidden;
+    overflow:auto;
     padding: var(--top-nav-height) 0 0;
 }
 
@@ -31,7 +39,6 @@ body {
 }
 
 .rev-main {
-    overflow: auto;
     padding:30px;
 }
 
@@ -46,36 +53,67 @@ footer {
 .rev-main .tabs {
     display:grid;
     align-content: stretch;
-    grid-template-columns: repeat(20, max-content 30px);
-    grid-template-rows: 44px repeat(11, 138px);
+    grid-template-columns: repeat(32, max-content 30px);
+    grid-template-rows: 44px repeat(16, 138px);
     row-gap:10px;
     grid-template-areas:
-". . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 ."
-". . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 ."
-". . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 ."
-". . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 ."
-". . tab-seal-1 tj-seal-1 tab-seal-2 tj-seal-2 tab-seal-3 tj-seal-3 tab-seal-4 tj-seal-4 tab-seal-5 tj-seal-5 tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 ."
-". . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 tj-mat-24-30b tab-rapture . tab-144 . tab-seal-7 ."
-". . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 tj-mark-13-26 tab-rapture . tab-144 . tab-seal-7 ."
-". . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 ."
-". . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 ."
-". . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 ."
-". . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 ."
+"tab-rev-12 . tab-rev-12-2 . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 . tab-trumpet-1 . tab-trumpet-2 . tab-trumpet-3 . tab-trumpet-4 . tab-trumpet-5 . tab-trumpet-6 . tab-2-wit . tab-ascension . tab-trumpet-7 . tab-vial-1 . tab-vial-2 . tab-vial-3 . tab-vial-4 . tab-vial-5 . tab-vial-6 . tab-thief . tab-vial-7 . tab-pre-1000 . tab-1000 . tab-end-1000 . tab-judgement"
+"tab-rev-12 . tab-rev-12-2 . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 . tab-trumpet-1 . tab-trumpet-2 . tab-trumpet-3 . tab-trumpet-4 . tab-trumpet-5 . tab-trumpet-6 . tab-2-wit . tab-ascension . tab-trumpet-7 . tab-vial-1 . tab-vial-2 . tab-vial-3 . tab-vial-4 . tab-vial-5 . tab-vial-6 . tab-thief . tab-vial-7 . tab-pre-1000 . tab-1000 . tab-end-1000 . tab-judgement"
+"tab-rev-12 . tab-rev-12-2 . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 . tab-trumpet-1 . tab-trumpet-2 . tab-trumpet-3 . tab-trumpet-4 . tab-trumpet-5 . tab-trumpet-6 . tab-2-wit . tab-ascension . tab-trumpet-7 . tab-vial-1 . tab-vial-2 . tab-vial-3 . tab-vial-4 . tab-vial-5 . tab-vial-6 . tab-thief . tab-vial-7 . tab-pre-1000 . tab-1000 . tab-end-1000 . tab-judgement"
+"tab-rev-12 . tab-rev-12-2 . tab-seal-1 tj-seal-1 tab-seal-2 tj-seal-2 tab-seal-3 tj-seal-3 tab-seal-4 tj-seal-4 tab-seal-5 tj-seal-5 tab-seal-6 . tab-rapture tj-rapture-7 tab-144 . tab-seal-7 . tab-trumpet-1 . tab-trumpet-2 . tab-trumpet-3 . tab-trumpet-4 . tab-trumpet-5 . tab-trumpet-6 . tab-2-wit . tab-ascension . tab-trumpet-7 . tab-vial-1 . tab-vial-2 . tab-vial-3 . tab-vial-4 . tab-vial-5 . tab-vial-6 . tab-thief . tab-vial-7 . tab-pre-1000 . tab-1000 . tab-end-1000 . tab-judgement"
+"tab-rev-12 . tab-rev-12-2 . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 tj-mat-24-30b tab-rapture . tab-144 . tab-seal-7 . tab-trumpet-1 . tab-trumpet-2 . tab-trumpet-3 . tab-trumpet-4 . tab-trumpet-5 . tab-trumpet-6 . tab-2-wit . tab-ascension . tab-trumpet-7 . tab-vial-1 . tab-vial-2 . tab-vial-3 . tab-vial-4 . tab-vial-5 . tab-vial-6 . tab-thief . tab-vial-7 . tab-pre-1000 . tab-1000 . tab-end-1000 . tab-judgement"
+"tab-rev-12 . tab-rev-12-2 . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 tj-mark-13-26 tab-rapture . tab-144 . tab-seal-7 . tab-trumpet-1 . tab-trumpet-2 . tab-trumpet-3 . tab-trumpet-4 . tab-trumpet-5 . tab-trumpet-6 . tab-2-wit . tab-ascension . tab-trumpet-7 . tab-vial-1 . tab-vial-2 . tab-vial-3 . tab-vial-4 . tab-vial-5 . tab-vial-6 . tab-thief . tab-vial-7 . tab-pre-1000 . tab-1000 . tab-end-1000 . tab-judgement"
+"tab-rev-12 . tab-rev-12-2 . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 . tab-trumpet-1 . tab-trumpet-2 . tab-trumpet-3 . tab-trumpet-4 . tab-trumpet-5 . tab-trumpet-6 . tab-2-wit . tab-ascension . tab-trumpet-7 . tab-vial-1 . tab-vial-2 . tab-vial-3 . tab-vial-4 . tab-vial-5 . tab-vial-6 . tab-thief . tab-vial-7 . tab-pre-1000 . tab-1000 . tab-end-1000 . tab-judgement"
+"tab-rev-12 . tab-rev-12-2 . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 tj-song-2-13a tab-rapture . tab-144 . tab-seal-7 . tab-trumpet-1 . tab-trumpet-2 . tab-trumpet-3 . tab-trumpet-4 . tab-trumpet-5 . tab-trumpet-6 . tab-2-wit . tab-ascension . tab-trumpet-7 . tab-vial-1 . tab-vial-2 . tab-vial-3 . tab-vial-4 . tab-vial-5 . tab-vial-6 . tab-thief . tab-vial-7 . tab-pre-1000 . tab-1000 . tab-end-1000 . tab-judgement"
+"tab-rev-12 . tab-rev-12-2 . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture tj-es2-5-1 tab-144 . tab-seal-7 . tab-trumpet-1 . tab-trumpet-2 . tab-trumpet-3 . tab-trumpet-4 . tab-trumpet-5 . tab-trumpet-6 . tab-2-wit . tab-ascension . tab-trumpet-7 . tab-vial-1 . tab-vial-2 . tab-vial-3 . tab-vial-4 . tab-vial-5 . tab-vial-6 . tab-thief . tab-vial-7 . tab-pre-1000 . tab-1000 . tab-end-1000 . tab-judgement"
+"tab-rev-12 . tab-rev-12-2 . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 tj-1thess-4-16a tab-rapture . tab-144 . tab-seal-7 . tab-trumpet-1 . tab-trumpet-2 . tab-trumpet-3 . tab-trumpet-4 . tab-trumpet-5 . tab-trumpet-6 . tab-2-wit . tab-ascension . tab-trumpet-7 . tab-vial-1 . tab-vial-2 . tab-vial-3 . tab-vial-4 . tab-vial-5 . tab-vial-6 . tab-thief . tab-vial-7 . tab-pre-1000 . tab-1000 . tab-end-1000 . tab-judgement"
+"tab-rev-12 . tab-rev-12-2 . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture tj-es2-2-37 tab-144 . tab-seal-7 . tab-trumpet-1 . tab-trumpet-2 . tab-trumpet-3 . tab-trumpet-4 . tab-trumpet-5 . tab-trumpet-6 . tab-2-wit . tab-ascension . tab-trumpet-7 . tab-vial-1 . tab-vial-2 . tab-vial-3 . tab-vial-4 . tab-vial-5 . tab-vial-6 . tab-thief . tab-vial-7 . tab-pre-1000 . tab-1000 . tab-end-1000 . tab-judgement"
+"tab-rev-12 . tab-rev-12-2 . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 . tab-trumpet-1 . tab-trumpet-2 . tab-trumpet-3 . tab-trumpet-4 . tab-trumpet-5 . tab-trumpet-6 . tab-2-wit . tab-ascension . tab-trumpet-7 . tab-vial-1 . tab-vial-2 . tab-vial-3 . tab-vial-4 . tab-vial-5 . tab-vial-6 . tab-thief . tab-vial-7 . tab-pre-1000 . tab-1000 . tab-end-1000 . tab-judgement"
+"tab-rev-12 . tab-rev-12-2 . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 . tab-trumpet-1 . tab-trumpet-2 . tab-trumpet-3 . tab-trumpet-4 . tab-trumpet-5 . tab-trumpet-6 . tab-2-wit . tab-ascension . tab-trumpet-7 . tab-vial-1 . tab-vial-2 . tab-vial-3 . tab-vial-4 . tab-vial-5 . tab-vial-6 . tab-thief . tab-vial-7 . tab-pre-1000 . tab-1000 . tab-end-1000 . tab-judgement"
+"tab-rev-12 . tab-rev-12-2 . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 tj-es2-15-8b tab-rapture tj-es2-15-11a tab-144 . tab-seal-7 . tab-trumpet-1 . tab-trumpet-2 . tab-trumpet-3 . tab-trumpet-4 . tab-trumpet-5 . tab-trumpet-6 . tab-2-wit . tab-ascension . tab-trumpet-7 . tab-vial-1 . tab-vial-2 . tab-vial-3 . tab-vial-4 . tab-vial-5 . tab-vial-6 . tab-thief . tab-vial-7 . tab-pre-1000 . tab-1000 . tab-end-1000 . tab-judgement"
+"tab-rev-12 . tab-rev-12-2 . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 . tab-trumpet-1 . tab-trumpet-2 . tab-trumpet-3 . tab-trumpet-4 . tab-trumpet-5 . tab-trumpet-6 . tab-2-wit . tab-ascension . tab-trumpet-7 . tab-vial-1 . tab-vial-2 . tab-vial-3 . tab-vial-4 . tab-vial-5 . tab-vial-6 . tab-thief . tab-vial-7 . tab-pre-1000 . tab-1000 . tab-end-1000 . tab-judgement"
+"tab-rev-12 . tab-rev-12-2 . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 . tab-trumpet-1 . tab-trumpet-2 . tab-trumpet-3 . tab-trumpet-4 . tab-trumpet-5 . tab-trumpet-6 . tab-2-wit . tab-ascension . tab-trumpet-7 . tab-vial-1 . tab-vial-2 . tab-vial-3 . tab-vial-4 . tab-vial-5 . tab-vial-6 . tab-thief . tab-vial-7 . tab-pre-1000 . tab-1000 . tab-end-1000 . tab-judgement"
+"tab-rev-12 . tab-rev-12-2 . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-144 . tab-seal-7 . tab-trumpet-1 . tab-trumpet-2 . tab-trumpet-3 . tab-trumpet-4 . tab-trumpet-5 . tab-trumpet-6 . tab-2-wit . tab-ascension . tab-trumpet-7 . tab-vial-1 . tab-vial-2 . tab-vial-3 . tab-vial-4 . tab-vial-5 . tab-vial-6 . tab-thief . tab-vial-7 . tab-pre-1000 . tab-1000 . tab-end-1000 . tab-judgement"
 ;
 }
 
 .rev-main .tab {
+    position:relative;
     min-width:180px;
-    border-left: 3px solid #fff1;
-    border-right: 3px solid #fff1;
-    background: linear-gradient(0deg, #120f10 0%, #121017 100%);
     grid-row-end: span 12;
+    box-shadow: 0 0 25px #0009;
+}
+
+.rev-main .tab:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(0deg, #636364 0, #2c2b2c 10%, #3c3a46 60%, #636364 95%, #3c3a46 100%),
+        linear-gradient(0deg, #3c3a46 0, #636364 35%, #2c2b2c 50%, #3c3a46 100%),
+        linear-gradient(45deg, #111 0, #121212 100%);
+    background-position: 0 0, 100% 0;
+    background-repeat: no-repeat;
+    background-size: 1px 100%, 1px 100%, cover;
+    z-index: -2;
+}
+
+.rev-main .tab:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url(/Images/Background/ReflectiveGlow.jpg) 0 var(--bk-scroll-pos, 50%) repeat fixed;
+    background-size: 2500px;
+    opacity: 0.03;
+    z-index: -1;
 }
 
 .rev-main .tab.dim {
-    border-left: 3px solid #121212;
-    border-right: 3px solid #121212;
-    box-shadow: none !important;
+    /*background-image: 
+        linear-gradient(0deg, #262626 0, #424242 10%, #4a4a4a 60%, #262626 95%, #424242 100%),
+        linear-gradient(0deg, #424242 0, #262626 10%, #4a4a4a 50%, #424242 100%),
+        linear-gradient(45deg, #111 0, #121212 100%) !important;*/
+    box-shadow: 0 0 25px #0007 !important;
 }
 
 .rev-main .tab > h2 {
@@ -98,7 +136,7 @@ footer {
     height: var(--heading-1-height);
     font-size: 1em;
     margin: 0;
-    color: #000;
+    color: #fff;
     text-align: center;
     padding: 2px 12px;
 }
@@ -147,9 +185,9 @@ footer {
     Joins
 *********************************************************************/
 .rev-main .tab-join {
-    width:87px;
+    width:65px;
     height: var(--heading-1-height);
-    margin:var(--heading-2-height) 0 0 -30px;
+    margin:var(--heading-2-height) 0 0 -18px;
     background: #f00;
 }
 
@@ -166,42 +204,184 @@ footer {
 
 
 
+/* Rev 12
+**********************************/
+.rev-main .tab.rev-12 {
+    box-shadow: 0 0 20px #20661b33;
+}
 
+.rev-main .tab.rev-12:before {
+    background-image: 
+        linear-gradient(0deg, #7bd983 0, #359b4b 10%, #20661b 60%, #7bd983 95%, #20661b 100%),
+        linear-gradient(0deg, #20661b 0, #7bd983 35%, #359b4b 50%, #20661b 100%),
+        linear-gradient(45deg, #111 0, #121212 100%);
+}
 
 
 /* Seals
 **********************************/
 .rev-main .tab.seal {
-    background: linear-gradient(0deg, #1f1d3a 0%, #674cff 100%);
-    box-shadow: 0 0 20px #674cff99;
-    /*background: linear-gradient(0deg, #777 0%, #eee 100%);   WHITE  */
+    box-shadow: 0 0 20px #674cff33;
 }
 
-.rev-main .tab.dim.seal {
-    background:linear-gradient(0deg, #0d0c18 0%, #211852 100%);
+.rev-main .tab.seal:before {
+    background-image: 
+        linear-gradient(0deg, #8f92ff 0, #45359b 10%, #674cff 60%, #8f92ff 95%, #674cff 100%),
+        linear-gradient(0deg, #674cff 0, #8f92ff 35%, #45359b 50%, #674cff 100%),
+        linear-gradient(45deg, #111 0, #121212 100%);
+}
+
+.rev-main .dim.seal {
+    /*background:linear-gradient(0deg, #0d0c18 0%, #211852 100%);*/
+    /*background:var(--tab-image) no-repeat center 50px, linear-gradient(0deg, #0d0c18 0%, #211852 100%);*/
 }
 
 
 /* Rapture
 **********************************/
 .rev-main .rapture {
-    background: linear-gradient(0deg, #38380e 0%, #d1be3b 100%);
-    box-shadow: 0 0 20px #d1be3b99;
+    box-shadow: 0 0 20px #91802d33;
+}
+
+.rev-main .rapture:before {
+    background-image: 
+        linear-gradient(0deg, #ffed8f 0, #5c541a 10%, #91802d 60%, #ffed8f 95%, #91802d 100%),
+        linear-gradient(0deg, #91802d 0, #ffed8f 35%, #5c541a 50%, #91802d 100%),
+        linear-gradient(45deg, #111 0, #121212 100%);
+    /*linear-gradient(0deg, #38380e 0%, #d1be3b 100%);*/
 }
 
 /* 144K
 **********************************/
 .rev-main .k144 {
-    background: linear-gradient(0deg, #0e2536 0%, #4282e1 100%);
-    box-shadow: 0 0 20px #4282e199;
+    box-shadow: 0 0 20px #4282e133;
 }
 
-/* Seal 7
-**********************************/
-.rev-main .tab-seal-7 {
-    grid-area: tab-seal-7;
-    background: linear-gradient(0deg, #222 0%, #444 100%);
+.rev-main .k144:before {
+    background-image: 
+        linear-gradient(0deg, #98c1ff 0, #2d5289 10%, #4282e1 60%, #98c1ff 95%, #4282e1 100%),
+        linear-gradient(0deg, #4282e1 0, #98c1ff 10%, #2d5289 50%, #4282e1 100%),
+        linear-gradient(45deg, #111 0, #121212 100%);
+    /*linear-gradient(0deg, #0e2536 0%, #4282e1 100%);*/
 }
+
+/* Trumpets
+**********************************/
+.rev-main .tab.trumpet {
+    box-shadow: 0 0 20px #c5834033;
+}
+
+.rev-main .tab.trumpet:before {
+    background-image: 
+        linear-gradient(0deg, #ffaf8f 0, #9b5b35 10%, #c58340 60%, #ffaf8f 95%, #c58340 100%),
+        linear-gradient(0deg, #c58340 0, #ffaf8f 35%, #9b5b35 50%, #c58340 100%),
+        linear-gradient(45deg, #111 0, #121212 100%);
+}
+
+/* 2 Witnesses
+**********************************/
+.rev-main .tab.witnesses {
+    box-shadow: 0 0 20px #4282e133;
+}
+
+.rev-main .tab.witnesses:before {
+    background-image: 
+        linear-gradient(0deg, #98c1ff 0, #2d5289 10%, #4282e1 60%, #98c1ff 95%, #4282e1 100%),
+        linear-gradient(0deg, #4282e1 0, #98c1ff 10%, #2d5289 50%, #4282e1 100%),
+        linear-gradient(45deg, #111 0, #121212 100%);
+}
+
+/* Ascension
+**********************************/
+.rev-main .tab.ascension {
+    box-shadow: 0 0 20px #ffe74533;
+}
+
+.rev-main .tab.ascension:before {
+    background-image: 
+        linear-gradient(0deg, #f9f9f9 0, #828282 10%, #d1be3b 60%, #f9f9f9 95%, #828282 100%),
+        linear-gradient(0deg, #d1be3b 0, #f9f9f9 35%, #4a4a4a 50%, #d1be3b 100%),
+        linear-gradient(45deg, #111 0, #121212 100%);
+}
+
+/* Vials
+**********************************/
+.rev-main .tab.vial {
+    box-shadow: 0 0 20px #d3434333;
+}
+
+.rev-main .tab.vial:before {
+    background-image: 
+        linear-gradient(0deg, #ff8f8f 0, #9b3535 10%, #d34343 60%, #ff8f8f 95%, #d34343 100%),
+        linear-gradient(0deg, #d34343 0, #ff8f8f 35%, #9b3535 50%, #d34343 100%),
+        linear-gradient(45deg, #111 0, #121212 100%);
+}
+
+/* Come as a Thief
+**********************************/
+.rev-main .tab.thief {
+    box-shadow: 0 0 20px #674cff33;
+}
+
+.rev-main .tab.thief:before {
+    background-image: 
+        linear-gradient(0deg, #8f92ff 0, #45359b 10%, #674cff 60%, #8f92ff 95%, #674cff 100%),
+        linear-gradient(0deg, #674cff 0, #8f92ff 35%, #45359b 50%, #674cff 100%),
+        linear-gradient(45deg, #111 0, #121212 100%);
+}
+
+/* Pre 1000 Years
+**********************************/
+.rev-main .tab.pre-1000 {
+    box-shadow: 0 0 20px #674cff33;
+}
+
+.rev-main .tab.pre-1000:before {
+    background-image: 
+        linear-gradient(0deg, #8f92ff 0, #45359b 10%, #674cff 60%, #8f92ff 95%, #674cff 100%),
+        linear-gradient(0deg, #674cff 0, #8f92ff 35%, #45359b 50%, #674cff 100%),
+        linear-gradient(45deg, #111 0, #121212 100%);
+}
+
+/* 1000 Years
+**********************************/
+.rev-main .tab.y1000 {
+    box-shadow: 0 0 20px #20661b33;
+}
+
+.rev-main .tab.y1000:before {
+    background-image: 
+        linear-gradient(0deg, #7bd983 0, #359b4b 10%, #20661b 60%, #7bd983 95%, #20661b 100%),
+        linear-gradient(0deg, #20661b 0, #7bd983 35%, #359b4b 50%, #20661b 100%),
+        linear-gradient(45deg, #111 0, #121212 100%);
+}
+
+/* End 1000 Years
+**********************************/
+.rev-main .tab.end-1000 {
+    box-shadow: 0 0 20px #674cff33;
+}
+
+.rev-main .tab.end-1000:before {
+    background-image: 
+        linear-gradient(0deg, #8f92ff 0, #45359b 10%, #674cff 60%, #8f92ff 95%, #674cff 100%),
+        linear-gradient(0deg, #674cff 0, #8f92ff 35%, #45359b 50%, #674cff 100%),
+        linear-gradient(45deg, #111 0, #121212 100%);
+}
+
+/* Judgement
+**********************************/
+.rev-main .tab.judgement {
+    box-shadow: 0 0 20px #d3434333;
+}
+
+.rev-main .tab.judgement:before {
+    background-image: 
+        linear-gradient(0deg, #ff8f8f 0, #9b3535 10%, #d34343 60%, #ff8f8f 95%, #d34343 100%),
+        linear-gradient(0deg, #d34343 0, #ff8f8f 35%, #9b3535 50%, #d34343 100%),
+        linear-gradient(45deg, #111 0, #121212 100%);
+}
+
 
 
 
@@ -211,9 +391,9 @@ footer {
 .rev-main .grid {
     display:grid;
     grid-template-columns: repeat(20, max-content);
-    grid-template-rows: repeat(6, 108px 30px);
+    grid-template-rows: repeat(20, 108px 30px);
     row-gap:5px;
-    margin:0 25px;
+    margin:0 15px;
 }
 
 /* Seal 1
@@ -295,8 +475,6 @@ footer {
 ". . . . . . . . . ."
 ". . . . . . . . . ."
 ". . . . . . . . . ."
-". . . . . . . . . ."
-". . . . . . . . . ."
 "j-rev6-11 j-rev6-11 seal-6-1 seal-6-2 seal-6-3 seal-6-4 j-rev6-15 seal-6-5 seal-6-6 seal-6-7"
 ". . . . . . . . . ."
 "j-mat-24-29a-s mat-24-29a mat-24-29b mat-24-29c j-mat-24-29c j-mat-24-29c mat-24-29d mat-24-30a mat-24-30b j-mat-24-30b"
@@ -305,33 +483,53 @@ footer {
 ". . . . . . . . . ."
 ". j-luke-21-25-s luke-21-25a luke-21-25b luke-21-25c luke-21-26a luke-21-26b j-luke-21-26b luke-21-27 j-luke-21-27-e"
 ". . . . . . . . . ."
-". . j-song-2-13-s song-2-13 j-song-2-13-e . . . . ."
+". . j-song-2-13-s song-2-13a j-song-2-13a j-song-2-13a j-song-2-13a j-song-2-13a j-song-2-13a j-song-2-13a"
 ". . . . . . . . . ."
-". . . . . . . j-1thess-4-16a-s 1thess-4-16a j-1thess-4-16a"
+". . . . . . . . . ."
+". . . . . . . . . ."
+". . . . . . . j-1thess-4-16a-s thess-4-16a j-1thess-4-16a"
+". . . . . . . . . ."
+". . . . . . . . . ."
+". . . . . . . . . ."
+". . . . . . . . . ."
+". . . . . . . . . ."
+". . . . . . . . . ."
+". . . . . . . . . ."
+"j-es2-15-8b j-es2-15-8b j-es2-15-8b j-es2-15-8b j-es2-15-8b j-es2-15-8b j-es2-15-8b j-es2-15-8b j-es2-15-8b j-es2-15-8b"
 ;
 }
 
-/* Seal 5
+/* Rapture
 **********************************/
 .rev-main .tab-rapture .grid {
     grid-template-areas:
-". . ."
-". . ."
-". . ."
-". . ."
-". . ."
-". . ."
-". . ."
-". . ."
-"mat-24-31a mat-24-31b j-mat-24-31b-e"
-". . ."
-"mark-13-27a mark-13-27b j-mark-13-27b-e"
-". . ."
-". . ."
-". . ."
-". . ."
-". . ."
-"1thess-4-16b 1thess-4-17 j-1thess-4-17-e"
+". . . ."
+". . . ."
+". . . ."
+". . . ."
+". . . rev-7-1"
+". . . ."
+"j-mat-24-31a mat-24-31a mat-24-31b j-mat-24-31b-e"
+". . . ."
+"j-mark-13-27a mark-13-27a mark-13-27b j-mark-13-27b-e"
+". . . ."
+". . . ."
+". . . ."
+"j-song-2-13b song-2-13b song-2-13c j-song-2-13-e"
+". . . ."
+". . es2-5-1 j-es2-5-1"
+". . . ."
+"j-thess-4-16b thess-4-16b thess-4-17 j-thess-4-17-e"
+". . . ."
+"j-es2-2-36-s es2-2-36 es2-2-37 j-es2-2-37"
+". . . ."
+". . . ."
+". . . ."
+". . . ."
+". . . ."
+"j-es2-15-9 es2-15-9 es2-15-10 j-es2-15-11a"
+". . . ."
+". . . dan7-2"
 ;
 }
 
@@ -340,6 +538,24 @@ footer {
 /*********************************************************************
     Book - Chapter Colors
 *********************************************************************/
+.rev-main .es2 > h4,
+.rev-main .join.es2,
+.rev-main .tab-join.es2 {
+    background: var(--es2);
+}
+
+.rev-main .es5 > h4,
+.rev-main .join.es5,
+.rev-main .tab-join.es5 {
+    background: var(--es5);
+}
+
+.rev-main .es15 > h4,
+.rev-main .join.es15,
+.rev-main .tab-join.es15 {
+    background: var(--es15);
+}
+
 .rev-main .luk21 > h4,
 .rev-main .join.luk21,
 .rev-main .tab-join.luk21 {
@@ -367,6 +583,18 @@ footer {
 .rev-main .rev7 > h4,
 .rev-main .tab-join.rev7  {
     background: var(--rev7);
+}
+
+.rev-main .song2 > h4,
+.rev-main .join.song2,
+.rev-main .tab-join.song2 {
+    background: var(--song2);
+}
+
+.rev-main .thess4 > h4,
+.rev-main .join.thess4,
+.rev-main .tab-join.thess4 {
+    background: var(--thess4);
 }
 
 

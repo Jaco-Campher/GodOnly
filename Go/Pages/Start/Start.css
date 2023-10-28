@@ -1102,7 +1102,7 @@ go-chapter {
     Dialog & Info
 **********************************************/
 .dialog-backgound {
-    background-color: #000b;
+    background-color: #000d;
     display:grid;
     grid-template-columns:1fr minmax(300px, 90%) 1fr;
     grid-template-rows:minmax(50px, 1fr) minmax(100px, auto) minmax(50px, 1fr);

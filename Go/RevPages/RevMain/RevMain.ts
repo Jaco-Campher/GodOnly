@@ -3,6 +3,10 @@
     enum Color {
         Default = '',
 
+        Es2 = 'es2',
+        Es5 = 'es5',
+        Es15 = 'es15',
+
         Luk21 = 'luk21',
 
         Mar13 = 'mar13',
@@ -10,7 +14,11 @@
         Mat24 = 'mat24',
 
         Rev6 = 'rev6',
-        Rev7 = 'rev7'
+        Rev7 = 'rev7',
+
+        Song2 = 'song2',
+
+        Thess4 = 'thess4'
     }
 
     enum FirstLast {
@@ -36,12 +44,28 @@
             let tab: Tab;
             let item: Item;
 
+            //#region Rev 12 Sign
+            //*******************************
+            tab = new Tab('rev-12', 'tab-rev-12', 'Rev 12 Sign');
+
+            this.Tabs.push(tab);
+            //#endregion
+
+
+            //#region Rev 12 Another Sign
+            //*******************************
+            tab = new Tab('rev-12-2', 'tab-rev-12-2', 'Another Sign');
+
+            this.Tabs.push(tab);
+            //#endregion
+
+
             //Seals
             //************************************************************
 
             //#region Seal 1
             //*******************************
-            tab = new Tab('seal dim', 'tab-seal-1', 'Seal 1');
+            tab = new Tab('seal', 'tab-seal-1', 'Seal 1');
             item = new Item(Color.Rev6, 'seal-1', 'Seal 1', 'White Horse', 'Rev 6:1-2', 'Rev 6:1-2', 'White horse: and He that sat on him ', '', FirstLast.First);
             tab.Items.push(item);
             this.TabJoins.push(new TabJoin(Color.Rev6, 'tj-seal-1'));
@@ -51,7 +75,7 @@
 
             //#region Seal 2
             //*******************************
-            tab = new Tab('seal dim', 'tab-seal-2', 'Seal 2');
+            tab = new Tab('seal', 'tab-seal-2', 'Seal 2');
             item = new Item(Color.Rev6, 'seal-2', 'Seal 2', 'Red Horse', 'Rev 6:3-4', 'Rev 6:3-4', '', '');
             tab.Items.push(item);
             this.TabJoins.push(new TabJoin(Color.Rev6, 'tj-seal-2'));
@@ -71,8 +95,8 @@
 
             //#region Seal 4
             //*******************************
-            tab = new Tab('seal dim', 'tab-seal-4', 'Seal 4');
-            item = new Item(Color.Rev6, 'seal-4', 'Seal 4', 'Green Horse', 'Rev 6:7-8', 'Rev 6:7-8', '', '');
+            tab = new Tab('seal', 'tab-seal-4', 'Seal 4');
+            item = new Item(Color.Rev6, 'seal-4', ' Kill with Sword, Hunger, Death', 'Green Horse', 'Rev 6:7-8', 'Rev 6:7-8', 'Power over the fourth part of the earth.', '');
             tab.Items.push(item);
             this.TabJoins.push(new TabJoin(Color.Rev6, 'tj-seal-4'));
             this.Tabs.push(tab);
@@ -81,7 +105,7 @@
 
             //#region Seal 5
             //*******************************
-            tab = new Tab('seal dim', 'tab-seal-5', 'Seal 5');
+            tab = new Tab('seal', 'tab-seal-5', 'Seal 5');
             item = new Item(Color.Rev6, 'seal-5', 'Seal 5', '', 'Rev 6:9-11', 'Rev 6:9-11', '', '');
             tab.Items.push(item);
             this.TabJoins.push(new TabJoin(Color.Rev6, 'tj-seal-5'));
@@ -162,8 +186,22 @@
             tab.Joins.push(new Join(Color.Luk21, 'j-luke-21-27-e', FirstLast.Last));
 
             //Songs
+            tab.Joins.push(new Join(Color.Song2, 'j-song-2-13-s', FirstLast.First));
+            item = new Item(Color.Song2, 'song-2-13a', '', '', 'Sng 2:13a', 'Sng 2:13', 'The fig tree putteth forth her green figs,', '');
+            tab.Items.push(item);
+            tab.Joins.push(new Join(Color.Song2, 'j-song-2-13a'));
+            this.TabJoins.push(new TabJoin(Color.Song2, 'tj-song-2-13a'));
 
-            //1 Thess
+            //1 Thess 4
+            tab.Joins.push(new Join(Color.Thess4, 'j-1thess-4-16a-s', FirstLast.First));
+            item = new Item(Color.Thess4, 'thess-4-16a', 'Yah Himself Shall Descend From Heaven', '', '1Th 4:16a', '1Th 4:16', 'with a shout,', ' with the voice of the archangel,');
+            tab.Items.push(item);
+            tab.Joins.push(new Join(Color.Thess4, 'j-1thess-4-16a'));
+            this.TabJoins.push(new TabJoin(Color.Thess4, 'tj-1thess-4-16a'));
+
+            //2 Esdras 15
+            tab.Joins.push(new Join(Color.Es15, 'j-es2-15-8b'));
+            this.TabJoins.push(new TabJoin(Color.Es15, 'tj-es2-15-8b'));
 
 
             this.Tabs.push(tab);
@@ -174,6 +212,7 @@
             //*******************************
             tab = new Tab('rapture', 'tab-rapture', 'Rapture');
             //Matt
+            tab.Joins.push(new Join(Color.Mat24, 'j-mat-24-31a'));
             item = new Item(Color.Mat24, 'mat-24-31a', 'With a Great Sound of a Trumpet', 'He Shall Send His Angels', 'Mat 24:31a', 'Mat 24:31', '', '');
             tab.Items.push(item);
             item = new Item(Color.Mat24, 'mat-24-31b', 'They Shall Gather Together His Elect', '4 Winds', 'Mat 24:31b', 'Mat 24:31', 'shall gather together his elect from the four winds, ', '');
@@ -181,6 +220,7 @@
             tab.Joins.push(new Join(Color.Mat24, 'j-mat-24-31b-e', FirstLast.Last));
 
             //Mark
+            tab.Joins.push(new Join(Color.Mar13, 'j-mark-13-27a'));
             item = new Item(Color.Mar13, 'mark-13-27a', '', 'Then Shall He Send His Angels', 'Mrk 13:27a', 'Mrk 13:27', '', '');
             tab.Items.push(item);
             item = new Item(Color.Mar13, 'mark-13-27b', 'Shall Gather Together His Elect', '4 Winds', 'Mrk 13:27b', 'Mrk 13:27', 'shall gather together his elect from the four winds,', 'from the uttermost part of the earth…');
@@ -188,7 +228,48 @@
             tab.Joins.push(new Join(Color.Mar13, 'j-mark-13-27b-e', FirstLast.Last));
 
 
-            //Luke
+            //Song
+            tab.Joins.push(new Join(Color.Song2, 'j-song-2-13b'));
+            item = new Item(Color.Song2, 'song-2-13b', '', '', 'Sng 2:13b', 'Sng 2:13', 'Arise, my love, my fair one,', '');
+            tab.Items.push(item);
+            item = new Item(Color.Song2, 'song-2-13c', '', '', 'Sng 2:13c', 'Sng 2:13', ' and come away.', '');
+            tab.Items.push(item);
+            tab.Joins.push(new Join(Color.Song2, 'j-song-2-13-e', FirstLast.Last));
+
+            //2 Esdras 5
+            item = new Item(Color.Es5, 'es2-5-1', 'Taken in a Great Number', '', '2Es 5:1', '2Es 5:1', 'Way of truth shall be hidden.', 'Land shall be barren of faith.');
+            tab.Items.push(item);
+            tab.Joins.push(new Join(Color.Es5, 'j-es2-5-1'));
+            this.TabJoins.push(new TabJoin(Color.Es5, 'tj-es2-5-1'));
+
+            //1 Thess 4
+            tab.Joins.push(new Join(Color.Thess4, 'j-thess-4-16b'));
+            item = new Item(Color.Thess4, 'thess-4-16b', 'The Dead in Christ Shall Rise First', 'With the Trump of God', '1Th 4:16b', '1Th 4:16', '', '');
+            tab.Items.push(item);
+            item = new Item(Color.Thess4, 'thess-4-17', 'Caught Up Together', 'We Which are Alive', '1Th 4:16b', '1Th 4:16', 'With them in the clouds,', ' to meet the Lord in the air:');
+            tab.Items.push(item);
+            tab.Joins.push(new Join(Color.Thess4, 'j-thess-4-17-e', FirstLast.Last));
+
+            //2 Esdras 2
+            tab.Joins.push(new Join(Color.Es2, 'j-es2-2-36-s', FirstLast.First));
+            item = new Item(Color.Es2, 'es2-2-36', '', '', '2Es 2:36', '2Es 2:36', 'receive the joyfulness of your glory.', ' I testify my Saviour openly.');
+            tab.Items.push(item);
+            item = new Item(Color.Es2, 'es2-2-37', '', '', '2Es 2:37', '2Es 2:37', 'O receive the gift that is given you, and be glad,', ' giving thanks unto Him that hath led you to the heavenly kingdom.');
+            tab.Items.push(item);
+            tab.Joins.push(new Join(Color.Es2, 'j-es2-2-37'));
+            this.TabJoins.push(new TabJoin(Color.Es2, 'tj-es2-2-37'));
+
+            //2 Esdras 15
+            tab.Joins.push(new Join(Color.Es15, 'j-es2-15-9'));
+            item = new Item(Color.Es15, 'es2-15-9', '', '', '2Es 15:9', '2Es 15:9', 'And receive unto me all the innocent blood.', '');
+            tab.Items.push(item);
+            item = new Item(Color.Es15, 'es2-15-10', '', '', '2Es 15:10-11a', '2Es 15:10-11', 'I will not suffer them now to dwell in the land of Egypt:', 'But I will bring them with a mighty hand and a stretched out arm.');
+            tab.Items.push(item);
+            tab.Joins.push(new Join(Color.Es15, 'j-es2-15-11a'));
+            this.TabJoins.push(new TabJoin(Color.Es15, 'tj-es2-15-11a'));
+
+            //Dan
+
 
 
             this.Tabs.push(tab);
@@ -198,6 +279,182 @@
             //#region 144K
             //*******************************
             tab = new Tab('k144', 'tab-144', '144 000');
+
+            this.Tabs.push(tab);
+            //#endregion
+
+
+            //#region Seal 7
+            //*******************************
+            tab = new Tab('seal', 'tab-seal-7', 'Seal 7 Start');
+
+            this.Tabs.push(tab);
+            //#endregion
+
+
+            //#region Trumpet 1
+            //*******************************
+            tab = new Tab('trumpet', 'tab-trumpet-1', 'Trumpet 1');
+
+            this.Tabs.push(tab);
+            //#endregion
+
+
+            //#region Trumpet 2
+            //*******************************
+            tab = new Tab('trumpet', 'tab-trumpet-2', 'Trumpet 2');
+
+            this.Tabs.push(tab);
+            //#endregion
+
+
+            //#region Trumpet 3
+            //*******************************
+            tab = new Tab('trumpet', 'tab-trumpet-3', 'Trumpet 3');
+
+            this.Tabs.push(tab);
+            //#endregion
+
+
+            //#region Trumpet 4
+            //*******************************
+            tab = new Tab('trumpet', 'tab-trumpet-4', 'Trumpet 4');
+
+            this.Tabs.push(tab);
+            //#endregion
+
+
+            //#region Trumpet 5
+            //*******************************
+            tab = new Tab('trumpet', 'tab-trumpet-5', 'Trumpet-5');
+
+            this.Tabs.push(tab);
+            //#endregion
+
+
+            //#region Trumpet 6
+            //*******************************
+            tab = new Tab('trumpet', 'tab-trumpet-6', 'Trumpet 6');
+
+            this.Tabs.push(tab);
+            //#endregion
+
+
+            //#region 2 Witnesses
+            //*******************************
+            tab = new Tab('witnesses', 'tab-2-wit', '2 Witnesses');
+
+            this.Tabs.push(tab);
+            //#endregion
+
+
+            //#region Ascension
+            //*******************************
+            tab = new Tab('ascension', 'tab-ascension', 'Ascension');
+
+            this.Tabs.push(tab);
+            //#endregion
+
+
+            //#region Trumpet 7
+            //*******************************
+            tab = new Tab('trumpet', 'tab-trumpet-7', 'Trumpet 7');
+
+            this.Tabs.push(tab);
+            //#endregion
+
+
+            //#region Vial 1
+            //*******************************
+            tab = new Tab('vial', 'tab-vial-1', 'Vial 1');
+
+            this.Tabs.push(tab);
+            //#endregion
+
+
+            //#region Vial 2
+            //*******************************
+            tab = new Tab('vial', 'tab-vial-2', 'Vial 2');
+
+            this.Tabs.push(tab);
+            //#endregion
+
+
+            //#region Vial 3
+            //*******************************
+            tab = new Tab('vial', 'tab-vial-3', 'Vial 3');
+
+            this.Tabs.push(tab);
+            //#endregion
+
+
+            //#region Vial 4
+            //*******************************
+            tab = new Tab('vial', 'tab-vial-4', 'Vial 4');
+
+            this.Tabs.push(tab);
+            //#endregion
+
+
+            //#region Vial 5
+            //*******************************
+            tab = new Tab('vial', 'tab-vial-5', 'Vial 5');
+
+            this.Tabs.push(tab);
+            //#endregion
+
+
+            //#region Vial 6
+            //*******************************
+            tab = new Tab('vial', 'tab-vial-6', 'Vial 6');
+
+            this.Tabs.push(tab);
+            //#endregion
+
+
+            //#region Come as a Thief
+            //*******************************
+            tab = new Tab('thief', 'tab-thief', 'Come as a Thief');
+
+            this.Tabs.push(tab);
+            //#endregion
+
+
+            //#region Vial 7
+            //*******************************
+            tab = new Tab('vial', 'tab-vial-7', 'Vial 7');
+
+            this.Tabs.push(tab);
+            //#endregion
+
+
+            //#region Pre 1000 Years
+            //*******************************
+            tab = new Tab('pre-1000', 'tab-pre-1000', 'Pre 1000 Years');
+
+            this.Tabs.push(tab);
+            //#endregion
+
+
+            //#region 1000 Years
+            //*******************************
+            tab = new Tab('y1000', 'tab-1000', '1000 Years');
+
+            this.Tabs.push(tab);
+            //#endregion
+
+
+            //#region End 1000 Years
+            //*******************************
+            tab = new Tab('end-1000', 'tab-end-1000', 'End 1000 Years');
+
+            this.Tabs.push(tab);
+            //#endregion
+
+
+            //#region Judgement
+            //*******************************
+            tab = new Tab('judgement', 'tab-judgement', 'Judgement');
 
             this.Tabs.push(tab);
             //#endregion
@@ -215,10 +472,10 @@
 
     class Tab {
         BaseCSSClass: string;
-        Location: string;
+        Style: string;
         Name: string;
 
-        Expanded: KnockoutObservable<boolean> = ko.observable<boolean>(true);
+        Expanded: KnockoutObservable<boolean> = ko.observable<boolean>(false);
 
         CSSClass: KnockoutComputed<string>;
 
@@ -228,11 +485,11 @@
 
         constructor(cssClass: string, location: string, name: string) {
             this.BaseCSSClass = cssClass;
-            this.Location = `grid-area: ${location}`;
+            this.Style = `grid-area: ${location}; --tab-image: url(../../Images/Rev/${location}.png)`;
             this.Name = name;
 
             this.CSSClass = ko.computed((): string => {
-                let css: string = `${this.BaseCSSClass} ${this.Location}`;
+                let css: string = `${this.BaseCSSClass} ${location}`;
                 css += this.Expanded() ? ' expanded' : '';
                 return css;
             }, this);

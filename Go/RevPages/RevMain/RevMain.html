@@ -8,7 +8,7 @@
 
     <div class="tabs">
         <!-- ko foreach: Tabs -->
-        <div class="tab" data-bind="class: CSSClass, attr: { style: Location }">
+        <div class="tab" data-bind="class: CSSClass, attr: { style: Style }">
             <h2 data-bind="text:Name, click: OpenClose"></h2>
             <div class="grid" data-bind="if: Expanded">
                 <!-- ko foreach: Items -->
