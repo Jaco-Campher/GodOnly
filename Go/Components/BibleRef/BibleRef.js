@@ -1,3 +1,4 @@
+"use strict";
 var GO;
 (function (GO) {
     var Compnents;
@@ -171,7 +172,7 @@ var GO;
                             if (this.params.Show() & GO.eRefTypeShow.AllStrongs || this.AllStrongs()) {
                                 for (let strong of word.Strongs) {
                                     strongNo += strong;
-                                    wordText += `<sup><a href="https://www.blueletterbible.org/lang/lexicon/lexicon.cfm?t=kjv&strongs=${strong}" target="blank">${strong}</a> </sup>`;
+                                    wordText += `<sup><a href="https://www.blueletterbible.org/lexicon/${strong}/kjv" target="blank">${strong}</a> </sup>`;
                                 }
                             }
                         }

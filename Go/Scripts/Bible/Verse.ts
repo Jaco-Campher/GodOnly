@@ -150,7 +150,7 @@
                     //let strongs: Array<string> = Array.isArray(word.Strongs) ? word.Strongs : [word.Strongs]
 
                     for (let i = 0; i < word.Strongs.length; i++) {
-                        strongHtml += `<a href="https://www.blueletterbible.org/lang/lexicon/lexicon.cfm?t=kjv&strongs=${word.Strongs[i]}">${word.Strongs[i]}</a>`;
+                        strongHtml += `<a href="https://www.blueletterbible.org/lexicon/${word.Strongs[i]}/kjv">${word.Strongs[i]}</a>`;
                         if (word.Strongs.length - 1 != i) { strongHtml += ', '; }
                     }
                     strongHtml += '</sup>';
