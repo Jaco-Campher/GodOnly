@@ -10,7 +10,7 @@
         Alt: string;
 
         constructor(private params: iStrongsParams, componentInfo: KnockoutComponentTypes.ComponentInfo) {
-            this.Strongs = `<a href="https://www.blueletterbible.org/lang/lexicon/lexicon.cfm?t=kjv&strongs=${params.Strongs}" target="blank">${params.Strongs}</a>`;
+            this.Strongs = `<a href="https://www.blueletterbible.org/lexicon/${params.Strongs}/kjv" target="blank">${params.Strongs}</a>`;
             this.Alt = params.Alt;
         }
     }

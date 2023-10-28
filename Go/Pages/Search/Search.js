@@ -1,3 +1,4 @@
+"use strict";
 var GO;
 (function (GO) {
     var Pages;
@@ -292,35 +293,6 @@ var GO;
                 });
                 this.ExactMatchesCount(exactMatchesCount);
                 this.PartialMatchesCount(partialMatchesCount);
-                //let alphas: Array<string> = ['a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b', 'sssssss']
-                //let start1: number = performance.now();
-                //for (var i = 0; i < 10000000; i++) {
-                //    let text: string = '';
-                //    for (let alpha of alphas) {
-                //        text += alpha;
-                //    }
-                //    text.indexOf('sssssss');
-                //}
-                //console.log('end 1', performance.now() - start1);
-                //let start2: number = performance.now();
-                //for (var i = 0; i < 10000000; i++) {
-                //    let text2: string = '';
-                //    for (let ii = 0; ii < alphas.length; ii++) {
-                //        text2 += alphas[ii];
-                //    }
-                //    text2.indexOf('sssssss');
-                //}
-                //console.log('end 2', performance.now() - start2);
-                //let start3: number = performance.now();
-                //for (var i = 0; i < 10000000; i++) {
-                //    let text3: string = '';
-                //    let len = alphas.length;
-                //    for (let i = 0; i < len; i++) {
-                //        text3 += alphas[i];
-                //    }
-                //    text3.indexOf('sssssss');
-                //}
-                //console.log('end 3', performance.now() - start3);
             }
         }
         Pages.SearchViewModel = SearchViewModel;

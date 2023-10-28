@@ -516,12 +516,12 @@
     }
 
     class Item {
-        Title: string;
-        SubTitle: string;
-        Ref: string;
-        RefDisplay: string;
-        Line1: string;
-        Line2: string;
+        Title: string = '';
+        SubTitle: string = '';
+        Ref: string = '';
+        RefDisplay: string = '';
+        Line1: string = '';
+        Line2: string = '';
 
         TitleLink: string = '';
         SubTitleLink: string = '';

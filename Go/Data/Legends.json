@@ -358,7 +358,21 @@
     "Refs": [
       {
         "Ref": "Isa 9:15",
-        "Bold": [{"From":48, "To":93}]
+        "Bold": [{ "From": 48, "To": 93}]
+      }
+    ]
+  },
+  "Tribulation": {
+    "Meaning": "Trouble",
+    "Refs": [
+      {
+        "Ref": "2Co 1:4",
+        "Bold": [{"From":29, "To":39}, {"From":95, "To":101}],
+        "Strongs": [{ "Strong": "G2347", "Meaning": "" }]
+      },
+      {
+        "Ref": "",
+        "Html": "<p>When the word tribulation is used in the Bible, it is “Trouble” or “Affliction” and not necessarily the end times. Please see the study about <a href='/prophesy-study/tribulation' target='_blank'>Tribulation</a>.</p>"
       }
     ]
   },

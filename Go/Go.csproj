@@ -151,6 +151,7 @@
     <Content Include="Pages\Search\Search.js" />
     <Content Include="ProphesyPages\Landing\Landing.html" />
     <Content Include="ProphesyPages\Landing\Landing.js" />
+    <Content Include="ProphesyPages\Tribulation\Tribulation.html" />
     <Content Include="RevPages\Landing\Landing.css" />
     <Content Include="RevPages\Landing\Landing.html" />
     <Content Include="RevPages\Landing\Landing.js" />
@@ -196,6 +197,7 @@
     <Content Include="ToolsPages\IncestLaws\IncestLaws.js" />
     <Content Include="TorahPages\Landing\Landing.html" />
     <Content Include="TorahPages\Landing\Landing.js" />
+    <Content Include="TorahPages\SimpleLaws\SimpleLaws.html" />
     <Content Include="TorahPages\SundayWorship\SundayWorship.html" />
     <Content Include="Web.config" />
   </ItemGroup>

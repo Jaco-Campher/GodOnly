@@ -1,3 +1,4 @@
+"use strict";
 var GO;
 (function (GO) {
     var Compnents;
@@ -5,7 +6,7 @@ var GO;
         class StrongsViewModel {
             constructor(params, componentInfo) {
                 this.params = params;
-                this.Strongs = `<a href="https://www.blueletterbible.org/lang/lexicon/lexicon.cfm?t=kjv&strongs=${params.Strongs}" target="blank">${params.Strongs}</a>`;
+                this.Strongs = `<a href="https://www.blueletterbible.org/lexicon/${params.Strongs}/kjv" target="blank">${params.Strongs}</a>`;
                 this.Alt = params.Alt;
             }
         }

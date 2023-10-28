@@ -2,6 +2,7 @@
 <div class="verses-container">
     <h4 data-bind="text: RefDisplay"></h4>
     <div class="controls" data-bind="ifnot: FullChapter">
+        <button class="btn-icon-only all-strongs" data-bind="click: ToggleAllStrongs, css: { 'selected': AllStrongs}" title="Strong"></button>
         <button class="btn-icon-only ref-only" data-bind="click: function(){SetDisplayContext('SelectedOnly')}, css: { 'selected': DisplayContext() == 'SelectedOnly'}" title="Show Selected Only"></button>
         <button class="btn-icon-only context" data-bind="click: function(){SetDisplayContext('Context'); }, css: { 'selected': DisplayContext() == 'Context'}" title="Show Context"></button>
         <button class="btn-icon-only chapter" data-bind="click: function(){SetDisplayContext('All')}, css: { 'selected': DisplayContext() == 'All'}" title="Show Chapter"></button>

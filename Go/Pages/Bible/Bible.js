@@ -1,3 +1,4 @@
+"use strict";
 var GO;
 (function (GO) {
     var Pages;
@@ -107,6 +108,12 @@ var GO;
                 this.Ref = ko.observable('');
                 this.Book = ko.observable();
                 this.ChapterNo = ko.observable(-1);
+                this.ShowPrev = ko.computed(() => {
+                    return this.ChapterNo() > 1;
+                }, this);
+                this.ShowNext = ko.computed(() => {
+                    return this.ChapterNo() < this.TotalChapters();
+                }, this);
                 this.SelectBook = () => {
                     this.Book(null);
                     this.ChapterNo(-1);
@@ -146,6 +153,13 @@ var GO;
                 }
                 else {
                     this.Ref(ref);
+                    //Needed to show the prev next buttons.
+                    let bibleRef = go.Bible.GetBibleReference(ref.trim());
+                    if (bibleRef != null && bibleRef.Verses == undefined) {
+                        this.Book(go.Bible.Book(bibleRef.BookAbbr));
+                        this.ChapterNo(bibleRef.Chapter);
+                        this.TotalChapters(this.Book().ChapterCount);
+                    }
                     this.ShowComponent('Content');
                 }
             }

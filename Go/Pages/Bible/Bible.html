@@ -57,10 +57,10 @@
             <go-bible-ref params="{ Ref: Ref, Show: $parent.ShowLegendType }"></go-bible-ref>
 
             <div class="bible-nav" data-bind="if:Book">
-                <button class="btn-icon" data-bind="enabled:function() {return ChapterNo() > 1}, click:Prev">
+                <button class="btn-icon" data-bind="visible:ShowPrev, click:Prev">
                     <svg viewBox="0 0 12 12"><polygon points="8.15,12 2.15,6 8.15,0 8.85,0.71 3.56,6 8.85,11.29" /></svg>
                 </button>
-                <button class="btn-icon right" data-bind="enabled:ChapterNo() != TotalChapters, click:Next">
+                <button class="btn-icon right" data-bind="visible:ShowNext, click:Next">
                     <svg viewBox="0 0 12 12"><polygon points="3.85,12 3.14,11.29 8.44,6 3.15,0.71 3.85,0 9.85,6" /></svg>
                 </button>
             </div>
@@ -77,7 +77,7 @@
 </div>
 
 <template id="PageHelp">
-    <p>The Old Testament, Apocrypha, and the New Testament is from the 1769 KJV. Other books are from various sources. Please see <a href="/copyright" data-bind="click: function() { go.Navigate('/copyright'); }">Copyright and Credits</a> for more information.</p>
+    <p>The Old Testament, Apocrypha, and New Testament are from the 1769 KJV. Other books are from various sources. Please see <a href="/copyright" data-bind="click: function() { go.Navigate('/copyright'); }">Copyright and Credits</a> for more information.</p>
     
     <h3>Formatting</h3>
     <p>Added words in both the Old and New Testaments will be shown as <span class="a">italic and darker</span>. In the Apocrypha and most other books, this is not available. Some of the Other books will sometimes use [ ] or [[ ]] to indicate added words, but this is dependent on how it was translated.</p>
