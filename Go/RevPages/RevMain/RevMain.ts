@@ -117,13 +117,13 @@
             //*******************************
             tab = new Tab('seal', 'tab-seal-6', 'Seal 6');
             tab.Joins.push(new Join(Color.Rev6, 'j-rev6-11'));
-            item = new Item(Color.Rev6, 'seal-6-1', 'Seal 6', 'Sun Became Black as Sackcloth of Hair', 'Rev 6:12', 'Rev 6:12', 'and the moon became as blood;', '');
+            item = new Item(Color.Rev6, 'seal-6-1', 'The Moon Became as Blood', 'Sun Became Black as Sackcloth of Hair', 'Rev 6:12', 'Rev 6:12', '', '');
             tab.Items.push(item);
-            item = new Item(Color.Rev6, 'seal-6-2', 'Seal 6', 'Stars of Heaven Fell unto the Earth', 'Rev 6:13', 'Rev 6:13', 'Even as a fig tree casteth her untimely figs,', ' when she is shaken of a mighty wind.');
+            item = new Item(Color.Rev6, 'seal-6-2', 'Stars of Heaven Fell unto the Earth', '', 'Rev 6:13', 'Rev 6:13', 'Even as a fig tree casteth her untimely figs,', ' when she is shaken of a mighty wind.');
             tab.Items.push(item);
-            item = new Item(Color.Rev6, 'seal-6-3', 'Seal 6', 'Heaven Departed as a Scroll', 'Rev 6:14', 'Rev 6:14', 'every mountain and island', ' were moved out of their places.');
+            item = new Item(Color.Rev6, 'seal-6-3', 'Heaven Departed as a Scroll', '', 'Rev 6:14', 'Rev 6:14', 'every mountain and island', ' were moved out of their places.');
             tab.Items.push(item);
-            item = new Item(Color.Rev6, 'seal-6-4', 'Seal 6', 'Kings and Men hid Themselves', 'Rev 6:15', 'Rev 6:15', '', '');
+            item = new Item(Color.Rev6, 'seal-6-4', 'Kings and Men hid Themselves', '', 'Rev 6:15', 'Rev 6:15', '', '');
             tab.Items.push(item);
             tab.Joins.push(new Join(Color.Rev6, 'j-rev6-15'));
             item = new Item(Color.Rev6, 'seal-6-5', 'Seal 6', '', 'Rev 6:16a', 'Rev 6:16', 'And said to the mountains', ' and rocks, fall on us,');
@@ -139,7 +139,7 @@
             tab.Items.push(item);
             item = new Item(Color.Mat24, 'mat-24-29b', 'Moon Shall Not Give Her Light', 'Shall the Sun be Darkened', 'Mat 24:29b', 'Mat 24:29', '', '');
             tab.Items.push(item);
-            item = new Item(Color.Mat24, 'mat-24-29c', '', 'Stars Shall Fall from Heaven', 'Mat 24:29c', 'Mat 24:29', '', '');
+            item = new Item(Color.Mat24, 'mat-24-29c', 'Stars Shall Fall from Heaven', '', 'Mat 24:29c', 'Mat 24:29', '', '');
             tab.Items.push(item);
             tab.Joins.push(new Join(Color.Mat24, 'j-mat-24-29c'));
             item = new Item(Color.Mat24, 'mat-24-29d', 'Powers of the Heavens Shall be Shaken', '', 'Mat 24:29d', 'Mat 24:29', '', '');
@@ -157,7 +157,7 @@
             tab.Items.push(item);
             item = new Item(Color.Mar13, 'mark-13-24b', 'Moon Shall Not Give Her Light', 'The Sun Shall be Darkened', 'Mrk 13:24b', 'Mrk 13:24', '', '');
             tab.Items.push(item);
-            item = new Item(Color.Mar13, 'mark-13-25a', '', 'Stars of Heaven Shall Fall', 'Mrk 13:25a', 'Mrk 13:25', '', '');
+            item = new Item(Color.Mar13, 'mark-13-25a', 'Stars of Heaven Shall Fall', '', 'Mrk 13:25a', 'Mrk 13:25', '', '');
             tab.Items.push(item);
             tab.Joins.push(new Join(Color.Mar13, 'j-mark-13-25a'));
             item = new Item(Color.Mar13, 'mark-13-25b', 'Powers of the Heavens Shall be Shaken', '', 'Mrk 13:25b', 'Mrk 13:25', '', '');
@@ -172,7 +172,7 @@
             tab.Joins.push(new Join(Color.Luk21, 'j-luke-21-25-s', FirstLast.First));
             item = new Item(Color.Luk21, 'luke-21-25a', 'And in the Moon', 'Shall be Signs in the Sun', 'Luk 21:25a', 'Luk 21:25', '', '');
             tab.Items.push(item);
-            item = new Item(Color.Luk21, 'luke-21-25b', '', 'And in the Stars', 'Luk 21:25b', 'Luk 21:25', '', '');
+            item = new Item(Color.Luk21, 'luke-21-25b', 'And in the Stars', '', 'Luk 21:25b', 'Luk 21:25', '', '');
             tab.Items.push(item);
             item = new Item(Color.Luk21, 'luke-21-25c', '', '', 'Luk 21:25c', 'Luk 21:25', 'upon the earth distress of nations, with perplexity;', ' the sea and the waves roaring;');
             tab.Items.push(item);

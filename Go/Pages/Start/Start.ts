@@ -329,7 +329,7 @@
                 }
 
                 for (let legendName in go.LegendsObject) {
-                    let reg: RegExp = new RegExp(`(?<=\\W)(${legendName})(?=\\W)`, 'gi');
+                    let reg: RegExp = new RegExp(`(^|(?<=\\W))(${legendName})(?=\\W)`, 'gi');
                     let htmlSections: Array<string> = inputSection.Html.split(reg);
 
 

@@ -81,7 +81,7 @@ var GO;
             };
             //#endregion
             //****************************************************************************
-            //#region Legend Functions
+            //#region Load Functions
             //****************************************************************************
             this.LoadDataFiles = async () => {
                 //Load data files.
@@ -184,6 +184,56 @@ var GO;
         OpenCloseMenu() {
             this.MenuOpen(!this.MenuOpen());
         }
+        //#endregion
+        //****************************************************************************
+        //#region Legend Functions
+        //****************************************************************************
+        //********************************
+        //#region Legend Functions
+        AddLegend(inputSections) {
+            let newSections = [];
+            let found = false;
+            for (let inputSection of inputSections) {
+                if (inputSection.Type != eRefTypeShow.None) {
+                    newSections.push(inputSection);
+                    continue;
+                }
+                for (let legendName in go.LegendsObject) {
+                    let reg = new RegExp(`(^|(?<=\\W))(${legendName})(?=\\W)`, 'gi');
+                    let htmlSections = inputSection.Html.split(reg);
+                    if (htmlSections.length > 1) {
+                        found = true;
+                        for (let htmlSection of htmlSections) {
+                            if (htmlSection.toLowerCase() != legendName.toLowerCase()) {
+                                //Other text, add as is.
+                                newSections.push(new Section(htmlSection));
+                                continue;
+                            }
+                            let legend = go.LegendsObject[legendName];
+                            let section = new Section('', eRefTypeShow.Prophesy);
+                            section.Original = htmlSection;
+                            if (legend.Case) {
+                                section.Meaning = legend.Meaning;
+                            }
+                            else {
+                                section.Meaning = htmlSection == htmlSection.toLowerCase() ? legend.Meaning.toLowerCase() : legend.Meaning;
+                            }
+                            section.Refs = legend.Lookup == undefined ? legend.Refs : go.LegendsObject[legend.Lookup].Refs;
+                            newSections.push(section);
+                        }
+                        break;
+                    }
+                }
+                if (found) {
+                    found = false;
+                }
+                else {
+                    //No match found, add as is.
+                    newSections.push(inputSection);
+                }
+            }
+            return newSections;
+        }
     }
     GO.Start = Start;
     class ImageLink {
@@ -198,6 +248,17 @@ var GO;
         }
     }
     GO.ImageLink = ImageLink;
+    class Section {
+        constructor(html, type = eRefTypeShow.None) {
+            this.Show = ko.observable(false);
+            this.Html = html;
+            this.Type = type;
+        }
+        OpenClose() {
+            this.Show(!this.Show());
+        }
+    }
+    GO.Section = Section;
 })(GO || (GO = {}));
 let go;
 GO.DomReady(() => {

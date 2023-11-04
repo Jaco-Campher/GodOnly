@@ -16,6 +16,7 @@
         Verses: KnockoutObservableArray<VerseHolder> = ko.observableArray<VerseHolder>([]);
         RefString: KnockoutObservable<string> = ko.observable();
         RefDisplay: KnockoutObservable<string> = ko.observable('');
+        AllStrongs: KnockoutObservable<boolean> = ko.observable(false);
         BookType: KnockoutObservable<string> = ko.observable<string>('');
 
         Bold: Array<iRefBold> = [];
@@ -130,6 +131,11 @@
             this.LoadVerses();
         }
 
+        ToggleAllStrongs = () => {
+            this.AllStrongs(!this.AllStrongs());
+            this.LoadVerses();
+        }
+
         //#endregion
 
         //****************************************************************************
@@ -197,7 +203,7 @@
                     }
 
                     if (strongMeaning == '?') {
-                        if (this.params.Show() & eRefTypeShow.AllStrongs) {
+                        if (this.params.Show() & eRefTypeShow.AllStrongs || this.AllStrongs()) {
                             for (let strong of word.Strongs) {
                                 strongNo += strong;
                                 wordText += `<sup><a href="https://www.blueletterbible.org/lexicon/${strong}/kjv" target="blank">${strong}</a> </sup>`

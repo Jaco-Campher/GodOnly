@@ -135,6 +135,7 @@ footer {
 .rev-main .item > h4 {
     height: var(--heading-1-height);
     font-size: 1em;
+    font-weight: normal;
     margin: 0;
     color: #fff;
     text-align: center;
@@ -142,9 +143,8 @@ footer {
 }
 
 .rev-main .item > h4 .legend {
-    color:#eee;
     font-weight:normal;
-    background:#1113;
+    background:#111c;
     border:none;
 }
 
