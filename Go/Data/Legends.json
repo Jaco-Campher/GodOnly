@@ -109,6 +109,15 @@
       }
     ]
   },
+  "Field": {
+    "Meaning": "World",
+    "Refs": [
+      {
+        "Ref": "Mat 13:38",
+        "Bold": [{"From":4, "To":9}, {"From":17, "To":22}]
+      }
+    ]
+  },
   "Fire": {
     "Meaning": "Torah (Law)",
     "Refs": [
