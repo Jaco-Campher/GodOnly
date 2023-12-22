@@ -6,6 +6,7 @@ var GO;
         let Color;
         (function (Color) {
             Color["Default"] = "";
+            Color["Ba30"] = "ba30";
             Color["Es2"] = "es2";
             Color["Es5"] = "es5";
             Color["Es15"] = "es15";
@@ -14,6 +15,7 @@ var GO;
             Color["Mat24"] = "mat24";
             Color["Rev6"] = "rev6";
             Color["Rev7"] = "rev7";
+            Color["Rev12"] = "rev12";
             Color["Song2"] = "song2";
             Color["Thess4"] = "thess4";
         })(Color || (Color = {}));
@@ -38,7 +40,12 @@ var GO;
                 let item;
                 //#region Rev 12 Sign
                 //*******************************
-                tab = new Tab('rev-12', 'tab-rev-12', 'Rev 12 Sign');
+                tab = new Tab('rev-12', 'tab-rev-12', 'Rev 12 Sign', '23 Sep 2017');
+                item = new Item(Color.Rev12, 'rev-12-1', 'A Woman Clothed with the Sun', 'Great Wonder in Heaven', 'Rev 12:2', 'Rev 12:2', ' and the moon under her feet,', 'upon her head a crown of twelve stars:', FirstLast.First);
+                tab.Items.push(item);
+                item = new Item(Color.Rev12, 'rev-12-2', 'Travailing in Birth, and Pained to be Delivered', 'And She Being with Child Cried', 'Rev 12:2', 'Rev 12:2', '', '');
+                tab.Items.push(item);
+                this.TabJoins.push(new TabJoin(Color.Rev12, 'tj-rev-12-2'));
                 this.Tabs.push(tab);
                 //#endregion
                 //#region Rev 12 Another Sign
@@ -169,16 +176,19 @@ var GO;
                 tab.Joins.push(new Join(Color.Thess4, 'j-1thess-4-16a'));
                 this.TabJoins.push(new TabJoin(Color.Thess4, 'tj-1thess-4-16a'));
                 //2 Esdras 15
-                tab.Joins.push(new Join(Color.Es15, 'j-es2-15-8b'));
                 this.TabJoins.push(new TabJoin(Color.Es15, 'tj-es2-15-8b'));
                 this.Tabs.push(tab);
                 //#endregion
                 //#region Rapture
                 //*******************************
                 tab = new Tab('rapture', 'tab-rapture', 'Rapture');
+                //Rev 7
+                item = new Item(Color.Rev7, 'rev-7-1', '4 Angels', 'Holding 4 Winds', 'Rev 7:1', 'Rev 7:1', '', '', FirstLast.First);
+                tab.Items.push(item);
+                this.TabJoins.push(new TabJoin(Color.Rev7, 'tj-rev-7-1'));
                 //Matt
                 tab.Joins.push(new Join(Color.Mat24, 'j-mat-24-31a'));
-                item = new Item(Color.Mat24, 'mat-24-31a', 'With a Great Sound of a Trumpet', 'He Shall Send His Angels', 'Mat 24:31a', 'Mat 24:31', '', '');
+                item = new Item(Color.Mat24, 'mat-24-31a', 'He Shall Send His Angels', 'With a Great Sound of a Trumpet', 'Mat 24:31a', 'Mat 24:31', '', '');
                 tab.Items.push(item);
                 item = new Item(Color.Mat24, 'mat-24-31b', 'They Shall Gather Together His Elect', '4 Winds', 'Mat 24:31b', 'Mat 24:31', 'shall gather together his elect from the four winds, ', '');
                 tab.Items.push(item);
@@ -217,10 +227,17 @@ var GO;
                 tab.Items.push(item);
                 tab.Joins.push(new Join(Color.Es2, 'j-es2-2-37'));
                 this.TabJoins.push(new TabJoin(Color.Es2, 'tj-es2-2-37'));
+                //2 Baruk 30
+                this.TabJoins.push(new TabJoin(Color.Ba30, 'tj-ba2-30-1'));
+                tab.Joins.push(new Join(Color.Ba30, 'j-ba2-30-1'));
+                item = new Item(Color.Ba30, 'ba2-30-2a', 'All Who Hope of Him Shall Rise Again', '', '2Ba 30:2a', '2Ba 30:2', '', '');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Ba30, 'j-ba2-30-2a'));
+                this.TabJoins.push(new TabJoin(Color.Ba30, 'tj-ba2-30-2a'));
                 //2 Esdras 15
                 tab.Joins.push(new Join(Color.Es15, 'j-es2-15-9'));
-                item = new Item(Color.Es15, 'es2-15-9', '', '', '2Es 15:9', '2Es 15:9', 'And receive unto me all the innocent blood.', '');
-                tab.Items.push(item);
+                //item = new Item(Color.Es15, 'es2-15-9', '', '', '2Es 15:9', '2Es 15:9', 'And receive unto me all the innocent blood.', '');
+                //tab.Items.push(item);
                 item = new Item(Color.Es15, 'es2-15-10', '', '', '2Es 15:10-11a', '2Es 15:10-11', 'I will not suffer them now to dwell in the land of Egypt:', 'But I will bring them with a mighty hand and a stretched out arm.');
                 tab.Items.push(item);
                 tab.Joins.push(new Join(Color.Es15, 'j-es2-15-11a'));
@@ -352,7 +369,7 @@ var GO;
         }
         Rev.RevMainViewModel = RevMainViewModel;
         class Tab {
-            constructor(cssClass, location, name) {
+            constructor(cssClass, location, name, time = '-') {
                 this.Expanded = ko.observable(false);
                 this.Items = ko.observableArray([]);
                 this.Joins = ko.observableArray([]);
@@ -361,8 +378,9 @@ var GO;
                     this.Expanded(!this.Expanded());
                 };
                 this.BaseCSSClass = cssClass;
-                this.Style = `grid-area: ${location}; --tab-image: url(../../Images/Rev/${location}.png)`;
+                this.Style = `grid-area: ${location} / ${location} / ${location}-end / ${location}-end; --tab-image: url(../../Images/Rev/${location}.png)`;
                 this.Name = name;
+                this.Time = time;
                 this.CSSClass = ko.computed(() => {
                     let css = `${this.BaseCSSClass} ${location}`;
                     css += this.Expanded() ? ' expanded' : '';
@@ -389,15 +407,17 @@ var GO;
                 this.RefDisplay = '';
                 this.Line1 = '';
                 this.Line2 = '';
-                this.TitleLink = '';
-                this.SubTitleLink = '';
-                this.Line1Link = '';
-                this.Line2Link = '';
+                //TitleLink: string = '';
+                //SubTitleLink: string = '';
+                //Line1Link: string = '';
+                //Line2Link: string = '';
                 this.Color = ko.observable(Color.Default);
-                this.Highlight = ko.observable(false);
+                //Highlight: KnockoutObservable<boolean> = ko.observable(false);
+                this.NotSureLocation = ko.observable(false);
                 this.CSSClass = ko.computed(() => {
                     let css = `${this.Color()} ${this.FirstLast}`;
-                    css += this.Highlight() ? ' highlight' : '';
+                    //css += this.Highlight() ? ' highlight' : '';
+                    css += this.NotSureLocation() ? ' not-sure-location' : '';
                     return css;
                 }, this);
                 this.Title = title;
