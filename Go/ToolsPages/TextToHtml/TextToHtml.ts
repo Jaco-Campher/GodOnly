@@ -166,7 +166,7 @@
 
             let text: string = '';
 
-            let verses: Array<string> = input.replace(/\s+/g, ' ').trim().split(/(\d{1,3}) /g); ///(\d{1,5})\.?/g
+            let verses: Array<string> = input.replace(/\s+/g, ' ').trim().split(/(\d{1,3})/g); ///(\d{1,5})\.?/g
             let verseNo: number = 1;
             text += `\\c ${this.Chapter()}
 `;
@@ -185,6 +185,9 @@
                 //Enoch
                 //() Indicated added words.
                 ver = ver.replace(/\(/g, '\\add (').replace(/\)/g, ')\\add*')
+
+                //[] Indicated added words.
+                //ver = ver.replace(/\[/g, '\\add [').replace(/\]/g, ']\\add*')
 
 
                 text += `\\v ${verseNo} ${ver}

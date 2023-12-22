@@ -1,4 +1,17 @@
 {
+  "Arrow": {
+    "Meaning": "Bitter Word",
+    "Refs": [
+      {
+        "Ref": "Psa 64:3",
+        "Bold": [{"From":71, "To":95}]
+      }
+    ]
+  },
+  "Arrows": {
+    "Meaning": "Bitter Words",
+    "Lookup": "Arrow"
+  },
   "Babylon": {
     "Meaning": "Great Whore",
     "Refs": [
@@ -109,6 +122,15 @@
       }
     ]
   },
+  "Field": {
+    "Meaning": "World",
+    "Refs": [
+      {
+        "Ref": "Mat 13:38",
+        "Bold": [{"From":4, "To":9}, {"From":17, "To":22}]
+      }
+    ]
+  },
   "Fire": {
     "Meaning": "Torah (Law)",
     "Refs": [
@@ -169,6 +191,23 @@
   "Forests": {
     "Meaning": "Kingdoms",
     "Lookup": "Forest"
+  },
+  "Fountain": {
+    "Meaning": "Ruler",
+    "Refs": [
+      {
+        "Ref": "2Ba 39:7",
+        "Bold": [{"From":104, "To":113}, {"From":147, "To":172}]
+      },
+      {
+        "Ref": "",
+        "Html": "<p>Principate meaning = Ruler / Reign / Prince</p>"
+      }
+    ]
+  },
+  "Fountains": {
+    "Meaning": "Rulers",
+    "Lookup": "Fountain"
   },
   "Goat": {
     "Meaning": "King",
