@@ -333,15 +333,46 @@
     "Refs": [
       {
         "Ref": "Rev 17:9",
-        "Bold": [{"From":50, "To":54}, {"From":66, "To":74}]
+        "Bold": [
+          {
+            "From": 50,
+            "To": 54
+          },
+          {
+            "From": 66,
+            "To": 74
+          }
+        ]
       },
       {
         "Ref": "2Es 12:22-23",
-        "Bold": [{"From":30, "To":34}, {"From":124, "To":132}]
+        "Bold": [
+          {
+            "From": 30,
+            "To": 34
+          },
+          {
+            "From": 124,
+            "To": 132
+          }
+        ]
       },
       {
         "Ref": "",
         "Html": "<p>Mountain = Head = Kingdom</p>"
+      }
+    ]
+  },
+  "Penny": {
+    "Meaning": "Daily Wage",
+    "Refs": [
+      {
+        "Ref": "Mat 20:2",
+        "Bold": [{"From":12, "To":59}]
+      },
+      {
+        "Ref": "",
+        "Html": "<p>G1220 = Denarius</p>"
       }
     ]
   },
