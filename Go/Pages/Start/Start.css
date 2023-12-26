@@ -364,6 +364,10 @@ h4 { /* Refs */
     margin:0;
 }
 
+.box p b {
+    color:#efefef;
+}
+
 p.note {
     background: #09f3;
     padding: 10px;
@@ -737,6 +741,11 @@ go-dialog .box:after {
 
 .img-link .description {
     grid-area:description;
+}
+
+.img-link .description i {
+    color: #888;
+    font-size: 0.9em;
 }
 
 .img-link .description p:first-child {

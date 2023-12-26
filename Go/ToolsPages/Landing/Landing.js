@@ -1,3 +1,4 @@
+"use strict";
 var GO;
 (function (GO) {
     var Tools;
@@ -37,7 +38,7 @@ var GO;
                 ko.postbox.subscribe('NavChanged', this.NavChanged);
             }
             SetupImageLinks() {
-                this.ImageLinks.push(new GO.ImageLink('Incest Laws', 'Helps to visually show the how the Torah affects a family tree.', '/tools/incestlaws', 'IncestLaws.jpg'));
+                this.ImageLinks.push(new GO.ImageLink('Incest Laws', 'Helps to visually show the how the Torah affects a family tree.<br/><i>(Does not work on mobile)</i>', '/tools/incestlaws', 'IncestLaws.jpg'));
                 this.ImageLinks.push(new GO.ImageLink('Prophecy Legend', '<p>The Prophesy Legend is a list of words that has been found in Scripture that can have other meanings in prophesy. One of the functions of this site is to share what has been found and to make it easier to see in the context of Scripture. When reading Scripture on this site, the words from the Prophesy Legend will be displayed when matches are found.</p>', '/tools/legend', 'MapCompass.jpg'));
                 //this.ImageLinks.push(new GO.ImageLink('Text to HTML', '', '/tools/texttohtml'));
                 //this.ImageLinks.push(new GO.ImageLink('Timeline', '', '/tools/timeline'));
