@@ -37,6 +37,7 @@
             let newSections: Array<Section> = [];
             newSections.push(new Section(this.Text));
 
+            if (this.params.Show() & eRefTypeShow.Strongs) { newSections = go.AddStrongs(newSections); }
             if (this.params.Show() & eRefTypeShow.Prophesy) { newSections = go.AddLegend(newSections); }
 
             //console.log(newSections);

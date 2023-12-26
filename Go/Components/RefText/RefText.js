@@ -1,4 +1,3 @@
-"use strict";
 var GO;
 (function (GO) {
     var Compnents;
@@ -29,6 +28,9 @@ var GO;
             ProcessText() {
                 let newSections = [];
                 newSections.push(new GO.Section(this.Text));
+                if (this.params.Show() & GO.eRefTypeShow.Strongs) {
+                    newSections = go.AddStrongs(newSections);
+                }
                 if (this.params.Show() & GO.eRefTypeShow.Prophesy) {
                     newSections = go.AddLegend(newSections);
                 }

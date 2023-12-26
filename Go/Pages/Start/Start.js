@@ -1,4 +1,3 @@
-"use strict";
 var GO;
 (function (GO) {
     let eRefTypeShow;
@@ -222,6 +221,48 @@ var GO;
                             newSections.push(section);
                         }
                         break;
+                    }
+                }
+                if (found) {
+                    found = false;
+                }
+                else {
+                    //No match found, add as is.
+                    newSections.push(inputSection);
+                }
+            }
+            return newSections;
+        }
+        //#endregion
+        //********************************
+        //#region Strongs Function
+        AddStrongs(inputSections) {
+            let newSections = [];
+            let found = false;
+            for (let inputSection of inputSections) {
+                if (inputSection.Type != eRefTypeShow.None) {
+                    newSections.push(inputSection);
+                    continue;
+                }
+                //Split on: '{Measure|G5518|One Liter}'
+                let reg = new RegExp(`(\\{\\w+\\|\\w\\d{4}\\})`, 'gi'); //(\\{\\w+\\|\\w+\\|.*?\\})
+                let htmlSections = inputSection.Html.split(reg);
+                if (htmlSections.length > 1) {
+                    found = true;
+                    for (let htmlSection of htmlSections) {
+                        console.log(htmlSection);
+                        if (htmlSection.startsWith('{') == false) {
+                            //Other text, add as is.
+                            newSections.push(new Section(htmlSection));
+                            continue;
+                        }
+                        let section = new Section('', eRefTypeShow.Strongs);
+                        htmlSection = htmlSection.substr(1, htmlSection.length - 2); //Remove { }
+                        let textSections = htmlSection.split('|');
+                        section.Original = textSections[0];
+                        section.Html = textSections[1]; //Strong No
+                        section.Meaning = ''; // textSections[2];
+                        newSections.push(section);
                     }
                 }
                 if (found) {

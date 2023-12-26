@@ -1,4 +1,3 @@
-"use strict";
 var GO;
 (function (GO) {
     var Rev;
@@ -74,7 +73,9 @@ var GO;
                 //#region Seal 3
                 //*******************************
                 tab = new Tab('seal', 'tab-seal-3', 'Seal 3');
-                item = new Item(Color.Rev6, 'seal-3', 'Seal 3', 'Black Horse', 'Rev 6:5-6', 'Rev 6:5-6', '', '');
+                item = new Item(Color.Rev6, 'rev-6-5', 'Had a Pair of Balances in His Hand', 'Black Horse', 'Rev 6:5', 'Rev 6:5', '', '');
+                tab.Items.push(item);
+                item = new Item(Color.Rev6, 'rev-6-6', 'Three Measures of Barley for a Penny', 'A {Measure|G5518} of Wheat for a Penny', 'Rev 6:6', 'Rev 6:6', ' and see thou hurt not the oil and the wine.', '');
                 tab.Items.push(item);
                 this.TabJoins.push(new TabJoin(Color.Rev6, 'tj-seal-3'));
                 this.Tabs.push(tab);

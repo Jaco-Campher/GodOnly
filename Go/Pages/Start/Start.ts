@@ -376,6 +376,60 @@
 
         //#endregion
 
+        //********************************
+        //#region Strongs Function
+
+        AddStrongs(inputSections: Array<Section>): Array<Section> {
+            let newSections: Array<Section> = [];
+            let found: boolean = false;
+
+            for (let inputSection of inputSections) {
+                if (inputSection.Type != eRefTypeShow.None) {
+                    newSections.push(inputSection);
+                    continue;
+                }
+
+                //Split on: '{Measure|G5518|One Liter}'
+                let reg: RegExp = new RegExp(`(\\{\\w+\\|\\w\\d{4}\\})`, 'gi'); //(\\{\\w+\\|\\w+\\|.*?\\})
+                let htmlSections: Array<string> = inputSection.Html.split(reg);
+
+                if (htmlSections.length > 1) {
+                    found = true;
+
+                    for (let htmlSection of htmlSections) {
+                        console.log(htmlSection);
+                        if (htmlSection.startsWith('{') == false) {
+                            //Other text, add as is.
+                            newSections.push(new Section(htmlSection));
+                            continue;
+                        }
+
+                        let section: Section = new Section('', eRefTypeShow.Strongs);
+
+                        htmlSection = htmlSection.substr(1, htmlSection.length - 2); //Remove { }
+                        let textSections: Array<string> = htmlSection.split('|');
+
+                        section.Original = textSections[0];
+                        section.Html = textSections[1]; //Strong No
+                        section.Meaning = ''; // textSections[2];
+                        newSections.push(section);
+                    }
+                }
+
+                if (found) {
+                    found = false;
+                }
+                else {
+                    //No match found, add as is.
+                    newSections.push(inputSection);
+                }
+            }
+
+            return newSections;
+        }
+
+        //#endregion
+
         //#endregion
     }
 
