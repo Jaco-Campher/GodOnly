@@ -132,6 +132,8 @@
     <Content Include="Images\Controlls\Context-Icon.png" />
     <Content Include="Images\ImgLinks\IncestLaws.jpg" />
     <Content Include="Images\ImgLinks\MapCompass.jpg" />
+    <Content Include="Images\ImgLinks\RevTimeline.jpg" />
+    <Content Include="Images\Pages\Home\RevTimeline.jpg" />
     <Content Include="Images\Rev\Tab-Seal-2.png" />
     <Content Include="Images\Rev\Tab-Rev-12-Sign.png" />
     <Content Include="Images\Rev\Tab-Seal-1.png" />
@@ -155,9 +157,9 @@
     <Content Include="RevPages\Landing\Landing.css" />
     <Content Include="RevPages\Landing\Landing.html" />
     <Content Include="RevPages\Landing\Landing.js" />
-    <Content Include="RevPages\RevMain\RevMain.js" />
-    <Content Include="RevPages\RevMain\RevMain.css" />
-    <Content Include="RevPages\RevMain\RevMain.html" />
+    <Content Include="ToolsPages\RevelationTimeline\RevelationTimeline.js" />
+    <Content Include="ToolsPages\RevelationTimeline\RevelationTimeline.css" />
+    <Content Include="ToolsPages\RevelationTimeline\RevelationTimeline.html" />
     <Content Include="Pages\Start\Start.css" />
     <Content Include="Pages\Start\Start.html" />
     <Content Include="Pages\Start\Start.js" />
@@ -239,7 +241,7 @@
     <TypeScriptCompile Include="Pages\Search\Search.ts" />
     <TypeScriptCompile Include="ProphesyPages\Landing\Landing.ts" />
     <TypeScriptCompile Include="RevPages\Landing\Landing.ts" />
-    <TypeScriptCompile Include="RevPages\RevMain\RevMain.ts" />
+    <TypeScriptCompile Include="ToolsPages\RevelationTimeline\RevelationTimeline.ts" />
     <TypeScriptCompile Include="Pages\Start\Start.ts" />
     <TypeScriptCompile Include="Scripts\Bible\Bible.ts" />
     <TypeScriptCompile Include="Scripts\Bible\Book.ts" />

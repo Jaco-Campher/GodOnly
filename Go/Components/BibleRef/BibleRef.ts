@@ -197,7 +197,7 @@
                             if (strongLegend == undefined) { continue; }
 
                             strongNo += word.Strongs[i];
-                            strongMeaning = this.GetMeaning(strongLegend, wordText);
+                            strongMeaning = go.GetMeaning(strongLegend, wordText);
                             break;
                         }
                     }
@@ -238,22 +238,6 @@
             if (html != '') { verseHolder.Sections.push(new Section(html, eRefTypeShow.None)); }
 
             return verseHolder;
-        }
-
-        private GetMeaning(strongLegend: GO.iStrong, word: string): string {
-            if (strongLegend.Meanings == undefined) {
-                return word == word.toLowerCase() ? strongLegend.Meaning!.toLowerCase() : strongLegend.Meaning!;
-            }
-            else {
-                //Multiple
-                //console.log('Word', word);
-
-                for (let meaning of strongLegend.Meanings) {
-                    if (word.search(meaning.Word) != -1) { return meaning.Meaning; }
-                    if (word.toLowerCase().search(meaning.Word.toLowerCase()) != -1) { return meaning.Meaning.toLowerCase(); }
-                }
-                return '?';
-            }
         }
 
         //#endregion

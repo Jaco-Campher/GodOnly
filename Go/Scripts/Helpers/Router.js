@@ -99,10 +99,10 @@ var GO;
         AddRoute(urlPattern, title, componentID) {
             //Make the url pattern a regex pattern.
             let pattern = urlPattern.replace(/\//g, '\\/'); //Replace / with \/ so we can match them.
-            pattern = pattern.replace(/:[\d\w]+/g, '([\\d\\w]+?)'); //Replace :var so that we can capture them.
+            pattern = pattern.replace(/:[\d\w-]+/g, '([\\d\\w-]+?)'); //Replace :var so that we can capture them.
             //Get the key names from the pattern.
             let keys = new Array();
-            let keysRegex = new RegExp(/(?<=:)[\d\w]+/g);
+            let keysRegex = new RegExp(/(?<=:)[\d\w-]+/g);
             let keysRegexArray;
             while ((keysRegexArray = keysRegex.exec(urlPattern)) != null) {
                 //This is necessary to avoid infinite loops with zero-width matches

@@ -384,22 +384,6 @@ p.update {
     text-align:center;
 }
 
-.temp-alpha {
-    background: #f703;
-    padding: 10px;
-    font-style: italic;
-    text-align: center;
-    margin: 50px 0 0;
-}
-
-.temp-alpha h4 {
-    color:#fc7;
-}
-
-.temp-alpha p {
-    margin: 0;
-}
-
 a,
 a:hover,
 a:visited {
@@ -607,7 +591,7 @@ go-dialog .box:after {
 
 
 
-.landing-sections {
+.landing-sections-holder {
     display: grid;
     grid-template: auto /repeat(auto-fit, minmax(275px, 1fr));
     grid-gap:30px;
@@ -615,16 +599,21 @@ go-dialog .box:after {
     padding: 20px 15px;
 }
 
-.landing-sections .section {
+.landing-sections .section,
+.rev-timeline {
     position:relative;
     min-width:250px;
-    max-width:575px;
     height:160px;
     background-position:center;
     box-shadow:5px 5px 15px #000;
 }
 
-.landing-sections .section h4 {
+.landing-sections .section {
+    max-width:575px;
+}
+
+.landing-sections .section h4,
+.rev-timeline h4{
     position: absolute;
     right: 15px;
     bottom: 10px;
@@ -652,6 +641,12 @@ go-dialog .box:after {
 
 .landing-sections .section.prophesy {
     background-image: url(/Images/Pages/Home/Prophesy.jpg);
+}
+
+.rev-timeline {
+    display:block;
+    margin:10px 15px;
+    background-image: url(/Images/Pages/Home/RevTimeline.jpg);
 }
 
 

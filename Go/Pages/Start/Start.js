@@ -1,3 +1,4 @@
+"use strict";
 var GO;
 (function (GO) {
     let eRefTypeShow;
@@ -177,7 +178,7 @@ var GO;
             //Other
             this.AddRoute('/introduction', 'Introduction', 'go-basic-page-introduction');
             this.AddRoute('/copyright', 'Copyright', 'go-basic-page-copyright');
-            this.AddRoute('/rev', 'Torah', 'go-rev-rev-main');
+            //this.AddRoute('/rev', 'Torah', 'go-rev-rev-main');
             //TODO: Route multi folder level _ > /
         }
         OpenCloseMenu() {
@@ -245,12 +246,12 @@ var GO;
                     continue;
                 }
                 //Split on: '{Measure|G5518|One Liter}'
-                let reg = new RegExp(`(\\{\\w+\\|\\w\\d{4}\\})`, 'gi'); //(\\{\\w+\\|\\w+\\|.*?\\})
+                let reg = new RegExp(`(\\{\\w+\\|\\w\\d{4}\\|?\\w*\\})`, 'gi'); //(\\{\\w+\\|\\w+\\|.*?\\})
                 let htmlSections = inputSection.Html.split(reg);
                 if (htmlSections.length > 1) {
                     found = true;
                     for (let htmlSection of htmlSections) {
-                        console.log(htmlSection);
+                        //console.log(htmlSection);
                         if (htmlSection.startsWith('{') == false) {
                             //Other text, add as is.
                             newSections.push(new Section(htmlSection));
@@ -261,7 +262,19 @@ var GO;
                         let textSections = htmlSection.split('|');
                         section.Original = textSections[0];
                         section.Html = textSections[1]; //Strong No
-                        section.Meaning = ''; // textSections[2];
+                        //Meaning
+                        if (textSections.length == 2) {
+                            let strongLegend = this.StrongsObject[textSections[1]];
+                            if (strongLegend == undefined) {
+                                section.Meaning = '';
+                            }
+                            else {
+                                section.Meaning = go.GetMeaning(strongLegend, textSections[0]);
+                            }
+                        }
+                        else {
+                            section.Meaning = textSections[2];
+                        }
                         newSections.push(section);
                     }
                 }
@@ -274,6 +287,24 @@ var GO;
                 }
             }
             return newSections;
+        }
+        GetMeaning(strongLegend, word) {
+            if (strongLegend.Meanings == undefined) {
+                return word == word.toLowerCase() ? strongLegend.Meaning.toLowerCase() : strongLegend.Meaning;
+            }
+            else {
+                //Multiple
+                //console.log('Word', word);
+                for (let meaning of strongLegend.Meanings) {
+                    if (word.search(meaning.Word) != -1) {
+                        return meaning.Meaning;
+                    }
+                    if (word.toLowerCase().search(meaning.Word.toLowerCase()) != -1) {
+                        return meaning.Meaning.toLowerCase();
+                    }
+                }
+                return '?';
+            }
         }
     }
     GO.Start = Start;

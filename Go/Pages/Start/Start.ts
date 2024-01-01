@@ -191,7 +191,7 @@
             this.AddRoute('/copyright', 'Copyright', 'go-basic-page-copyright');
 
 
-            this.AddRoute('/rev', 'Torah', 'go-rev-rev-main');
+            //this.AddRoute('/rev', 'Torah', 'go-rev-rev-main');
             //TODO: Route multi folder level _ > /
         }
 
@@ -390,14 +390,14 @@
                 }
 
                 //Split on: '{Measure|G5518|One Liter}'
-                let reg: RegExp = new RegExp(`(\\{\\w+\\|\\w\\d{4}\\})`, 'gi'); //(\\{\\w+\\|\\w+\\|.*?\\})
+                let reg: RegExp = new RegExp(`(\\{\\w+\\|\\w\\d{4}\\|?\\w*\\})`, 'gi'); //(\\{\\w+\\|\\w+\\|.*?\\})
                 let htmlSections: Array<string> = inputSection.Html.split(reg);
 
                 if (htmlSections.length > 1) {
                     found = true;
 
                     for (let htmlSection of htmlSections) {
-                        console.log(htmlSection);
+                        //console.log(htmlSection);
                         if (htmlSection.startsWith('{') == false) {
                             //Other text, add as is.
                             newSections.push(new Section(htmlSection));
@@ -411,7 +411,21 @@
 
                         section.Original = textSections[0];
                         section.Html = textSections[1]; //Strong No
-                        section.Meaning = ''; // textSections[2];
+
+                        //Meaning
+                        if (textSections.length == 2) {
+                            let strongLegend: iStrong = this.StrongsObject[textSections[1]];
+                            if (strongLegend == undefined) {
+                                section.Meaning = '';
+                            }
+                            else {
+                                section.Meaning = go.GetMeaning(strongLegend, textSections[0]);
+                            }
+                        }
+                        else {
+                            section.Meaning = textSections[2];
+                        }
+
                         newSections.push(section);
                     }
                 }
@@ -426,6 +440,22 @@
             }
 
             return newSections;
+        }
+
+        GetMeaning(strongLegend: GO.iStrong, word: string): string {
+            if (strongLegend.Meanings == undefined) {
+                return word == word.toLowerCase() ? strongLegend.Meaning!.toLowerCase() : strongLegend.Meaning!;
+            }
+            else {
+                //Multiple
+                //console.log('Word', word);
+
+                for (let meaning of strongLegend.Meanings) {
+                    if (word.search(meaning.Word) != -1) { return meaning.Meaning; }
+                    if (word.toLowerCase().search(meaning.Word.toLowerCase()) != -1) { return meaning.Meaning.toLowerCase(); }
+                }
+                return '?';
+            }
         }
 
         //#endregion

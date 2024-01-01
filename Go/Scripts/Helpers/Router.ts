@@ -70,11 +70,11 @@ namespace GO {
         public AddRoute(urlPattern: string, title: string, componentID: string) {
             //Make the url pattern a regex pattern.
             let pattern: string = urlPattern.replace(/\//g, '\\/'); //Replace / with \/ so we can match them.
-            pattern = pattern.replace(/:[\d\w]+/g, '([\\d\\w]+?)');   //Replace :var so that we can capture them.
+            pattern = pattern.replace(/:[\d\w-]+/g, '([\\d\\w-]+?)');   //Replace :var so that we can capture them.
 
             //Get the key names from the pattern.
             let keys: Array<any> = new Array();
-            let keysRegex: RegExp = new RegExp(/(?<=:)[\d\w]+/g);
+            let keysRegex: RegExp = new RegExp(/(?<=:)[\d\w-]+/g);
             let keysRegexArray: RegExpExecArray | null;
 
             while ((keysRegexArray = keysRegex.exec(urlPattern)) != null) {
