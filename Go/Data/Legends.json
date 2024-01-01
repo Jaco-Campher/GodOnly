@@ -333,29 +333,11 @@
     "Refs": [
       {
         "Ref": "Rev 17:9",
-        "Bold": [
-          {
-            "From": 50,
-            "To": 54
-          },
-          {
-            "From": 66,
-            "To": 74
-          }
-        ]
+        "Bold": [{"From": 50, "To": 54}, {"From": 66, "To": 74}]
       },
       {
         "Ref": "2Es 12:22-23",
-        "Bold": [
-          {
-            "From": 30,
-            "To": 34
-          },
-          {
-            "From": 124,
-            "To": 132
-          }
-        ]
+        "Bold": [{"From": 30, "To": 34}, {"From": 124, "To": 132}]
       },
       {
         "Ref": "",
@@ -368,12 +350,30 @@
     "Refs": [
       {
         "Ref": "Mat 20:2",
-        "Bold": [{"From":12, "To":59}]
+        "Bold": [{"From": 12, "To": 59}]
       },
       {
         "Ref": "",
         "Html": "<p>G1220 = Denarius</p>"
       }
+    ]
+  },
+  "Sea": {
+    "Meaning": "Peoples / Nations",
+    "Refs": [
+      {
+        "Ref": "Gen 1:10",
+        "Bold": [{"From":43, "To":84}, {"From":86, "To":89}],
+        "Strongs": [{ "Strong": "H3220", "Meaning": "" }]        
+      },
+      {
+        "Ref": "Rev 17:15",
+        "Bold": [{"From":26, "To":31}, {"From":81, "To":87}, {"From":94, "To":103}, {"From":110, "To":116}, {"From":123, "To":129}]
+      },
+      {
+        "Ref": "",
+        "Html": "<p>Sea = Waters = Peoples / Nations</p>"
+      }    
     ]
   },
   "serpent": {
@@ -447,7 +447,7 @@
     ]
   },
   "Waters": {
-    "Meaning": "Peoples",
+    "Meaning": "Peoples / Nations",
     "Refs": [
       {
         "Ref": "Rev 17:15",

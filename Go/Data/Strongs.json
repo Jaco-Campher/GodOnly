@@ -43,8 +43,25 @@
       }
     ]
   },
+  "G5515": {
+    "Meanings": [
+      {
+        "Word": "Pale",
+        "Meaning": "Green"
+      }
+    ]
+  },
   "G5518": {
-    "Meaning": "One Litre"
+    "Meanings": [
+      {
+        "Word": "Measures",
+        "Meaning": "Litres"
+      },
+      {
+        "Word": "Measure",
+        "Meaning": "One Litre"
+      }
+    ]
   },
   "H0802": {
     "Meanings": [
