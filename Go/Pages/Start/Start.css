@@ -1262,6 +1262,7 @@ go-bible-ref .verses {
 go-bible-ref .content {
     line-height: 1.4em;
     margin: 0 0 0.2em;
+    text-wrap: pretty;
 }
 
 go-bible-ref .content.dim {

@@ -324,6 +324,19 @@
       }
     ]
   },
+  "Lion": {
+    "Meaning": "Prince",
+    "Lookup": "Lions"
+  },
+  "Lions": {
+    "Meaning": "Princes",
+    "Refs": [
+      {
+        "Ref": "Zep 3:3",
+        "Bold": [{"From":4, "To":10}, {"From":35, "To":39}]
+      }
+    ]
+  },
   "Mountain": {
     "Meaning": "Kingdom",
     "Lookup": "Mountains"
@@ -333,29 +346,11 @@
     "Refs": [
       {
         "Ref": "Rev 17:9",
-        "Bold": [
-          {
-            "From": 50,
-            "To": 54
-          },
-          {
-            "From": 66,
-            "To": 74
-          }
-        ]
+        "Bold": [{"From": 50,"To": 54},{"From": 66,"To": 74}]
       },
       {
         "Ref": "2Es 12:22-23",
-        "Bold": [
-          {
-            "From": 30,
-            "To": 34
-          },
-          {
-            "From": 124,
-            "To": 132
-          }
-        ]
+        "Bold": [{"From": 30,"To": 34},{"From": 124,"To": 132}]
       },
       {
         "Ref": "",
@@ -475,6 +470,23 @@
       {
         "Ref": "2Es 12:14-16",
         "Bold": [{"From":18, "To":29}, {"From":163, "To":174}]
+      }
+    ]
+  },
+  "Wolf": {
+    "Meaning": "Judge / Prince",
+    "Lookup": "Wolves"
+  },
+  "Wolves": {
+    "Meaning": "Judges / Princes",
+    "Refs": [
+      {
+        "Ref": "Zep 3:3",
+        "Bold": [{"From":46, "To":51}, {"From":65, "To":70}]
+      },
+      {
+        "Ref": "Ezk 22:27",
+        "Bold": [{"From":4, "To":10}, {"From":42, "To":47}]
       }
     ]
   },

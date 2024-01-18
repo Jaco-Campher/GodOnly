@@ -16,15 +16,7 @@
                 <!-- ko if: Expanded --><svg viewBox="-0.5 0.5 42 42"><path d="M1.325,36.209L5.78,40.66c1.134,1.135,1.576,1.105,2.679,0l5.691-5.684l5.35,5.354V22.5H1.655l5.359,5.346l-5.689,5.688 C0.241,34.615,0.209,35.098,1.325,36.209z M39.676,6.79l-4.455-4.451c-1.134-1.134-1.576-1.104-2.679,0l-5.69,5.685L21.5,2.669 v17.83h17.846l-5.359-5.347l5.689-5.685C40.76,8.385,40.789,7.902,39.676,6.79z"></path></svg><!-- /ko -->
             </button>
             <div class="grid" data-bind="if: Expanded">
-                <!-- ko foreach: Items -->
-                <div class="item" data-bind="class: CSSClass, attr: { style: Location }">
-                    <h5><go-ref-text params="{ Text: SubTitle}"></go-ref-text></h5>
-                    <h4><go-ref-text params="{ Text: Title}"></go-ref-text></h4>
-                    <div class="ref" data-bind="text: RefDisplay"></div>
-                    <go-ref-text class="line" params="{ Text: Line1}"></go-ref-text>
-                    <go-ref-text class="line" params="{ Text: Line2}"></go-ref-text>
-                </div>
-                <!-- /ko -->
+                <!-- ko template: { name: 'Rev-Item', foreach: Items } --><!-- /ko -->
                 <!-- ko foreach: Joins -->
                 <div class="join" data-bind="class: CSSClass, attr: { style: Style }"></div>
                 <!-- /ko -->
@@ -36,14 +28,14 @@
         <!-- /ko -->
     </div>
 
-    <!-- tempko foreach: Links -->
-    <!--<div class="link" data-bind="attr: { style: Location }">-->
-    <!-- tempko if: Top --><!--<div class="t" data-bind="css: { highlight: HighlightTop }"></div>--><!-- temp/ko -->
-    <!-- tempko if: Left --><!--<div class="l" data-bind="css: { highlight: HighlightLeft }"></div>--><!-- temp/ko -->
-    <!--<div class="m" data-bind="css: { highlight: HighlightMiddle }"></div>-->
-    <!-- tempko if: Right --><!--<div class="r" data-bind="css: { highlight: HighlightRight }"></div>--><!-- temp/ko -->
-    <!-- tempko if: Bottom --><!--<div class="b" data-bind="css: { highlight: HighlightBottom }"></div>--><!-- temp/ko -->
-    <!--</div>-->
-    <!-- temp/ko -->
+    <template id="Rev-Item">
+        <div class="item" data-bind="class: CSSClass, attr: { style: Location }">
+            <h5><go-ref-text params="{ Text: SubTitle}"></go-ref-text></h5>
+            <h4><go-ref-text params="{ Text: Title}"></go-ref-text></h4>
+            <div class="ref" data-bind="text: RefDisplay"></div>
+            <go-ref-text class="line" params="{ Text: Line1}"></go-ref-text>
+            <go-ref-text class="line line2" params="{ Text: Line2}"></go-ref-text>
+        </div>
+    </template>
 
 </div>
