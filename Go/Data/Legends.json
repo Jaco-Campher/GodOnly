@@ -371,6 +371,24 @@
       }
     ]
   },
+  "Sea": {
+    "Meaning": "Nations / Peoples",
+    "Refs": [
+      {
+        "Ref": "Gen 1:10",
+        "Bold": [{"From":43, "To":84}, {"From":86, "To":89}],
+        "Strongs": [{ "Strong": "H3220", "Meaning": "" }]        
+      },
+      {
+        "Ref": "Rev 17:15",
+        "Bold": [{"From":26, "To":31}, {"From":81, "To":87}, {"From":94, "To":103}, {"From":110, "To":116}, {"From":123, "To":129}]
+      },
+      {
+        "Ref": "",
+        "Html": "<p>Sea = Waters = Peoples / Nations</p>"
+      }    
+    ]
+  },
   "serpent": {
     "Meaning": "devil / satan",
     "Refs": [
@@ -442,7 +460,7 @@
     ]
   },
   "Waters": {
-    "Meaning": "Peoples",
+    "Meaning": "Peoples / Nations",
     "Refs": [
       {
         "Ref": "Rev 17:15",
