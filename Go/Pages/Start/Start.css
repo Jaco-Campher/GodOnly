@@ -14,7 +14,9 @@
     --corner-cut:10px;
     --clip-corner: polygon(0 0, calc(100% - var(--corner-cut)) 0, 100% var(--corner-cut), 100% 100%, var(--corner-cut) 100%, 0 calc(100% - var(--corner-cut)));
 
-    --ver-b: #79f;    
+    --ver-b: #79f;
+    --ver-b-back: linear-gradient(#79f, #58f, #79f);
+    --ver-b-i-back: linear-gradient(#79f, #58f, #79f);
     --width:1200px;
 
     /* Controls */
@@ -1282,10 +1284,22 @@ go-bible-ref .content i {
 go-bible-ref .content b,
 go-bible-ref b {
     color: var(--ver-b);
+    background: var(--ver-b-back);
 }
 
+go-bible-ref b .a,
 go-bible-ref .content b i {
     color:#ccc;
+    background:#359;
+}
+
+go-bible-ref .content b,
+go-bible-ref b,
+go-bible-ref b .a {
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
 }
 
 go-bible-ref sup a {
