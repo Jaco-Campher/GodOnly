@@ -20,10 +20,19 @@
         Last = 'last'
     }
 
+    enum Flag {
+        None = '',
+        NotSureLocation = 'not-sure-location',
+        Protection = 'protection'
+    }
+
     export class RevelationTimelineViewModel {
 
         Tabs: KnockoutObservableArray<Tab> = ko.observableArray<Tab>([]);
         TabJoins: KnockoutObservableArray<TabJoin> = ko.observableArray<TabJoin>([]);
+
+        Ref: KnockoutObservable<string> = ko.observable('').subscribeTo('Rev-Ref', false);
+        ShowRef: KnockoutObservable<boolean> = ko.observable(false).subscribeTo('Rev-ShowRef', false);
 
         //****************************************************************************
         // Constructor
@@ -65,7 +74,7 @@
 
             //#region Seal 1
             //*******************************
-            tab = new Tab('seal', 'tab-seal-1', 'Seal 1');
+            tab = new Tab('seal', 'tab-seal-1', 'Seal 1', 'Yahshua');
 
             //Rev 6
             item = new Item(Color.Rev, 'rev-6-1', 'I Heard, as it were the Noise of Thunder', 'The Lamb Opened One of the Seals', 'Rev 6:1', 'Rev 6:1', 'One of the four {beasts|G2226} saying,', 'Come and see.', FirstLast.First);
@@ -80,7 +89,7 @@
 
             //#region Seal 2
             //*******************************
-            tab = new Tab('seal', 'tab-seal-2', 'Seal 2');
+            tab = new Tab('seal', 'tab-seal-2', 'Seal 2', 'Take Peace from the Earth');
 
             //Rev 6
             item = new Item(Color.Rev, 'rev-6-3', 'Was Given to Him that Sat Thereon to Take Peace From the Earth', 'Red Horse', 'Rev 6:3-4', 'Rev 6:3-4', ' that they should kill one another:', ' and there was given unto him a great sword.');
@@ -93,7 +102,7 @@
 
             //#region Seal 3
             //*******************************
-            tab = new Tab('seal', 'tab-seal-3', 'Seal 3');
+            tab = new Tab('seal', 'tab-seal-3', 'Seal 3', 'Hyper Inflation?');
 
             //Rev 6
             item = new Item(Color.Rev, 'rev-6-5', 'Had a Pair of Balances in His Hand', 'Black Horse', 'Rev 6:5', 'Rev 6:5', '', '');
@@ -108,7 +117,7 @@
 
             //#region Seal 4
             //*******************************
-            tab = new Tab('seal', 'tab-seal-4', 'Seal 4');
+            tab = new Tab('seal', 'tab-seal-4', 'Seal 4', 'War? Famine?');
 
             //2 Esdras 15
             tab.Joins.push(new Join(Color.Es2, 'j-es2-15-5-s', FirstLast.First));
@@ -335,7 +344,7 @@
             //Rev 6
             tab.Joins.push(new Join(Color.Rev, 'j-rev-6-16'));
             item = new Item(Color.Rev, 'rev-6-17', 'Seal 6', 'Great Day of His Wrath is Come', 'Rev 6:17', 'Rev 6:17', 'and who shall be able to stand?', '', FirstLast.Last);
-            item.NotSureLocation(true);
+            item.Flag(Flag.NotSureLocation);
             tab.Items.push(item);
 
             //Rev 7
@@ -383,7 +392,7 @@
 
             //#region Seal 7
             //*******************************
-            tab = new Tab('seal', 'tab-seal-7', 'Seal 7 Start');
+            tab = new Tab('seal', 'tab-seal-7', 'Seal 7', '144K');
 
             this.Tabs.push(tab);
             //#endregion
@@ -394,7 +403,7 @@
 
             //#region Trumpet 1
             //*******************************
-            tab = new Tab('trumpet', 'tab-trumpet-1', 'Trumpet 1');
+            tab = new Tab('trumpet', 'tab-trumpet-1', 'Trumpet 1', '2 Witnesses');
 
             this.Tabs.push(tab);
             //#endregion
@@ -402,7 +411,7 @@
 
             //#region Trumpet 2
             //*******************************
-            tab = new Tab('trumpet', 'tab-trumpet-2', 'Trumpet 2');
+            tab = new Tab('trumpet', 'tab-trumpet-2', 'Trumpet 2', 'World War 3?');
 
             this.Tabs.push(tab);
             //#endregion
@@ -426,7 +435,7 @@
 
             //#region Trumpet 5
             //*******************************
-            tab = new Tab('trumpet', 'tab-trumpet-5', 'Trumpet-5');
+            tab = new Tab('trumpet', 'tab-trumpet-5', 'Trumpet 5');
 
             this.Tabs.push(tab);
             //#endregion
@@ -578,9 +587,10 @@
 
     class Tab {
         BaseCSSClass: string;
+        HeadingStyle: string;
         Style: string;
         Name: string;
-        Time: string;
+        SubHeading: string;
 
         Expanded: KnockoutObservable<boolean> = ko.observable<boolean>(false);
 
@@ -590,11 +600,12 @@
         Joins: KnockoutObservableArray<Join> = ko.observableArray<Join>([]);
         Links: KnockoutObservableArray<Link> = ko.observableArray<Link>([]);
 
-        constructor(cssClass: string, location: string, name: string, time: string = '-') {
+        constructor(cssClass: string, location: string, name: string, subHeading: string = '-') {
             this.BaseCSSClass = cssClass;
+            this.HeadingStyle = `grid-area: h-${location}`;
             this.Style = `grid-area: ${location} / ${location} / ${location}-end / ${location}-end; --tab-image: url(../../Images/Rev/${location}.png)`;
             this.Name = name;
-            this.Time = time;
+            this.SubHeading = subHeading;
 
             this.CSSClass = ko.computed((): string => {
                 let css: string = `${this.BaseCSSClass} ${location}`;
@@ -624,10 +635,10 @@
 
             switch (firstLast) {
                 case FirstLast.First:
-                    this.Style += `background:linear-gradient(90deg, #0000, var(--${color}));`;
+                    this.Style += `background:linear-gradient(90deg, #0000 0, #0000 30%, var(--${color}));`;
                     break;
                 case FirstLast.Last:
-                    this.Style += `background:linear-gradient(90deg, var(--${color}), #0000);`;
+                    this.Style += `background:linear-gradient(90deg, var(--${color}) 0, #0000 70%);`;
                     break;
 
                 default:
@@ -653,12 +664,12 @@
         FirstLast: FirstLast;
 
         //Highlight: KnockoutObservable<boolean> = ko.observable(false);
-        NotSureLocation: KnockoutObservable<boolean> = ko.observable(false);
+        Flag: KnockoutObservable<Flag> = ko.observable <Flag>(Flag.None);
 
         CSSClass: KnockoutComputed<string> = ko.computed((): string => {
             let css: string = `${this.Color()} ${this.FirstLast}`;
             //css += this.Highlight() ? ' highlight' : '';
-            css += this.NotSureLocation() ? ' not-sure-location' : '';
+            css += ` ${this.Flag()}`;
             return css;
         }, this);
 
@@ -673,6 +684,11 @@
             this.Color(color);
             this.Location = `grid-area: ${location}`;
             this.FirstLast = firstLast;
+        }
+
+        ShowVerses = () => {
+            ko.postbox.publish('Rev-Ref', this.Ref);
+            ko.postbox.publish('Rev-ShowRef', true);
         }
     }
 
@@ -693,10 +709,10 @@
 
             switch (firstLast) {
                 case FirstLast.First:
-                    this.Style += `background:linear-gradient(90deg, #0000, var(--${color}));`;
+                    this.Style += `background:linear-gradient(90deg, #0000 0, #0000 30%, var(--${color}));`;
                     break;
                 case FirstLast.Last:
-                    this.Style += `background:linear-gradient(90deg, var(--${color}), #0000);`;
+                    this.Style += `background:linear-gradient(90deg, var(--${color}) 0, #0000 70%);`;
                     break;
 
                 default:

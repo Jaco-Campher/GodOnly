@@ -1,4 +1,3 @@
-"use strict";
 var GO;
 (function (GO) {
     var Tools;
@@ -22,6 +21,12 @@ var GO;
             FirstLast["First"] = "first";
             FirstLast["Last"] = "last";
         })(FirstLast || (FirstLast = {}));
+        let Flag;
+        (function (Flag) {
+            Flag["None"] = "";
+            Flag["NotSureLocation"] = "not-sure-location";
+            Flag["Protection"] = "protection";
+        })(Flag || (Flag = {}));
         class RevelationTimelineViewModel {
             //****************************************************************************
             // Constructor
@@ -29,6 +34,8 @@ var GO;
             constructor() {
                 this.Tabs = ko.observableArray([]);
                 this.TabJoins = ko.observableArray([]);
+                this.Ref = ko.observable('').subscribeTo('Rev-Ref', false);
+                this.ShowRef = ko.observable(false).subscribeTo('Rev-ShowRef', false);
                 this.LoadItems();
                 this.LoadLinks();
             }
@@ -56,7 +63,7 @@ var GO;
                 //************************************************************
                 //#region Seal 1
                 //*******************************
-                tab = new Tab('seal', 'tab-seal-1', 'Seal 1');
+                tab = new Tab('seal', 'tab-seal-1', 'Seal 1', 'Yahshua');
                 //Rev 6
                 item = new Item(Color.Rev, 'rev-6-1', 'I Heard, as it were the Noise of Thunder', 'The Lamb Opened One of the Seals', 'Rev 6:1', 'Rev 6:1', 'One of the four {beasts|G2226} saying,', 'Come and see.', FirstLast.First);
                 tab.Items.push(item);
@@ -67,7 +74,7 @@ var GO;
                 //#endregion
                 //#region Seal 2
                 //*******************************
-                tab = new Tab('seal', 'tab-seal-2', 'Seal 2');
+                tab = new Tab('seal', 'tab-seal-2', 'Seal 2', 'Take Peace from the Earth');
                 //Rev 6
                 item = new Item(Color.Rev, 'rev-6-3', 'Was Given to Him that Sat Thereon to Take Peace From the Earth', 'Red Horse', 'Rev 6:3-4', 'Rev 6:3-4', ' that they should kill one another:', ' and there was given unto him a great sword.');
                 tab.Items.push(item);
@@ -76,7 +83,7 @@ var GO;
                 //#endregion
                 //#region Seal 3
                 //*******************************
-                tab = new Tab('seal', 'tab-seal-3', 'Seal 3');
+                tab = new Tab('seal', 'tab-seal-3', 'Seal 3', 'Hyper Inflation?');
                 //Rev 6
                 item = new Item(Color.Rev, 'rev-6-5', 'Had a Pair of Balances in His Hand', 'Black Horse', 'Rev 6:5', 'Rev 6:5', '', '');
                 tab.Items.push(item);
@@ -87,7 +94,7 @@ var GO;
                 //#endregion
                 //#region Seal 4
                 //*******************************
-                tab = new Tab('seal', 'tab-seal-4', 'Seal 4');
+                tab = new Tab('seal', 'tab-seal-4', 'Seal 4', 'War? Famine?');
                 //2 Esdras 15
                 tab.Joins.push(new Join(Color.Es2, 'j-es2-15-5-s', FirstLast.First));
                 item = new Item(Color.Es2, 'es2-15-5', 'Sword, Famine, Death', '', '2Es 15:5', '2Es 15:5', 'Behold, saith the Lord,', ' I will bring plagues upon the world;');
@@ -284,7 +291,7 @@ var GO;
                 //Rev 6
                 tab.Joins.push(new Join(Color.Rev, 'j-rev-6-16'));
                 item = new Item(Color.Rev, 'rev-6-17', 'Seal 6', 'Great Day of His Wrath is Come', 'Rev 6:17', 'Rev 6:17', 'and who shall be able to stand?', '', FirstLast.Last);
-                item.NotSureLocation(true);
+                item.Flag(Flag.NotSureLocation);
                 tab.Items.push(item);
                 //Rev 7
                 item = new Item(Color.Rev, 'rev-7-1', '4 Angels', 'Holding 4 Winds', 'Rev 7:1', 'Rev 7:1', '', '', FirstLast.First);
@@ -324,19 +331,19 @@ var GO;
                 //#endregion
                 //#region Seal 7
                 //*******************************
-                tab = new Tab('seal', 'tab-seal-7', 'Seal 7 Start');
+                tab = new Tab('seal', 'tab-seal-7', 'Seal 7', '144K');
                 this.Tabs.push(tab);
                 //#endregion
                 //Trumpets
                 //************************************************************
                 //#region Trumpet 1
                 //*******************************
-                tab = new Tab('trumpet', 'tab-trumpet-1', 'Trumpet 1');
+                tab = new Tab('trumpet', 'tab-trumpet-1', 'Trumpet 1', '2 Witnesses');
                 this.Tabs.push(tab);
                 //#endregion
                 //#region Trumpet 2
                 //*******************************
-                tab = new Tab('trumpet', 'tab-trumpet-2', 'Trumpet 2');
+                tab = new Tab('trumpet', 'tab-trumpet-2', 'Trumpet 2', 'World War 3?');
                 this.Tabs.push(tab);
                 //#endregion
                 //#region Trumpet 3
@@ -351,7 +358,7 @@ var GO;
                 //#endregion
                 //#region Trumpet 5
                 //*******************************
-                tab = new Tab('trumpet', 'tab-trumpet-5', 'Trumpet-5');
+                tab = new Tab('trumpet', 'tab-trumpet-5', 'Trumpet 5');
                 this.Tabs.push(tab);
                 //#endregion
                 //#region Trumpet 6
@@ -447,7 +454,7 @@ var GO;
         }
         Tools.RevelationTimelineViewModel = RevelationTimelineViewModel;
         class Tab {
-            constructor(cssClass, location, name, time = '-') {
+            constructor(cssClass, location, name, subHeading = '-') {
                 this.Expanded = ko.observable(false);
                 this.Items = ko.observableArray([]);
                 this.Joins = ko.observableArray([]);
@@ -456,9 +463,10 @@ var GO;
                     this.Expanded(!this.Expanded());
                 };
                 this.BaseCSSClass = cssClass;
+                this.HeadingStyle = `grid-area: h-${location}`;
                 this.Style = `grid-area: ${location} / ${location} / ${location}-end / ${location}-end; --tab-image: url(../../Images/Rev/${location}.png)`;
                 this.Name = name;
-                this.Time = time;
+                this.SubHeading = subHeading;
                 this.CSSClass = ko.computed(() => {
                     let css = `${this.BaseCSSClass} ${location}`;
                     css += this.Expanded() ? ' expanded' : '';
@@ -478,10 +486,10 @@ var GO;
                 //this.FirstLast = firstLast;
                 switch (firstLast) {
                     case FirstLast.First:
-                        this.Style += `background:linear-gradient(90deg, #0000, var(--${color}));`;
+                        this.Style += `background:linear-gradient(90deg, #0000 0, #0000 30%, var(--${color}));`;
                         break;
                     case FirstLast.Last:
-                        this.Style += `background:linear-gradient(90deg, var(--${color}), #0000);`;
+                        this.Style += `background:linear-gradient(90deg, var(--${color}) 0, #0000 70%);`;
                         break;
                     default:
                 }
@@ -501,13 +509,17 @@ var GO;
                 //Line2Link: string = '';
                 this.Color = ko.observable(Color.Default);
                 //Highlight: KnockoutObservable<boolean> = ko.observable(false);
-                this.NotSureLocation = ko.observable(false);
+                this.Flag = ko.observable(Flag.None);
                 this.CSSClass = ko.computed(() => {
                     let css = `${this.Color()} ${this.FirstLast}`;
                     //css += this.Highlight() ? ' highlight' : '';
-                    css += this.NotSureLocation() ? ' not-sure-location' : '';
+                    css += ` ${this.Flag()}`;
                     return css;
                 }, this);
+                this.ShowVerses = () => {
+                    ko.postbox.publish('Rev-Ref', this.Ref);
+                    ko.postbox.publish('Rev-ShowRef', true);
+                };
                 this.Title = title;
                 this.SubTitle = subTitle;
                 this.Ref = ref;
@@ -532,10 +544,10 @@ var GO;
                 //this.FirstLast = firstLast;
                 switch (firstLast) {
                     case FirstLast.First:
-                        this.Style += `background:linear-gradient(90deg, #0000, var(--${color}));`;
+                        this.Style += `background:linear-gradient(90deg, #0000 0, #0000 30%, var(--${color}));`;
                         break;
                     case FirstLast.Last:
-                        this.Style += `background:linear-gradient(90deg, var(--${color}), #0000);`;
+                        this.Style += `background:linear-gradient(90deg, var(--${color}) 0, #0000 70%);`;
                         break;
                     default:
                 }
