@@ -1,4 +1,3 @@
-"use strict";
 var GO;
 (function (GO) {
     var Pages;
@@ -275,7 +274,7 @@ var GO;
                                             break;
                                         } //All words must match.
                                         for (let match of matches) {
-                                            bold.push({ From: match.index, To: match.index + word.length });
+                                            bold.push({ From: match.index, To: match.index + word.length - 1 });
                                         }
                                     }
                                     if (found) {

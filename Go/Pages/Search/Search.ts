@@ -227,7 +227,7 @@
                                     if (matches.length == 0) { found = false; break; } //All words must match.
 
                                     for (let match of matches) {
-                                        bold.push({ From: match.index as number, To: match.index as number + word.length });
+                                        bold.push({ From: match.index as number, To: match.index as number + word.length - 1 });
                                     }
                                 }
 
