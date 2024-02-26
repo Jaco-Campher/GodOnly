@@ -15,7 +15,7 @@
             <div>References</div>
         </div>
         <hr />
-        <div class="ledgends" data-bind="foreach: Ledgends">
+        <div class="ledgends" data-bind="foreach: CurrentItems">
             <div class="legend-item hover">
                 <div class="name" data-bind="text:Name"></div>
                 <div class="meaning" data-bind="text:Meaning"></div>
@@ -28,6 +28,25 @@
                     <!-- /ko -->
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="box pages-holder">
+        <div class="prev-next">
+            <button class="btn-icon" data-bind="click: PrevPage">
+                <svg viewBox="0 0 12 12"><polygon points="8.15,12 2.15,6 8.15,0 8.85,0.71 3.56,6 8.85,11.29" /></svg>
+            </button>
+            <div></div>
+            <button class="btn-icon" data-bind="click: NextPage">
+                <svg viewBox="0 0 12 12"><polygon points="3.85,12 3.14,11.29 8.44,6 3.15,0.71 3.85,0 9.85,6" /></svg>
+            </button>
+        </div>
+
+        <h3>More Results</h3>
+        <div class="pages" data-bind="foreach: Pages">
+            <a class="btn-x" href="#" data-bind="click: function() { $parent.UpdatePageIndex(Index) }, css: { selected: Index == $parent.CurrentPageIndex() }">
+                <div class="bib"></div><div data-bind="text: Title"></div>
+            </a>
         </div>
     </div>
 
