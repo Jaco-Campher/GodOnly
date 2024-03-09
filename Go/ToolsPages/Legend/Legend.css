@@ -57,3 +57,55 @@
 .legend-main .refs .ref-container {
     margin:0 0 10px;
 }
+
+
+
+
+
+
+.pages-holder h3 {
+    text-align: center;
+    margin: 9px 0 20px;
+}
+
+.pages-holder .prev-next {
+    display: grid;
+    grid-template: 37px / 50px 1fr 50px;
+    grid-gap: 15px;
+    position: absolute;
+    inset: 15px 15px auto;
+}
+
+.pages-holder .pages {
+    columns:2;
+    column-gap:15px;
+}
+
+@media (max-width:400px) {
+    .pages-holder .pages {
+        columns:1;
+    }
+}
+
+.pages-holder .bib{
+    display:inline-block;
+    width: 1px;
+    height: calc(100% + 10px);
+    height: 100%;
+    margin: -5px -2px 0;
+     margin: 0 4px;
+    background: #fff;
+    box-shadow: 0 0 5px #fff, 0 0 7px #fff, 0 0 20px #fff;
+}
+
+.pages-holder .pages .btn-x {
+    width:100%;
+    margin:0 0 15px 0;
+    height: auto;
+    display: inline-grid;
+    grid-template: auto / 7px 1fr;
+}
+
+.pages-holder .pages .btn-x.selected {
+    background: #227;
+}

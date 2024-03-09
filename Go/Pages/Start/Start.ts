@@ -53,6 +53,7 @@
     export interface iLegend {
         //Used durig runtime.
         Name?: string;
+        PageTitle?: string;
 
         //Json
         Case?: string;
