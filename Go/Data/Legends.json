@@ -79,6 +79,27 @@
       }
     ]
   },
+  "Daughter": {
+    "Meaning": "City",
+    "Lookup": "Daughters"
+  },
+  "Daughters": {
+    "Meaning": "Cities",
+    "Refs": [
+      {
+        "Ref": "Isa 32:9-10",
+        "Bold": [{"From":12, "To":16}, {"From":63, "To":71}, {"From":152, "To":156}]
+      },
+      {
+        "Ref": "Rev 17:18",
+        "Bold": [{"From":8, "To":12}, {"From":46, "To":49}]
+      },
+      {
+        "Ref": "",
+        "Html": "<p>Daughters > Women > Cities</p>"
+      }
+    ]
+  },
   "dragon": {
     "Meaning": "devil / satan",
     "Refs": [
@@ -184,11 +205,15 @@
       },
       {
         "Ref": "",
-        "Html": "<p>Forest = Mountain = Head = Kingdom</p>"
+        "Html": "<p>Forest > Mountain > Head > Kingdom</p>"
       }
     ]
   },
   "Forests": {
+    "Meaning": "Kingdoms",
+    "Lookup": "Forest"
+  },
+  "Woods": {
     "Meaning": "Kingdoms",
     "Lookup": "Forest"
   },
@@ -283,7 +308,7 @@
       },
       {
         "Ref": "",
-        "Html": "<p>Hill = Tabernacle = City</p>"
+        "Html": "<p>Hill > Tabernacle > City</p>"
       }
     ]
   },
@@ -320,7 +345,7 @@
       },
       {
         "Ref": "",
-        "Html": "<p>leviathan = serpent = devil</p>"
+        "Html": "<p>leviathan > serpent > devil</p>"
       }
     ]
   },
@@ -354,7 +379,7 @@
       },
       {
         "Ref": "",
-        "Html": "<p>Mountain = Head = Kingdom</p>"
+        "Html": "<p>Mountain > Head > Kingdom</p>"
       }
     ]
   },
@@ -385,7 +410,7 @@
       },
       {
         "Ref": "",
-        "Html": "<p>Sea = Waters = Peoples / Nations</p>"
+        "Html": "<p>Sea = Gathering together of the waters</p><p>Waters > Peoples / Nations"
       }    
     ]
   },
