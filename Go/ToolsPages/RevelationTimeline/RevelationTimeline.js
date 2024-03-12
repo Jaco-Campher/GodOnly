@@ -8,6 +8,7 @@ var GO;
             Color["Ba2"] = "ba2";
             Color["Es2"] = "es2";
             Color["Gad"] = "gad";
+            Color["Job"] = "job";
             Color["Luk"] = "luk";
             Color["Mrk"] = "mrk";
             Color["Mat"] = "mat";
@@ -53,12 +54,6 @@ var GO;
                 this.TabJoins.push(new TabJoin(Color.Rev, 'tj-rev-12-2'));
                 this.Tabs.push(tab);
                 //#endregion
-                //#region Rev 12 Another Sign
-                //*******************************
-                tab = new Tab('rev-12-2', 'tab-rev-12-2', 'Another Sign');
-                this.TabJoins.push(new TabJoin(Color.Rev, 'tj-rev-12-3'));
-                this.Tabs.push(tab);
-                //#endregion
                 //Seals
                 //************************************************************
                 //#region Seal 1
@@ -102,6 +97,15 @@ var GO;
                 item = new Item(Color.Es2, 'es2-15-6', '', 'For Wickedness Hath Exceedingly Polluted', '2Es 15:6', '2Es 15:6', 'the whole earth,', 'and their hurtful works are fulfilled.');
                 tab.Items.push(item);
                 this.TabJoins.push(new TabJoin(Color.Es2, 'tj-es2-15-6'));
+                //Job 5
+                this.TabJoins.push(new TabJoin(Color.Job, 'tj-job-5-19-s', FirstLast.First));
+                item = new Item(Color.Job, 'job-5-19', 'He Shall Deliver Thee in Six Troubles', '', 'Job 5:19', 'Job 5:19', 'yea, in seven there shall no evil touch thee.', '');
+                item.Flag(Flag.Protection);
+                tab.Items.push(item);
+                item = new Item(Color.Job, 'job-5-20', 'In Famine He Shall Redeem Thee from Death', '', 'Job 5:20', 'Job 5:20', 'and in war from the power of the sword.', '');
+                item.Flag(Flag.Protection);
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Job, 'j-job-5-19-e', FirstLast.Last));
                 //Rev 6
                 item = new Item(Color.Rev, 'rev-6-7', 'His Name that Sat on Him was Death', '{Pale|G5515} Horse', 'Rev 6:7-8a', 'Rev 6:7-8', 'and Hell followed with him.', '');
                 tab.Items.push(item);
@@ -250,9 +254,11 @@ var GO;
                 tab.Joins.push(new Join(Color.Es2, 'j-es2-2-37'));
                 this.TabJoins.push(new TabJoin(Color.Es2, 'tj-es2-2-37'));
                 //2 Esdras 5
-                item = new Item(Color.Es2, 'es2-5-1', 'Taken in a Great Number', '', '2Es 5:1', '2Es 5:1', 'Way of truth shall be hidden.', 'Land shall be barren of faith.');
+                item = new Item(Color.Es2, 'es2-5-1', 'Taken in a Great Number', '', '2Es 5:1', '2Es 5:1', 'Way of truth shall be hidden.', 'Land shall be barren of faith.', FirstLast.First);
                 tab.Items.push(item);
-                tab.Joins.push(new Join(Color.Es2, 'j-es2-5-1'));
+                item = new Item(Color.Es2, 'es2-5-2', '', 'Iniquity Shall be Increased', '2Es 5:2', '2Es 5:2', 'above that which now thou seest,', 'or that thou hast heard long ago.');
+                item.Flag(Flag.NotSureLocation);
+                tab.Items.push(item);
                 this.TabJoins.push(new TabJoin(Color.Es2, 'tj-es2-5-1'));
                 //2 Esdras 15
                 tab.Joins.push(new Join(Color.Es2, 'j-es2-15-9'));
@@ -260,6 +266,17 @@ var GO;
                 tab.Items.push(item);
                 tab.Joins.push(new Join(Color.Es2, 'j-es2-15-11a'));
                 this.TabJoins.push(new TabJoin(Color.Es2, 'tj-es2-15-11a'));
+                //Gad 14
+                tab.Joins.push(new Join(Color.Gad, 'j-gad-14-5'));
+                item = new Item(Color.Gad, 'gad-14-5', 'And the Glory of the LORD', '', 'Gad 14:5', 'Gad 14:5', ' had the appearance like that of the rainbow,', ' His covenant');
+                tab.Items.push(item);
+                item = new Item(Color.Gad, 'gad-14-6', '3 Books - Records of Every Man', 'The Host of Heaven were Standing Before Him', 'Gad 14:6-9a', 'Gad 14:6-9', '1st Book - Granted eternal life.', '');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Gad, 'j-gad-14-9a'));
+                item = new Item(Color.Gad, 'gad-14-9b', '', '', 'Gad 14:9b-10', 'Gad 14:9-10', 'Silence! This day is holy to our Lord.', '2nd Book - Wait 10 days?');
+                item.Flag(Flag.NotSureLocation);
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Gad, 'j-gad-14-9b-e', FirstLast.Last));
                 //Luk 21
                 item = new Item(Color.Luk, 'luke-21-27', 'The Son of Man Coming', 'Then Shall They See', 'Luk 21:27', 'Luk 21:27', 'In a cloud', ' with power and great glory.');
                 tab.Items.push(item);
@@ -332,6 +349,130 @@ var GO;
                 //#region Seal 7
                 //*******************************
                 tab = new Tab('seal', 'tab-seal-7', 'Seal 7', '144K');
+                //2 Baruk 30
+                tab.Joins.push(new Join(Color.Ba2, 'j-ba2-30-2aa'));
+                item = new Item(Color.Ba2, 'ba2-30-2b', 'Number of the Souls of the Righteous', '', '2Ba 30:2b', '2Ba 30:2', '', '');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Ba2, 'j-ba2-30-2b'));
+                item = new Item(Color.Ba2, 'ba2-30-2c', '', '', '2Ba 30:2c', '2Ba 30:2', 'A multitude of souls shall be seen together', ' in one assemblage of one thought.');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Ba2, 'j-ba2-30-2c'));
+                this.TabJoins.push(new TabJoin(Color.Ba2, 'tj-ba2-30-2c'));
+                //2 Esdras 2
+                tab.Joins.push(new Join(Color.Es2, 'j-es2-2-37a'));
+                item = new Item(Color.Es2, 'es2-2-38', 'Number of Those that be Sealed', '', '2Es 2:38', '2Es 2:38', ' in the feast of the Lord.', '');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Es2, 'j-es2-2-38'));
+                item = new Item(Color.Es2, 'es2-2-39', 'Received Glorious Garments', 'Clothed in White', '2Es 2:39-40', '2Es 2:39-40', 'Departed from the shadow of the world.', 'Which have fulfilled the law of the Lord.');
+                tab.Items.push(item);
+                item = new Item(Color.Es2, 'es2-2-41', 'They All Praised the Lord with Songs', '', '2Es 2:41-42', '2Es 2:41-42', 'A great people, whom I could not number.', '');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Es2, 'j-es2-2-41-e', FirstLast.Last));
+                //2 Esdras 15
+                tab.Joins.push(new Join(Color.Es2, 'j-es2-15-11aa'));
+                item = new Item(Color.Es2, 'es2-15-11b', 'Egypt Shall Mourn', 'And Will Destroy All the Land Thereof', '2Es 15:11b-12', '2Es 15:11-12', 'and the foundation of it shall be smitten with the plague', ' and punishment that God shall bring upon it.');
+                item.Flag(Flag.NotSureLocation);
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Es2, 'j-es2-15-11b'));
+                this.TabJoins.push(new TabJoin(Color.Es2, 'tj-es2-15-11b'));
+                //2 Esdras 16
+                tab.Joins.push(new Join(Color.Es2, 'j-es2-16-9-s', FirstLast.First));
+                item = new Item(Color.Es2, 'es2-16-9', 'He Shall Cast Lightnings', 'Fire Shall go Forth From His Wrath', '2Es 16:9-11', '2Es 16:9-11', 'He shall thunder.', ' and who shall not be afraid?');
+                tab.Items.push(item);
+                item = new Item(Color.Es2, 'es2-16-12a', 'And the Foundations Thereof', 'The Earth Quaketh', '2Es 16:12a', '2Es 16:12', '', '');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Es2, 'j-es2-16-12a'));
+                this.TabJoins.push(new TabJoin(Color.Es2, 'tj-es2-16-12a'));
+                //Rev 4
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-4-3a'));
+                item = new Item(Color.Rev, 'rev-4-4', '', 'Clothed in White Raiment', 'Rev 4:4', 'Rev 4:4', '24 Seats, 24 Elders.', 'Crown of gold.');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-4-4'));
+                item = new Item(Color.Rev, 'rev-4-5', '', 'Out of the Throne Proceeded', 'Rev 4:5', 'Rev 4:5', 'Lightnings and Thunderings and Voices', '');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-4-5'));
+                this.TabJoins.push(new TabJoin(Color.Rev, 'tj-rev-4-5'));
+                //Rev 5
+                this.TabJoins.push(new TabJoin(Color.Rev, 'tj-rev-5-5-s', FirstLast.First));
+                item = new Item(Color.Rev, 'rev-5-5', 'The Lion of the Tribe of Juda', '', 'Rev 5:5', 'Rev 5:5', ' hath prevailed to open the book,', ' and to loose the 7 seals thereof.');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-5-5'));
+                item = new Item(Color.Rev, 'rev-5-6', 'Stood a Lamb as It Had Been Slain', 'In the Midst of the Throne', 'Rev 5:6', 'Rev 5:6', '4 Living beings, Elders', '7 Horns and 7 Eyes');
+                tab.Items.push(item);
+                item = new Item(Color.Rev, 'rev-5-7', 'Out of the Right Hand of Him that Sat Opon the Throne', 'And He Came and Took the Book', 'Rev 5:7', 'Rev 5:7', '', '');
+                tab.Items.push(item);
+                item = new Item(Color.Rev, 'rev-5-8', 'Which are the Prayers of Saints', 'Golden Vials Full of Odours', 'Rev 5:8', 'Rev 5:8', '4 Living beings, 24 Elders', 'Having every one of them harps.');
+                tab.Items.push(item);
+                item = new Item(Color.Rev, 'rev-5-9a', '', 'They Sung a New Song', 'Rev 5:9a', 'Rev 5:9', 'Thou art worthy to take the book,', 'and to open the seals thereof:');
+                tab.Items.push(item);
+                item = new Item(Color.Rev, 'rev-5-9b', 'And Hast Redeemed Us to God by Thy Blood', 'For Thou wast Slain', 'Rev 5:9b', 'Rev 5:9', '', '');
+                tab.Items.push(item);
+                item = new Item(Color.Rev, 'rev-5-9c', 'Every Kindred, and Tongue, and People, and Nation', '', 'Rev 5:9c', 'Rev 5:9c', '', '');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-5-9c'));
+                this.TabJoins.push(new TabJoin(Color.Rev, 'tj-rev-5-9c'));
+                //Rev 7
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-7-2a'));
+                item = new Item(Color.Rev, 'rev-7-2', 'Having the Seal of the Living God', 'I Saw Another Angel Ascending from the East', 'Rev 7:2-3', 'Rev 7:2-3', 'Hurt not earth, sea, trees', 'Till we sealed the servants of our God.');
+                tab.Items.push(item);
+                item = new Item(Color.Rev, 'rev-7-4', '144K', 'Number of Them Which Were Sealed', 'Rev 7:4-8', 'Rev 7:4-8', '', '');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-7-4'));
+                item = new Item(Color.Rev, 'rev-7-9', 'Clothed with White Robes', 'All Nations, and Kindreds, and People, and Tongues', 'Rev 7:9', 'Rev 7:9', 'A great multitude, which no man could number.', 'Stood before the throne, and before the Lamb…');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-7-9'));
+                this.TabJoins.push(new TabJoin(Color.Rev, 'tj-rev-7-9'));
+                //Rev 8
+                item = new Item(Color.Rev, 'rev-8-1', 'Opened the 7th Seal', '', 'Rev 8:1-2', 'Rev 8:1-2', 'Silence in heaven about the space of half an hour.', '7 Angels given 7 trumpets.', FirstLast.First);
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-8-1'));
+                item = new Item(Color.Rev, 'rev-8-3a', 'With the Prayers of the Saints', 'Another Angel Came and Stood at the Altar', 'Rev 8:3a', 'Rev 8:3', '', '');
+                tab.Items.push(item);
+                item = new Item(Color.Rev, 'rev-8-3b', 'Golden Altar Which Was Before the Throne', '', 'Rev 8:3b', 'Rev 8:3', 'Smoke of incense', '');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-8-3b'));
+                item = new Item(Color.Rev, 'rev-8-5a', 'Cencer Cast to the Earth', 'Filled It With Fire', 'Rev 8:5a', 'Rev 8:5', 'Voices, and Thunderings, and Lightnings', '');
+                tab.Items.push(item);
+                item = new Item(Color.Rev, 'rev-8-5b', 'And an Earthquake', '', 'Rev 8:5b', 'Rev 8:5', '', '');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-8-5b'));
+                item = new Item(Color.Rev, 'rev-8-6', 'Prepared to Sound', '7 Angels', 'Rev 8:6', 'Rev 8:6', '', '');
+                tab.Items.push(item);
+                this.TabJoins.push(new TabJoin(Color.Rev, 'tj-rev-8-6'));
+                //Rev 10
+                item = new Item(Color.Rev, 'rev-10-1', 'Clothed with a Cloud', 'I Saw Another Mighty Angel Come Down from Heaven', 'Rev 10:1', 'Rev 10:1', ' and a rainbow was upon His Head and His Face as the sun,', ' feet as pillars of fire.', FirstLast.First);
+                tab.Items.push(item);
+                item = new Item(Color.Rev, 'rev-10-2', 'Little Book Open', '', 'Rev 10:2', 'Rev 10:2', 'Right foot on the sea.', 'Left foot on the earth.');
+                tab.Items.push(item);
+                item = new Item(Color.Rev, 'rev-10-3', '7 Thunders', '{Loud|G3173} Voice', 'Rev 10:3-4', 'Rev 10:3-4', 'Lion roareth, Voice from heaven,', 'seal what 7 thunders uttered.');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-10-3'));
+                item = new Item(Color.Rev, 'rev-10-5', 'Lifted Up His Hand to Heaven', 'Angel Stand Upon Sea and Earth.', 'Rev 10:5', 'Rev 10:5', '', '');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-10-5'));
+                this.TabJoins.push(new TabJoin(Color.Rev, 'tj-rev-10-5'));
+                //Rev 14
+                item = new Item(Color.Rev, 'rev-14-1', 'I Looked, a Lamb Stood on Mount Sion', '144K', 'Rev 14:1', 'Rev 14:1', 'Having His Father’s name written', 'in their foreheads.', FirstLast.First);
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-14-1'));
+                item = new Item(Color.Rev, 'rev-14-2', '', '', 'Rev 14:2', 'Rev 14:2', 'Voice of many waters.', 'Voice of harpers harping with their harps.');
+                tab.Items.push(item);
+                item = new Item(Color.Rev, 'rev-14-3', '144K', 'New Song Before the Throne', 'Rev 14:3', 'Rev 14:3', '4 Living beings, Elders', '');
+                tab.Items.push(item);
+                item = new Item(Color.Rev, 'rev-14-4', 'Redeemed from Among {Men|G0444|People}', '', 'Rev 14:4-5', 'Rev 14:4-5', 'Not defiled with women.', 'Firstfruits without fault.');
+                tab.Items.push(item);
+                item = new Item(Color.Rev, 'rev-14-6a', 'Every Nation, and Kindred, and Tongue, and People', 'I Saw Another Angel Fly in the Midst of Heaven', 'Rev 14:6a', 'Rev 14:6', 'Having the everlasting gospel to preach unto them that', 'dwell on the earth, and to all people.');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-14-6a'));
+                item = new Item(Color.Rev, 'rev-14-7a', 'Saying with a {Loud|G3173} Voice', '', 'Rev 14:7a', 'Rev 14:7', 'Fear God, and give glory to Him;', 'for the hour of His judgment is come:');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-14-7a'));
+                this.TabJoins.push(new TabJoin(Color.Rev, 'tj-rev-14-7a'));
+                //Rev 18
+                item = new Item(Color.Rev, 'rev-18-1', '', 'I Saw Another Angel Come Down from Heaven', 'Rev 18:1', 'Rev 18:1', 'Having great power.', 'Earth was lightened with his glory.', FirstLast.First);
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-18-1'));
+                this.TabJoins.push(new TabJoin(Color.Rev, 'tj-rev-18-1'));
                 this.Tabs.push(tab);
                 //#endregion
                 //Trumpets
