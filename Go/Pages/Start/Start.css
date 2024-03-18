@@ -1405,3 +1405,41 @@ go-strongs .strongs,
 go-ref-text {
     display:block;
 }
+
+
+
+/*********************************************
+    Page Settings
+**********************************************/
+.page-settings {
+    position:fixed;
+    inset:90px 0 50px auto;
+    width:350px;
+    transition: transform 200ms ease-out;
+    transform: translateX(100%);
+    z-index: 100;
+}
+
+.page-settings.open {
+    transform: translateX(0);
+}
+
+.page-settings-buttons {
+    position:fixed;
+    box-shadow: 0px 0px 10px #447;
+    bottom:0;
+    right:0;
+    background: linear-gradient(45deg, #111 0, #121212 100%);
+    padding: 7px 3px;
+    z-index: 9999;
+}
+
+.page-settings-buttons button {
+    height: 32px;
+    padding: 0;
+}
+
+.page-settings-buttons svg {
+    height: 25px;
+    width: 32px;
+}

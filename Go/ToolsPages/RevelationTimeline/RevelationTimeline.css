@@ -38,7 +38,7 @@
     --x: #5E483B;
     --mat: #7F2677;
     --x: #783461;
-    --x: #8B2252;
+    --enoch: #8B2252;
     --x: #4C4C4C;
 
 }
@@ -54,7 +54,7 @@ body {
     /*grid-template-rows: calc(100vh - var(--top-nav-height));*/
     grid-gap: 10px;
     margin:0;
-    padding:30px;
+    padding:18px 30px 30px;
 }
 
 footer {
@@ -68,35 +68,102 @@ footer {
 .rev-main .tabs {
     display:grid;
     align-content: stretch;
-    grid-template-columns: repeat(32, max-content 30px);
-    grid-template-rows: 68px 7px repeat(20, 115px);
+    grid-template-columns: repeat(29, max-content 30px);
+    grid-template-rows: 30px 30px 68px 7px repeat(21, 115px);
     row-gap:10px;
     grid-template-areas:
+"y-start y-2023 y-2023 y-2023 y-2024 y-2024 y-2024 y-2024 y-2025 y-2025 y-2025 y-2025 y-2026 y-2026 y-2026 y-2026 y-2027 y-2027 y-2027 y-2027 y-2028 y-2028 y-2028 y-2028 y-2029 y-2029 y-2029 y-2030 y-2030 y-2030 y-2030 y-2030 . . y-2031 y-2031 y-2031 y-2031 y-2032 y-2032 y-2032 y-2033 y-2033 y-2033 y-2033 y-2034 y-2034 y-2034 . . . y-end . . . . . . ."
+"m-start m-tab-seal-1 m-tab-seal-1 m-tab-seal-2 m-tab-seal-2 m-tab-seal-3 m-tab-seal-3 m-tab-seal-4 m-tab-seal-4 m-tab-seal-5 m-tab-seal-5 m-tab-seal-6 m-tab-seal-6 m-tab-seal-7 m-tab-seal-7 m-tab-seal-7 m-tab-seal-7 m-tab-trumpet-1 m-tab-trumpet-1 m-tab-trumpet-2 m-tab-trumpet-2 m-tab-trumpet-3 m-tab-trumpet-3 m-tab-trumpet-4 m-tab-trumpet-4 m-tab-trumpet-5 m-tab-trumpet-5 m-tab-trumpet-6 m-tab-trumpet-6 m-tab-trumpet-7 m-tab-trumpet-7 m-tab-trumpet-7 m-tab-trumpet-7 m-tab-trumpet-7 m-tab-trumpet-7 m-tab-vial-1 m-tab-vial-1 m-tab-vial-2 m-tab-vial-2 m-tab-vial-3 m-tab-vial-3 m-tab-vial-4 m-tab-vial-4 m-tab-vial-5 m-tab-vial-5 m-tab-vial-6 m-tab-vial-6 . . m-tab-vial-7 m-tab-vial-7 m-end . . . . . . ."
 "h-tab-rev-12 . h-tab-seal-1 . h-tab-seal-2 . h-tab-seal-3 . h-tab-seal-4 . h-tab-seal-5 . h-tab-seal-6 . h-tab-rapture . h-tab-seal-7 . h-tab-trumpet-1 . h-tab-trumpet-2 . h-tab-trumpet-3 . h-tab-trumpet-4 . h-tab-trumpet-5 . h-tab-trumpet-6 . h-tab-2-wit . h-tab-ascension . h-tab-trumpet-7 . h-tab-vial-1 . h-tab-vial-2 . h-tab-vial-3 . h-tab-vial-4 . h-tab-vial-5 . h-tab-vial-6 . h-tab-thief . h-tab-vial-7 . h-tab-pre-1000 . h-tab-1000 . h-tab-end-1000 . h-tab-judgement"
 "tab-rev-12 . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-seal-7 . tab-trumpet-1 . tab-trumpet-2 . tab-trumpet-3 . tab-trumpet-4 . tab-trumpet-5 . tab-trumpet-6 . tab-2-wit . tab-ascension . tab-trumpet-7 . tab-vial-1 . tab-vial-2 . tab-vial-3 . tab-vial-4 . tab-vial-5 . tab-vial-6 . tab-thief . tab-vial-7 . tab-pre-1000 . tab-1000 . tab-end-1000 . tab-judgement"
-". tj-rev-12-2 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 . tj-rev-12-4 . tj-rev-12-5b tj-rev-12-5b tj-rev-12-5b . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-". . . . . . . . . . . . . . . tj-rev-5-5-s . tj-rev-5-9c . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-". . . tj-seal-1 . tj-seal-2 . tj-seal-3 . tj-seal-4 . tj-seal-5 . tj-rev-6-16 . tj-rev-7-1 . tj-rev-7-9 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-". . . . . . . tj-job-5-19-s . . . tj-mat-24-29a-s . tj-mat-24-30b . . . tj-rev-8-6 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-". . . . . . . . . . . tj-mrk-13-24a-s . tj-mark-13-26 . . . tj-rev-10-5 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-". . . . . . . . . . . . . tj-luke-21-26b . . . tj-rev-14-7a . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". tj-rev-12-2 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 . tj-rev-12-4 . tj-rev-12-5b tj-rev-12-5b tj-rev-12-5b . tj-rev-12-6 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . . . . . . . . tj-rev-5-5-s . tj-rev-5-9c tj-rev-5-9c tj-rev-5-9c . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . tj-seal-1 . tj-seal-2 . tj-seal-3 . tj-seal-4 . tj-seal-5 . tj-rev-6-16 . tj-rev-7-1 . tj-rev-7-9 tj-rev-7-9 tj-rev-7-9 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . . . . . tj-job-5-19-s . . . tj-mat-24-29a-s . tj-mat-24-30b . . . tj-rev-8-6 . tj-rev-8-7 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . . . . tj-mrk-13-24a-s . tj-mark-13-26 . . . tj-rev-10-5 . tj-rev-10-6a . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . . . . . . tj-luke-21-26b . . . tj-rev-14-7a . tj-rev-14-7b . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
 ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-". . . . . . . . . . . . . . . tj-rev-11-1 tj-rev-11-1 tj-rev-11-1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-". . . . . . . . . . . . . tj-rev-4-2 . tj-rev-4-3 . tj-rev-4-5 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . . . . . . . . tj-rev-11-1 tj-rev-11-1 tj-rev-11-1 . tj-rev-11-6a . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . . . . . . . . . . tj-rev-13-5a . tj-rev-13-5b . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . . . . . . tj-rev-4-2 . tj-rev-4-3 . tj-rev-4-5 tj-rev-4-5 tj-rev-4-5 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
 ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
 ". . . . . . . . . . . . . . . tj-ba2-30-2a . tj-ba2-30-2c tj-ba2-30-2c tj-ba2-30-2c . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
 ". . . . . . . . . . . . . tj-song-2-13a . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-". . . . . . . . . . . . . tj-rev-21-10a . tj-rev-21-16 . tj-rev-18-1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-". . . . . . . . . tj-es2-15-6 . tj-es2-15-8b tj-es2-15-8b tj-es2-15-8b . tj-es2-15-11a . tj-es2-15-11b . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-". . . . . . . . . . . . . . . tj-es2-5-1 tj-es2-5-1 tj-es2-5-1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . . . . . . tj-rev-21-10a . tj-rev-21-16 . tj-rev-18-1 tj-rev-18-1 tj-rev-18-1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . . tj-es2-15-6 . tj-es2-15-8b tj-es2-15-8b tj-es2-15-8b . tj-es2-15-11a . tj-es2-15-11b . tj-es2-15-13a . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . . . . . . . . tj-es2-5-1 tj-es2-5-1 tj-es2-5-1 . tj-es2-5-3 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
 ". . . . . . . . . . . . . tj-es2-2-34-s . tj-es2-2-37 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-". . . . . . . . . . . . . tj-1thess-4-16a-s . . . tj-es2-16-12a . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . . . . . . tj-1thess-4-16a-s . . . tj-es2-16-12a tj-es2-16-12a tj-es2-16-12a . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
 ". . . . . . . . . . . . . tj-gad-14-4 . tj-gad-14-9a . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . . . . . . . . . . . . tj-enoch-80-2b . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
 "tab-rev-12-end . tab-seal-1-end . tab-seal-2-end . tab-seal-3-end . tab-seal-4-end . tab-seal-5-end . tab-seal-6-end . tab-rapture-end . tab-seal-7-end . tab-trumpet-1-end . tab-trumpet-2-end . tab-trumpet-3-end . tab-trumpet-4-end . tab-trumpet-5-end . tab-trumpet-6-end . tab-2-wit-end . tab-ascension-end . tab-trumpet-7-end . tab-vial-1-end . tab-vial-2-end . tab-vial-3-end . tab-vial-4-end . tab-vial-5-end . tab-vial-6-end . tab-thief-end . tab-vial-7-end . tab-pre-1000-end . tab-1000-end . tab-end-1000-end . tab-judgement-end"
 ;
 }
 
+.rev-main.compact .tabs {
+    grid-template-rows: 30px 30px 68px 7px repeat(20, 70px);
+}
+
+/* Time Lines */
+/***************************************/
+.time {
+    box-shadow: 0 0 10px #674cff33;
+    background: #111;
+}
+
+.dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #ccf;
+    box-shadow: 0 0 7px #fff, 0 0 11px #fff;
+    margin: 2px
+}
+
+.main-line {
+    background: #99d;
+    box-shadow: 0 0 5px #99d, 0 0 7px #99d;
+    height: 1px;
+    margin:14px 10px 0;
+}
+
+/* Year Time Line */
+/***************************************/
+.year-line {
+    grid-area: y-start / y-start / y-end / y-end;
+}
+
+.year div,
+.month div {
+    display:inline-block;
+}
+
+.year .text,
+.month .text {
+    padding: 0 5px;
+    margin: 4px 0 0;
+    background: #222;
+    border: 1px solid #444;
+    cursor: pointer;
+}
+
+
+
+
+/* Month Time Line */
+/***************************************/
+.month-line {
+    grid-area: m-start / m-start / m-end / m-end;
+}
+
+.month {
+    padding: 0 10px;
+}
+
+
+/* Tab */
+/***************************************/
 .rev-main .tab {
     position:relative;
     min-width:180px;
@@ -105,7 +172,8 @@ footer {
 
 .rev-main .tab-heading {
     position:sticky;
-    top:0;
+    top:65px;
+    z-index:10;
 }
 
 .rev-main .tab:before,
@@ -123,7 +191,7 @@ footer {
     z-index: -2;
 }
 
-.rev-main .tab:after, {
+.rev-main .tab:after {
     content: "";
     position: absolute;
     inset: 0;
@@ -167,7 +235,7 @@ footer {
     Items
 *********************************************************************/
 .rev-main .item {
-    min-width:150px;
+    min-width:200px;
     background: #000;
     border-left: 1px solid #aaa;
     border-right: 1px solid #aaa;
@@ -232,9 +300,12 @@ footer {
 .rev-main .ref {
     font-size: 0.83em;
     position: absolute;
-    bottom: 3px;
-    right: 7px;
+    top: -20px;
+    right: 0;
+    padding: 0 5px;
     color:#fff;
+    background: #222;
+    border: 1px solid #444;
     cursor: pointer;
 }
 
@@ -245,6 +316,10 @@ footer {
 
 .rev-main .line2 {
     padding: 0 85px 0 7px;
+}
+
+.rev-main.compact .line {
+    display:none;
 }
 
 
@@ -446,6 +521,10 @@ footer {
     grid-template-rows: repeat(20, 90px 25px);
     row-gap:5px;
     margin:17px 15px 0;
+}
+
+.rev-main.compact .grid {
+    grid-template-rows: repeat(20, 45px 25px);
 }
 
 /* Rev 12 Sign
@@ -696,6 +775,63 @@ footer {
 ;
 }
 
+/* Trumpet 1
+**********************************/
+.rev-main .tab-trumpet-1 .grid {
+    grid-template-areas:
+"j-rev-12-5aa rev-12-6 j-rev-12-6 j-rev-12-6"
+". . . ."
+". . . ."
+". . . ."
+". . . ."
+". . . ."
+"j-rev-8-6a j-rev-8-6a rev-8-7 j-rev-8-7"
+". . . ."
+"j-rev-10-5aa j-rev-10-5aa rev-10-6a j-rev-10-6a"
+". . . ."
+"j-rev-14-7aa j-rev-14-7aa rev-14-7b j-rev-14-7b"
+". . . ."
+". . . ."
+". . . ."
+"rev-11-2b rev-11-3 rev-11-4 rev-11-6a"
+". . . ."
+"rev-13-5b j-rev-13-5b j-rev-13-5b j-rev-13-5b"
+". . . ."
+". . . ."
+". . . ."
+". . . ."
+". . . ."
+". . . ."
+". . . ."
+". . . ."
+". . . ."
+". . . ."
+". . . ."
+"j-es2-15-11ba j-es2-15-11ba es2-15-13a j-es2-15-13a"
+". . . ."
+"j-es2-5-2a j-es2-5-2a es2-5-3 j-es2-5-3"
+". . . ."
+". . . ."
+". . . ."
+". . . ."
+". . . ."
+". . . ."
+". . . ."
+". . . ."
+". . . ."
+". j-enoch-80-2a enoch-80-2a enoch-80-2b"
+;
+}
+
+/* Trumpet 2
+**********************************/
+.rev-main .tab-trumpet-2 .grid {
+    grid-template-areas:
+". . . . . . . . . . . . ."
+". . . . . . . . . . . . ."
+;
+}
+
 
 /*********************************************************************
     Book - Chapter Colors
@@ -704,6 +840,12 @@ footer {
 .rev-main .join.ba2,
 .rev-main .tab-join.ba2 {
     background: var(--ba2);
+}
+
+.rev-main .enoch > h4,
+.rev-main .join.enoch,
+.rev-main .tab-join.enoch {
+    background: var(--enoch);
 }
 
 .rev-main .es2 > h4,

@@ -1,3 +1,4 @@
+"use strict";
 var GO;
 (function (GO) {
     let eRefTypeShow;
@@ -22,6 +23,8 @@ var GO;
             this.MenuOpen = ko.observable(false);
             this.HasHelp = ko.observable(false);
             this.ShowHelp = ko.observable(false);
+            this.HasPageSettings = ko.observable(false);
+            this.ShowPageSettings = ko.observable(false);
             //Global Settings
             this.ShowGlobalSettings = ko.observable(false);
             this.DisableTransparency = ko.observable(false);
@@ -51,6 +54,7 @@ var GO;
             };
             this.PageLoadCompleted = () => {
                 this.HasHelp(document.getElementById('PageHelp') != null);
+                this.HasPageSettings(document.getElementById('PageSettings') != null);
             };
             //#endregion
             //****************************************************************************
@@ -111,6 +115,9 @@ var GO;
                 this.ShowHelp(!this.ShowHelp());
                 //console.log(this.componentLoader.LastPageViewModel);
                 go.PushPageHelp();
+            };
+            this.ShowHidePageSettings = () => {
+                this.ShowPageSettings(!this.ShowPageSettings());
             };
             this.ShowHideGlobalSettings = () => {
                 this.ShowGlobalSettings(!this.ShowGlobalSettings());

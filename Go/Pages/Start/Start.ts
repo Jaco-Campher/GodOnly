@@ -98,6 +98,8 @@
 
         HasHelp: KnockoutObservable<boolean> = ko.observable(false);
         ShowHelp: KnockoutObservable<boolean> = ko.observable(false);
+        HasPageSettings: KnockoutObservable<boolean> = ko.observable(false);
+        ShowPageSettings: KnockoutObservable<boolean> = ko.observable(false);
 
         //Global Settings
         ShowGlobalSettings: KnockoutObservable<boolean> = ko.observable(false);
@@ -229,6 +231,7 @@
 
         PageLoadCompleted = () => {
             this.HasHelp(document.getElementById('PageHelp') != null);
+            this.HasPageSettings(document.getElementById('PageSettings') != null);
         }
 
         //#endregion
@@ -302,6 +305,10 @@
             this.ShowHelp(!this.ShowHelp());
             //console.log(this.componentLoader.LastPageViewModel);
             go.PushPageHelp();
+        }
+
+        ShowHidePageSettings = () => {
+            this.ShowPageSettings(!this.ShowPageSettings());
         }
 
         ShowHideGlobalSettings = () => {

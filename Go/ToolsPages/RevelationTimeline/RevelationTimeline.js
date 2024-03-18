@@ -1,3 +1,4 @@
+"use strict";
 var GO;
 (function (GO) {
     var Tools;
@@ -6,6 +7,7 @@ var GO;
         (function (Color) {
             Color["Default"] = "";
             Color["Ba2"] = "ba2";
+            Color["Enoch"] = "enoch";
             Color["Es2"] = "es2";
             Color["Gad"] = "gad";
             Color["Job"] = "job";
@@ -35,10 +37,55 @@ var GO;
             constructor() {
                 this.Tabs = ko.observableArray([]);
                 this.TabJoins = ko.observableArray([]);
+                this.Years = ko.observableArray([]);
+                this.Months = ko.observableArray([]);
                 this.Ref = ko.observable('').subscribeTo('Rev-Ref', false);
                 this.ShowRef = ko.observable(false).subscribeTo('Rev-ShowRef', false);
+                // Settings
+                //******************************
+                this.DetailedView = ko.observable(false);
+                this.CSSClass = ko.computed(() => {
+                    let css = this.DetailedView() ? '' : 'compact';
+                    return css;
+                }, this);
+                this.LoadTimeline();
                 this.LoadItems();
                 this.LoadLinks();
+            }
+            LoadTimeline() {
+                this.Years.push(new Year(2023, '2023-03-23', '2Ba 27:2', 0));
+                this.Years.push(new Year(2024, '2024-04-10', '2Ba 27:3', 7));
+                this.Years.push(new Year(2025, '2025-03-30', '2Ba 27:4', 4));
+                this.Years.push(new Year(2026, '2026-??-??', '2Ba 27:5', 0));
+                this.Years.push(new Year(2027, '2027-??-??', '2Ba 27:6', 0));
+                this.Years.push(new Year(2028, '2028-??-??', '2Ba 27:7', 5));
+                this.Years.push(new Year(2029, '2029-??-??', '2Ba 27:8', 2));
+                this.Years.push(new Year(2030, '2030-??-??', '2Ba 27:9', 0));
+                this.Years.push(new Year(2031, '2031-??-??', '2Ba 27:10', 0));
+                this.Years.push(new Year(2032, '2032-??-??', '2Ba 27:11', 4));
+                this.Years.push(new Year(2033, '2033-??-??', '2Ba 27:12', 1));
+                this.Years.push(new Year(2034, '2034-??-??', '2Ba 27:13', 0));
+                this.Months.push(new Month('m-tab-seal-1', 'Mar 23'));
+                this.Months.push(new Month('m-tab-seal-2', 'Oct 23'));
+                this.Months.push(new Month('m-tab-seal-3', 'May 24'));
+                this.Months.push(new Month('m-tab-seal-4', 'Dec 24'));
+                this.Months.push(new Month('m-tab-seal-5', 'Jul 25'));
+                this.Months.push(new Month('m-tab-seal-6', 'Feb 26'));
+                this.Months.push(new Month('m-tab-seal-7', 'Sep 26'));
+                this.Months.push(new Month('m-tab-trumpet-1', 'Apr 27'));
+                this.Months.push(new Month('m-tab-trumpet-2', 'Nov 27'));
+                this.Months.push(new Month('m-tab-trumpet-3', 'Jun 28'));
+                this.Months.push(new Month('m-tab-trumpet-4', 'Jan 29'));
+                this.Months.push(new Month('m-tab-trumpet-5', 'Aug 29'));
+                this.Months.push(new Month('m-tab-trumpet-6', 'Mar 30'));
+                this.Months.push(new Month('m-tab-trumpet-7', 'Oct 30'));
+                this.Months.push(new Month('m-tab-vial-1', 'May 31'));
+                this.Months.push(new Month('m-tab-vial-2', 'Dec 31'));
+                this.Months.push(new Month('m-tab-vial-3', 'Jul 32'));
+                this.Months.push(new Month('m-tab-vial-4', 'Feb 33'));
+                this.Months.push(new Month('m-tab-vial-5', 'Sep 33'));
+                this.Months.push(new Month('m-tab-vial-6', 'Apr 34'));
+                this.Months.push(new Month('m-tab-vial-7', 'Nov 34'));
             }
             LoadItems() {
                 let tab;
@@ -78,7 +125,7 @@ var GO;
                 //#endregion
                 //#region Seal 3
                 //*******************************
-                tab = new Tab('seal', 'tab-seal-3', 'Seal 3', 'Hyper Inflation?');
+                tab = new Tab('seal', 'tab-seal-3', 'Seal 3', 'Food Inflation?');
                 //Rev 6
                 item = new Item(Color.Rev, 'rev-6-5', 'Had a Pair of Balances in His Hand', 'Black Horse', 'Rev 6:5', 'Rev 6:5', '', '');
                 tab.Items.push(item);
@@ -480,6 +527,67 @@ var GO;
                 //#region Trumpet 1
                 //*******************************
                 tab = new Tab('trumpet', 'tab-trumpet-1', 'Trumpet 1', '2 Witnesses');
+                //2 Esdras 5
+                tab.Joins.push(new Join(Color.Es2, 'j-es2-5-2a'));
+                item = new Item(Color.Es2, 'es2-5-3', 'Wasted Suddenly', 'The Land that Have Root', '2Es 5:3', '2Es 5:3', '', '');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Es2, 'j-es2-5-3'));
+                this.TabJoins.push(new TabJoin(Color.Es2, 'tj-es2-5-3'));
+                //2 Esdras 15
+                tab.Joins.push(new Join(Color.Es2, 'j-es2-15-11ba'));
+                item = new Item(Color.Es2, 'es2-15-13a', 'Hail', 'Ground', '2Es 15:13a', '2Es 15:13', 'They that till the ground shall mourn:', ' for their seeds shall fail…');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Es2, 'j-es2-15-13a'));
+                this.TabJoins.push(new TabJoin(Color.Es2, 'tj-es2-15-13a'));
+                //Enoch
+                tab.Joins.push(new Join(Color.Enoch, 'j-enoch-80-2a', FirstLast.First));
+                item = new Item(Color.Enoch, 'enoch-80-2a', '', 'Earth', 'Enoch 80:2a', 'Enoch 80:2', 'Their seed shall be tardy on their lands and fields.', 'All things on the earth shall alter.');
+                tab.Items.push(item);
+                item = new Item(Color.Enoch, 'enoch-80-2b', 'And the Heaven Shall Withhold', 'The Rain Shall be Kept Back', 'Enoch 80:2b', 'Enoch 80:2', 'And shall not appear in their time.', '');
+                tab.Items.push(item);
+                this.TabJoins.push(new TabJoin(Color.Enoch, 'tj-enoch-80-2b'));
+                //Rev 8
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-8-6a'));
+                item = new Item(Color.Rev, 'rev-8-7', 'Hail and Fire Mingled with Blood', 'Earth', 'Rev 8:7', 'Rev 8:7', '1/3 Trees burnt', 'All green grass burnt');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-8-7'));
+                this.TabJoins.push(new TabJoin(Color.Rev, 'tj-rev-8-7'));
+                //Rev 10
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-10-5aa'));
+                item = new Item(Color.Rev, 'rev-10-6a', '', 'Earth', 'Rev 10:6a', 'Rev 10:6', 'And sware by Him that liveth for ever and ever,', ' Who created heaven,');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-10-6a'));
+                this.TabJoins.push(new TabJoin(Color.Rev, 'tj-rev-10-6a'));
+                //Rev 11
+                item = new Item(Color.Rev, 'rev-11-2b', '', '42 Months', 'Rev 11:2b', 'Rev 11:2', 'Given unto the gentiles.', 'The holy city shall they tread under foot.');
+                item.Flag(Flag.NotSureLocation);
+                tab.Items.push(item);
+                item = new Item(Color.Rev, 'rev-11-3', '2 Witnesses and They Shall Prophesy', '1260 Days', 'Rev 11:3', 'Rev 11:3', 'Clothed in sackcloth.', '');
+                tab.Items.push(item);
+                item = new Item(Color.Rev, 'rev-11-4', '2 Olive Trees, 2 Candlesticks', 'Standing Before the God of the Earth', 'Rev 11:4-5', 'Rev 11:4-5', 'Fire out of their mouth.', 'Devoureth their enemies.');
+                tab.Items.push(item);
+                item = new Item(Color.Rev, 'rev-11-6a', 'In the Days of Their Prophecy', 'Power to Shut Heaven that it Rain Not', 'Rev 11:6a', 'Rev 11:6', '', '');
+                tab.Items.push(item);
+                this.TabJoins.push(new TabJoin(Color.Rev, 'tj-rev-11-6a'));
+                //Rev 12
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-12-5aa'));
+                item = new Item(Color.Rev, 'rev-12-6', 'Woman Fled into the Wilderness', '1260 Days', 'Rev 12:6', 'Rev 12:6', 'Where she hath a place prepared of God.', '');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-12-6'));
+                this.TabJoins.push(new TabJoin(Color.Rev, 'tj-rev-12-6'));
+                //Rev 13
+                this.TabJoins.push(new TabJoin(Color.Rev, 'tj-rev-13-5a'));
+                item = new Item(Color.Rev, 'rev-13-5b', 'Power Was Given Unto him', '42 Months', 'Rev 13:5b', 'Rev 13:5', ' to continue forty and two months.', '');
+                item.Flag(Flag.NotSureLocation);
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-13-5b'));
+                this.TabJoins.push(new TabJoin(Color.Rev, 'tj-rev-13-5b'));
+                //Rev 14
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-14-7aa'));
+                item = new Item(Color.Rev, 'rev-14-7b', '', 'Earth', 'Rev 14:7b', 'Rev 14:7', 'Worship Him that made heaven, and earth.', '');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-14-7b'));
+                this.TabJoins.push(new TabJoin(Color.Rev, 'tj-rev-14-7b'));
                 this.Tabs.push(tab);
                 //#endregion
                 //#region Trumpet 2
@@ -586,14 +694,31 @@ var GO;
                 tab = new Tab('judgement', 'tab-judgement', 'Judgement');
                 this.Tabs.push(tab);
                 //#endregion
-                //Trumpets
-                //this.Items.push(new Item(Color.Rev6, 'trump-1', 'Trump 1', 'Subtitle', 'Rev 6:', 'Rev 6:', 'Line 1', 'Line 2', FirstLast.First));
             }
             LoadLinks() {
                 //this.Links.push(new Link('|', 'l-1s', 'l-1e'));
             }
         }
         Tools.RevelationTimelineViewModel = RevelationTimelineViewModel;
+        class Year {
+            constructor(year, displayYear, ref, offset) {
+                this.Ref = '';
+                this.ShowVerses = () => {
+                    ko.postbox.publish('Rev-Ref', this.Ref);
+                    ko.postbox.publish('Rev-ShowRef', true);
+                };
+                this.Style = `grid-area: y-${year}`;
+                this.DisplayYear = displayYear;
+                this.Offset = `width: ${(offset * 25) + 6}px`;
+                this.Ref = ref;
+            }
+        }
+        class Month {
+            constructor(area, displayYear) {
+                this.Style = `grid-area: ${area}`;
+                this.DisplayYear = displayYear;
+            }
+        }
         class Tab {
             constructor(cssClass, location, name, subHeading = '-') {
                 this.Expanded = ko.observable(false);

@@ -1,12 +1,39 @@
 ﻿<link rel="Stylesheet" type="text/css" href="../toolspages/RevelationTimeline/RevelationTimeline.css" />
 
-<div class="rev-main">
+<div class="rev-main" data-bind="class: CSSClass">
 
     <template id="LinkIcon">
 
     </template>
 
     <div class="tabs">
+        <div class="time year-line">
+            <div class="main-line"></div>
+        </div>
+
+        <div class="year" style="grid-area: y-start;padding:0 0 0 20px">
+            <div class="text">Biblical Years - 2Ba 27</div>
+        </div>
+        <!-- ko foreach: Years -->
+        <div class="year" data-bind="attr: { style: Style }">
+            <div data-bind="attr: { style: Offset }"></div>
+            <div class="dot"></div>
+            <div class="text" data-bind="text:DisplayYear, click: ShowVerses"></div>
+        </div>
+        <!-- /ko -->
+
+        <div class="time month-line">
+            <div class="main-line"></div>
+        </div>
+
+        <!-- ko foreach: Months -->
+        <div class="month" data-bind="attr: { style: Style }">
+            <div class="dot"></div>
+            <div class="text" data-bind="text:DisplayYear"></div>
+        </div>
+        <!-- /ko -->
+
+
         <!-- ko foreach: Tabs -->
         <div class="tab-heading" data-bind="class: CSSClass, attr: { style: HeadingStyle }">
             <h2 data-bind="text:Name, click: OpenClose"></h2>
@@ -32,16 +59,33 @@
 
     <template id="Rev-Item">
         <div class="item" data-bind="class: CSSClass, attr: { style: Location }">
+            <div class="ref" data-bind="text: RefDisplay, click: ShowVerses"></div>
             <h5><go-ref-text params="{ Text: SubTitle}"></go-ref-text></h5>
             <h4><go-ref-text params="{ Text: Title}"></go-ref-text></h4>
-            <div class="ref" data-bind="text: RefDisplay, click: ShowVerses"></div>
             <go-ref-text class="line" params="{ Text: Line1}"></go-ref-text>
             <go-ref-text class="line line2" params="{ Text: Line2}"></go-ref-text>
         </div>
     </template>
 
+    <template id="PageHelp">
+        <p>Help goes here.</p>
+    </template>
+
     <go-dialog params="{ Title: 'Reference', Show: ShowRef }">
         <go-bible-ref params="{ Ref: $parent.Ref, Show: GO.eRefTypeShow.Most }"></go-bible-ref>
     </go-dialog>
+
+    <template id="PageSettings">
+        <div class="settings-group">
+            <h6>Show</h6>
+            <hr />
+            <ul class="settings-list content">
+                <li>
+                    <label for="DetailedView">Detailed View</label>
+                    <input type="checkbox" id="DetailedView" data-bind="checked: DetailedView" />
+                </li>
+            </ul>
+        </div>
+    </template>
 
 </div>
