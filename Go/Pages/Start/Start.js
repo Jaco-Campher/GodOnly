@@ -1,4 +1,3 @@
-"use strict";
 var GO;
 (function (GO) {
     let eRefTypeShow;
@@ -205,7 +204,7 @@ var GO;
                     continue;
                 }
                 for (let legendName in go.LegendsObject) {
-                    let reg = new RegExp(`(^|(?<=\\W))(${legendName})(?=\\W)`, 'gi');
+                    let reg = new RegExp(`(^|(?<=\\W))(${legendName})($|(?=\\W))`, 'gi');
                     let htmlSections = inputSection.Html.split(reg);
                     if (htmlSections.length > 1) {
                         found = true;

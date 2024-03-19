@@ -1,4 +1,3 @@
-"use strict";
 var GO;
 (function (GO) {
     var Tools;
@@ -6,6 +5,7 @@ var GO;
         let Color;
         (function (Color) {
             Color["Default"] = "";
+            Color["AscIsa"] = "ascisa";
             Color["Ba2"] = "ba2";
             Color["Enoch"] = "enoch";
             Color["Es2"] = "es2";
@@ -527,6 +527,13 @@ var GO;
                 //#region Trumpet 1
                 //*******************************
                 tab = new Tab('trumpet', 'tab-trumpet-1', 'Trumpet 1', '2 Witnesses');
+                //Enoch 80
+                tab.Joins.push(new Join(Color.Enoch, 'j-enoch-80-2a', FirstLast.First));
+                item = new Item(Color.Enoch, 'enoch-80-2a', '', 'Earth', 'Enoch 80:2a', 'Enoch 80:2', 'Their seed shall be tardy on their lands and fields.', 'All things on the earth shall alter.');
+                tab.Items.push(item);
+                item = new Item(Color.Enoch, 'enoch-80-2b', 'And the Heaven Shall Withhold', 'The Rain Shall be Kept Back', 'Enoch 80:2b', 'Enoch 80:2', 'And shall not appear in their time.', '');
+                tab.Items.push(item);
+                this.TabJoins.push(new TabJoin(Color.Enoch, 'tj-enoch-80-2b'));
                 //2 Esdras 5
                 tab.Joins.push(new Join(Color.Es2, 'j-es2-5-2a'));
                 item = new Item(Color.Es2, 'es2-5-3', 'Wasted Suddenly', 'The Land that Have Root', '2Es 5:3', '2Es 5:3', '', '');
@@ -539,13 +546,6 @@ var GO;
                 tab.Items.push(item);
                 tab.Joins.push(new Join(Color.Es2, 'j-es2-15-13a'));
                 this.TabJoins.push(new TabJoin(Color.Es2, 'tj-es2-15-13a'));
-                //Enoch
-                tab.Joins.push(new Join(Color.Enoch, 'j-enoch-80-2a', FirstLast.First));
-                item = new Item(Color.Enoch, 'enoch-80-2a', '', 'Earth', 'Enoch 80:2a', 'Enoch 80:2', 'Their seed shall be tardy on their lands and fields.', 'All things on the earth shall alter.');
-                tab.Items.push(item);
-                item = new Item(Color.Enoch, 'enoch-80-2b', 'And the Heaven Shall Withhold', 'The Rain Shall be Kept Back', 'Enoch 80:2b', 'Enoch 80:2', 'And shall not appear in their time.', '');
-                tab.Items.push(item);
-                this.TabJoins.push(new TabJoin(Color.Enoch, 'tj-enoch-80-2b'));
                 //Rev 8
                 tab.Joins.push(new Join(Color.Rev, 'j-rev-8-6a'));
                 item = new Item(Color.Rev, 'rev-8-7', 'Hail and Fire Mingled with Blood', 'Earth', 'Rev 8:7', 'Rev 8:7', '1/3 Trees burnt', 'All green grass burnt');
@@ -593,6 +593,66 @@ var GO;
                 //#region Trumpet 2
                 //*******************************
                 tab = new Tab('trumpet', 'tab-trumpet-2', 'Trumpet 2', 'World War 3?');
+                //Asc Isa 4
+                item = new Item(Color.AscIsa, 'ascisa-4-1', 'Days of the Completion of the World', '', 'AscIsa 4:1', 'AscIsa 4:1', '', '', FirstLast.First);
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.AscIsa, 'j-ascisa-4-1'));
+                this.TabJoins.push(new TabJoin(Color.AscIsa, 'tj-ascisa-4-1'));
+                //2 Baruk 30
+                tab.Joins.push(new Join(Color.Ba2, 'j-ba2-30-2ca'));
+                item = new Item(Color.Ba2, 'ba2-30-3', 'It is the Consummation of the Times', 'Time has Come of Which it is Said', '2Ba 30:3', '2Ba 30:3', '', '');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Ba2, 'j-ba2-30-3'));
+                this.TabJoins.push(new TabJoin(Color.Ba2, 'tj-ba2-30-3'));
+                //Enoch 80
+                tab.Joins.push(new Join(Color.Enoch, 'j-enoch-80-2b'));
+                item = new Item(Color.Enoch, 'enoch-80-3', 'In Those Times', '', 'Enoch 80:3', 'Enoch 80:3', ' the fruits of the earth shall be backward,', ' and shall not grow in their time,');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Enoch, 'j-enoch-80-3'));
+                this.TabJoins.push(new TabJoin(Color.Enoch, 'tj-enoch-80-3'));
+                //2 Esdras 16
+                item = new Item(Color.Es2, 'es2-16-12b', '', '', '2Es 16:12b', '2Es 16:12', 'The sea ariseth up with waves from the deep,', ' and the waves of it are troubled, and the fishes');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Es2, 'j-es2-16-12b'));
+                this.TabJoins.push(new TabJoin(Color.Es2, 'tj-es2-16-12b'));
+                //Gad 2
+                tab.Joins.push(new Join(Color.Gad, 'j-gad-2-26a', FirstLast.First));
+                item = new Item(Color.Gad, 'gad-2-26a', 'At the End of Days', '', 'Gad 2:26a', 'Gad 2:26', '', '');
+                item.Flag(Flag.NotSureLocation);
+                tab.Items.push(item);
+                item = new Item(Color.Gad, 'gad-2-26b', 'Michael the Great Prince will Stand Up in War', '', 'Gad 2:26b', 'Gad 2:26', '', '');
+                tab.Items.push(item);
+                this.TabJoins.push(new TabJoin(Color.Gad, 'tj-gad-2-26'));
+                //Rev 8
+                item = new Item(Color.Rev, 'rev-8-8', 'Great Mountain Burning with Fire', 'Sea', 'Rev 8:8-9', 'Rev 8:8-9', '1/3 Sea Blood, 1/3 Sea die.', '1/3 Ships destroyed.');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-8-8'));
+                this.TabJoins.push(new TabJoin(Color.Rev, 'tj-rev-8-8'));
+                //Rev 10
+                item = new Item(Color.Rev, 'rev-10-6b', '', 'Sea', 'Rev 10:6b', 'Rev 10:6', '', '');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-10-6b'));
+                item = new Item(Color.Rev, 'rev-10-6c', 'Time No Longer', '', 'Rev 10:c', 'Rev 10:6', '', '');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-10-6c'));
+                this.TabJoins.push(new TabJoin(Color.Rev, 'tj-rev-10-6c'));
+                //Rev 11
+                item = new Item(Color.Rev, 'rev-11-6b', '', '', 'Rev 11:6b', 'Rev 11:6', 'Power over waters to turn them to blood.', '');
+                tab.Items.push(item);
+                item = new Item(Color.Rev, 'rev-11-6c', '', '', 'Rev 11:6c', 'Rev 11:6', 'Smite the earth with all plagues,', ' as often as they will.');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-11-6c'));
+                this.TabJoins.push(new TabJoin(Color.Rev, 'tj-rev-11-6c'));
+                //Rev 12
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-12-6a'));
+                item = new Item(Color.Rev, 'rev-12-7', 'Michael and His Angels Fought', 'War in Heaven', 'Rev 12:7-8', 'Rev 12:7-8', 'and the dragon fought and his angels,', 'and prevailed not;');
+                tab.Items.push(item);
+                this.TabJoins.push(new TabJoin(Color.Rev, 'tj-rev-12-7'));
+                //Rev 14
+                item = new Item(Color.Rev, 'rev-14-7c', '', 'Sea', 'Rev 14:7c', 'Rev 14:7', '', '');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-14-7c'));
+                this.TabJoins.push(new TabJoin(Color.Rev, 'tj-rev-14-7c'));
                 this.Tabs.push(tab);
                 //#endregion
                 //#region Trumpet 3
