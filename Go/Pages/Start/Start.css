@@ -376,6 +376,13 @@ p.note {
     font-style: italic;
 }
 
+p.warning {
+    background: #f703;
+    padding: 10px;
+    font-style: italic;
+    text-align: center;
+}
+
 p.update {
     background: #f902;
     padding: 10px;
@@ -1173,6 +1180,21 @@ go-chapter {
     color:var(--text-color);
     text-align:left;
     font-weight:normal;
+}
+
+
+/* Dialog Page
+****************************/
+.dialog-backgound.dialog-page .dialog-content {
+    margin: 25px 15px 10px 0;
+}
+
+.dialog-backgound.dialog-page {
+    z-index: 10001;
+}
+
+.dialog-page .box:after {
+    display: none;
 }
 
 

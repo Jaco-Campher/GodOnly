@@ -11,8 +11,9 @@
             <div class="main-line"></div>
         </div>
 
-        <div class="year" style="grid-area: y-start;padding:0 0 0 20px">
-            <div class="text">Biblical Years - 2Ba 27</div>
+        <div class="year" style="grid-area: y-start;padding:0 0 0 48px">
+            <div class="text" data-bind="click: ShowTimelineExplanation">Biblical Years</div>
+            <go-dialog-page params="{ Title: 'Timeline Dates Explanation', Page: 'go-prophesypage-timelinedatesexplanation', Show: ShowTimelineExplanation }"></go-dialog-page>
         </div>
         <!-- ko foreach: Years -->
         <div class="year" data-bind="attr: { style: Style }">
@@ -32,8 +33,12 @@
             <div class="text" data-bind="text:DisplayYear"></div>
         </div>
         <!-- /ko -->
-
-
+        <!-- ko foreach: TimelineEvents -->
+        <div class="timeline-event" data-bind="attr: { style: Style }">
+            <div data-bind="attr: { style: Offset }"></div>
+            <img data-bind="attr: { src: ImageUrl, alt: Title, Title: Title }" />
+        </div>
+        <!-- /ko -->
         <!-- ko foreach: Tabs -->
         <div class="tab-heading" data-bind="class: CSSClass, attr: { style: HeadingStyle }">
             <h2 data-bind="text:Name, click: OpenClose"></h2>
@@ -68,7 +73,75 @@
     </template>
 
     <template id="PageHelp">
-        <p>Help goes here.</p>
+        <h3>Formatting</h3>
+        <p>When you first open the Revelation Timeline you will see the sections (Seal 1, Seal 2, etc.) in a closed state. You can click on the Title or the Open button in the top right corner to open each of the sections. This will show all the verses for that section.</p>
+        <p>In both the open and closed state of the section, there will be colored bars going horizontally over the sections. These are joins that shows how different verses joins together.</p>
+
+        <ul class="join-legends">
+            <li>
+                <div class="mat" style="height:var(--heading-1-height);background:linear-gradient(90deg, #0000 0, #0000 30%, var(--mat));"></div>
+                <p>Fading in indicated the start of the verses in the timeline, but not the start of a chapter in the Bible.</p>
+            </li>
+
+            <li>
+                <div class="mat" style="height:var(--heading-1-height);background:linear-gradient(90deg, var(--mat) 0, #0000 70%);"></div>
+                <p>Fading out indicated the end of the verses in the timeline, but not the end of a chapter in the Bible.</p>
+            </li>
+            <li>
+                <div class="mat" style="height:var(--heading-1-height);background:var(--mat);"></div>
+                <p>Solid indicates a join on both sides. If there are no verses on one of the sides, it is because it is still as work in progress and needs to be added.</p>
+            </li>
+        </ul>
+        <p class="note">Please keep in mind that verses will not be shown if the sections are closed.</p>
+
+        <h3>Verses</h3>
+        <p>Verses are arranged in rows and columns. Rows are normally part of the same chapter and columns shows how verses related to each other across different chapters.</p>
+        <p>Verses with a bright white line at the front or back indicates the start or end of a chapter in the Bible.</p>
+        <div class="rev-main verses-demo">
+            <div class="item first">
+                <h5>Sub Heading</h5>
+                <h4 style="background: var(--mat)">Heading</h4>
+            </div>
+            <div class="item last">
+                <h5>Sub Heading</h5>
+                <h4 style="background: var(--mat)">Heading</h4>
+            </div>
+        </div>
+        <br />
+        <p>Some verses will have a different background color.</p>
+        <div class="rev-main verses-demo">
+            <div class="item protection">
+                <h5>Green</h5>
+                <h4 style="background: var(--rev)">Shows the Protection of Yah</h4>
+            </div>
+            <div class="item not-sure-location">
+                <h5>Orange</h5>
+                <h4 style="background: var(--rev)">Not Sure of the Location</h4>
+            </div>
+        </div>
+
+        <h3>Other</h3>
+        <p>Anything showing a ‘?’ mark behind it, means that it is based on my own interpretation and understanding or based on worldly sources. This also includes all the dates shown.</p>
+        <p class="note">Please see the <a href="/prophesy-study/TimelineDatesExplanation" data-bind="click: ShowTimelineExplanation">Timeline Dates Explanation</a> for more information.</p>
+
+        <h3>Settings</h3>
+        <div class="settings-holder">
+            <div class="settings-group">
+                <h6>Show</h6>
+                <hr />
+                <ul class="settings-list content">
+                    <li>
+                        <div class="heading">
+                            <label for="DetailedView">Detailed View</label>
+                            <input type="checkbox" id="DetailedView" data-bind="checked: DetailedView" />
+                        </div>
+                        <div class="description">
+                            <p>Shows more details about the given verse if available. This is recommended if you want to do your own studies in Revelation. This is turned off by default as it can be overwhelming the first time you open the sections, and it can make it more difficult to see how verses relate to each other.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </template>
 
     <go-dialog params="{ Title: 'Reference', Show: ShowRef }">

@@ -39,8 +39,10 @@ var GO;
                 this.TabJoins = ko.observableArray([]);
                 this.Years = ko.observableArray([]);
                 this.Months = ko.observableArray([]);
+                this.TimelineEvents = ko.observableArray([]);
                 this.Ref = ko.observable('').subscribeTo('Rev-Ref', false);
                 this.ShowRef = ko.observable(false).subscribeTo('Rev-ShowRef', false);
+                this.ShowTimelineExplanation = ko.observable(false);
                 // Settings
                 //******************************
                 this.DetailedView = ko.observable(false);
@@ -48,23 +50,28 @@ var GO;
                     let css = this.DetailedView() ? '' : 'compact';
                     return css;
                 }, this);
+                this.ShowHideTimelineExplanation = () => {
+                    this.ShowTimelineExplanation(!this.ShowTimelineExplanation());
+                };
                 this.LoadTimeline();
                 this.LoadItems();
                 this.LoadLinks();
             }
             LoadTimeline() {
-                this.Years.push(new Year(2023, '2023-03-23', '2Ba 27:2', 0));
-                this.Years.push(new Year(2024, '2024-04-10', '2Ba 27:3', 7));
-                this.Years.push(new Year(2025, '2025-03-30', '2Ba 27:4', 4));
-                this.Years.push(new Year(2026, '2026-??-??', '2Ba 27:5', 0));
-                this.Years.push(new Year(2027, '2027-??-??', '2Ba 27:6', 0));
-                this.Years.push(new Year(2028, '2028-??-??', '2Ba 27:7', 5));
-                this.Years.push(new Year(2029, '2029-??-??', '2Ba 27:8', 2));
-                this.Years.push(new Year(2030, '2030-??-??', '2Ba 27:9', 0));
-                this.Years.push(new Year(2031, '2031-??-??', '2Ba 27:10', 0));
-                this.Years.push(new Year(2032, '2032-??-??', '2Ba 27:11', 4));
-                this.Years.push(new Year(2033, '2033-??-??', '2Ba 27:12', 1));
-                this.Years.push(new Year(2034, '2034-??-??', '2Ba 27:13', 0));
+                //Years
+                this.Years.push(new Year(2023, 'Mar 2023', '2Ba 27:2', 0));
+                this.Years.push(new Year(2024, 'Apr 2024', '2Ba 27:3', 7));
+                this.Years.push(new Year(2025, 'Mar 2025', '2Ba 27:4', 4));
+                this.Years.push(new Year(2026, '??? 2026', '2Ba 27:5', 0));
+                this.Years.push(new Year(2027, '??? 2027', '2Ba 27:6', 0));
+                this.Years.push(new Year(2028, '??? 2028', '2Ba 27:7', 5));
+                this.Years.push(new Year(2029, '??? 2029', '2Ba 27:8', 2));
+                this.Years.push(new Year(2030, '??? 2030', '2Ba 27:9', 0));
+                this.Years.push(new Year(2031, '??? 2031', '2Ba 27:10', 0));
+                this.Years.push(new Year(2032, '??? 2032', '2Ba 27:11', 4));
+                this.Years.push(new Year(2033, '??? 2033', '2Ba 27:12', 1));
+                this.Years.push(new Year(2034, '??? 2034', '2Ba 27:13', 0));
+                //Months
                 this.Months.push(new Month('m-tab-seal-1', 'Mar 23'));
                 this.Months.push(new Month('m-tab-seal-2', 'Oct 23'));
                 this.Months.push(new Month('m-tab-seal-3', 'May 24'));
@@ -86,6 +93,11 @@ var GO;
                 this.Months.push(new Month('m-tab-vial-5', 'Sep 33'));
                 this.Months.push(new Month('m-tab-vial-6', 'Apr 34'));
                 this.Months.push(new Month('m-tab-vial-7', 'Nov 34'));
+                //Events
+                this.TimelineEvents.push(new TimelineEvent('tab-seal-6', 'Solar Eclipse (17 Feb 2026)', '/images/rev/solareclipse40.png', 10, 380));
+                this.TimelineEvents.push(new TimelineEvent('tab-seal-6', 'Blood Moon (2-3 Mar 2026)', '/images/rev/bloodmoon40.png', 20, 480)); //410
+                //this.TimelineEvents.push(new TimelineEvent('tab-seal-6', 'Solar Eclipse (12 Aug 2026)', '/images/rev/solareclipse40.png', 200, 480));
+                //this.TimelineEvents.push(new TimelineEvent('tab-seal-6', 'Blood Moon (27-28 Aug 2026)', '/images/rev/bloodmoon40.png', 210, 510));
             }
             LoadItems() {
                 let tab;
@@ -146,7 +158,7 @@ var GO;
                 this.TabJoins.push(new TabJoin(Color.Es2, 'tj-es2-15-6'));
                 //Job 5
                 this.TabJoins.push(new TabJoin(Color.Job, 'tj-job-5-19-s', FirstLast.First));
-                item = new Item(Color.Job, 'job-5-19', 'He Shall Deliver Thee in Six Troubles', '', 'Job 5:19', 'Job 5:19', 'yea, in seven there shall no evil touch thee.', '');
+                item = new Item(Color.Job, 'job-5-19', 'He Shall Deliver Thee in 6 Troubles', '', 'Job 5:19', 'Job 5:19', 'yea, in 7 there shall no evil touch thee.', '');
                 item.Flag(Flag.Protection);
                 tab.Items.push(item);
                 item = new Item(Color.Job, 'job-5-20', 'In Famine He Shall Redeem Thee from Death', '', 'Job 5:20', 'Job 5:20', 'and in war from the power of the sword.', '');
@@ -156,7 +168,7 @@ var GO;
                 //Rev 6
                 item = new Item(Color.Rev, 'rev-6-7', 'His Name that Sat on Him was Death', '{Pale|G5515} Horse', 'Rev 6:7-8a', 'Rev 6:7-8', 'and Hell followed with him.', '');
                 tab.Items.push(item);
-                item = new Item(Color.Rev, 'rev-6-8b', 'Kill with Sword, {Hunger|G3042|Famine}, Death', 'Power was Given unto Them over the Fourth Part of the Earth', 'Rev 6:8b', 'Rev 6:8', ' and with the beasts of the earth.', '');
+                item = new Item(Color.Rev, 'rev-6-8b', 'Kill with Sword, {Hunger|G3042|Famine}, Death', 'Power was Given unto Them over the 4th Part of the Earth', 'Rev 6:8b', 'Rev 6:8', ' and with the beasts of the earth.', '');
                 tab.Items.push(item);
                 tab.Joins.push(new Join(Color.Rev, 'j-rev-6-8b'));
                 this.TabJoins.push(new TabJoin(Color.Rev, 'tj-seal-4'));
@@ -332,7 +344,7 @@ var GO;
                 item = new Item(Color.Mrk, 'mark-13-26', 'The Son of Man Coming', 'Then Shall They See', 'Mrk 13:26', 'Mrk 13:26', 'in the clouds', ' with great power and glory.');
                 tab.Items.push(item);
                 tab.Joins.push(new Join(Color.Mrk, 'j-mark-13-26'));
-                item = new Item(Color.Mrk, 'mark-13-27a', '', 'Then Shall He Send His Angels', 'Mrk 13:27a', 'Mrk 13:27', '', '');
+                item = new Item(Color.Mrk, 'mark-13-27a', 'Then Shall He Send His Angels', '', 'Mrk 13:27a', 'Mrk 13:27', '', '');
                 tab.Items.push(item);
                 item = new Item(Color.Mrk, 'mark-13-27b', 'Shall Gather Together His Elect', '4 Winds', 'Mrk 13:27b', 'Mrk 13:27', 'shall gather together his elect from the four winds,', 'from the uttermost part of the earth…');
                 tab.Items.push(item);
@@ -779,9 +791,27 @@ var GO;
                 this.DisplayYear = displayYear;
             }
         }
+        class TimelineEvent {
+            constructor(location, title, imageUrl, offsetClosed, offsetOpen) {
+                this.ImageUrl = '';
+                this.Style = `grid-area: m-${location}`;
+                this.Title = title;
+                this.OffsetClosed = offsetClosed;
+                this.OffsetOpen = offsetOpen;
+                this.ImageUrl = imageUrl;
+                this.Expanded = ko.observable(false).subscribeTo(location);
+                this.Offset = ko.computed(() => {
+                    if (this.Expanded()) {
+                        return `width: ${this.OffsetOpen}px;transition: width 300ms`;
+                    }
+                    else {
+                        return `width: ${this.OffsetClosed}px`;
+                    }
+                }, this);
+            }
+        }
         class Tab {
             constructor(cssClass, location, name, subHeading = '-') {
-                this.Expanded = ko.observable(false);
                 this.Items = ko.observableArray([]);
                 this.Joins = ko.observableArray([]);
                 this.Links = ko.observableArray([]);
@@ -793,6 +823,7 @@ var GO;
                 this.Style = `grid-area: ${location} / ${location} / ${location}-end / ${location}-end; --tab-image: url(../../Images/Rev/${location}.png)`;
                 this.Name = name;
                 this.SubHeading = subHeading;
+                this.Expanded = ko.observable(false).publishOn(location);
                 this.CSSClass = ko.computed(() => {
                     let css = `${this.BaseCSSClass} ${location}`;
                     css += this.Expanded() ? ' expanded' : '';

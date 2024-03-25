@@ -134,22 +134,19 @@ footer {
     grid-area: y-start / y-start / y-end / y-end;
 }
 
-.year div,
-.month div {
+.year > div,
+.month > div,
+.timeline-event > div {
     display:inline-block;
 }
 
-.year .text,
-.month .text {
+.year .text {
     padding: 0 5px;
     margin: 4px 0 0;
     background: #222;
     border: 1px solid #444;
     cursor: pointer;
 }
-
-
-
 
 /* Month Time Line */
 /***************************************/
@@ -160,6 +157,22 @@ footer {
 .month {
     padding: 0 10px;
 }
+
+.month .text {
+    padding: 0 5px;
+    margin: 4px 0 0;
+    background: #121212;
+    border-top: 1px solid #121212;
+}
+
+/* Time Line Event */
+/***************************************/
+.timeline-event img {
+    position:relative;
+    top:-17px;
+    width:20px;
+}
+
 
 
 /* Tab */
@@ -1008,3 +1021,36 @@ footer {
     background:rgb(80,40,0);
 }
 
+
+/*********************************************************************
+    Help
+*********************************************************************/
+.join-legends {
+    padding:0;
+}
+
+.join-legends li {
+    display:grid;
+    grid-gap: 8px;
+    grid-template-columns: 80px 1fr;
+    margin: 8px 0;
+}
+.join-legends p {
+    min-height:40px;
+    margin:0;
+}
+
+.verses-demo {
+    display:grid;
+    grid-gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    margin:20px 5px;
+}
+
+@media (max-width:600px) {
+    .verses-demo {
+        grid-gap: 20px;
+        grid-template-columns: 1fr;
+        margin:20px 0;
+    }
+}
