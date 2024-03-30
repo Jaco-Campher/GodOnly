@@ -12,6 +12,7 @@
 
         Studies: KnockoutObservableArray<StudyLink> = ko.observableArray<StudyLink>([]);
 
+        NavChangedSubscription: KnockoutSubscription;
 
         //****************************************************************************
         // Constructor
@@ -19,7 +20,6 @@
         constructor() {
             if (this.NavChanged()) { return }
             this.SetupLinks();
-            ko.postbox.subscribe('NavChanged', this.NavChanged);
         }
 
         SetupLinks() {
@@ -34,12 +34,14 @@
 
         public NavChanged = (): boolean => {
             let state: iStudyHistoryState = history.state;
+            if (this.NavChangedSubscription != null) { this.NavChangedSubscription.dispose(); }
 
             if (state && state.Parameters.page) {
                 go.ActivePage(`go-torahpage-${state.Parameters.page}`);
                 return true;
             }
 
+            this.NavChangedSubscription = ko.postbox.subscribe('NavChanged', this.NavChanged);
             return false;
         }
 
