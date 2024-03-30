@@ -7,28 +7,34 @@ var GO;
             // Constructor
             //****************************************************************************
             constructor() {
+                this.RevelationTimelineStudies = ko.observableArray([]);
                 this.Studies = ko.observableArray([]);
                 //****************************************************************************
                 //#region Functions
                 //****************************************************************************
                 this.NavChanged = () => {
                     let state = history.state;
-                    console.log('..', state);
+                    if (this.NavChangedSubscription != null) {
+                        this.NavChangedSubscription.dispose();
+                    }
                     if (state && state.Parameters.page) {
                         go.ActivePage(`go-prophesypage-${state.Parameters.page}`);
                         return true;
                     }
+                    this.NavChangedSubscription = ko.postbox.subscribe('NavChanged', this.NavChanged);
                     return false;
                 };
                 if (this.NavChanged()) {
                     return;
                 }
                 this.SetupLinks();
-                ko.postbox.subscribe('NavChanged', this.NavChanged);
             }
             SetupLinks() {
+                //Studies
                 this.Studies.push(new StudyLink('Day of the LORD', '/prophesy-study/dayofthelord'));
                 this.Studies.push(new StudyLink('Tribulation', '/prophesy-study/tribulation'));
+                //Revelation Timeline Studies
+                this.RevelationTimelineStudies.push(new StudyLink('Dates Explanation', '/prophesy-study/timelinedatesexplanation'));
             }
         }
         Prophesy.LandingViewModel = LandingViewModel;

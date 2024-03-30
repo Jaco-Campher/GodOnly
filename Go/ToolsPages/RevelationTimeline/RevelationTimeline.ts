@@ -885,9 +885,9 @@
             //#endregion
 
 
-            //#region Come as a Thief
+            //#region Day of Yah
             //*******************************
-            tab = new Tab('thief', 'tab-thief', 'Come as a Thief');
+            tab = new Tab('thief', 'tab-thief', 'Day of Yah', 'Come as a Thief');
 
             this.Tabs.push(tab);
             //#endregion

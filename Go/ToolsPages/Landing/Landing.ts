@@ -10,6 +10,8 @@
 
         ImageLinks: KnockoutObservableArray<GO.ImageLink> = ko.observableArray<GO.ImageLink>([]);
 
+        NavChangedSubscription: KnockoutSubscription;
+
         //****************************************************************************
         // Constructor
         //****************************************************************************
@@ -17,7 +19,7 @@
             //console.log('Tools Landing...')
             this.SetupImageLinks();
             this.NavChanged();
-            ko.postbox.subscribe('NavChanged', this.NavChanged);
+            
         }
 
         SetupImageLinks() {
@@ -33,6 +35,8 @@
 
         public NavChanged = () => {
             let state: iToolsHistoryState = history.state;
+            if (this.NavChangedSubscription != null) { this.NavChangedSubscription.dispose(); }
+
             if (state && state.Parameters.page) {
 
                 //console.log(state.Parameters.page);
@@ -43,21 +47,28 @@
                         return;
 
                     case 'incest-laws':
-                        return go.ActivePage('go-tools-incestLaws');
+                        go.ActivePage('go-tools-incestLaws');
+                        return;
 
                     case 'revelation-timeline':
-                        return go.ActivePage('go-tools-revelationTimeline');
+                        go.ActivePage('go-tools-revelationTimeline');
+                        return;
 
                     case 'texttohtml':
-                        return go.ActivePage('go-tools-textToHtml');
+                        go.ActivePage('go-tools-textToHtml');
+                        return;
 
                     case 'timeline':
-                        return go.ActivePage('go-tools-timeline');
+                        go.ActivePage('go-tools-timeline');
+                        return;
                 }
 
                 //Show the page.
                 go.Navigate(`tools/${state.Parameters.page}`);
-            } 
+            }
+            else {
+                this.NavChangedSubscription = ko.postbox.subscribe('NavChanged', this.NavChanged);
+            }
         }
 
         //#endregion

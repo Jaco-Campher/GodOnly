@@ -13,17 +13,20 @@ var GO;
                 //****************************************************************************
                 this.NavChanged = () => {
                     let state = history.state;
+                    if (this.NavChangedSubscription != null) {
+                        this.NavChangedSubscription.dispose();
+                    }
                     if (state && state.Parameters.page) {
                         go.ActivePage(`go-studypage-${state.Parameters.page}`);
                         return true;
                     }
+                    this.NavChangedSubscription = ko.postbox.subscribe('NavChanged', this.NavChanged);
                     return false;
                 };
                 if (this.NavChanged()) {
                     return;
                 }
                 this.SetupLinks();
-                ko.postbox.subscribe('NavChanged', this.NavChanged);
             }
             SetupLinks() {
                 this.Studies.push(new StudyLink('Marriage in Heaven', '', '/bible-study/MarriageinHeaven'));

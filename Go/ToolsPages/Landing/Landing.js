@@ -13,6 +13,9 @@ var GO;
                 //****************************************************************************
                 this.NavChanged = () => {
                     let state = history.state;
+                    if (this.NavChangedSubscription != null) {
+                        this.NavChangedSubscription.dispose();
+                    }
                     if (state && state.Parameters.page) {
                         //console.log(state.Parameters.page);
                         switch (state.Parameters.page) {
@@ -21,22 +24,28 @@ var GO;
                                 go.ActivePage('go-tools-legend');
                                 return;
                             case 'incest-laws':
-                                return go.ActivePage('go-tools-incestLaws');
+                                go.ActivePage('go-tools-incestLaws');
+                                return;
                             case 'revelation-timeline':
-                                return go.ActivePage('go-tools-revelationTimeline');
+                                go.ActivePage('go-tools-revelationTimeline');
+                                return;
                             case 'texttohtml':
-                                return go.ActivePage('go-tools-textToHtml');
+                                go.ActivePage('go-tools-textToHtml');
+                                return;
                             case 'timeline':
-                                return go.ActivePage('go-tools-timeline');
+                                go.ActivePage('go-tools-timeline');
+                                return;
                         }
                         //Show the page.
                         go.Navigate(`tools/${state.Parameters.page}`);
+                    }
+                    else {
+                        this.NavChangedSubscription = ko.postbox.subscribe('NavChanged', this.NavChanged);
                     }
                 };
                 //console.log('Tools Landing...')
                 this.SetupImageLinks();
                 this.NavChanged();
-                ko.postbox.subscribe('NavChanged', this.NavChanged);
             }
             SetupImageLinks() {
                 this.ImageLinks.push(new GO.ImageLink('Incest Laws', 'Helps to visually show the how the Torah affects a family tree.<br/><i>(Does not work on mobile)</i>', '/tools/incest-laws', 'IncestLaws.jpg'));

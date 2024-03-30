@@ -734,9 +734,9 @@ var GO;
                 tab = new Tab('vial', 'tab-vial-6', 'Vial 6');
                 this.Tabs.push(tab);
                 //#endregion
-                //#region Come as a Thief
+                //#region Day of Yah
                 //*******************************
-                tab = new Tab('thief', 'tab-thief', 'Come as a Thief');
+                tab = new Tab('thief', 'tab-thief', 'Day of Yah', 'Come as a Thief');
                 this.Tabs.push(tab);
                 //#endregion
                 //#region Vial 7

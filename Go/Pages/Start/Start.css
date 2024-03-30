@@ -1194,7 +1194,8 @@ go-chapter {
     z-index: 10001;
 }
 
-.dialog-page .box:after {
+.dialog-page > .dialog:after,
+.dialog-page .hide-in-dialog-page {
     display: none;
 }
 
