@@ -135,11 +135,12 @@
         ChapterNo: KnockoutObservable<number> = ko.observable(-1);
 
         ShowPrev: KnockoutComputed<boolean> = ko.computed((): boolean => {
-            return this.ChapterNo() > 1;
+            if (this.Book() == null) { return false; }
+            if (this.ChapterNo() == -1) { return false; }
+            return this.ChapterNo() > this.FirstChapterNo();
         }, this);
 
         ShowNext: KnockoutComputed<boolean> = ko.computed((): boolean => {
-            console.log('TotalChapters', this.TotalChapters());
             return this.ChapterNo() < this.TotalChapters();
         }, this);
 
@@ -156,8 +157,8 @@
                 if (bibleRef != null && bibleRef.Verses == undefined) {
                     this.Book(go.Bible.Book(bibleRef.BookAbbr));
                     this.ChapterNo(bibleRef.Chapter);
+                    this.FirstChapterNo(this.Book()!.FirstChapterNo);
                     this.TotalChapters(this.Book()!.ChapterCount);
-                    console.log('ChapterCount', this.Book()!.ChapterCount);
                 }
 
                 this.ShowComponent('Content');
