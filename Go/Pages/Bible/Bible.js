@@ -111,6 +111,7 @@ var GO;
                     return this.ChapterNo() > 1;
                 }, this);
                 this.ShowNext = ko.computed(() => {
+                    console.log('TotalChapters', this.TotalChapters());
                     return this.ChapterNo() < this.TotalChapters();
                 }, this);
                 this.SelectBook = () => {
@@ -124,13 +125,13 @@ var GO;
                     this.ChapterNo(-1);
                     this.Book(go.Bible.Book(bookDetails.Abbr));
                     this.FirstChapterNo(this.Book().FirstChapterNo);
-                    this.TotalChapters(this.Book().ChapterCount + this.FirstChapterNo());
+                    this.TotalChapters(this.Book().ChapterCount);
                     this.ShowComponent('ChapterSelect');
                 };
                 this.SelectChapter = () => {
                     this.ChapterNo(-1);
                     this.FirstChapterNo(this.Book().FirstChapterNo);
-                    this.TotalChapters(this.Book().ChapterCount + this.FirstChapterNo());
+                    this.TotalChapters(this.Book().ChapterCount);
                     this.ShowComponent('ChapterSelect');
                 };
                 this.ChapterSelected = (num) => {
@@ -158,6 +159,7 @@ var GO;
                         this.Book(go.Bible.Book(bibleRef.BookAbbr));
                         this.ChapterNo(bibleRef.Chapter);
                         this.TotalChapters(this.Book().ChapterCount);
+                        console.log('ChapterCount', this.Book().ChapterCount);
                     }
                     this.ShowComponent('Content');
                 }

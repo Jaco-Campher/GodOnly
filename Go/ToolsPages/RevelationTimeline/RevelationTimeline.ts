@@ -552,7 +552,7 @@
             tab.Joins.push(new Join(Color.Rev, 'j-rev-7-2a'));
             item = new Item(Color.Rev, 'rev-7-2', 'Having the Seal of the Living God', 'I Saw Another Angel Ascending from the East', 'Rev 7:2-3', 'Rev 7:2-3', 'Hurt not earth, sea, trees', 'Till we sealed the servants of our God.');
             tab.Items.push(item);
-            item = new Item(Color.Rev, 'rev-7-4', '144K', 'Number of Them Which Were Sealed', 'Rev 7:4-8', 'Rev 7:4-8', '', '');
+            item = new Item(Color.Rev, 'rev-7-4', 'Number of Them Which Were Sealed', '144K', 'Rev 7:4-8', 'Rev 7:4-8', '', '');
             tab.Items.push(item);
             tab.Joins.push(new Join(Color.Rev, 'j-rev-7-4'));
             item = new Item(Color.Rev, 'rev-7-9', 'Clothed with White Robes', 'All Nations, and Kindreds, and People, and Tongues', 'Rev 7:9', 'Rev 7:9', 'A great multitude, which no man could number.', 'Stood before the throne, and before the Lamb…');

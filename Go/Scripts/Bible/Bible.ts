@@ -218,7 +218,7 @@
             }
 
             if (firstChapterNo != 0) { book.FirstChapterNo = firstChapterNo; }
-            book.ChapterCount = chapterNo - firstChapterNo;
+            book.ChapterCount = chapterNo;// - firstChapterNo;
 
             //if (book.Name == "Ezekiel") { console.log(book); ]}
             
