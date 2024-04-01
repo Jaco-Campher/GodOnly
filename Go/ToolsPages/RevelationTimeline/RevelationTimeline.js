@@ -7,6 +7,7 @@ var GO;
             Color["Default"] = "";
             Color["AscIsa"] = "ascisa";
             Color["Ba2"] = "ba2";
+            Color["Dan"] = "dan";
             Color["Enoch"] = "enoch";
             Color["Es2"] = "es2";
             Color["Gad"] = "gad";
@@ -417,6 +418,12 @@ var GO;
                 tab.Items.push(item);
                 tab.Joins.push(new Join(Color.Ba2, 'j-ba2-30-2c'));
                 this.TabJoins.push(new TabJoin(Color.Ba2, 'tj-ba2-30-2c'));
+                //Dan 12
+                tab.Joins.push(new Join(Color.Dan, 'j-dan-12-7a-s', FirstLast.First));
+                item = new Item(Color.Dan, 'dan-12-7b', 'He Held up His Right Hand and His Left Hand unto Heaven', 'Which Was Upon the Waters of the River', 'Dan 12:7b', 'Dan 12:7', '', '');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Dan, 'j-dan-12-7b'));
+                this.TabJoins.push(new TabJoin(Color.Dan, 'tj-dan-12-7b'));
                 //2 Esdras 2
                 tab.Joins.push(new Join(Color.Es2, 'j-es2-2-37a'));
                 item = new Item(Color.Es2, 'es2-2-38', 'Number of Those that be Sealed', '', '2Es 2:38', '2Es 2:38', ' in the feast of the Lord.', '');
@@ -444,7 +451,7 @@ var GO;
                 this.TabJoins.push(new TabJoin(Color.Es2, 'tj-es2-16-12a'));
                 //Rev 4
                 tab.Joins.push(new Join(Color.Rev, 'j-rev-4-3a'));
-                item = new Item(Color.Rev, 'rev-4-4', '', 'Clothed in White Raiment', 'Rev 4:4', 'Rev 4:4', '24 Seats, 24 Elders.', 'Crown of gold.');
+                item = new Item(Color.Rev, 'rev-4-4', '', 'Clothed in White Raiment', 'Rev 4:4', 'Rev 4:4', '24 Seats, 24 Elders.', 'Crowns of gold.');
                 tab.Items.push(item);
                 tab.Joins.push(new Join(Color.Rev, 'j-rev-4-4'));
                 item = new Item(Color.Rev, 'rev-4-5', '', 'Out of the Throne Proceeded', 'Rev 4:5', 'Rev 4:5', 'Lightnings and Thunderings and Voices', '');
@@ -520,7 +527,7 @@ var GO;
                 tab.Items.push(item);
                 item = new Item(Color.Rev, 'rev-14-4', 'Redeemed from Among {Men|G0444|People}', '', 'Rev 14:4-5', 'Rev 14:4-5', 'Not defiled with women.', 'Firstfruits without fault.');
                 tab.Items.push(item);
-                item = new Item(Color.Rev, 'rev-14-6a', 'Every Nation, and Kindred, and Tongue, and People', 'I Saw Another Angel Fly in the Midst of Heaven', 'Rev 14:6a', 'Rev 14:6', 'Having the everlasting gospel to preach unto them that', 'dwell on the earth, and to all people.');
+                item = new Item(Color.Rev, 'rev-14-6a', 'Every Nation, and Kindred, and Tongue, and People', 'I Saw Another Angel Fly in the Midst of Heaven', 'Rev 14:6', 'Rev 14:6', 'Having the everlasting gospel to preach unto them that', 'dwell on the earth, and to all people.');
                 tab.Items.push(item);
                 tab.Joins.push(new Join(Color.Rev, 'j-rev-14-6a'));
                 item = new Item(Color.Rev, 'rev-14-7a', 'Saying with a {Loud|G3173} Voice', '', 'Rev 14:7a', 'Rev 14:7', 'Fear God, and give glory to Him;', 'for the hour of His judgment is come:');
@@ -539,6 +546,11 @@ var GO;
                 //#region Trumpet 1
                 //*******************************
                 tab = new Tab('trumpet', 'tab-trumpet-1', 'Trumpet 1', '2 Witnesses');
+                //Dan 12
+                tab.Joins.push(new Join(Color.Dan, 'j-dan-12-7ba'));
+                item = new Item(Color.Dan, 'dan-12-7c', 'And Sware by Him that Liveth For Ever', 'Time, Times, and an Half', 'Dan 12:7c', 'Dan 12:7', 'when he shall have accomplished to scatter the power', 'of the holy people, all these shall be finished.');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Dan, 'j-dan-12-7c-e', FirstLast.Last));
                 //Enoch 80
                 tab.Joins.push(new Join(Color.Enoch, 'j-enoch-80-2a', FirstLast.First));
                 item = new Item(Color.Enoch, 'enoch-80-2a', '', 'Earth', 'Enoch 80:2a', 'Enoch 80:2', 'Their seed shall be tardy on their lands and fields.', 'All things on the earth shall alter.');
@@ -566,10 +578,12 @@ var GO;
                 this.TabJoins.push(new TabJoin(Color.Rev, 'tj-rev-8-7'));
                 //Rev 10
                 tab.Joins.push(new Join(Color.Rev, 'j-rev-10-5aa'));
-                item = new Item(Color.Rev, 'rev-10-6a', '', 'Earth', 'Rev 10:6a', 'Rev 10:6', 'And sware by Him that liveth for ever and ever,', ' Who created heaven,');
+                item = new Item(Color.Rev, 'rev-10-6a', 'And Sware by Him that Liveth For Ever and Ever', '', 'Rev 10:6a', 'Rev 10:6', '', '');
                 tab.Items.push(item);
-                tab.Joins.push(new Join(Color.Rev, 'j-rev-10-6a'));
-                this.TabJoins.push(new TabJoin(Color.Rev, 'tj-rev-10-6a'));
+                item = new Item(Color.Rev, 'rev-10-6b', '', 'Earth', 'Rev 10:6b', 'Rev 10:6', 'Who created heaven, and the things that therein are', 'and the earth, and the things that therein are,');
+                tab.Items.push(item);
+                tab.Joins.push(new Join(Color.Rev, 'j-rev-10-6b'));
+                this.TabJoins.push(new TabJoin(Color.Rev, 'tj-rev-10-6b'));
                 //Rev 11
                 item = new Item(Color.Rev, 'rev-11-2b', '', '42 Months', 'Rev 11:2b', 'Rev 11:2', 'Given unto the gentiles.', 'The holy city shall they tread under foot.');
                 item.Flag(Flag.NotSureLocation);
