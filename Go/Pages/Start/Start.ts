@@ -346,8 +346,9 @@
 
                         for (let htmlSection of htmlSections) {
                             if (htmlSection.toLowerCase() != legendName.toLowerCase()) {
-                                //Other text, add as is.
-                                newSections.push(new Section(htmlSection));
+                                //Other text, search for more matches.
+                                newSections.push(...this.AddLegend([new Section(htmlSection)]));
+                                //newSections.push(new Section(htmlSection));
                                 continue;
                             }
 
@@ -407,8 +408,9 @@
                     for (let htmlSection of htmlSections) {
                         //console.log(htmlSection);
                         if (htmlSection.startsWith('{') == false) {
-                            //Other text, add as is.
-                            newSections.push(new Section(htmlSection));
+                            //Other text, search for more matches.
+                            newSections.push(...this.AddStrongs([new Section(htmlSection)]));
+                            //newSections.push(new Section(htmlSection));
                             continue;
                         }
 
