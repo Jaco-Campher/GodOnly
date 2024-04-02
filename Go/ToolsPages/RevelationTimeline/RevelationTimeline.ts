@@ -45,7 +45,7 @@
 
         // Settings
         //******************************
-        DetailedView: KnockoutObservable<boolean> = ko.observable(false);
+        DetailedView: KnockoutObservable<boolean> = ko.observable(true);
 
         CSSClass: KnockoutComputed<string> = ko.computed((): string => {
             let css: string = this.DetailedView() ? '' : 'compact';

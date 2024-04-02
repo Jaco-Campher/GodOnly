@@ -46,7 +46,7 @@ var GO;
                 this.ShowTimelineExplanation = ko.observable(false);
                 // Settings
                 //******************************
-                this.DetailedView = ko.observable(false);
+                this.DetailedView = ko.observable(true);
                 this.CSSClass = ko.computed(() => {
                     let css = this.DetailedView() ? '' : 'compact';
                     return css;
