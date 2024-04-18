@@ -796,7 +796,7 @@
 
             //#region Trumpet 3
             //*******************************
-            tab = new Tab('trumpet', 'tab-trumpet-3', 'Trumpet 3');
+            tab = new Tab('', 'tab-trumpet-3', 'Trumpet 3'); //trumpet
 
             this.Tabs.push(tab);
             //#endregion
@@ -804,7 +804,7 @@
 
             //#region Trumpet 4
             //*******************************
-            tab = new Tab('trumpet', 'tab-trumpet-4', 'Trumpet 4');
+            tab = new Tab('', 'tab-trumpet-4', 'Trumpet 4'); //trumpet
 
             this.Tabs.push(tab);
             //#endregion
@@ -812,7 +812,7 @@
 
             //#region Trumpet 5
             //*******************************
-            tab = new Tab('trumpet', 'tab-trumpet-5', 'Trumpet 5');
+            tab = new Tab('', 'tab-trumpet-5', 'Trumpet 5'); //trumpet
 
             this.Tabs.push(tab);
             //#endregion
@@ -820,7 +820,7 @@
 
             //#region Trumpet 6
             //*******************************
-            tab = new Tab('trumpet', 'tab-trumpet-6', 'Trumpet 6');
+            tab = new Tab('', 'tab-trumpet-6', 'Trumpet 6'); //trumpet
 
             this.Tabs.push(tab);
             //#endregion
@@ -828,15 +828,15 @@
 
             //#region 2 Witnesses
             //*******************************
-            tab = new Tab('witnesses', 'tab-2-wit', '2 Witnesses');
+            //tab = new Tab('', 'tab-2-wit', '2 Witnesses'); //witnesses
 
-            this.Tabs.push(tab);
+            //this.Tabs.push(tab);
             //#endregion
 
 
             //#region Ascension
             //*******************************
-            tab = new Tab('ascension', 'tab-ascension', 'Ascension');
+            tab = new Tab('', 'tab-ascension', 'Ascension', '2 Witnesses'); //ascension
 
             this.Tabs.push(tab);
             //#endregion
@@ -844,7 +844,7 @@
 
             //#region Trumpet 7
             //*******************************
-            tab = new Tab('trumpet', 'tab-trumpet-7', 'Trumpet 7');
+            tab = new Tab('', 'tab-trumpet-7', 'Trumpet 7'); //trumpet
 
             this.Tabs.push(tab);
             //#endregion
@@ -855,7 +855,7 @@
 
             //#region Vial 1
             //*******************************
-            tab = new Tab('vial', 'tab-vial-1', 'Vial 1');
+            tab = new Tab('', 'tab-vial-1', 'Vial 1'); //vial
 
             this.Tabs.push(tab);
             //#endregion
@@ -863,7 +863,7 @@
 
             //#region Vial 2
             //*******************************
-            tab = new Tab('vial', 'tab-vial-2', 'Vial 2');
+            tab = new Tab('', 'tab-vial-2', 'Vial 2'); //vial
 
             this.Tabs.push(tab);
             //#endregion
@@ -871,7 +871,7 @@
 
             //#region Vial 3
             //*******************************
-            tab = new Tab('vial', 'tab-vial-3', 'Vial 3');
+            tab = new Tab('', 'tab-vial-3', 'Vial 3'); //vial
 
             this.Tabs.push(tab);
             //#endregion
@@ -879,7 +879,7 @@
 
             //#region Vial 4
             //*******************************
-            tab = new Tab('vial', 'tab-vial-4', 'Vial 4');
+            tab = new Tab('', 'tab-vial-4', 'Vial 4'); //vial
 
             this.Tabs.push(tab);
             //#endregion
@@ -887,7 +887,7 @@
 
             //#region Vial 5
             //*******************************
-            tab = new Tab('vial', 'tab-vial-5', 'Vial 5');
+            tab = new Tab('', 'tab-vial-5', 'Vial 5'); //vial
 
             this.Tabs.push(tab);
             //#endregion
@@ -895,7 +895,7 @@
 
             //#region Vial 6
             //*******************************
-            tab = new Tab('vial', 'tab-vial-6', 'Vial 6');
+            tab = new Tab('', 'tab-vial-6', 'Vial 6'); //vial
 
             this.Tabs.push(tab);
             //#endregion
@@ -903,7 +903,7 @@
 
             //#region Day of Yah
             //*******************************
-            tab = new Tab('thief', 'tab-thief', 'Day of Yah', 'Come as a Thief');
+            tab = new Tab('', 'tab-thief', 'Day of Yah', 'Come as a Thief'); //thief
 
             this.Tabs.push(tab);
             //#endregion
@@ -911,7 +911,7 @@
 
             //#region Vial 7
             //*******************************
-            tab = new Tab('vial', 'tab-vial-7', 'Vial 7');
+            tab = new Tab('', 'tab-vial-7', 'Vial 7'); //vial
 
             this.Tabs.push(tab);
             //#endregion
@@ -922,7 +922,7 @@
 
             //#region Pre 1000 Years
             //*******************************
-            tab = new Tab('pre-1000', 'tab-pre-1000', 'Pre 1000 Years');
+            tab = new Tab('', 'tab-pre-1000', 'Pre 1000 Years'); //pre-1000
 
             this.Tabs.push(tab);
             //#endregion
@@ -930,7 +930,7 @@
 
             //#region 1000 Years
             //*******************************
-            tab = new Tab('y1000', 'tab-1000', '1000 Years');
+            tab = new Tab('', 'tab-1000', '1000 Years'); //y1000
 
             this.Tabs.push(tab);
             //#endregion
@@ -938,7 +938,7 @@
 
             //#region End 1000 Years
             //*******************************
-            tab = new Tab('end-1000', 'tab-end-1000', 'End 1000 Years');
+            tab = new Tab('', 'tab-end-1000', 'End 1000 Years'); //end-1000
 
             this.Tabs.push(tab);
             //#endregion
@@ -946,7 +946,7 @@
 
             //#region Judgement
             //*******************************
-            tab = new Tab('judgement', 'tab-judgement', 'Judgement');
+            tab = new Tab('', 'tab-judgement', 'Judgement'); //judgement
 
             this.Tabs.push(tab);
             //#endregion
