@@ -11,25 +11,12 @@ var GO;
         eRefTypeShow[eRefTypeShow["AllStrongs"] = 64] = "AllStrongs";
         eRefTypeShow[eRefTypeShow["All"] = 255] = "All";
     })(eRefTypeShow = GO.eRefTypeShow || (GO.eRefTypeShow = {}));
-    //Open Graph
-    let eOpenGraphType;
-    (function (eOpenGraphType) {
-        eOpenGraphType["Article"] = "article";
-        eOpenGraphType["Book"] = "Book";
-        eOpenGraphType["Website"] = "website";
-    })(eOpenGraphType = GO.eOpenGraphType || (GO.eOpenGraphType = {}));
     class Start extends GO.Router {
         //****************************************************************************
         //#region Constructor
         //****************************************************************************
         constructor() {
             super();
-            //Open Graph
-            this.OpenGraphTitle = ko.observable('God Only');
-            this.OpenGraphType = ko.observable(eOpenGraphType.Website);
-            this.OpenGraphDescription = ko.observable('And ye shall know the truth, and the truth shall make you free.');
-            this.OpenGraphImageUrl = ko.observable('https://godonly.net/Images/Pages/Home/Bible.jpg');
-            this.OpenGraphPageUrl = ko.observable('godonly.net');
             this.Bible = new GO.Bible();
             this.componentLoader = new GO.KO.ComponentLoader();
             this.MenuOpen = ko.observable(false);
@@ -159,7 +146,7 @@ var GO;
             this.componentLoader.RegisterAddedComponents();
             //Setup knockout.
             ko.options.deferUpdates = true;
-            ko.applyBindings(this, document.getElementById('html'));
+            ko.applyBindings(this, document.getElementById('main'));
             this.SetupRoutes();
             //Load the Bible and Data files.
             await Promise.all([
