@@ -25,6 +25,13 @@
         Url: string;
     }
 
+    //Open Graph
+    export enum eOpenGraphType {
+        Article = 'article',
+        Book = 'Book',
+        Website = 'website'
+    }
+
 
     //Refs
     export interface iRef {
@@ -88,6 +95,15 @@
     
     export class Start extends Router {
 
+        //Open Graph
+        OpenGraphTitle: KnockoutObservable<string> = ko.observable<string>('God Only');
+        OpenGraphType: KnockoutObservable<eOpenGraphType> = ko.observable<eOpenGraphType>(eOpenGraphType.Website);
+        OpenGraphDescription: KnockoutObservable<string> = ko.observable<string>('And ye shall know the truth, and the truth shall make you free.');
+        OpenGraphImageUrl: KnockoutObservable<string> = ko.observable<string>('https://godonly.net/Images/Pages/Home/Bible.jpg');
+        OpenGraphPageUrl: KnockoutObservable<string> = ko.observable<string>('godonly.net');
+
+
+
         Bible: Bible = new Bible();
         LegendsObject!: iLegendsJson;
         StrongsObject!: iStrongsJson;
@@ -142,7 +158,7 @@
 
             //Setup knockout.
             ko.options.deferUpdates = true;
-            ko.applyBindings(this, document.getElementById('main'));
+            ko.applyBindings(this, document.getElementById('html'));
 
             this.SetupRoutes();
 
