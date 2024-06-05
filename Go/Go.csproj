@@ -125,6 +125,7 @@
     <Content Include="Data\Legends.json" />
     <Content Include="Data\Strongs.json" />
     <Content Include="Data\eng-scripture_usfm.zip" />
+    <Content Include="Data\Layouts.xlsx" />
     <None Include="Images\Background\ReflectiveGlow.psd" />
     <None Include="Images\Controlls\Context-Icon.psd" />
     <None Include="app.webmanifest" />
