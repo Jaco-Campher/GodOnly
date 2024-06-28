@@ -31,6 +31,14 @@
     </div>
 
     <div class="box">
+        <h2>New to Torah</h2>
+        <p>If you are new to Torah, please start here.</p>
+        <!-- ko foreach: NewToTorahStudies -->
+        <go-link-study params="{ Title: Title, Url: Url }"></go-link-study>
+        <!-- /ko -->
+    </div>
+
+    <div class="box">
         <h2>Studies</h2>
         <!-- ko foreach: Studies -->
         <go-link-study params="{ Title: Title, Url: Url }"></go-link-study>

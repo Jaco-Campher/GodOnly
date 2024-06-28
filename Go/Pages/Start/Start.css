@@ -37,7 +37,7 @@ body {
     grid-template-rows: 1fr 48px;
     color: var(--text-color);
     background: #0f0f0f;
-    background: linear-gradient(45deg, #181012 20%, #0f0f0f, #14101c 75%);
+    background: linear-gradient(45deg, #221115 20%, #0f0f0f, #1d142e 75%);
     background-attachment:fixed;
     margin: 0;
     padding: var(--top-nav-height) 15px 0;

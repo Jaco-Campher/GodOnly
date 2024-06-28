@@ -10,6 +10,7 @@
 
     export class LandingViewModel {
 
+        NewToTorahStudies: KnockoutObservableArray<StudyLink> = ko.observableArray<StudyLink>([]);
         Studies: KnockoutObservableArray<StudyLink> = ko.observableArray<StudyLink>([]);
 
         NavChangedSubscription: KnockoutSubscription;
@@ -23,6 +24,8 @@
         }
 
         SetupLinks() {
+            this.NewToTorahStudies.push(new StudyLink('1. Do We Still Need to Keep the Law', '/torah-study/needtokeepthelaw'));
+
             this.Studies.push(new StudyLink('Lesbians in the Bible', '/torah-study/lesbians'));
             this.Studies.push(new StudyLink('Simple Laws', '/torah-study/simplelaws'));
             this.Studies.push(new StudyLink('Sunday Worship', '/torah-study/sundayworship'));
