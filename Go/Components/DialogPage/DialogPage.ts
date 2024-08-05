@@ -1,8 +1,8 @@
 namespace GO.Compnents {
 
     interface iDialogPageParams {
-        Title: string;
-        Page: string;
+        Title: KnockoutObservable<string> | string;
+        Page: KnockoutObservable<string> | string;
         Show?: KnockoutObservable<boolean> | boolean;
     }
 
@@ -12,8 +12,8 @@ namespace GO.Compnents {
         Show: KnockoutObservable<boolean> = ko.observable(false);
 
         constructor(params: iDialogPageParams) {
-            this.Title = ko.observable(params.Title);
-            this.Page = ko.observable(params.Page);
+            this.Title = ko.isObservable(params.Title) ? params.Title : ko.observable(params.Title as string);
+            this.Page = ko.isObservable(params.Page) ? params.Page : ko.observable(params.Page as string);
 
             if (params.Show != undefined) {
                 this.Show = ko.isObservable(params.Show) ? params.Show : ko.observable(params.Show as boolean);

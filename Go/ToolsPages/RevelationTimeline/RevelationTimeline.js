@@ -43,7 +43,6 @@ var GO;
                 this.TimelineEvents = ko.observableArray([]);
                 this.Ref = ko.observable('').subscribeTo('Rev-Ref', false);
                 this.ShowRef = ko.observable(false).subscribeTo('Rev-ShowRef', false);
-                this.ShowTimelineExplanation = ko.observable(false);
                 // Settings
                 //******************************
                 this.DetailedView = ko.observable(true);
@@ -51,9 +50,6 @@ var GO;
                     let css = this.DetailedView() ? '' : 'compact';
                     return css;
                 }, this);
-                this.ShowHideTimelineExplanation = () => {
-                    this.ShowTimelineExplanation(!this.ShowTimelineExplanation());
-                };
                 this.LoadTimeline();
                 this.LoadItems();
                 this.LoadLinks();
@@ -61,7 +57,7 @@ var GO;
             LoadTimeline() {
                 //Years
                 this.Years.push(new Year(2023, 'Mar 2023', '2Ba 27:2', 0));
-                this.Years.push(new Year(2024, 'Apr 2024', '2Ba 27:3', 7));
+                this.Years.push(new Year(2024, 'Apr 2024', 'go-prophesypage-year2', 7, 'Apr 2024 - Tribulation Year 2'));
                 this.Years.push(new Year(2025, 'Mar 2025', '2Ba 27:4', 4));
                 this.Years.push(new Year(2026, '??? 2026', '2Ba 27:5', 0));
                 this.Years.push(new Year(2027, '??? 2027', '2Ba 27:6', 0));
@@ -406,8 +402,8 @@ var GO;
                 tab.Joins.push(new Join(Color.Th1, 'j-thess-4-17-e', FirstLast.Last));
                 this.Tabs.push(tab);
                 //#endregion
-                //#region Seal 7
-                //*******************************
+                // Seal 7
+                //#region *******************************
                 tab = new Tab('seal', 'tab-seal-7', 'Seal 7', '144K');
                 //2 Baruk 30
                 tab.Joins.push(new Join(Color.Ba2, 'j-ba2-30-2aa'));
@@ -646,7 +642,7 @@ var GO;
                 item = new Item(Color.Gad, 'gad-2-26a', 'At the End of Days', '', 'Gad 2:26a', 'Gad 2:26', '', '');
                 item.Flag(Flag.NotSureLocation);
                 tab.Items.push(item);
-                item = new Item(Color.Gad, 'gad-2-26b', 'Michael the Great Prince will Stand Up in War', '', 'Gad 2:26b', 'Gad 2:26', '', '');
+                item = new Item(Color.Gad, 'gad-2-26b', 'Michael the Great Prince will Stand Up in War', '', 'Gad 2:26b', 'Gad 2:26', 'like a whirlwind', '');
                 tab.Items.push(item);
                 this.TabJoins.push(new TabJoin(Color.Gad, 'tj-gad-2-26'));
                 //Rev 8
@@ -787,16 +783,22 @@ var GO;
         }
         Tools.RevelationTimelineViewModel = RevelationTimelineViewModel;
         class Year {
-            constructor(year, displayYear, ref, offset) {
+            constructor(year, displayYear, ref, offset, dialogTitle = '') {
                 this.Ref = '';
                 this.ShowVerses = () => {
-                    ko.postbox.publish('Rev-Ref', this.Ref);
-                    ko.postbox.publish('Rev-ShowRef', true);
+                    if (this.DialogTitle == '') {
+                        ko.postbox.publish('Rev-Ref', this.Ref);
+                        ko.postbox.publish('Rev-ShowRef', true);
+                    }
+                    else {
+                        go.ShowPageDialog(null, this.DialogTitle, this.Ref);
+                    }
                 };
                 this.Style = `grid-area: y-${year}`;
                 this.DisplayYear = displayYear;
                 this.Offset = `width: ${(offset * 25) + 6}px`;
                 this.Ref = ref;
+                this.DialogTitle = dialogTitle;
             }
         }
         class Month {

@@ -8,6 +8,10 @@ var GO;
                 this.Show = ko.observable(false);
                 this.Type = params.Type ?? GO.eRefTypeShow.Prophesy;
                 switch (this.Type) {
+                    case GO.eRefTypeShow.NamesPlaces:
+                        this.Title = 'Names / Places';
+                        this.TypeClass = 'names';
+                        break;
                     //case eRefTypeShow.Prophesy:
                     default:
                         this.Title = 'Prophecy Legend';

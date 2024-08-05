@@ -126,6 +126,7 @@
     <Content Include="Data\Strongs.json" />
     <Content Include="Data\eng-scripture_usfm.zip" />
     <Content Include="Data\Layouts.xlsx" />
+    <Content Include="Data\NamesPlaces.json" />
     <None Include="Images\Background\ReflectiveGlow.psd" />
     <None Include="Images\Controlls\Context-Icon.psd" />
     <None Include="app.webmanifest" />
@@ -135,6 +136,7 @@
     <Content Include="Images\Controlls\Context-Icon.png" />
     <Content Include="Images\ImgLinks\IncestLaws.jpg" />
     <Content Include="Images\ImgLinks\MapCompass.jpg" />
+    <Content Include="Images\ImgLinks\NamesPlaces.jpg" />
     <Content Include="Images\ImgLinks\RevTimeline.jpg" />
     <Content Include="Images\Other\SiteOG.jpg" />
     <Content Include="Images\Pages\Home\RevTimeline.jpg" />
@@ -159,13 +161,18 @@
     <Content Include="Pages\Search\Search.css" />
     <Content Include="Pages\Search\Search.html" />
     <Content Include="Pages\Search\Search.js" />
+    <Content Include="ProphesyPages\Iran\Iran.html" />
     <Content Include="ProphesyPages\Landing\Landing.html" />
     <Content Include="ProphesyPages\Landing\Landing.js" />
     <Content Include="ProphesyPages\TimelineDatesExplanation\TimelineDatesExplanation.html" />
     <Content Include="ProphesyPages\Tribulation\Tribulation.html" />
+    <Content Include="ProphesyPages\Year2\Year2.css" />
+    <Content Include="ProphesyPages\Year2\Year2.html" />
     <Content Include="RevPages\Landing\Landing.css" />
     <Content Include="RevPages\Landing\Landing.html" />
     <Content Include="RevPages\Landing\Landing.js" />
+    <Content Include="ToolsPages\NamesPlaces\NamesPlaces.html" />
+    <Content Include="ToolsPages\NamesPlaces\NamesPlaces.js" />
     <Content Include="ToolsPages\RevelationTimeline\RevelationTimeline.js" />
     <Content Include="ToolsPages\RevelationTimeline\RevelationTimeline.css" />
     <Content Include="ToolsPages\RevelationTimeline\RevelationTimeline.html" />
@@ -253,6 +260,7 @@
     <TypeScriptCompile Include="Pages\Search\Search.ts" />
     <TypeScriptCompile Include="ProphesyPages\Landing\Landing.ts" />
     <TypeScriptCompile Include="RevPages\Landing\Landing.ts" />
+    <TypeScriptCompile Include="ToolsPages\NamesPlaces\NamesPlaces.ts" />
     <TypeScriptCompile Include="ToolsPages\RevelationTimeline\RevelationTimeline.ts" />
     <TypeScriptCompile Include="Pages\Start\Start.ts" />
     <TypeScriptCompile Include="Scripts\Bible\Bible.ts" />

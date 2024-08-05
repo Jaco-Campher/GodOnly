@@ -129,8 +129,14 @@ var GO;
             //#region Legend Functions
             //****************************************************************************
             AddRefShow(verses, show) {
-                if (show & GO.eRefTypeShow.Prophesy) {
-                    verses = this.AddVerseLegend(verses);
+                //if (show & eRefTypeShow.Prophesy) { verses = this.AddVerseLegend(verses); }
+                for (let verseHolder of verses) {
+                    if (show & GO.eRefTypeShow.Prophesy) {
+                        verseHolder.Sections(go.AddLegend(verseHolder.Sections(), go.LegendsObject, GO.eRefTypeShow.Prophesy));
+                    }
+                    if (show & GO.eRefTypeShow.NamesPlaces) {
+                        verseHolder.Sections(go.AddLegend(verseHolder.Sections(), go.NamesPlacesObject, GO.eRefTypeShow.NamesPlaces));
+                    }
                 }
                 this.Verses(verses);
             }
@@ -202,48 +208,6 @@ var GO;
                     verseHolder.Sections.push(new GO.Section(html, GO.eRefTypeShow.None));
                 }
                 return verseHolder;
-            }
-            //#endregion
-            //********************************
-            //#region Legend Functions
-            AddVerseLegend(inputVerses) {
-                for (let verseHolder of inputVerses) {
-                    verseHolder.Sections(go.AddLegend(verseHolder.Sections()));
-                    //for (let legendName in go.LegendsObject) {
-                    //    let newSections: Array<Section> = [];
-                    //    for (let inputSection of verseHolder.Sections()) {
-                    //        if (inputSection.Type != eRefTypeShow.None) {
-                    //            newSections.push(inputSection);
-                    //            continue;
-                    //        }
-                    //        let reg: RegExp = new RegExp(`(?<=\\W)(${legendName})(?=\\W)`, 'gi');
-                    //        let htmlSections: Array<string> = inputSection.Html.split(reg);
-                    //        if (htmlSections.length == 1) {
-                    //            newSections.push(inputSection);
-                    //            continue;
-                    //        }
-                    //        for (let htmlSection of htmlSections) {
-                    //            if (htmlSection.toLowerCase() != legendName.toLowerCase()) {
-                    //                newSections.push(new Section(htmlSection));
-                    //                continue;
-                    //            }
-                    //            let legend: GO.iLegend = go.LegendsObject[legendName];
-                    //            let section: Section = new Section('', eRefTypeShow.Prophesy);
-                    //            section.Original = htmlSection;
-                    //            if (legend.Case) {
-                    //                section.Meaning = legend.Meaning;
-                    //            }
-                    //            else {
-                    //                section.Meaning = htmlSection == htmlSection.toLowerCase() ? legend.Meaning.toLowerCase() : legend.Meaning;
-                    //            }
-                    //            section.Refs = legend.Lookup == undefined ? legend.Refs : go.LegendsObject[legend.Lookup].Refs;
-                    //            newSections.push(section);
-                    //        }
-                    //    }
-                    //    verseHolder.Sections(newSections);
-                    //}
-                }
-                return inputVerses;
             }
         }
         Compnents.BibleRefViewModel = BibleRefViewModel;

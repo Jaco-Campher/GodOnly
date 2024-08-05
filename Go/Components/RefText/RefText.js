@@ -32,7 +32,10 @@ var GO;
                     newSections = go.AddStrongs(newSections);
                 }
                 if (this.params.Show() & GO.eRefTypeShow.Prophesy) {
-                    newSections = go.AddLegend(newSections);
+                    newSections = go.AddLegend(newSections, go.LegendsObject, GO.eRefTypeShow.Prophesy);
+                }
+                if (this.params.Show() & GO.eRefTypeShow.Prophesy) {
+                    newSections = go.AddLegend(newSections, go.NamesPlacesObject, GO.eRefTypeShow.NamesPlaces);
                 }
                 //console.log(newSections);
                 this.Sections(newSections);

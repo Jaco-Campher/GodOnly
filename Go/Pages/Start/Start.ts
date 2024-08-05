@@ -6,6 +6,7 @@
         Strongs = 1,
         Prophesy = 2,
         WordMeaning = 4,
+        NamesPlaces = 8,
         Most = 63,
 
         AllStrongs = 64,
@@ -90,6 +91,7 @@
 
         Bible: Bible = new Bible();
         LegendsObject!: iLegendsJson;
+        NamesPlacesObject!: iLegendsJson;
         StrongsObject!: iStrongsJson;
 
         componentLoader: KO.ComponentLoader = new KO.ComponentLoader();
@@ -100,6 +102,11 @@
         ShowHelp: KnockoutObservable<boolean> = ko.observable(false);
         HasPageSettings: KnockoutObservable<boolean> = ko.observable(false);
         ShowPageSettings: KnockoutObservable<boolean> = ko.observable(false);
+
+        //Page Dialog
+        PageDialogShow: KnockoutObservable<boolean> = ko.observable(false);
+        PageDialogTitle: KnockoutObservable<string> = ko.observable('');
+        PageDialogPage: KnockoutObservable<string> = ko.observable('');
 
         //Global Settings
         ShowGlobalSettings: KnockoutObservable<boolean> = ko.observable(false);
@@ -201,8 +208,8 @@
         //#endregion
 
         //*********************************************************
-        //#region Pages and Navigation
-        //*********************************************************
+        // Pages and Navigation
+        //#region *************************************************
 
         NavIcons: KnockoutObservableArray<iNavIcon> = ko.observableArray([
             //{ ID: 'go-page-home', Title: 'Home', Url: '/' },
@@ -229,17 +236,30 @@
             this.Navigate(imageLink.Url);
         }
 
+        NavigateLink = (event: Event) => {
+            event.preventDefault();
+            this.Navigate((event.srcElement as HTMLAnchorElement).attributes.getNamedItem('href').value);
+            this.PageDialogShow(false);
+        }
+
         PageLoadCompleted = () => {
             this.HasHelp(document.getElementById('PageHelp') != null);
             this.HasPageSettings(document.getElementById('PageSettings') != null);
+        }
+
+        ShowPageDialog = (event: Event | null, title: string, page: string) => {
+            if (event != null) { event.preventDefault(); }
+            this.PageDialogTitle(title);
+            this.PageDialogPage(page);
+            this.PageDialogShow(true);
         }
 
         //#endregion
 
 
         //****************************************************************************
-        //#region Global Functions
-        //****************************************************************************
+        // Global Functions
+        //#region ********************************************************************
 
         AddBoldAtIndex = (text: string, boldIndexes: Array<iRefBold>, offset: number): iRefBoldOutput => {
             if (text == '') { return { Offset: offset, Html: text } }
@@ -277,19 +297,26 @@
 
 
         //****************************************************************************
-        //#region Load Functions
-        //****************************************************************************
+        // Load Functions
+        //#region ********************************************************************
 
         private LoadDataFiles = async () => {
             //Load data files.
             this.LegendsObject = JSON.parse(await GO.LoadFileData('../../data/legends.json'));
+            this.NamesPlacesObject = JSON.parse(await GO.LoadFileData('../../data/namesplaces.json'));
             this.StrongsObject = JSON.parse(await GO.LoadFileData('../../data/strongs.json'));
 
             //Ensure propeties exists as Knockout needs them for binding.
-            for (let legendIndex in this.LegendsObject) {
-                if (this.LegendsObject[legendIndex].Refs == undefined) { continue; }
+            this.EnsureLegendProperties(this.LegendsObject);
+            this.EnsureLegendProperties(this.NamesPlacesObject);
+        }
 
-                for (let ref of this.LegendsObject[legendIndex].Refs) {
+        //Ensure propeties exists as Knockout needs them for binding.
+        private EnsureLegendProperties = (holderObject: iLegendsJson) => {
+            for (let index in holderObject) {
+                if (holderObject[index].Refs == undefined) { continue; }
+
+                for (let ref of holderObject[index].Refs) {
                     if (ref.Bold == undefined) { ref.Bold = []; }
                     if (ref.Strongs == undefined) { ref.Strongs = []; }
                     if (ref.Html == undefined) { ref.Html = ''; }
@@ -297,9 +324,11 @@
             }
         }
 
+        //#endregion
+
         //****************************************************************************
-        //#region Functions
-        //****************************************************************************
+        // Functions
+        //#region ********************************************************************
 
         ShowHideHelp = () => {
             this.ShowHelp(!this.ShowHelp());
@@ -319,14 +348,14 @@
 
 
         //****************************************************************************
-        //#region Legend Functions
-        //****************************************************************************
+        // Legend Functions
+        //#region ********************************************************************
 
 
         //********************************
         //#region Legend Functions
 
-        AddLegend(inputSections: Array<Section>): Array<Section> {
+        AddLegend(inputSections: Array<Section>, holderObject: iLegendsJson, refType: eRefTypeShow): Array<Section> {
             let newSections: Array<Section> = [];
             let found: boolean = false;
 
@@ -336,7 +365,7 @@
                     continue;
                 }
 
-                for (let legendName in go.LegendsObject) {
+                for (let legendName in holderObject) {
                     let reg: RegExp = new RegExp(`(^|(?<=\\W))(${legendName})($|(?=\\W))`, 'gi');
                     let htmlSections: Array<string> = inputSection.Html.split(reg);
 
@@ -347,14 +376,14 @@
                         for (let htmlSection of htmlSections) {
                             if (htmlSection.toLowerCase() != legendName.toLowerCase()) {
                                 //Other text, search for more matches.
-                                newSections.push(...this.AddLegend([new Section(htmlSection)]));
+                                newSections.push(...this.AddLegend([new Section(htmlSection)], holderObject, refType));
                                 //newSections.push(new Section(htmlSection));
                                 continue;
                             }
 
-                            let legend: GO.iLegend = go.LegendsObject[legendName];
+                            let legend: GO.iLegend = holderObject[legendName];
 
-                            let section: Section = new Section('', eRefTypeShow.Prophesy);
+                            let section: Section = new Section('', refType);
                             section.Original = htmlSection;
                             if (legend.Case) {
                                 section.Meaning = legend.Meaning;
@@ -362,7 +391,7 @@
                             else {
                                 section.Meaning = htmlSection == htmlSection.toLowerCase() ? legend.Meaning.toLowerCase() : legend.Meaning;
                             }
-                            section.Refs = legend.Lookup == undefined ? legend.Refs : go.LegendsObject[legend.Lookup].Refs;
+                            section.Refs = legend.Lookup == undefined ? legend.Refs : holderObject[legend.Lookup].Refs;
                             newSections.push(section);
                         }
 

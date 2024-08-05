@@ -1,39 +1,36 @@
-﻿.timeline-main {
-    position:relative;
-}
-
+﻿
 .timeline .event {
     display: grid;
-    grid-template-columns: 120px 20px 1fr;
+    grid-template-columns: 120px 16px 1fr;
 }
 
-/* Years */
-.timeline div.year {
+.timeline div.date {
     text-align: right;
     padding:8px 16px;
 }
 
-.timeline .details-holder {
-    padding:8px 0;
-}
-
-/* Title */
-.timeline .title {
-    /*border-left: 7px solid #004ffc;*/
-}
-
-
-
 .timeline .line {
     position: relative;
-    background: #99d;
-    box-shadow: 0 0 5px #99d, 0 0 7px #99d;
     width: 1px;
     margin: -1px 0;
+    background: #99d;
+    box-shadow: 0 0 5px #99d, 0 0 7px #99d;
 }
 
 .timeline .event:first-child .line {
     margin: 13px 0 -1px;
+}
+
+.timeline .title {
+    padding:8px 0;
+}
+
+.timeline .attempted {
+    color:#999;
+}
+
+.timeline .attempted sup {
+    font-style: italic;
 }
 
 .line div {

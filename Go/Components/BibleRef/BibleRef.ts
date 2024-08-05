@@ -143,7 +143,16 @@
         //****************************************************************************
 
         AddRefShow(verses: Array<VerseHolder>, show: eRefTypeShow) {
-            if (show & eRefTypeShow.Prophesy) { verses = this.AddVerseLegend(verses); }
+            //if (show & eRefTypeShow.Prophesy) { verses = this.AddVerseLegend(verses); }
+
+            for (let verseHolder of verses) {
+                if (show & eRefTypeShow.Prophesy) {
+                    verseHolder.Sections(go.AddLegend(verseHolder.Sections(), go.LegendsObject, eRefTypeShow.Prophesy));
+                }
+                if (show & eRefTypeShow.NamesPlaces) {
+                    verseHolder.Sections(go.AddLegend(verseHolder.Sections(), go.NamesPlacesObject, eRefTypeShow.NamesPlaces));
+                }
+            }
 
             this.Verses(verses);
         }
@@ -245,57 +254,58 @@
         //********************************
         //#region Legend Functions
 
-        AddVerseLegend(inputVerses: Array<VerseHolder>): Array<VerseHolder> {
+        //AddVerseLegend(inputVerses: Array<VerseHolder>): Array<VerseHolder> {
 
-            for (let verseHolder of inputVerses) {
+        //    for (let verseHolder of inputVerses) {
 
-                verseHolder.Sections(go.AddLegend(verseHolder.Sections()));
+        //        verseHolder.Sections(go.AddLegend(verseHolder.Sections(), go.LegendsObject, eRefTypeShow.Prophesy));
+        //        verseHolder.Sections(go.AddLegend(verseHolder.Sections(), go.NamesPlacesObject, eRefTypeShow.NamesPlaces));
 
-                //for (let legendName in go.LegendsObject) {
-                //    let newSections: Array<Section> = [];
+        //        //for (let legendName in go.LegendsObject) {
+        //        //    let newSections: Array<Section> = [];
 
-                //    for (let inputSection of verseHolder.Sections()) {
-                //        if (inputSection.Type != eRefTypeShow.None) {
-                //            newSections.push(inputSection);
-                //            continue;
-                //        }
+        //        //    for (let inputSection of verseHolder.Sections()) {
+        //        //        if (inputSection.Type != eRefTypeShow.None) {
+        //        //            newSections.push(inputSection);
+        //        //            continue;
+        //        //        }
 
-                //        let reg: RegExp = new RegExp(`(?<=\\W)(${legendName})(?=\\W)`, 'gi');
-                //        let htmlSections: Array<string> = inputSection.Html.split(reg);
+        //        //        let reg: RegExp = new RegExp(`(?<=\\W)(${legendName})(?=\\W)`, 'gi');
+        //        //        let htmlSections: Array<string> = inputSection.Html.split(reg);
 
-                //        if (htmlSections.length == 1) {
-                //            newSections.push(inputSection);
-                //            continue;
-                //        }
+        //        //        if (htmlSections.length == 1) {
+        //        //            newSections.push(inputSection);
+        //        //            continue;
+        //        //        }
 
-                //        for (let htmlSection of htmlSections) {
-                //            if (htmlSection.toLowerCase() != legendName.toLowerCase()) {
-                //                newSections.push(new Section(htmlSection));
-                //                continue;
-                //            }
+        //        //        for (let htmlSection of htmlSections) {
+        //        //            if (htmlSection.toLowerCase() != legendName.toLowerCase()) {
+        //        //                newSections.push(new Section(htmlSection));
+        //        //                continue;
+        //        //            }
 
-                //            let legend: GO.iLegend = go.LegendsObject[legendName];
+        //        //            let legend: GO.iLegend = go.LegendsObject[legendName];
 
-                //            let section: Section = new Section('', eRefTypeShow.Prophesy);
-                //            section.Original = htmlSection;
-                //            if (legend.Case) {
-                //                section.Meaning = legend.Meaning;
-                //            }
-                //            else {
-                //                section.Meaning = htmlSection == htmlSection.toLowerCase() ? legend.Meaning.toLowerCase() : legend.Meaning;
-                //            }
-                //            section.Refs = legend.Lookup == undefined ? legend.Refs : go.LegendsObject[legend.Lookup].Refs;
-                //            newSections.push(section);
-                //        }
+        //        //            let section: Section = new Section('', eRefTypeShow.Prophesy);
+        //        //            section.Original = htmlSection;
+        //        //            if (legend.Case) {
+        //        //                section.Meaning = legend.Meaning;
+        //        //            }
+        //        //            else {
+        //        //                section.Meaning = htmlSection == htmlSection.toLowerCase() ? legend.Meaning.toLowerCase() : legend.Meaning;
+        //        //            }
+        //        //            section.Refs = legend.Lookup == undefined ? legend.Refs : go.LegendsObject[legend.Lookup].Refs;
+        //        //            newSections.push(section);
+        //        //        }
 
-                //    }
+        //        //    }
 
-                //    verseHolder.Sections(newSections);
-                //}
-            }
+        //        //    verseHolder.Sections(newSections);
+        //        //}
+        //    }
 
-            return inputVerses;
-        }
+        //    return inputVerses;
+        //}
 
         //#endregion
 

@@ -23,10 +23,12 @@
         SetupLinks() {
             //Studies
             this.Studies.push(new StudyLink('Day of the LORD', '/prophesy-study/dayofthelord'));
+            this.Studies.push(new StudyLink('Iran in Prophesy', '/prophesy-study/iran'));
             this.Studies.push(new StudyLink('Tribulation', '/prophesy-study/tribulation'));
 
             //Revelation Timeline Studies
             this.RevelationTimelineStudies.push(new StudyLink('Dates Explanation', '/prophesy-study/timelinedatesexplanation'));
+            this.RevelationTimelineStudies.push(new StudyLink('Tribulation Year 2', '/prophesy-study/year2'));
         }
 
         //****************************************************************************

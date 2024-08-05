@@ -20,6 +20,11 @@
             this.Type = params.Type ?? eRefTypeShow.Prophesy;
             
             switch (this.Type) {
+                case eRefTypeShow.NamesPlaces:
+                    this.Title = 'Names / Places';
+                    this.TypeClass = 'names';
+                    break;
+
                 //case eRefTypeShow.Prophesy:
                 default:
                     this.Title = 'Prophecy Legend';

@@ -12,8 +12,7 @@
         </div>
 
         <div class="year" style="grid-area: y-start;padding:0 0 0 48px">
-            <div class="text" data-bind="click: ShowTimelineExplanation">Biblical Years</div>
-            <go-dialog-page params="{ Title: 'Timeline Dates Explanation', Page: 'go-prophesypage-timelinedatesexplanation', Show: ShowTimelineExplanation }"></go-dialog-page>
+            <a class="text" onclick="go.ShowPageDialog(event, 'Timeline Dates Explanation', 'go-prophesypage-timelinedatesexplanation')">Biblical Years</a>
         </div>
         <!-- ko foreach: Years -->
         <div class="year" data-bind="attr: { style: Style }">
@@ -121,8 +120,8 @@
         </div>
 
         <h3>Other</h3>
-        <p>Anything showing a ‘?’ mark behind it, means that it is based on my own interpretation and understanding or based on worldly sources. This also includes all the dates shown.</p>
-        <p class="note">Please see the <a href="/prophesy-study/TimelineDatesExplanation" data-bind="click: ShowTimelineExplanation">Timeline Dates Explanation</a> for more information.</p>
+        <p>Anything showing a '?' mark behind it, means that it is based on my own interpretation and understanding or based on worldly sources. This also includes all the dates shown.</p>
+        <p class="note">Please see the <a href="/prophesy-study/TimelineDatesExplanation" onclick="go.ShowPageDialog(event, 'Timeline Dates Explanation', 'go-prophesypage-timelinedatesexplanation')">Timeline Dates Explanation</a> for more information.</p>
 
         <h3>Settings</h3>
         <div class="settings-holder">

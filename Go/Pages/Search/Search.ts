@@ -61,6 +61,7 @@
 
         //Show
         ShowStrongs: KnockoutObservable<boolean> = ko.observable<boolean>(false);
+        ShowNamesPlaces: KnockoutObservable<boolean> = ko.observable<boolean>(false);
         ShowProphecy: KnockoutObservable<boolean> = ko.observable<boolean>(false);
         ShowWordMeaning: KnockoutObservable<boolean> = ko.observable<boolean>(false);
         ShowAllStrongs: KnockoutObservable<boolean> = ko.observable<boolean>(false);
@@ -69,6 +70,7 @@
             let show: eRefTypeShow = eRefTypeShow.None;
 
             if (this.ShowStrongs()) { show += eRefTypeShow.Strongs; }
+            if (this.ShowNamesPlaces()) { show += eRefTypeShow.NamesPlaces; }
             if (this.ShowProphecy()) { show += eRefTypeShow.Prophesy; }
             if (this.ShowWordMeaning()) { show += eRefTypeShow.WordMeaning; }
 

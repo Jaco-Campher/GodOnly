@@ -43,6 +43,7 @@ var GO;
                 this.SearchInOtherBooks = ko.observable(true);
                 //Show
                 this.ShowStrongs = ko.observable(false);
+                this.ShowNamesPlaces = ko.observable(false);
                 this.ShowProphecy = ko.observable(false);
                 this.ShowWordMeaning = ko.observable(false);
                 this.ShowAllStrongs = ko.observable(false);
@@ -50,6 +51,9 @@ var GO;
                     let show = GO.eRefTypeShow.None;
                     if (this.ShowStrongs()) {
                         show += GO.eRefTypeShow.Strongs;
+                    }
+                    if (this.ShowNamesPlaces()) {
+                        show += GO.eRefTypeShow.NamesPlaces;
                     }
                     if (this.ShowProphecy()) {
                         show += GO.eRefTypeShow.Prophesy;

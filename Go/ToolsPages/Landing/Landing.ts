@@ -24,6 +24,7 @@
 
         SetupImageLinks() {
             this.ImageLinks.push(new GO.ImageLink('Incest Laws', 'Helps to visually show the how the Torah affects a family tree.<br/><i>(Does not work on mobile)</i>', '/tools/incest-laws', 'IncestLaws.jpg'));
+            this.ImageLinks.push(new GO.ImageLink('Names and Places', '<p>A list of names, places or nations that has been found in scripture.</p>', '/tools/namesplaces', 'NamesPlaces.jpg'));
             this.ImageLinks.push(new GO.ImageLink('Prophecy Legend', '<p>The Prophesy Legend is a list of words that has been found in Scripture that can have other meanings in prophesy. One of the functions of this site is to share what has been found and to make it easier to see in the context of Scripture. When reading Scripture on this site, the words from the Prophesy Legend will be displayed when matches are found.</p>', '/tools/legend', 'MapCompass.jpg'));
             this.ImageLinks.push(new GO.ImageLink('Revelation Timeline', '', '/tools/revelation-timeline', 'RevTimeline.jpg'));
             //this.ImageLinks.push(new GO.ImageLink('Timeline', '', '/tools/timeline'));
@@ -48,6 +49,11 @@
 
                     case 'incest-laws':
                         go.ActivePage('go-tools-incestLaws');
+                        return;
+
+                    case 'namesplaces':
+                        //console.log('3.1');
+                        go.ActivePage('go-tools-namesPlaces');
                         return;
 
                     case 'revelation-timeline':

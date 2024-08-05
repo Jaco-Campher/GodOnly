@@ -72,6 +72,8 @@
     </div>
     <!-- /ko -->
 
+    <go-dialog-page params="{ Title: PageDialogTitle, Page: PageDialogPage, Show: PageDialogShow }"></go-dialog-page>
+
     <go-dialog params="{ Title: 'Page Help', Show: ShowHelp }">
         <div class="help" data-bind="template: { name: 'PageHelp', data: $parent.componentLoader.LastPageViewModel }"></div>
     </go-dialog>
@@ -102,7 +104,10 @@
         <go-strongs params="{ Strongs: Html, Alt: Meaning}"><span data-bind="html:$parent.Original"></span></go-strongs>
     </template>
     <template id="T2">
-        <go-legend params="{ Original: Original, Meaning: Meaning, Refs: Refs }"></go-legend>
+        <go-legend params="{ Original: Original, Meaning: Meaning, Refs: Refs, Type: GO.eRefTypeShow.Prophesy }"></go-legend>
+    </template>
+    <template id="T8">
+        <go-legend params="{ Original: Original, Meaning: Meaning, Refs: Refs, Type: GO.eRefTypeShow.NamesPlaces }"></go-legend>
     </template>
 
 
@@ -110,7 +115,7 @@
     <script>
         (function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
-                'gtm.start':new Date().getTime(), event: 'gtm.js'
+                'gtm.start': new Date().getTime(), event: 'gtm.js'
             });
             var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MW3JWTX')</script>

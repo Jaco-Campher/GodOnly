@@ -8,8 +8,8 @@ var GO;
                 this.ShowHide = () => {
                     this.Show(!this.Show());
                 };
-                this.Title = ko.observable(params.Title);
-                this.Page = ko.observable(params.Page);
+                this.Title = ko.isObservable(params.Title) ? params.Title : ko.observable(params.Title);
+                this.Page = ko.isObservable(params.Page) ? params.Page : ko.observable(params.Page);
                 if (params.Show != undefined) {
                     this.Show = ko.isObservable(params.Show) ? params.Show : ko.observable(params.Show);
                 }

@@ -12,6 +12,7 @@ var GO;
                 this.ShowSettings = ko.observable(false);
                 this.ShowStrongs = ko.observable(true);
                 this.ShowProphecy = ko.observable(true);
+                this.ShowNamesPlaces = ko.observable(true);
                 this.ShowWordMeaning = ko.observable(false);
                 this.ShowAllStrongs = ko.observable(false);
                 this.ShowLegendType = ko.computed(() => {
@@ -21,6 +22,9 @@ var GO;
                     }
                     if (this.ShowProphecy()) {
                         show += GO.eRefTypeShow.Prophesy;
+                    }
+                    if (this.ShowNamesPlaces()) {
+                        show += GO.eRefTypeShow.NamesPlaces;
                     }
                     if (this.ShowWordMeaning()) {
                         show += GO.eRefTypeShow.WordMeaning;

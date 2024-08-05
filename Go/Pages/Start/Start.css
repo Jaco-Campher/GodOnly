@@ -371,6 +371,12 @@ h4 { /* Refs */
     color:#efefef;
 }
 
+p.external {
+    background: #5573;
+    padding: 10px;
+    font-style: italic;
+}
+
 p.note {
     background: #09f3;
     padding: 10px;
@@ -1420,6 +1426,14 @@ go-strongs .strongs,
 .legend .div.mea{
     background: #1c0;
     box-shadow: 0 0 5px #4f3, 0 0 7px #4f3;
+}
+
+/* Names / Places
+**********************************/
+.names .bib,
+.legend .div.names{
+    background: #fe0;
+    box-shadow: 0 0 5px #ff7, 0 0 7px #ff7;
 }
 
 

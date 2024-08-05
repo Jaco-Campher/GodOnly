@@ -1,0 +1,45 @@
+﻿<link rel="Stylesheet" type="text/css" href="../toolspages/legend/legend.css" />
+
+<div class="legend-main grid-layout">
+
+    <div class="box">
+        <h1>Names and Places</h1>
+        <p>Sometimes one place or person can have more than one name, for instance Abram became Abraham.</p>
+        <go-bible-ref params="{ Ref: 'Gen 17:5', Bold: [{From:42, To:46}, {From:71, To:77}] }"></go-bible-ref>
+        <p>Abraham is not on the list as his name has no end times prophetic implications that I’m aware of, but you get the idea.</p>
+        <p>Places or nations that have been identified will also be added to the list. When reading Scripture on this site, the words from the Names / Places will be displayed when matches are found to hopefully help us better understand prophesy.</p>
+    </div>
+
+    <div class="box">
+        <div class="legend-item headings">
+            <div>Word</div>
+            <div>Meaning</div>
+            <div>References</div>
+        </div>
+        <hr />
+        <div class="ledgends" data-bind="foreach: Items">
+            <div class="legend-item hover">
+                <div class="name" data-bind="text:Name"></div>
+                <div class="meaning" data-bind="text:Meaning"></div>
+                <div class="refs" data-bind="foreach: Refs">
+                    <!-- ko if: Ref == ''-->
+                    <div data-bind="html: Html"></div>
+                    <!-- /ko -->
+                    <!-- ko if: Ref != ''-->
+                    <go-bible-ref params="{ Ref: Ref, Bold: Bold, Strongs: Strongs }"></go-bible-ref>
+                    <!-- /ko -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <template id="PageHelp">
+        <p>The Names and Places is a list of names, places or nations that has been found in scripture. One of the functions of this site is to share what has been found and to make it easier to see in the context of scripture.</p>
+        <p>When reading scripture, the words from the Names and Places list will be displayed when matches are found. The verse below is an example of this.</p>
+        <go-bible-ref params="{ Ref: 'Dan 11:2', Show: GO.eRefTypeShow.NamesPlaces }"></go-bible-ref>
+        <p>Clicking on the word will open a dialog to show the verse or verses in scripture that makes this known. This helps in keeping with the idea that scripture should interpret scripture.</p>
+        <p>Please bear in mind that this is intended for prophesy and will not work everywhere in scripture, even though it will be displayed everywhere.</p>
+        <p>This function can be turned off if not desired in the options on the <a href="/bible" data-bind="click: function() { go.Navigate('/bible'); go.ShowHideHelp(); }">Bible</a> and <a href="/search" data-bind="click: function() { go.Navigate('/search'); go.ShowHideHelp(); }">Search</a> pages.</p>
+    </template>
+
+</div>

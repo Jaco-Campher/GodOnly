@@ -66,6 +66,23 @@
       }
     ]
   },
+  "Cedars": {
+    "Meaning": "Cedar",
+    "Lookup": "Leaders"
+  },
+  "Cedar": {
+    "Meaning": "Leader",
+    "Refs": [
+      {
+        "Ref": "2Ba 39:8",
+        "Bold": [{"From":42, "To":56}]
+      },
+      {
+        "Ref": "2Ba 40:1",
+        "Bold": [{"From":9, "To":14}]
+      }
+    ]
+  },
   "Chariot": {
     "Meaning": "Angel",
     "Lookup": "Chariots"
@@ -397,7 +414,7 @@
     ]
   },
   "Sea": {
-    "Meaning": "Nations / Peoples",
+    "Meaning": "Gathering of Nations / Peoples",
     "Refs": [
       {
         "Ref": "Gen 1:10",
@@ -410,7 +427,7 @@
       },
       {
         "Ref": "",
-        "Html": "<p>Sea = Gathering together of the waters</p><p>Waters > Peoples / Nations"
+        "Html": "<p>Sea = Gathering together of the waters</p><p>Waters = Peoples / Nations"
       }    
     ]
   },

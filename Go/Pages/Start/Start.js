@@ -7,6 +7,7 @@ var GO;
         eRefTypeShow[eRefTypeShow["Strongs"] = 1] = "Strongs";
         eRefTypeShow[eRefTypeShow["Prophesy"] = 2] = "Prophesy";
         eRefTypeShow[eRefTypeShow["WordMeaning"] = 4] = "WordMeaning";
+        eRefTypeShow[eRefTypeShow["NamesPlaces"] = 8] = "NamesPlaces";
         eRefTypeShow[eRefTypeShow["Most"] = 63] = "Most";
         eRefTypeShow[eRefTypeShow["AllStrongs"] = 64] = "AllStrongs";
         eRefTypeShow[eRefTypeShow["All"] = 255] = "All";
@@ -24,13 +25,17 @@ var GO;
             this.ShowHelp = ko.observable(false);
             this.HasPageSettings = ko.observable(false);
             this.ShowPageSettings = ko.observable(false);
+            //Page Dialog
+            this.PageDialogShow = ko.observable(false);
+            this.PageDialogTitle = ko.observable('');
+            this.PageDialogPage = ko.observable('');
             //Global Settings
             this.ShowGlobalSettings = ko.observable(false);
             this.DisableTransparency = ko.observable(false);
             //#endregion
             //*********************************************************
-            //#region Pages and Navigation
-            //*********************************************************
+            // Pages and Navigation
+            //#region *************************************************
             this.NavIcons = ko.observableArray([
                 //{ ID: 'go-page-home', Title: 'Home', Url: '/' },
                 { ID: 'go-page-bible', Title: 'Bible', Url: '/bible' },
@@ -51,14 +56,27 @@ var GO;
             this.ImageLinkClicked = (imageLink) => {
                 this.Navigate(imageLink.Url);
             };
+            this.NavigateLink = (event) => {
+                event.preventDefault();
+                this.Navigate(event.srcElement.attributes.getNamedItem('href').value);
+                this.PageDialogShow(false);
+            };
             this.PageLoadCompleted = () => {
                 this.HasHelp(document.getElementById('PageHelp') != null);
                 this.HasPageSettings(document.getElementById('PageSettings') != null);
             };
+            this.ShowPageDialog = (event, title, page) => {
+                if (event != null) {
+                    event.preventDefault();
+                }
+                this.PageDialogTitle(title);
+                this.PageDialogPage(page);
+                this.PageDialogShow(true);
+            };
             //#endregion
             //****************************************************************************
-            //#region Global Functions
-            //****************************************************************************
+            // Global Functions
+            //#region ********************************************************************
             this.AddBoldAtIndex = (text, boldIndexes, offset) => {
                 if (text == '') {
                     return { Offset: offset, Html: text };
@@ -83,18 +101,24 @@ var GO;
             };
             //#endregion
             //****************************************************************************
-            //#region Load Functions
-            //****************************************************************************
+            // Load Functions
+            //#region ********************************************************************
             this.LoadDataFiles = async () => {
                 //Load data files.
                 this.LegendsObject = JSON.parse(await GO.LoadFileData('../../data/legends.json'));
+                this.NamesPlacesObject = JSON.parse(await GO.LoadFileData('../../data/namesplaces.json'));
                 this.StrongsObject = JSON.parse(await GO.LoadFileData('../../data/strongs.json'));
                 //Ensure propeties exists as Knockout needs them for binding.
-                for (let legendIndex in this.LegendsObject) {
-                    if (this.LegendsObject[legendIndex].Refs == undefined) {
+                this.EnsureLegendProperties(this.LegendsObject);
+                this.EnsureLegendProperties(this.NamesPlacesObject);
+            };
+            //Ensure propeties exists as Knockout needs them for binding.
+            this.EnsureLegendProperties = (holderObject) => {
+                for (let index in holderObject) {
+                    if (holderObject[index].Refs == undefined) {
                         continue;
                     }
-                    for (let ref of this.LegendsObject[legendIndex].Refs) {
+                    for (let ref of holderObject[index].Refs) {
                         if (ref.Bold == undefined) {
                             ref.Bold = [];
                         }
@@ -107,9 +131,10 @@ var GO;
                     }
                 }
             };
+            //#endregion
             //****************************************************************************
-            //#region Functions
-            //****************************************************************************
+            // Functions
+            //#region ********************************************************************
             this.ShowHideHelp = () => {
                 this.ShowHelp(!this.ShowHelp());
                 //console.log(this.componentLoader.LastPageViewModel);
@@ -191,11 +216,11 @@ var GO;
         }
         //#endregion
         //****************************************************************************
-        //#region Legend Functions
-        //****************************************************************************
+        // Legend Functions
+        //#region ********************************************************************
         //********************************
         //#region Legend Functions
-        AddLegend(inputSections) {
+        AddLegend(inputSections, holderObject, refType) {
             let newSections = [];
             let found = false;
             for (let inputSection of inputSections) {
@@ -203,7 +228,7 @@ var GO;
                     newSections.push(inputSection);
                     continue;
                 }
-                for (let legendName in go.LegendsObject) {
+                for (let legendName in holderObject) {
                     let reg = new RegExp(`(^|(?<=\\W))(${legendName})($|(?=\\W))`, 'gi');
                     let htmlSections = inputSection.Html.split(reg);
                     if (htmlSections.length > 1) {
@@ -211,12 +236,12 @@ var GO;
                         for (let htmlSection of htmlSections) {
                             if (htmlSection.toLowerCase() != legendName.toLowerCase()) {
                                 //Other text, search for more matches.
-                                newSections.push(...this.AddLegend([new Section(htmlSection)]));
+                                newSections.push(...this.AddLegend([new Section(htmlSection)], holderObject, refType));
                                 //newSections.push(new Section(htmlSection));
                                 continue;
                             }
-                            let legend = go.LegendsObject[legendName];
-                            let section = new Section('', eRefTypeShow.Prophesy);
+                            let legend = holderObject[legendName];
+                            let section = new Section('', refType);
                             section.Original = htmlSection;
                             if (legend.Case) {
                                 section.Meaning = legend.Meaning;
@@ -224,7 +249,7 @@ var GO;
                             else {
                                 section.Meaning = htmlSection == htmlSection.toLowerCase() ? legend.Meaning.toLowerCase() : legend.Meaning;
                             }
-                            section.Refs = legend.Lookup == undefined ? legend.Refs : go.LegendsObject[legend.Lookup].Refs;
+                            section.Refs = legend.Lookup == undefined ? legend.Refs : holderObject[legend.Lookup].Refs;
                             newSections.push(section);
                         }
                         break;
