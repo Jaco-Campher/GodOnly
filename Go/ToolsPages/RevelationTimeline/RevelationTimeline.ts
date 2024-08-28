@@ -58,10 +58,10 @@
 
         // Settings
         //******************************
-        DetailedView: KnockoutObservable<boolean> = ko.observable(true);
+        CompactView: KnockoutObservable<boolean> = ko.observable(false);
 
         CSSClass: KnockoutComputed<string> = ko.computed((): string => {
-            let css: string = this.DetailedView() ? '' : 'compact';
+            let css: string = this.CompactView() ? 'compact' : '';
             return css;
         }, this);
 
@@ -115,6 +115,7 @@
             this.Months.push(new Month('m-tab-vial-7', 'Sep 2034'));
 
             //Events
+            //this.TimelineEvents.push(new TimelineEvent('tab-seal-3', 'Stock Crash', '/images/rev/stockcrash40.png', 130, 460));
             this.TimelineEvents.push(new TimelineEvent('tab-seal-6', 'Solar Eclipse (17 Feb 2026 / 12 Aug 2026)', '/images/rev/solareclipse40.png', 10, 380));
             this.TimelineEvents.push(new TimelineEvent('tab-seal-6', 'Blood Moon (3 Mar 2026 / 28 Aug 2026)', '/images/rev/bloodmoon40.png', 20, 480)); //410
 
@@ -144,8 +145,8 @@
             //Seals
             //************************************************************
 
-            //#region Seal 1
-            //*******************************
+            // Seal 1
+            //#region *******************************
             tab = new Tab('seal', 'tab-seal-1', 'Seal 1', 'Yahshua');
 
             //Rev 6
@@ -159,8 +160,8 @@
             //#endregion
 
 
-            //#region Seal 2
-            //*******************************
+            // Seal 2
+            //#region *******************************
             tab = new Tab('seal', 'tab-seal-2', 'Seal 2', 'Take Peace from the Earth');
 
             //Rev 6
@@ -172,9 +173,10 @@
             //#endregion
 
 
-            //#region Seal 3
-            //*******************************
-            tab = new Tab('seal', 'tab-seal-3', 'Seal 3', 'Food Inflation?');
+            // Seal 3
+            //#region *******************************
+            tab = new Tab('seal', 'tab-seal-3', 'Seal 3', 'Recession?');
+            //tab.DetailsPage = 'go-prophesypage-year2';
 
             //Rev 6
             item = new Item(Color.Rev, 'rev-6-5', 'Had a Pair of Balances in His Hand', 'Black Horse', 'Rev 6:5', 'Rev 6:5', '', '');
@@ -187,8 +189,8 @@
             //#endregion
 
 
-            //#region Seal 4
-            //*******************************
+            // Seal 4
+            //#region *******************************
             tab = new Tab('seal', 'tab-seal-4', 'Seal 4', 'War? Famine?');
 
             //2 Esdras 15
@@ -221,8 +223,8 @@
             //#endregion
 
 
-            //#region Seal 5
-            //*******************************
+            // Seal 5
+            //#region *******************************
             tab = new Tab('seal', 'tab-seal-5', 'Seal 5');
 
             //2 Esdras 15
@@ -249,8 +251,8 @@
             //#endregion
 
 
-            //#region Seal 6
-            //*******************************
+            // Seal 6
+            //#region *******************************
             tab = new Tab('seal', 'tab-seal-6', 'Seal 6');
 
             //Gad 14
@@ -353,8 +355,8 @@
             //#endregion
 
 
-            //#region Rapture
-            //*******************************
+            // Rapture
+            //#region *******************************
             tab = new Tab('rapture', 'tab-rapture', 'Rapture');
 
             //2 Baruk 30
@@ -1040,6 +1042,7 @@
         Style: string;
         Name: string;
         SubHeading: string;
+        DetailsPage: string = '';
 
         Expanded: KnockoutObservable<boolean>;
 
@@ -1068,16 +1071,17 @@
         OpenClose = () => {
             this.Expanded(!this.Expanded());
         }
+
+        ShowDetails = () => {
+            go.ShowPageDialog(null, this.Name, this.DetailsPage);
+        }
     }
 
     class TabJoin {
         Color: KnockoutObservable<Color> = ko.observable<Color>(Color.Default);
         Style: string;
 
-        CSSClass: KnockoutComputed<string> = ko.computed((): string => {
-            let css: string = this.Color();
-            return css;
-        }, this);
+        CSSClass: KnockoutComputed<string>;
 
         constructor(color: Color, location: string, firstLast: FirstLast = FirstLast.Default) {
             this.Color(color);
@@ -1094,6 +1098,11 @@
 
                 default:
             }
+
+            this.CSSClass = ko.computed((): string => {
+                let css: string = `${this.Color()} ${firstLast}`;
+                return css;
+            }, this);
         }
     }
 

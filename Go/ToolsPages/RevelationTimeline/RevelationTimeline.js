@@ -45,9 +45,9 @@ var GO;
                 this.ShowRef = ko.observable(false).subscribeTo('Rev-ShowRef', false);
                 // Settings
                 //******************************
-                this.DetailedView = ko.observable(true);
+                this.CompactView = ko.observable(false);
                 this.CSSClass = ko.computed(() => {
-                    let css = this.DetailedView() ? '' : 'compact';
+                    let css = this.CompactView() ? 'compact' : '';
                     return css;
                 }, this);
                 this.LoadTimeline();
@@ -91,6 +91,7 @@ var GO;
                 this.Months.push(new Month('m-tab-vial-6', 'Feb 2034'));
                 this.Months.push(new Month('m-tab-vial-7', 'Sep 2034'));
                 //Events
+                //this.TimelineEvents.push(new TimelineEvent('tab-seal-3', 'Stock Crash', '/images/rev/stockcrash40.png', 130, 460));
                 this.TimelineEvents.push(new TimelineEvent('tab-seal-6', 'Solar Eclipse (17 Feb 2026 / 12 Aug 2026)', '/images/rev/solareclipse40.png', 10, 380));
                 this.TimelineEvents.push(new TimelineEvent('tab-seal-6', 'Blood Moon (3 Mar 2026 / 28 Aug 2026)', '/images/rev/bloodmoon40.png', 20, 480)); //410
                 //this.TimelineEvents.push(new TimelineEvent('tab-seal-6', 'Solar Eclipse (12 Aug 2026)', '/images/rev/solareclipse40.png', 200, 480));
@@ -112,8 +113,8 @@ var GO;
                 //#endregion
                 //Seals
                 //************************************************************
-                //#region Seal 1
-                //*******************************
+                // Seal 1
+                //#region *******************************
                 tab = new Tab('seal', 'tab-seal-1', 'Seal 1', 'Yahshua');
                 //Rev 6
                 item = new Item(Color.Rev, 'rev-6-1', 'I Heard, as it were the Noise of Thunder', 'The Lamb Opened One of the Seals', 'Rev 6:1', 'Rev 6:1', 'One of the four {beasts|G2226} saying,', 'Come and see.', FirstLast.First);
@@ -123,8 +124,8 @@ var GO;
                 this.TabJoins.push(new TabJoin(Color.Rev, 'tj-seal-1'));
                 this.Tabs.push(tab);
                 //#endregion
-                //#region Seal 2
-                //*******************************
+                // Seal 2
+                //#region *******************************
                 tab = new Tab('seal', 'tab-seal-2', 'Seal 2', 'Take Peace from the Earth');
                 //Rev 6
                 item = new Item(Color.Rev, 'rev-6-3', 'Was Given to Him that Sat Thereon to Take Peace From the Earth', 'Red Horse', 'Rev 6:3-4', 'Rev 6:3-4', ' that they should kill one another:', ' and there was given unto him a great sword.');
@@ -132,9 +133,10 @@ var GO;
                 this.TabJoins.push(new TabJoin(Color.Rev, 'tj-seal-2'));
                 this.Tabs.push(tab);
                 //#endregion
-                //#region Seal 3
-                //*******************************
-                tab = new Tab('seal', 'tab-seal-3', 'Seal 3', 'Food Inflation?');
+                // Seal 3
+                //#region *******************************
+                tab = new Tab('seal', 'tab-seal-3', 'Seal 3', 'Recession?');
+                //tab.DetailsPage = 'go-prophesypage-year2';
                 //Rev 6
                 item = new Item(Color.Rev, 'rev-6-5', 'Had a Pair of Balances in His Hand', 'Black Horse', 'Rev 6:5', 'Rev 6:5', '', '');
                 tab.Items.push(item);
@@ -143,8 +145,8 @@ var GO;
                 this.TabJoins.push(new TabJoin(Color.Rev, 'tj-seal-3'));
                 this.Tabs.push(tab);
                 //#endregion
-                //#region Seal 4
-                //*******************************
+                // Seal 4
+                //#region *******************************
                 tab = new Tab('seal', 'tab-seal-4', 'Seal 4', 'War? Famine?');
                 //2 Esdras 15
                 tab.Joins.push(new Join(Color.Es2, 'j-es2-15-5-s', FirstLast.First));
@@ -171,8 +173,8 @@ var GO;
                 this.TabJoins.push(new TabJoin(Color.Rev, 'tj-seal-4'));
                 this.Tabs.push(tab);
                 //#endregion
-                //#region Seal 5
-                //*******************************
+                // Seal 5
+                //#region *******************************
                 tab = new Tab('seal', 'tab-seal-5', 'Seal 5');
                 //2 Esdras 15
                 this.TabJoins.push(new TabJoin(Color.Es2, 'tj-es2-15-8b'));
@@ -194,8 +196,8 @@ var GO;
                 this.TabJoins.push(new TabJoin(Color.Rev, 'tj-seal-5'));
                 this.Tabs.push(tab);
                 //#endregion
-                //#region Seal 6
-                //*******************************
+                // Seal 6
+                //#region *******************************
                 tab = new Tab('seal', 'tab-seal-6', 'Seal 6');
                 //Gad 14
                 item = new Item(Color.Gad, 'gad-14-1', '1st Day of the 7th Month', 'I Had a Vision from the LORD', 'Gad 14:1', 'Gad 14:1', '', '', FirstLast.First);
@@ -287,8 +289,8 @@ var GO;
                 this.TabJoins.push(new TabJoin(Color.Sng, 'tj-song-2-13a'));
                 this.Tabs.push(tab);
                 //#endregion
-                //#region Rapture
-                //*******************************
+                // Rapture
+                //#region *******************************
                 tab = new Tab('rapture', 'tab-rapture', 'Rapture');
                 //2 Baruk 30
                 item = new Item(Color.Ba2, 'ba2-30-1', 'He Shall Return in Glory', '', '2Ba 30:1', '2Ba 30:1', '', '', FirstLast.First);
@@ -828,11 +830,15 @@ var GO;
         }
         class Tab {
             constructor(cssClass, location, name, subHeading = '-') {
+                this.DetailsPage = '';
                 this.Items = ko.observableArray([]);
                 this.Joins = ko.observableArray([]);
                 this.Links = ko.observableArray([]);
                 this.OpenClose = () => {
                     this.Expanded(!this.Expanded());
+                };
+                this.ShowDetails = () => {
+                    go.ShowPageDialog(null, this.Name, this.DetailsPage);
                 };
                 this.BaseCSSClass = cssClass;
                 this.HeadingStyle = `grid-area: h-${location}`;
@@ -850,10 +856,6 @@ var GO;
         class TabJoin {
             constructor(color, location, firstLast = FirstLast.Default) {
                 this.Color = ko.observable(Color.Default);
-                this.CSSClass = ko.computed(() => {
-                    let css = this.Color();
-                    return css;
-                }, this);
                 this.Color(color);
                 this.Style = `grid-area: ${location};`;
                 //this.FirstLast = firstLast;
@@ -866,6 +868,10 @@ var GO;
                         break;
                     default:
                 }
+                this.CSSClass = ko.computed(() => {
+                    let css = `${this.Color()} ${firstLast}`;
+                    return css;
+                }, this);
             }
         }
         class Item {

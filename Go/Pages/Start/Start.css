@@ -189,6 +189,11 @@ header .btn-help {
     right: 0;
     top: calc(var(--top-nav-height) - 10px);
     font-weight:bold;
+    transition: right 200ms ease-out;
+}
+
+.page-settings-open header .btn-help {
+    right: 45px;
 }
 
 
@@ -467,8 +472,8 @@ textarea {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: linear-gradient(90deg, #828282 0, #f9f9f9 10%, #4a4a4a 50%, #828282 100%),
-                linear-gradient(90deg, #828282 0, #f9f9f9 30%, #4a4a4a 45%, #828282 80%, #f9f9f9 100%),
+    background-image: linear-gradient(90deg, #828282 0, #d9d9d9 10%, #4a4a4a 50%, #828282 100%),
+                linear-gradient(90deg, #828282 0, #f9f9f9 30%, #4a4a4a 45%, #828282 80%, #d9d9d9 100%),
                 linear-gradient(45deg, #111 0, #121212 100%);
     background-position: 0 0, 0 100%;
     background-repeat: no-repeat;
@@ -1217,13 +1222,13 @@ go-info {
     overflow: visible;
 }
 
-go-info .info-button {
+.info-button {
     padding: 3px 6px 0;
     border-radius: 50%;
     min-width: 37px;
 }
 
-go-info .info-button svg {
+.info-button svg {
     fill:#aaa;
     width:20px;
 }
@@ -1451,15 +1456,26 @@ go-ref-text {
 **********************************************/
 .page-settings {
     position:fixed;
-    inset:90px 0 50px auto;
+    inset:40px 0 40px auto;
     width:350px;
     transition: transform 200ms ease-out;
     transform: translateX(100%);
     z-index: 100;
 }
 
-.page-settings.open {
+.page-settings-open .page-settings {
     transform: translateX(0);
+}
+
+.page-settings-close {
+    position: absolute;
+    right: -45px;
+    top: calc(var(--top-nav-height) - 10px);
+    transition: right 200ms ease-out;
+}
+
+.page-settings-open .page-settings-close {
+    right:0;
 }
 
 .page-settings-buttons {

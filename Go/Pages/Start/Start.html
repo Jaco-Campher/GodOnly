@@ -30,7 +30,7 @@
 
     <script type="text/javascript" src="/pages/Start/start.js"></script>
 </head>
-<body id="main" class="theme-dark" data-bind="css: { 'no-transparency': DisableTransparency }">
+<body id="main" class="theme-dark" data-bind="css: { 'no-transparency': DisableTransparency, 'page-settings-open': ShowPageSettings }">
     <header>
         <a href="/" data-bind="click: function() { Navigate('/'); }">God Only</a>
         <div></div>
@@ -43,6 +43,7 @@
         <!-- ko if: HasHelp -->
         <button class="btn-round btn-help" data-bind="click: ShowHideHelp" title="Page Help">?</button>
         <!-- /ko -->
+        <button class="btn-round page-settings-close" data-bind="click: ShowHidePageSettings">X</button>
     </header>
 
     <!-- ko if: ActivePage() == '' -->
@@ -67,7 +68,7 @@
         </button>
     </div>
 
-    <div class="page-settings box" data-bind="css: { open: ShowPageSettings }">
+    <div class="page-settings box">
         <div class="settings-holder" data-bind="template: { name: 'PageSettings', data: componentLoader.LastPageViewModel }"></div>
     </div>
     <!-- /ko -->

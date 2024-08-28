@@ -144,6 +144,8 @@
     <Content Include="Images\Rev\BloodMoon_Original.jpg" />
     <Content Include="Images\Rev\SolarEclipse40.png" />
     <Content Include="Images\Rev\SolarEclipse_Original.jpg" />
+    <Content Include="Images\Rev\StockCrash40.png" />
+    <Content Include="Images\Rev\StockCrash_Origial.jpg" />
     <Content Include="Images\Rev\Tab-Seal-2.png" />
     <Content Include="Images\Rev\Tab-Rev-12-Sign.png" />
     <Content Include="Images\Rev\Tab-Seal-1.png" />

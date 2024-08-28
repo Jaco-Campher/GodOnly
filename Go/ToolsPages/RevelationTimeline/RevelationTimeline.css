@@ -42,6 +42,7 @@
     --enoch: #8B2252;
     --x: #4C4C4C;
 
+    --tab-join-compact-overide: #ff000017;
 }
 
 body {
@@ -239,10 +240,15 @@ footer {
     right: -15px;
 }
 
-
 .rev-main .tab-heading .btn-expand svg {
     fill: #aaa;
     width: 20px;
+}
+
+.rev-main .tab-heading .info-button {
+    position: absolute;
+    top: 40px;
+    right: -15px;
 }
 
 
@@ -256,6 +262,11 @@ footer {
     border-right: 1px solid #aaa;
     margin: 0 0 0 -1px;
     position: relative;
+}
+
+.rev-main.compact .item {
+    min-height:90px;
+    margin: 25px 0 0 -1px;
 }
 
 .rev-main .item.not-sure-location {
@@ -333,10 +344,6 @@ footer {
     padding: 0 85px 0 7px;
 }
 
-.rev-main.compact .line {
-    display:none;
-}
-
 
 /*********************************************************************
     Joins
@@ -352,6 +359,10 @@ footer {
     height: var(--heading-1-height);
     margin:var(--heading-2-height) 1px 0 -1px;
     background: #f00;
+}
+
+.rev-main.compact .join {
+    margin: 48px 0 0;
 }
 
 .rev-main .join.first {
@@ -539,7 +550,8 @@ footer {
 }
 
 .rev-main.compact .grid {
-    grid-template-rows: repeat(20, 45px 25px);
+    grid-template-rows: repeat(20, auto auto);
+    row-gap: 0;
 }
 
 /* Rev 12 Sign
@@ -1002,6 +1014,20 @@ footer {
 .rev-main .join.th1,
 .rev-main .tab-join.th1 {
     background: var(--th1);
+}
+
+
+
+.rev-main.compact .tab-join {
+    background: #ff000017;
+}
+
+.rev-main.compact .tab-join.first {
+    background:linear-gradient(90deg, #0000 0, #0000 30%, var(--tab-join-compact-overide)) !important;
+}
+
+.rev-main.compact .tab-join.last {
+    background:linear-gradient(90deg, var(--tab-join-compact-overide) 0, #0000 70%) !important;
 }
 
 
