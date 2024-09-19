@@ -166,6 +166,7 @@
     <Content Include="ProphesyPages\Iran\Iran.html" />
     <Content Include="ProphesyPages\Landing\Landing.html" />
     <Content Include="ProphesyPages\Landing\Landing.js" />
+    <Content Include="ProphesyPages\Seal3\Seal3.html" />
     <Content Include="ProphesyPages\TimelineDatesExplanation\TimelineDatesExplanation.html" />
     <Content Include="ProphesyPages\Tribulation\Tribulation.html" />
     <Content Include="ProphesyPages\Year2\Year2.css" />

@@ -136,7 +136,7 @@ var GO;
                 // Seal 3
                 //#region *******************************
                 tab = new Tab('seal', 'tab-seal-3', 'Seal 3', 'Recession?');
-                //tab.DetailsPage = 'go-prophesypage-year2';
+                tab.DetailsPage = 'go-prophesypage-seal3';
                 //Rev 6
                 item = new Item(Color.Rev, 'rev-6-5', 'Had a Pair of Balances in His Hand', 'Black Horse', 'Rev 6:5', 'Rev 6:5', '', '');
                 tab.Items.push(item);

@@ -28,6 +28,7 @@
 
             //Revelation Timeline Studies
             this.RevelationTimelineStudies.push(new StudyLink('Dates Explanation', '/prophesy-study/timelinedatesexplanation'));
+            this.RevelationTimelineStudies.push(new StudyLink('Seal 3', '/prophesy-study/seal3'));
             this.RevelationTimelineStudies.push(new StudyLink('Tribulation Year 2', '/prophesy-study/year2'));
         }
 
