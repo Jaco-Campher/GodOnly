@@ -9,6 +9,7 @@ var GO;
             constructor() {
                 this.NewToTorahStudies = ko.observableArray([]);
                 this.Studies = ko.observableArray([]);
+                this.AdvancedStudies = ko.observableArray([]);
                 //****************************************************************************
                 //#region Functions
                 //****************************************************************************
@@ -30,11 +31,14 @@ var GO;
                 this.SetupLinks();
             }
             SetupLinks() {
+                //New to Torah
                 this.NewToTorahStudies.push(new StudyLink('1. Do We Still Need to Keep the Law', '/torah-study/needtokeepthelaw'));
-                this.Studies.push(new StudyLink('Lesbians in the Bible', '/torah-study/lesbians'));
-                this.Studies.push(new StudyLink('Nudity in the Bible', '/torah-study/nudityinthebible'));
+                //Studies
                 this.Studies.push(new StudyLink('Simple Laws', '/torah-study/simplelaws'));
                 this.Studies.push(new StudyLink('Sunday Worship', '/torah-study/sundayworship'));
+                //Advanced Studies
+                this.AdvancedStudies.push(new StudyLink('Lesbians in the Bible', '/torah-study/lesbians'));
+                this.AdvancedStudies.push(new StudyLink('Nudity in the Bible', '/torah-study/nudityinthebible'));
             }
         }
         Torah.LandingViewModel = LandingViewModel;
