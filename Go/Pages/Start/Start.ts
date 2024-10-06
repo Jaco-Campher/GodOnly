@@ -98,6 +98,8 @@
 
         MenuOpen: KnockoutObservable<boolean> = ko.observable(false);
 
+        PageTitle: KnockoutObservable<string> = ko.observable('God Only');
+
         HasHelp: KnockoutObservable<boolean> = ko.observable(false);
         ShowHelp: KnockoutObservable<boolean> = ko.observable(false);
         HasPageSettings: KnockoutObservable<boolean> = ko.observable(false);
@@ -149,7 +151,7 @@
 
             //Setup knockout.
             ko.options.deferUpdates = true;
-            ko.applyBindings(this, document.getElementById('main'));
+            ko.applyBindings(this, document.getElementById('HtmlTop')); //.getElementById('HtmlTop'));
 
             this.SetupRoutes();
 
@@ -243,6 +245,10 @@
         }
 
         PageLoadCompleted = () => {
+            let pageTitle: HTMLElement = document.getElementById('PageTitle');
+            this.PageTitle(pageTitle == null ? 'God Only' : pageTitle.innerHTML);
+            console.log(this.PageTitle());
+            
             this.HasHelp(document.getElementById('PageHelp') != null);
             this.HasPageSettings(document.getElementById('PageSettings') != null);
         }

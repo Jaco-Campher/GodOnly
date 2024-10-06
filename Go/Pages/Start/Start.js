@@ -21,6 +21,7 @@ var GO;
             this.Bible = new GO.Bible();
             this.componentLoader = new GO.KO.ComponentLoader();
             this.MenuOpen = ko.observable(false);
+            this.PageTitle = ko.observable('God Only');
             this.HasHelp = ko.observable(false);
             this.ShowHelp = ko.observable(false);
             this.HasPageSettings = ko.observable(false);
@@ -62,6 +63,9 @@ var GO;
                 this.PageDialogShow(false);
             };
             this.PageLoadCompleted = () => {
+                let pageTitle = document.getElementById('PageTitle');
+                this.PageTitle(pageTitle == null ? 'God Only' : pageTitle.innerHTML);
+                console.log(this.PageTitle());
                 this.HasHelp(document.getElementById('PageHelp') != null);
                 this.HasPageSettings(document.getElementById('PageSettings') != null);
             };
@@ -171,7 +175,7 @@ var GO;
             this.componentLoader.RegisterAddedComponents();
             //Setup knockout.
             ko.options.deferUpdates = true;
-            ko.applyBindings(this, document.getElementById('main'));
+            ko.applyBindings(this, document.getElementById('HtmlTop')); //.getElementById('HtmlTop'));
             this.SetupRoutes();
             //Load the Bible and Data files.
             await Promise.all([
