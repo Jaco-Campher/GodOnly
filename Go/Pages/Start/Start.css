@@ -45,6 +45,7 @@ body {
     font-size: var(--text-size);
     line-height: 1.4em;
     height:100vh;
+    height:100dvh;
     width:100vw;
     overflow-x:hidden;
 }
@@ -458,14 +459,8 @@ textarea {
 .box {
     position:relative;
     margin: 0 0 15px;
-    padding:15px;
+    padding:15px 20px;
     box-shadow: 0 0 25px #0009;
-}
-
-@media (max-width:800px) {
-    .box {
-        padding:15px 7px;
-    }
 }
 
 .box:before {
@@ -489,14 +484,16 @@ go-dialog .box:before {
 }
 
 
-.box:after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: url(/Images/Background/ReflectiveGlow.jpg) 0 var(--bk-scroll-pos, 50%) repeat fixed;
-    background-size: cover;
-    opacity: 0.04;
-    z-index: -1;
+@media (min-width:500px) {
+    .box:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url(/Images/Background/ReflectiveGlow.jpg) 0 var(--bk-scroll-pos, 50%) repeat fixed;
+        background-size: cover;
+        opacity: 0.04;
+        z-index: -1;
+    }
 }
 
 go-dialog .box:after {
@@ -617,7 +614,7 @@ go-dialog .box:after {
     grid-template: auto /repeat(auto-fit, minmax(275px, 1fr));
     grid-gap:30px;
     justify-items: stretch;
-    padding: 20px 15px;
+    padding: 20px 0;
 }
 
 .landing-sections .section,
