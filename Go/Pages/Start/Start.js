@@ -65,7 +65,6 @@ var GO;
             this.PageLoadCompleted = () => {
                 let pageTitle = document.getElementById('PageTitle');
                 this.PageTitle(pageTitle == null ? 'God Only' : pageTitle.innerHTML);
-                console.log(this.PageTitle());
                 this.HasHelp(document.getElementById('PageHelp') != null);
                 this.HasPageSettings(document.getElementById('PageSettings') != null);
             };

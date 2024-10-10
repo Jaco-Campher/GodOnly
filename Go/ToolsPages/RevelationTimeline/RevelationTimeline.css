@@ -207,14 +207,16 @@ footer {
     z-index: -2;
 }
 
-.rev-main .tab:after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: url(/Images/Background/ReflectiveGlow.jpg) 0 var(--bk-scroll-pos, 50%) repeat fixed;
-    background-size: 2500px;
-    opacity: 0.03;
-    z-index: -1;
+@media (min-width:500px) {
+    .rev-main .tab:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url(/Images/Background/ReflectiveGlow.jpg) 0 var(--bk-scroll-pos, 50%) repeat fixed;
+        background-size: 2500px;
+        opacity: 0.03;
+        z-index: -1;
+    }
 }
 
 .rev-main .tab-heading > h2 {
