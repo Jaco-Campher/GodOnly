@@ -222,6 +222,7 @@
     <Content Include="TorahPages\Landing\Landing.js" />
     <Content Include="TorahPages\Lesbians\Lesbians.html" />
     <Content Include="TorahPages\NudityInTheBible\NudityInTheBible.html" />
+    <Content Include="TorahPages\OnlyForIsrael\OnlyForIsrael.html" />
     <Content Include="TorahPages\SimpleLaws\SimpleLaws.html" />
     <Content Include="TorahPages\SundayWorship\SundayWorship.html" />
     <Content Include="Web.config" />

@@ -33,6 +33,7 @@ var GO;
             SetupLinks() {
                 //New to Torah
                 this.NewToTorahStudies.push(new StudyLink('1. Do We Still Need to Keep the Law', '/torah-study/needtokeepthelaw'));
+                this.NewToTorahStudies.push(new StudyLink('2. Only for Israel (Double Standards?)', '/torah-study/onlyforisrael'));
                 //Studies
                 this.Studies.push(new StudyLink('Simple Laws', '/torah-study/simplelaws'));
                 this.Studies.push(new StudyLink('Sunday Worship', '/torah-study/sundayworship'));
