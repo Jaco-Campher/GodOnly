@@ -34,6 +34,7 @@ var GO;
                 //New to Torah
                 this.NewToTorahStudies.push(new StudyLink('1. Do We Still Need to Keep the Law', '/torah-study/needtokeepthelaw'));
                 this.NewToTorahStudies.push(new StudyLink('2. Only for Israel (Double Standards?)', '/torah-study/onlyforisrael'));
+                this.NewToTorahStudies.push(new StudyLink('3. Law or Commandments Only?', '/torah-study/laworcommandmentsonly'));
                 //Studies
                 this.Studies.push(new StudyLink('Simple Laws', '/torah-study/simplelaws'));
                 this.Studies.push(new StudyLink('Sunday Worship', '/torah-study/sundayworship'));
