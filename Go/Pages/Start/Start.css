@@ -663,7 +663,7 @@ go-dialog .box:after {
 
 .rev-timeline {
     display:block;
-    margin:10px 15px;
+    margin:10px 0;
     background-image: url(/Images/Pages/Home/RevTimeline.jpg);
 }
 

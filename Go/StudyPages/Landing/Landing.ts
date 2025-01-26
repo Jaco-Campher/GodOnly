@@ -23,6 +23,7 @@
 
         SetupLinks() {
             this.Studies.push(new StudyLink('Marriage in Heaven', '', '/bible-study/MarriageinHeaven'));
+            this.Studies.push(new StudyLink('Withholding Knowledge', '', '/bible-study/WithholdingKnowledge'));
         }
 
         //****************************************************************************
