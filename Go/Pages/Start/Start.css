@@ -667,7 +667,23 @@ go-dialog .box:after {
     background-image: url(/Images/Pages/Home/RevTimeline.jpg);
 }
 
+.youtube-holder {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
 
+.youtube-iframe {
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
 
 /*********************************************************************

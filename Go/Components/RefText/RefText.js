@@ -34,7 +34,7 @@ var GO;
                 if (this.params.Show() & GO.eRefTypeShow.Prophesy) {
                     newSections = go.AddLegend(newSections, go.LegendsObject, GO.eRefTypeShow.Prophesy);
                 }
-                if (this.params.Show() & GO.eRefTypeShow.Prophesy) {
+                if (this.params.Show() & GO.eRefTypeShow.NamesPlaces) {
                     newSections = go.AddLegend(newSections, go.NamesPlacesObject, GO.eRefTypeShow.NamesPlaces);
                 }
                 //console.log(newSections);

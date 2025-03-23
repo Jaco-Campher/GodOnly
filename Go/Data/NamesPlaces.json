@@ -7,5 +7,14 @@
         "Html": "<p>The name Iran is not in the Bible, but according to Wikipedia, Iran is also known as Persia.</p><p class=\"external\">\"Iran, officially the Islamic Republic of Iran (IRI), also known as Persia, is a country in West Asia\" - <a href=\"https://en.wikipedia.org/wiki/Iran\" target=\"_blank\">Wikipedia</a></p><p>If we start looking for Persia in the Bible, we do find prophesies that matches Iran. Please see the study about <a href='/prophesy-study/iran' onclick=\"go.ShowPageDialog(event, 'Iran in Prophesy', 'go-prophesypage-iran')\">Iran in Prophesy</a> for more information.</p>"
       }
     ]
+  },
+  "Taphath": {
+    "Meaning": "Tamar",
+    "Refs": [
+      {
+        "Ref": "Gad 13:62-65",
+        "Bold": [{"From":325, "To":330}, {"From":344, "To":350}]
+      }
+    ]
   }
 }

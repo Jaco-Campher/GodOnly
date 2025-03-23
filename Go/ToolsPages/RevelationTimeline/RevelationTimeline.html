@@ -78,22 +78,55 @@
 
     <template id="PageHelp">
         <h3>Formatting</h3>
-        <p>When you first open the Revelation Timeline you will see the sections (Seal 1, Seal 2, etc.) in a closed state. You can click on the Title or the Open button in the top right corner to open each of the sections. This will show all the verses for that section.</p>
+        <p>When you first open the Revelation Timeline you will see the sections (Seal 1, Seal 2, etc.) in a closed state. You can click on the Title or the Open button in the top right corner to open each of the sections, this will show all the verses for that section.</p>
         <p>In both the open and closed state of the section, there will be colored bars going horizontally over the sections. These are joins that shows how different verses joins together.</p>
 
+        <h3>Tab Join Formatting</h3>
+        <div class="join-legend-tab-holder">
+            <div class="join-legend-tab-line1"></div>
+            <div class="join-legend-tab-line2"></div>
+            <ul class="join-legends">
+                <li>
+                    <div class="mat" style="height:var(--heading-1-height);background:linear-gradient(90deg, #0000 43px, var(--rev) 49px, var(--rev));"></div>
+                    <p>Wrap around indicated the start of the verses in the timeline, but not the start of a chapter in the Bible.</p>
+                </li>
+                <li>
+                    <div class="mat" style="height:var(--heading-1-height);background:linear-gradient(90deg, var(--rev) 0, var(--rev) 18px, #0000 24px);"></div>
+                    <p>Wrap at the end indicates the end of the verses in the timeline, but not the end of a chapter in the Bible.</p>
+                </li>
+                <li>
+                    <div class="mat" style="height:var(--heading-1-height);background:linear-gradient(90deg, var(--rev) 0, #0000 80%);"></div>
+                    <p>Going underneath is an indication that there are other verses following this one, but they are not in the next tab / section. A join line will continue to run underneath the sections to where the next verses are located.</p>
+                </li>
+                <li>
+                    <div class="mat" style="height:var(--heading-1-height);background:var(--rev);z-index:-2;"></div>
+                    <p>A join running underneath the tabs.</p>
+                </li>
+                <li>
+                    <div class="mat" style="height:var(--heading-1-height);background:linear-gradient(90deg, #0000 0, #0000 20%, var(--rev));"></div>
+                    <p>Coming up from underneath is an indication that there are other verses future back in the timeline, but they are not in the previous tab / section. A join line will continue to run underneath the sections to where the previous verses are located.</p>
+                </li>
+
+                <li>
+                    <div class="mat" style="height:var(--heading-1-height);background:var(--rev);"></div>
+                    <p>Solid indicates a join on both sides. If there are no verses on one of the sides, it is because it is still as work in progress and needs to be added.</p>
+                </li>
+            </ul>
+        </div>
+
+        <h3>Verse Join Formatting</h3>
         <ul class="join-legends">
             <li>
                 <div class="mat" style="height:var(--heading-1-height);background:linear-gradient(90deg, #0000 0, #0000 30%, var(--mat));"></div>
                 <p>Fading in indicated the start of the verses in the timeline, but not the start of a chapter in the Bible.</p>
             </li>
-
             <li>
                 <div class="mat" style="height:var(--heading-1-height);background:linear-gradient(90deg, var(--mat) 0, #0000 70%);"></div>
                 <p>Fading out indicated the end of the verses in the timeline, but not the end of a chapter in the Bible.</p>
             </li>
             <li>
                 <div class="mat" style="height:var(--heading-1-height);background:var(--mat);"></div>
-                <p>Solid indicates a join on both sides. If there are no verses on one of the sides, it is because it is still as work in progress and needs to be added.</p>
+                <p>Solid indicates a join to verses on both sides. If there are no verses on one of the sides, it is because it is still as work in progress and needs to be added.</p>
             </li>
         </ul>
         <p class="note">Please keep in mind that verses will not be shown if the sections are closed.</p>

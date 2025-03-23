@@ -39,7 +39,7 @@
 
             if (this.params.Show() & eRefTypeShow.Strongs) { newSections = go.AddStrongs(newSections); }
             if (this.params.Show() & eRefTypeShow.Prophesy) { newSections = go.AddLegend(newSections, go.LegendsObject, eRefTypeShow.Prophesy); }
-            if (this.params.Show() & eRefTypeShow.Prophesy) { newSections = go.AddLegend(newSections, go.NamesPlacesObject, eRefTypeShow.NamesPlaces); }
+            if (this.params.Show() & eRefTypeShow.NamesPlaces) { newSections = go.AddLegend(newSections, go.NamesPlacesObject, eRefTypeShow.NamesPlaces); }
 
             //console.log(newSections);
             this.Sections(newSections);
