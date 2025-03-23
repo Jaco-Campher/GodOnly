@@ -1089,6 +1089,7 @@
 
         OpenClose = () => {
             this.Expanded(!this.Expanded());
+
         }
 
         ShowDetails = () => {
