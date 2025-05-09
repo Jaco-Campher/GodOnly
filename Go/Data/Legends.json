@@ -457,6 +457,34 @@
     "Meaning": "Angels",
     "Lookup": "Star"
   },
+  "Sword": {
+    "Meaning": "Word / Mouth",
+    "Refs": [
+      {
+        "Ref": "Eph 6:17",
+        "Bold": [{"From":42, "To":46}, {"From":76, "To":79}]
+      },
+      {
+        "Ref": "",
+        "Html": "<p>We also se this in when Yahshua comes again to destroy the nations:</p>"
+      },
+      {
+        "Ref": "Rev 2:16",
+        "Bold": [{"From":85, "To":101}]
+      },
+      {
+        "Ref": "Rev 19:15",
+        "Bold": [{"From":4, "To":81}]
+      },
+      {
+        "Ref": "2Co 10:4"
+      },
+      {
+        "Ref": "",
+        "Html": "<p>Please see 'Arrow' in the Prophesy Legend for another example of this.</p>"
+      }
+    ]
+  },
   "Tabernacles": {
     "Meaning": "New Jerusalem",
     "Lookup": "Tabernacle"

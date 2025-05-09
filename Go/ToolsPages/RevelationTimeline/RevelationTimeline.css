@@ -13,9 +13,9 @@
     --x: #882A41;
     --x: #803335;
     --x: #7D372D;
-    --x: #644635;
+    --zec: #644635;
     --gad: #833222;
-    --x: #674613;
+    /*--x: #674613;*/
     --ba2: #564B33;
     --mrk: #594B1A;
     --job: #485028;
@@ -35,7 +35,7 @@
     /*--x: #5704DC;*/
     --sng: #663490;
     --x: #74346E;
-    --x: #970083;
+    --deu: #970083;
     --x: #5E483B;
     --mat: #7F2677;
     --x: #783461;
@@ -71,34 +71,41 @@ footer {
     display:grid;
     align-content: stretch;
     grid-template-columns: repeat(29, max-content 30px);
-    grid-template-rows: 30px 30px 68px 7px repeat(21, 115px);
+    grid-template-rows: 30px 30px 68px 7px repeat(28, 115px);
     row-gap:10px;
     grid-template-areas:
 "y-start y-2023 y-2023 y-2023 y-2024 y-2024 y-2024 y-2024 y-2025 y-2025 y-2025 y-2025 y-2026 y-2026 y-2026 y-2026 y-2027 y-2027 y-2027 y-2027 y-2028 y-2028 y-2028 y-2028 y-2029 y-2029 y-2029 y-2030 y-2030 y-2030 . . y-2031 y-2031 y-2031 y-2031 y-2032 y-2032 y-2032 y-2033 y-2033 y-2033 y-2033 y-2034 y-2034 y-2034 . . . y-end . . . . . . ."
 "m-start m-tab-seal-1 m-tab-seal-1 m-tab-seal-2 m-tab-seal-2 m-tab-seal-3 m-tab-seal-3 m-tab-seal-4 m-tab-seal-4 m-tab-seal-5 m-tab-seal-5 m-tab-seal-6 m-tab-seal-6 m-tab-seal-7 m-tab-seal-7 m-tab-seal-7 m-tab-seal-7 m-tab-trumpet-1 m-tab-trumpet-1 m-tab-trumpet-2 m-tab-trumpet-2 m-tab-trumpet-3 m-tab-trumpet-3 m-tab-trumpet-4 m-tab-trumpet-4 m-tab-trumpet-5 m-tab-trumpet-5 m-tab-trumpet-6 m-tab-trumpet-6 m-tab-trumpet-7 m-tab-trumpet-7 m-tab-trumpet-7 m-tab-trumpet-7 m-tab-vial-1 m-tab-vial-1 m-tab-vial-2 m-tab-vial-2 m-tab-vial-3 m-tab-vial-3 m-tab-vial-4 m-tab-vial-4 m-tab-vial-5 m-tab-vial-5 m-tab-vial-6 m-tab-vial-6 . . m-tab-vial-7 m-tab-vial-7 m-end . . . . . . ."
 "h-tab-rev-12 . h-tab-seal-1 . h-tab-seal-2 . h-tab-seal-3 . h-tab-seal-4 . h-tab-seal-5 . h-tab-seal-6 . h-tab-rapture . h-tab-seal-7 . h-tab-trumpet-1 . h-tab-trumpet-2 . h-tab-trumpet-3 . h-tab-trumpet-4 . h-tab-trumpet-5 . h-tab-trumpet-6 . h-tab-ascension . h-tab-trumpet-7 . h-tab-vial-1 . h-tab-vial-2 . h-tab-vial-3 . h-tab-vial-4 . h-tab-vial-5 . h-tab-vial-6 . h-tab-thief . h-tab-vial-7 . h-tab-pre-1000 . h-tab-1000 . h-tab-end-1000 . h-tab-judgement"
 "tab-rev-12 . tab-seal-1 . tab-seal-2 . tab-seal-3 . tab-seal-4 . tab-seal-5 . tab-seal-6 . tab-rapture . tab-seal-7 . tab-trumpet-1 . tab-trumpet-2 . tab-trumpet-3 . tab-trumpet-4 . tab-trumpet-5 . tab-trumpet-6 . tab-ascension . tab-trumpet-7 . tab-vial-1 . tab-vial-2 . tab-vial-3 . tab-vial-4 . tab-vial-5 . tab-vial-6 . tab-thief . tab-vial-7 . tab-pre-1000 . tab-1000 . tab-end-1000 . tab-judgement"
-". tj-rev-12-2 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 . tj-rev-12-4 . tj-rev-12-5b-d . tj-rev-12-6-up . tj-rev-12-6 . tj-rev-12-7 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-". . . . . . . . . . . . . . . tj-rev-5-5-s . tj-rev-5-9c tj-rev-5-9c-u tj-rev-5-9c-u tj-rev-5-9c-u tj-rev-5-9c-u tj-rev-5-9c-u . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". tj-rev-12-2 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 tj-rev-12-3 . tj-rev-12-4 . tj-rev-12-5b-d . tj-rev-12-5b-up . tj-rev-12-6 . tj-rev-12-6-up . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . tj-rev-5-4 tj-rev-5-4-u tj-rev-5-4-u tj-rev-5-4-u tj-rev-5-4-u tj-rev-5-4-u tj-rev-5-4-u tj-rev-5-4-u tj-rev-5-4-u tj-rev-5-4-u tj-song-2-13a . tj-rev-5-4-up . tj-rev-5-9c tj-rev-5-9c-u tj-rev-5-9c-u tj-rev-5-9c-u tj-rev-5-9c-u tj-rev-5-9c-u . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
 ". . . tj-seal-1 . tj-seal-2 . tj-seal-3 . tj-seal-4 . tj-seal-5 . tj-rev-6-16 . tj-rev-7-1 . tj-rev-7-9 tj-rev-7-9-u tj-rev-7-9-u tj-rev-7-9-u tj-rev-7-9-u tj-rev-7-9-u . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-". . . . . . . tj-job-5-19-s . . . tj-mat-24-29a-s . tj-mat-24-30b . . . tj-rev-8-6 . tj-rev-8-7 . tj-rev-8-8 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-". . . . . . . . . . . tj-mrk-13-24a-s . tj-mark-13-26 . . . tj-rev-10-5 . tj-rev-10-6b . tj-rev-10-6c . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . tj-zec-1-7-s . tj-zec-1-7-e . tj-job-5-19-s . . . tj-mat-24-29a-s . tj-mat-24-30b . . . tj-rev-8-6 . tj-rev-8-7 . tj-rev-8-8 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . . . . tj-mrk-13-24a-s . tj-mark-13-26 . . . tj-rev-10-5 . tj-rev-10-6b . tj-rev-10-6c tj-rev-10-6c-u . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
 ". . . . . . . . . . . . . tj-luke-21-26b . . . tj-rev-14-7a . tj-rev-14-7b . tj-rev-14-7c . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-". . . . . . . . . . . . . . . . . tj-dan-12-7b . . . tj-gad-2-26 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-". . . . . . . . . . . . . . . tj-rev-11-1 . tj-rev-11-1-up . tj-rev-11-6a . tj-rev-11-6c . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-". . . . . . . . . . . . . . . . . tj-rev-13-5a . tj-rev-13-5b tj-rev-13-5u tj-rev-13-5u . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-". . . . . . . . . . . . . tj-rev-4-2 . tj-rev-4-3 . tj-rev-4-5 tj-rev-4-5-u tj-rev-4-5-u tj-rev-4-5-u tj-rev-4-5-u tj-rev-4-5-u . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . tj-dan-12-1 . tj-dan-12-1b tj-dan-12-1b-u tj-dan-12-1b-u tj-dan-12-1b-u tj-dan-12-1b-u tj-dan-12-1b-u tj-dan-12-1b-u tj-dan-12-1b-u tj-dan-12-1b-up . tj-dan-12-2 . tj-dan-12-7a . tj-dan-12-7b . tj-dan-12-9 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . . . . . . . . tj-rev-11-1 . tj-rev-11-1-up . tj-rev-11-6a . tj-rev-11-6c tj-rev-11-6c-u . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . . . . . . . . . . tj-rev-13-5a . tj-rev-13-5b . tj-gad-2-26 tj-rev-13-5u . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . . . . . . tj-rev-4-2 . tj-rev-4-3 . tj-rev-4-5 . tj-enoch-80-2b . tj-enoch-80-3 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
 ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
 ". . . . . . . . . . . . . . . tj-ba2-30-2a . tj-ba2-30-2c . tj-ba2-30-2c-up . tj-ba2-30-3 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-". . . . . . . . . . . . . tj-song-2-13a . . . . . . . tj-ascisa-4-1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . . . . . tj-deu-32-20-s . tj-deu-32-20 . tj-deu-32-21 tj-deu-32-21-u tj-deu-32-21-u tj-deu-32-21-u tj-deu-32-21-u tj-deu-32-21-u tj-deu-32-21-up . tj-deu-32-23-e . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
 ". . . . . . . . . . . . . tj-rev-21-10a . tj-rev-21-16 . tj-rev-18-1 tj-rev-18-1-u tj-rev-18-1-u tj-rev-18-1-u tj-rev-18-1-up . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-". . . . . . . . . tj-es2-15-6 . tj-es2-15-8b . tj-es2-15-8b-up . tj-es2-15-11a . tj-es2-15-11b . tj-es2-15-13a tj-es2-15-13a-u tj-es2-15-13a-u . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . tj-es2-15-2 tj-es2-15-2-u tj-es2-15-2-u tj-es2-15-2-u tj-es2-15-2-up . tj-es2-15-6 . tj-es2-15-8b . tj-es2-15-8b-up . tj-es2-15-11a . tj-es2-15-11a-up . tj-es2-15-13a tj-es2-15-13a-u tj-es2-15-13a-u . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
 ". . . . . . . . . . . . . . . tj-es2-5-2 . tj-es2-5-2-up . tj-es2-5-3 tj-es2-5-3-u tj-es2-5-3-u . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
 ". . . . . . . . . . . . . tj-es2-2-34-s . tj-es2-2-37 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-". . . . . . . . . . . . . tj-1thess-4-16a-s . . . tj-es2-16-12a . tj-es2-16-12a-up . tj-es2-16-12b . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . . . . . . tj-1thess-4-16a-s . . . tj-es2-16-13 . tj-es2-16-16a . tj-es2-16-16b . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
 ". . . . . . . . . . . . . tj-gad-14-4 . tj-gad-14-9a . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
 ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
-". . . . . . . . . . . . . . . . . . . tj-enoch-80-2b . tj-enoch-80-3 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+". . . tj-dan-11-2a tj-dan-11-2a-u tj-dan-11-2a-u tj-dan-11-2a-u tj-dan-11-2a-up . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
 "tab-rev-12-end . tab-seal-1-end . tab-seal-2-end . tab-seal-3-end . tab-seal-4-end . tab-seal-5-end . tab-seal-6-end . tab-rapture-end . tab-seal-7-end . tab-trumpet-1-end . tab-trumpet-2-end . tab-trumpet-3-end . tab-trumpet-4-end . tab-trumpet-5-end . tab-trumpet-6-end . tab-ascension-end . tab-trumpet-7-end . tab-vial-1-end . tab-vial-2-end . tab-vial-3-end . tab-vial-4-end . tab-vial-5-end . tab-vial-6-end . tab-thief-end . tab-vial-7-end . tab-pre-1000-end . tab-1000-end . tab-end-1000-end . tab-judgement-end"
 ;
 }
@@ -295,6 +302,12 @@ footer {
     border-top: 1px solid #156017;
     border-bottom: 1px solid #156017;
     background: #071c08;
+}
+
+.rev-main .item.wrong-location {
+    border-top: 1px solid #601515;
+    border-bottom: 1px solid #601515;
+    background:#1c0707;
 }
 
 .rev-main .item > h4 {
@@ -679,7 +692,7 @@ footer {
 .rev-main .grid {
     display:grid;
     grid-template-columns: repeat(20, max-content);
-    grid-template-rows: repeat(20, 90px 25px);
+    grid-template-rows: repeat(28, 90px 25px);
     row-gap:5px;
     margin:17px 15px 0;
 }
@@ -701,11 +714,61 @@ footer {
 **********************************/
 .rev-main .tab-seal-1 .grid {
     grid-template-areas:
-". ."
-". ."
-". ."
-". ."
-"rev-6-1 rev-6-2"
+". . ."
+". . ."
+"rev-5-1 j-rev-5-4 j-rev-5-4"
+". . ."
+". rev-6-1 rev-6-2"
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . dan-12-1"
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". j-es2-15-2-s es2-15-2"
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+". . ."
+"dan-11-1 dan-11-2a j-dan-11-2a"
 ;
 }
 
@@ -718,6 +781,14 @@ footer {
 "."
 "."
 "rev-6-3"
+"."
+"zec-1-7"
+"."
+"."
+"."
+"."
+"."
+"dan-12-1b"
 ;
 }
 
@@ -737,35 +808,61 @@ footer {
 **********************************/
 .rev-main .tab-seal-4 .grid {
     grid-template-areas:
-". . ."
-". . ."
-". . ."
-". . ."
-"rev-6-7 rev-6-8b j-rev-6-8b"
-". . ."
-"job-5-19 job-5-20 j-job-5-19-e"
-". . ."
-". . ."
-". . ."
-". . ."
-". . ."
-". . ."
-". . ."
-". . ."
-". . ."
-". . ."
-". . ."
-". . ."
-". . ."
-". . ."
-". . ."
-". . ."
-". . ."
-". . ."
-". . ."
-". . ."
-". . ."
-"j-es2-15-5-s es2-15-5 es2-15-6"
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+"rev-6-7 j-rev-6-7 rev-6-8b j-rev-6-8b j-rev-6-8b j-rev-6-8b j-rev-6-8b j-rev-6-8b"
+". . . . . . . ."
+"job-5-19 j-job-5-19 job-5-20 j-job-5-20-e . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+"deu-32-20 j-deu-32-20 j-deu-32-20 j-deu-32-20 j-deu-32-20 j-deu-32-20 j-deu-32-20 j-deu-32-20"
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+"es2-15-3 j-es2-15-4 es2-15-5 j-es2-15-5 j-es2-15-5 j-es2-15-5 j-es2-15-5 es2-15-6"
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+". . . . . . . ."
+"dan-8-1 dan-8-3 dan-8-5 dan-8-6 dan-8-7 dan-8-8a dan-8-8b j-dan-8-8b"
+". . . . . . . ."
+"j-dan-8-19b dan-8-20 dan-8-21 j-dan-8-21 j-dan-8-21 dan-8-22a dan-8-22b dan-8-23a"
+". . . . . . . ."
+"j-dan-11-2ba j-dan-11-2ba dan-11-2b j-dan-11-2bb dan-11-3 dan-11-4a dan-11-4b j-dan-11-4b"
 ;
 }
 
@@ -797,7 +894,7 @@ footer {
 ". . . ."
 ". . . ."
 ". . . ."
-". . . ."
+"j-deu-32-20b deu-32-21 j-deu-32-21 j-deu-32-21"
 ". . . ."
 ". . . ."
 ". . . ."
@@ -812,7 +909,7 @@ footer {
     grid-template-areas:
 "j-rev-12-3 j-rev-12-3 rev-12-4 j-rev-12-4 j-rev-12-4 j-rev-12-4 j-rev-12-4 j-rev-12-4"
 ". . . . . . . ."
-". . . . . . . ."
+". j-song-2-13-s song-2-13a j-song-2-13a j-song-2-13a j-song-2-13a j-song-2-13a j-song-2-13a"
 ". . . . . . . ."
 "j-rev6-11 rev-6-1 rev-6-2 rev-6-3 rev-6-4 j-rev6-15 rev-6-16a rev-6-16b"
 ". . . . . . . ."
@@ -834,7 +931,7 @@ footer {
 ". . . . . . . ."
 ". . . . . . . ."
 ". . . . . . . ."
-". j-song-2-13-s song-2-13a j-song-2-13a j-song-2-13a j-song-2-13a j-song-2-13a j-song-2-13a"
+". . . . . . . ."
 ". . . . . . . ."
 ". . . . . . . ."
 ". . . . . . . ."
@@ -856,7 +953,7 @@ footer {
     grid-template-areas:
 "rev-12-5a j-rev-12-5a j-rev-12-5a j-rev-12-5a rev-12-5b j-rev-12-5b"
 ". . . . . ."
-". . . . . ."
+"j-song-2-13a j-song-2-13a j-song-2-13a song-2-13b song-2-13c j-song-2-13-e"
 ". . . . . ."
 "j-rev-6-16 rev-6-17 . . . rev-7-1"
 ". . . . . ."
@@ -866,7 +963,7 @@ footer {
 ". . . . . ."
 "luke-21-27 j-luke-21-27-e . . . ."
 ". . . . . ."
-". . . . . ."
+"j-dan-12-1ca j-dan-12-1ca dan-12-1c j-dan-12-1cb dan-12-2 j-dan-12-2"
 ". . . . . ."
 ". . rev-11-1 j-rev-11-1 j-rev-11-1 j-rev-11-1"
 ". . . . . ."
@@ -878,7 +975,7 @@ footer {
 ". . . . . ."
 "ba2-30-1 j-ba2-30-1 j-ba2-30-1 ba2-30-2a j-ba2-30-2a j-ba2-30-2a"
 ". . . . . ."
-"j-song-2-13a j-song-2-13a j-song-2-13a song-2-13b song-2-13c j-song-2-13-e"
+". . . . . ."
 ". . . . . ."
 ". . . . . ."
 ". . . . . ."
@@ -911,7 +1008,7 @@ footer {
 ". . . . . . . . . . . . ."
 ". . rev-14-1 j-rev-14-1 rev-14-2 rev-14-3 rev-14-4 rev-14-6a j-rev-14-6a j-rev-14-6a j-rev-14-6a rev-14-7a j-rev-14-7a"
 ". . . . . . . . . . . . ."
-". . . . . . . . . . j-dan-12-7a-s dan-12-7b j-dan-12-7b"
+"j-dan-12-2b j-dan-12-2b dan-12-3 j-dan-12-3 . . . . . . j-dan-12-6 dan-12-6 j-dan-12-7a"
 ". . . . . . . . . . . . ."
 ". . . . . . . . . . . . ."
 ". . . . . . . . . . . . ."
@@ -927,13 +1024,15 @@ footer {
 ". . . . . . . . . . . . ."
 ". . . . . . . rev-18-1 j-rev-18-1 j-rev-18-1 j-rev-18-1 j-rev-18-1 j-rev-18-1"
 ". . . . . . . . . . . . ."
-"j-es2-15-11aa j-es2-15-11aa j-es2-15-11aa j-es2-15-11aa j-es2-15-11aa j-es2-15-11aa j-es2-15-11aa j-es2-15-11aa j-es2-15-11aa j-es2-15-11aa es2-15-11b j-es2-15-11b j-es2-15-11b"
+". . . . . . . . . . . . ."
 ". . . . . . . . . . . . ."
 ". . . . . . . . . . . . ."
 ". . . . . . . . . . . . ."
 "j-es2-2-37a j-es2-2-37a es2-2-38 j-es2-2-38 es2-2-39 es2-2-41 j-es2-2-41-e . . . . . ."
 ". . . . . . . . . . . . ."
-". . . . . . . . j-es2-16-9-s es2-16-9 es2-16-12a j-es2-16-12a j-es2-16-12a"
+". . . . . . . . j-es2-16-9-s es2-16-9 es2-16-12a es2-16-12b es2-16-13"
+". . . . . . . . . . . . ."
+". . . . . . . . . . . . ."
 ;
 }
 
@@ -953,35 +1052,29 @@ footer {
 ". . . ."
 "j-rev-14-7aa j-rev-14-7aa rev-14-7b j-rev-14-7b"
 ". . . ."
-"j-dan-12-7ba dan-12-7c j-dan-12-7c-e ."
+"j-dan-12-7ba dan-12-7b j-dan-12-7bb j-dan-12-7bb"
 ". . . ."
 "rev-11-2b rev-11-3 rev-11-4 rev-11-6a"
 ". . . ."
 "rev-13-5b j-rev-13-5b j-rev-13-5b j-rev-13-5b"
 ". . . ."
+". j-enoch-80-2a enoch-80-2a enoch-80-2b"
 ". . . ."
 ". . . ."
 ". . . ."
 ". . . ."
 ". . . ."
+"j-deu-32-21b j-deu-32-21b deu-32-22 deu-32-23"
 ". . . ."
 ". . . ."
 ". . . ."
-". . . ."
-". . . ."
-"j-es2-15-11ba j-es2-15-11ba es2-15-13a j-es2-15-13a"
+"j-es2-15-11aa es2-15-11b es2-15-13a j-es2-15-13a"
 ". . . ."
 "j-es2-5-2a j-es2-5-2a es2-5-3 j-es2-5-3"
 ". . . ."
 ". . . ."
 ". . . ."
-". . . ."
-". . . ."
-". . . ."
-". . . ."
-". . . ."
-". . . ."
-". j-enoch-80-2a enoch-80-2a enoch-80-2b"
+"j-es2-16-13b es2-16-14 es2-16-15 es2-16-16a"
 ;
 }
 
@@ -989,7 +1082,7 @@ footer {
 **********************************/
 .rev-main .tab-trumpet-2 .grid {
     grid-template-areas:
-"j-rev-12-6a j-rev-12-6a j-rev-12-6a rev-12-7"
+". . . ."
 ". . . ."
 ". . . ."
 ". . . ."
@@ -1001,13 +1094,13 @@ footer {
 ". . . ."
 "rev-14-7c j-rev-14-7c j-rev-14-7c j-rev-14-7c"
 ". . . ."
-". j-gad-2-26a gad-2-26a gad-2-26b"
+"j-dan-12-7bc j-dan-12-7bc dan-12-8 j-dan-12-9"
 ". . . ."
 "rev-11-6b rev-11-6c j-rev-11-6c j-rev-11-6c"
 ". . . ."
+". j-gad-2-26a gad-2-26a gad-2-26b"
 ". . . ."
-". . . ."
-". . . ."
+"j-enoch-80-2b j-enoch-80-2b enoch-80-3 j-enoch-80-3"
 ". . . ."
 ". . . ."
 ". . . ."
@@ -1023,13 +1116,7 @@ footer {
 ". . . ."
 ". . . ."
 ". . . ."
-"es2-16-12b j-es2-16-12b j-es2-16-12b j-es2-16-12b"
-". . . ."
-". . . ."
-". . . ."
-". . . ."
-". . . ."
-"j-enoch-80-2b j-enoch-80-2b enoch-80-3 j-enoch-80-3"
+"j-es2-16-12ba es2-16-16b j-es2-16-12bb j-es2-16-12bb"
 ;
 }
 
@@ -1091,6 +1178,12 @@ footer {
     background: var(--dan);
 }
 
+.rev-main .deu > h4,
+.rev-main .join.deu,
+.rev-main .tab-join.deu {
+    background: var(--deu);
+}
+
 .rev-main .enoch > h4,
 .rev-main .join.enoch,
 .rev-main .tab-join.enoch {
@@ -1149,6 +1242,12 @@ footer {
 .rev-main .join.th1,
 .rev-main .tab-join.th1 {
     background: var(--th1);
+}
+
+.rev-main .zec > h4,
+.rev-main .join.zec,
+.rev-main .tab-join.zec {
+    background: var(--zec);
 }
 
 

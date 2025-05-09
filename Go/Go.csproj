@@ -167,8 +167,10 @@
     <Content Include="ProphesyPages\Seal3\Seal3.html" />
     <Content Include="ProphesyPages\TimelineDatesExplanation\TimelineDatesExplanation.html" />
     <Content Include="ProphesyPages\Tribulation\Tribulation.html" />
+    <Content Include="ProphesyPages\Year1\Year1.html" />
     <Content Include="ProphesyPages\Year2\Year2.css" />
     <Content Include="ProphesyPages\Year2\Year2.html" />
+    <Content Include="ProphesyPages\Year4\Year4.html" />
     <Content Include="RevPages\Landing\Landing.css" />
     <Content Include="RevPages\Landing\Landing.html" />
     <Content Include="RevPages\Landing\Landing.js" />
@@ -250,6 +252,8 @@
     <Content Include="Images\Rev\Tab-Seal-6.webp" />
     <Content Include="Images\Rev\Tab-Trumpet-2.webp" />
     <Content Include="Images\Rev\Tab-Trumpet-1.webp" />
+    <Content Include="Images\Rev\lunarelcipse40.webp" />
+    <Content Include="Images\Rev\BloodMoonPartial40.webp" />
     <None Include="packages.config" />
     <Content Include="tsconfig.json" />
     <None Include="Web.Debug.config">
