@@ -7,7 +7,7 @@ var GO;
             // Constructor
             //****************************************************************************
             constructor() {
-                this.Output = ko.observable('USFM');
+                this.Output = ko.observable('USFM Verses Only');
                 this.Book = ko.observable('');
                 this.Chapter = ko.observable('');
                 this.Text = ko.observable('');
@@ -126,7 +126,7 @@ var GO;
                 this.ParseUSFMVersesOnly = () => {
                     let input = this.Text().replace(/(?:\r\n|\r|\n)/g, ' ');
                     let text = '';
-                    let verses = input.replace(/\s+/g, ' ').trim().split(/(\d{1,3}\.)/g); ///(\d{1,5})\.?/g
+                    let verses = input.replace(/\s+/g, ' ').trim().split(/(\d{1,3} )/g); ///(\d{1,5})\.?/g
                     let verseNo = 1;
                     text += `\\c ${this.Chapter()}
 `;

@@ -2,7 +2,7 @@
 
     export class TextToHtmlViewModel {
 
-        Output: KnockoutObservable<string> = ko.observable('USFM');
+        Output: KnockoutObservable<string> = ko.observable('USFM Verses Only');
 
         Book: KnockoutObservable<string> = ko.observable('');
         Chapter: KnockoutObservable<string> = ko.observable('');
@@ -166,7 +166,7 @@
 
             let text: string = '';
 
-            let verses: Array<string> = input.replace(/\s+/g, ' ').trim().split(/(\d{1,3}\.)/g); ///(\d{1,5})\.?/g
+            let verses: Array<string> = input.replace(/\s+/g, ' ').trim().split(/(\d{1,3} )/g); ///(\d{1,5})\.?/g
             let verseNo: number = 1;
             text += `\\c ${this.Chapter()}
 `;

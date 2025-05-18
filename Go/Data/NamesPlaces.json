@@ -1,4 +1,86 @@
 {
+  "Festival of Deliverance": {
+    "Meaning": "Passover",
+    "Refs": [
+      {
+        "Ref": "Luk 2:41-43"
+      },
+      {
+        "Ref": "",
+        "Html": "<p>Entry for the book of the Natsarim and the Enlightened Ones.</p>"
+      }
+    ]
+  },
+  "Great Festival": {
+    "Meaning": "Passover",
+    "Refs": [
+      {
+        "Ref": "Luk 2:41-43"
+      },
+      {
+        "Ref": "",
+        "Html": "<p>Entry for the book of the Natsarim and the Enlightened Ones.</p>"
+      }
+    ]
+  },
+  "Kepha": {
+    "Meaning": "Peter",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": "<p>Original name.</p>"
+      }
+    ]
+  },
+  "Mashiach": {
+    "Meaning": "Messiah",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": "<p>Original name.</p>"
+      }
+    ]
+  },
+  "Mattityahu": {
+    "Meaning": "Matthew",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": "<p>Original name.</p>"
+      }
+    ]
+  },
+  "Miryam": {
+    "Meaning": "Mary",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": "<p>Original name.</p>"
+      }
+    ]
+  },
+  "Natsarim": {
+    "Meaning": "Nazarene",
+    "Refs": [
+      {
+        "Ref": "Act 24:5",
+        "Bold": [{"From":148, "To":156}]
+      },
+      {
+        "Ref": "",
+        "Html": "<p>Entry for the book of the Natsarim and the Enlightened Ones.</p>"
+      }
+    ]
+  },
+  "Parashiym": {
+    "Meaning": "Pharisees",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": "<p>Original name.</p>"
+      }
+    ]
+  },
   "Persia": {
     "Meaning": "Iran",
     "Refs": [
@@ -8,12 +90,120 @@
       }
     ]
   },
+  "Ruach Ha'Qodesh": {
+    "Meaning": "Holy Spirit",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": "<p>Original name.</p>"
+      }
+    ]
+  },
+  "Shabbat": {
+    "Meaning": "Sabbath",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": "<p>Original name.</p>"
+      }
+    ]
+  },
   "Taphath": {
     "Meaning": "Tamar",
     "Refs": [
       {
         "Ref": "Gad 13:62-65",
         "Bold": [{"From":325, "To":330}, {"From":344, "To":350}]
+      }
+    ]
+  },
+  "Yahudiym": {
+    "Meaning": "Jews",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": "<p>Original name.</p>"
+      }
+    ]
+  },
+  "Yahusha": {
+    "Meaning": "Jesus",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": "<p>Original name.</p>"
+      }
+    ]
+  },
+  "Yardan": {
+    "Meaning": "Jordan",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": "<p>Original name.</p>"
+      }
+    ]
+  },
+  "Yeshayahu": {
+    "Meaning": "Isaiah",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": "<p>Original name.</p>"
+      }
+    ]
+  },
+  "Yeshua": {
+    "Meaning": "Salvation",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": "<p>Original name.</p>"
+      }
+    ]
+  },
+  "Yishai": {
+    "Meaning": "Jesse",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": "<p>Original name.</p>"
+      }
+    ]
+  },
+  "Yoceph": {
+    "Meaning": "Joseph",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": "<p>Original name.</p>"
+      }
+    ]
+  },
+  "Yochanon": {
+    "Meaning": "John",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": "<p>Original name.</p>"
+      }
+    ]
+  },
+  "Yacob": {
+    "Meaning": "James",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": "<p>Original name.</p>"
+      }
+    ]
+  },
+  "Yahudah": {
+    "Meaning": "Judas",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": "<p>Original name.</p>"
       }
     ]
   }
