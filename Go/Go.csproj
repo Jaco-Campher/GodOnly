@@ -217,6 +217,7 @@
     <Content Include="ToolsPages\IncestLaws\IncestLaws.css" />
     <Content Include="ToolsPages\IncestLaws\IncestLaws.html" />
     <Content Include="ToolsPages\IncestLaws\IncestLaws.js" />
+    <Content Include="TorahPages\FeastsAndSacrifices\FeastsAndSacrifices.html" />
     <Content Include="TorahPages\LawOrCommandmentsOnly\LawOrCommandmentsOnly.html" />
     <Content Include="TorahPages\NeedToKeepTheLaw\NeedToKeepTheLaw.html" />
     <Content Include="TorahPages\Landing\Landing.html" />
