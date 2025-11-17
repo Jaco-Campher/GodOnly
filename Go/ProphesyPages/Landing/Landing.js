@@ -33,12 +33,14 @@ var GO;
                 //Studies
                 this.Studies.push(new StudyLink('Day of the LORD', '/prophesy-study/dayofthelord'));
                 this.Studies.push(new StudyLink('Iran in Prophesy', '/prophesy-study/iran'));
+                this.Studies.push(new StudyLink('No One Knows the Day or the Hour?', '/prophesy-study/NoOneKnowstheDayortheHour'));
                 this.Studies.push(new StudyLink('Tribulation', '/prophesy-study/tribulation'));
                 //Revelation Timeline Studies
                 this.RevelationTimelineStudies.push(new StudyLink('Dates Explanation', '/prophesy-study/timelinedatesexplanation'));
                 this.RevelationTimelineStudies.push(new StudyLink('Revelation 12 Sign', '/prophesy-study/rev12sign'));
                 this.RevelationTimelineStudies.push(new StudyLink('Seal 1', '/prophesy-study/seal1'));
                 this.RevelationTimelineStudies.push(new StudyLink('Seal 3', '/prophesy-study/seal3'));
+                this.RevelationTimelineStudies.push(new StudyLink('Rapture', '/prophesy-study/rapture'));
                 this.RevelationTimelineStudies.push(new StudyLink('Tribulation Year 1', '/prophesy-study/year1'));
                 this.RevelationTimelineStudies.push(new StudyLink('Tribulation Year 2', '/prophesy-study/year2'));
             }

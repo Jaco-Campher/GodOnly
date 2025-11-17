@@ -524,6 +524,7 @@
             // Rapture
             //#region *******************************
             tab = new Tab('rapture', 'tab-rapture', 'Rapture', '-', true);
+            tab.DetailsPage = 'go-prophesypage-rapture';
 
             //2 Baruk 30
             item = new Item(Color.Ba2, 'ba2-30-1', 'He Shall Return in Glory', '', '2Ba 30:1', '2Ba 30:1', '', '', FirstLast.First);
