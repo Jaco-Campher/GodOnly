@@ -15,9 +15,8 @@
 
         SearchRefs: KnockoutObservable<string> = ko.observable('').syncWith('BibleRefs');
 
-        ShowSettings: KnockoutObservable<boolean> = ko.observable<boolean>(false);
-        
         ShowStrongs: KnockoutObservable<boolean> = ko.observable<boolean>(true);
+        ShowDictionary: KnockoutObservable<boolean> = ko.observable<boolean>(true);
         ShowProphecy: KnockoutObservable<boolean> = ko.observable<boolean>(true);
         ShowNamesPlaces: KnockoutObservable<boolean> = ko.observable<boolean>(true);
         ShowWordMeaning: KnockoutObservable<boolean> = ko.observable<boolean>(false);
@@ -28,6 +27,7 @@
 
             if (this.ShowStrongs()) { show += eRefTypeShow.Strongs; }
             if (this.ShowProphecy()) { show += eRefTypeShow.Prophesy; }
+            if (this.ShowDictionary()) { show += eRefTypeShow.Dictionary; }
             if (this.ShowNamesPlaces()) { show += eRefTypeShow.NamesPlaces; }
             if (this.ShowWordMeaning()) { show += eRefTypeShow.WordMeaning; }
 
@@ -36,6 +36,8 @@
             return show;
         }, this);
 
+        ShowDictionaryInfo: KnockoutObservable<boolean> = ko.observable<boolean>(false);
+        ShowNamesPlacesInfo: KnockoutObservable<boolean> = ko.observable<boolean>(false);
         ShowProphecyLegendInfo: KnockoutObservable<boolean> = ko.observable<boolean>(false);
 
         //****************************************************************************
@@ -115,8 +117,12 @@
             return hashString.replace(/_/g, ' ').replace(/\|/g, ':').replace(/\+/g, ',');
         }
 
-        ShowHideSettings = () => {
-            this.ShowSettings(!this.ShowSettings());
+        ShowHideDictionaryInfo = () => {
+            this.ShowDictionaryInfo(!this.ShowDictionaryInfo());
+        }
+
+        ShowHideNamesPlacesInfo = () => {
+            this.ShowNamesPlacesInfo(!this.ShowNamesPlacesInfo());
         }
 
         ShowHideProphecyLegendInfo = () => {

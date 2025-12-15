@@ -12,6 +12,10 @@ var GO;
                         this.Title = 'Names / Places';
                         this.TypeClass = 'names';
                         break;
+                    case GO.eRefTypeShow.Dictionary:
+                        this.Title = 'Dictionary';
+                        this.TypeClass = 'dictionary';
+                        break;
                     //case eRefTypeShow.Prophesy:
                     default:
                         this.Title = 'Prophecy Legend';

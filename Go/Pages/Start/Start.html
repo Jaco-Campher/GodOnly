@@ -69,7 +69,9 @@
     </div>
 
     <div class="page-settings box">
-        <div class="settings-holder" data-bind="template: { name: 'PageSettings', data: componentLoader.LastPageViewModel }"></div>
+        <div class="main-settings-holder">
+            <div data-bind="template: { name: 'PageSettings', data: componentLoader.LastPageViewModel }"></div>
+        </div>
     </div>
     <!-- /ko -->
 
@@ -109,6 +111,9 @@
     </template>
     <template id="T8">
         <go-legend params="{ Original: Original, Meaning: Meaning, Refs: Refs, Type: GO.eRefTypeShow.NamesPlaces }"></go-legend>
+    </template>
+    <template id="T16">
+        <go-legend params="{ Original: Original, Meaning: Meaning, Refs: Refs, Type: GO.eRefTypeShow.Dictionary }"></go-legend>
     </template>
 
 

@@ -537,6 +537,13 @@ go-dialog .box:after {
 
 /* Settings
 **********************************/
+.main-settings-holder {
+    overflow-y: auto;
+    position: fixed;
+    inset: 0;
+    padding: 15px 20px;
+}
+
 .settings-holder {
     grid-column: span 2;
     display: flex;
@@ -561,7 +568,7 @@ go-dialog .box:after {
 .settings-list li {
     list-style: none;
     display: grid;
-    grid-template: auto / minmax(180px, 1fr) 50px;
+    grid-template: auto / minmax(180px, 1fr) 5px 50px;
     grid-gap: 15px;
     padding: 5px 15px;
 }
@@ -1381,7 +1388,8 @@ go-strongs .strongs,
     padding: 0 6px 2px
 }
 
-.legend .div {
+.legend .div,
+.settings-list .div {
     display: inline-block;
     width: 1px;
     height: 15px;
@@ -1422,7 +1430,8 @@ go-strongs .strongs,
 /* Strong / Lexicon
 **********************************/
 .sto .bib,
-.legend .div.sto{
+.legend .div.sto,
+.settings-list .div.sto{
     background: #09f;
     box-shadow: 0 0 5px #3bf, 0 0 7px #3bf;
     margin: 0 2px -2px;
@@ -1432,26 +1441,35 @@ go-strongs .strongs,
 /* Legend
 **********************************/
 .leg .bib,
-.legend .div.leg{
+.legend .div.leg,
+.settings-list .div.leg{
     background: #f90;
     box-shadow: 0 0 5px #fc3, 0 0 7px #fc3;
 }
 
-
-/* Meaning
+/* Dictionary
 **********************************/
 .mea .bib,
-.legend .div.mea{
-    background: #1c0;
-    box-shadow: 0 0 5px #4f3, 0 0 7px #4f3;
+.legend .div.dictionary,
+.settings-list .div.dictionary{
+    background: #f6f;
+    box-shadow: 0 0 5px #f9f, 0 0 7px #f9f;
 }
 
 /* Names / Places
 **********************************/
 .names .bib,
-.legend .div.names{
+.legend .div.names,
+.settings-list .div.names{
     background: #fe0;
     box-shadow: 0 0 5px #ff7, 0 0 7px #ff7;
+}
+
+.settings-list > li > .bib,
+.settings-list > li > .div,
+.settings-list > li > .div.sto{
+    height: 15px;
+    margin: 7px 2px 0;
 }
 
 
@@ -1461,7 +1479,6 @@ go-strongs .strongs,
 go-ref-text {
     display:block;
 }
-
 
 
 /*********************************************

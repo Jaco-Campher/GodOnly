@@ -137,6 +137,9 @@ var GO;
                     if (show & GO.eRefTypeShow.NamesPlaces) {
                         verseHolder.Sections(go.AddLegend(verseHolder.Sections(), go.NamesPlacesObject, GO.eRefTypeShow.NamesPlaces));
                     }
+                    if (show & GO.eRefTypeShow.Dictionary) {
+                        verseHolder.Sections(go.AddLegend(verseHolder.Sections(), go.DictionaryObject, GO.eRefTypeShow.Dictionary));
+                    }
                 }
                 this.Verses(verses);
             }

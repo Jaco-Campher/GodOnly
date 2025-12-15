@@ -4,39 +4,9 @@
 
     <div class="box search-holder">
         <go-search params="{SearchMode:'Manual', SearchFunc:SearchChanged, SyncWith:'BibleRefs', PlaceHolder: 'e.g. gen 1, deu 4:4-7'}"></go-search>
-        <button class="btn-icon" data-bind="click: ShowHideSettings">
+        <button class="btn-icon" data-bind="click: go.ShowHidePageSettings">
             <svg viewBox="0 0 512 512"><path d="M64,144H290.75a48,48,0,0,0,90.5,0H448a16,16,0,0,0,0-32H381.25a48,48,0,0,0-90.5,0H64a16,16,0,0,0,0,32Z" /><path d="M448,368H381.25a48,48,0,0,0-90.5,0H64a16,16,0,0,0,0,32H290.75a48,48,0,0,0,90.5,0H448a16,16,0,0,0,0-32Z" /><path d="M448,240H221.25a48,48,0,0,0-90.5,0H64a16,16,0,0,0,0,32h66.75a48,48,0,0,0,90.5,0H448a16,16,0,0,0,0-32Z" /></svg>
         </button>
-        <!-- ko if: ShowSettings -->
-        <div class="settings-holder">
-            <div class="settings-group">
-                <h6>Show</h6>
-                <hr />
-                <ul class="settings-list content">
-                    <li>
-                        <label for="ShowStrongs">Selected Strong / Lexicon</label>
-                        <input type="checkbox" id="ShowStrongs" data-bind="checked: ShowStrongs" />
-                    </li>
-                    <li>
-                        <label for="ShowNamesPlaces">Names / Places</label>
-                        <input type="checkbox" id="ShowNamesPlaces" data-bind="checked: ShowNamesPlaces" />
-                    </li>
-                    <li>
-                        <label for="ShowProphecy">Prophecy Legends</label>
-                        <input type="checkbox" id="ShowProphecy" data-bind="checked: ShowProphecy" />
-                    </li>
-                    <!--<li>
-        <label>Uncommon Word Meaning</label>
-        <input type="checkbox" disabled="disabled" data-bind="checked: ShowWordMeaning" />
-    </li>-->
-                    <li>
-                        <label for="ShowAllStrongs">All Strongs</label>
-                        <input type="checkbox" id="ShowAllStrongs" data-bind="checked: ShowAllStrongs" />
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- /ko -->
     </div>
 
     <div class="ref-sections" data-bind="foreach:Sections">
@@ -80,6 +50,44 @@
 
 </div>
 
+<template id="PageSettings">
+    <div class="settings-holder">
+        <div class="settings-group">
+            <h6>Show</h6>
+            <hr />
+            <ul class="settings-list content">
+                <li>
+                    <label for="ShowStrongs">Selected Strong / Lexicon</label>
+                    <span class="div sto"></span>
+                    <input type="checkbox" id="ShowStrongs" data-bind="checked: ShowStrongs" />
+                </li>
+                <li>
+                    <label for="ShowDictionary">Dictionary</label>
+                    <span class="div dictionary"></span>
+                    <input type="checkbox" id="ShowDictionary" data-bind="checked: ShowDictionary" />
+                </li>
+                <li>
+                    <label for="ShowNamesPlaces">Names / Places</label>
+                    <span class="div names"></span>
+                    <input type="checkbox" id="ShowNamesPlaces" data-bind="checked: ShowNamesPlaces" />
+                </li>
+                <li>
+                    <label for="ShowProphecy">Prophecy Legends</label>
+                    <span class="div leg"></span>
+                    <input type="checkbox" id="ShowProphecy" data-bind="checked: ShowProphecy" />
+                </li>
+                <li>
+                </li>
+                <li>
+                    <label for="ShowAllStrongs">All Strongs</label>
+                    <span></span>
+                    <input type="checkbox" id="ShowAllStrongs" data-bind="checked: ShowAllStrongs" />
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>
+
 <template id="PageHelp">
     <p>The Old Testament, Apocrypha, and New Testament are from the 1769 KJV. Other books are from various sources. Please see <a href="/copyright" data-bind="click: function() { go.Navigate('/copyright'); }">Copyright and Credits</a> for more information.</p>
     
@@ -100,9 +108,42 @@
                     </div>
                     <div class="description">
                         <p>Highlights words that might have an alternate or at least a more consistent translation. Mostly used to show an alternative meaning in prophecy or because of a study that was done that involved a specific word. But can also be shown simply to highlight words that is translated differently.</p>
-                        <b>Examples:</b><br/>
-                        <go-strongs params="{ Strongs: 'G999', Alt: ''}">Original word</go-strongs><br/>
+                        <b>Examples:</b><br />
+                        <go-strongs params="{ Strongs: 'G999', Alt: ''}">Original word</go-strongs><br /><br />
                         <go-strongs params="{ Strongs: 'G999', Alt: 'Other possible translation'}">Original word</go-strongs>
+                    </div>
+                </li>
+                <li>
+                    <div class="heading">
+                        <label for="ShowDictionaryHelp">Dictionary</label>
+                        <input type="checkbox" id="ShowDictionaryHelp" data-bind="checked: ShowDictionary" />
+                    </div>
+                    <div class="description">
+                        <p>Dictionary to show the meaning of words that are not always clear.</p>
+                        <b>Example:</b><br />
+                        <div>
+                            <div data-bind="click:ShowHideDictionaryInfo" class="legend">Original word <span class="div dictionary"></span> Other word</div>
+                            <go-dialog params="{ Title: 'Dictionary', Show: ShowDictionaryInfo }">
+                                <p>Dictionary definition.</p>
+                            </go-dialog>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="heading">
+                        <label for="ShowNamesPlacesHelp">Names / Places</label>
+                        <input type="checkbox" id="ShowNamesPlacesHelp" data-bind="checked: ShowNamesPlaces" />
+                    </div>
+                    <div class="description">
+                        <p>Sometimes one place or person can have more than one name, for instance Abram became Abraham.</p>
+                        <b>Example:</b><br />
+                        <div>
+                            <div data-bind="click:ShowHideNamesPlacesInfo" class="legend">Original name/place <span class="div names"></span> Actual/Other name/place</div>
+                            <go-dialog params="{ Title: 'Names / Places', Show: ShowNamesPlacesInfo }">
+                                <p>Example verse below:</p>
+                                <go-bible-ref params="{ Ref: 'Gen 17:5', Bold: [{From:42, To:46}, {From:71, To:77}] }"></go-bible-ref>
+                            </go-dialog>
+                        </div>
                     </div>
                 </li>
                 <li>
@@ -129,7 +170,7 @@
                     </div>
                     <div class="description">
                         <p>Show all the strong numbers.</p>
-                        <p class="note">Strong numbers are only available for the Old and New Testament.</p>
+                        <p class="note">Strong numbers are only available for the Old and New Testaments.</p>
                         <b>Example:</b><br />
                         <go-bible-ref params="{ Ref: '2Pe 1:20', Show: GO.eRefTypeShow.AllStrongs }"></go-bible-ref>
                     </div>

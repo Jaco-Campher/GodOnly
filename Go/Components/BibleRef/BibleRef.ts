@@ -152,6 +152,9 @@
                 if (show & eRefTypeShow.NamesPlaces) {
                     verseHolder.Sections(go.AddLegend(verseHolder.Sections(), go.NamesPlacesObject, eRefTypeShow.NamesPlaces));
                 }
+                if (show & eRefTypeShow.Dictionary) {
+                    verseHolder.Sections(go.AddLegend(verseHolder.Sections(), go.DictionaryObject, eRefTypeShow.Dictionary));
+                }
             }
 
             this.Verses(verses);

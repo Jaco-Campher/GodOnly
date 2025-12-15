@@ -4,79 +4,9 @@
 
     <div class="box search-holder">
         <go-search params="{SearchMode:'Manual', SearchFunc:SearchChanged, SyncWith:'BibleSearch', PlaceHolder: 'e.g. day of the Lord'}"></go-search>
-        <button class="btn-icon" data-bind="click: ShowHideSettings">
+        <button class="btn-icon" data-bind="click: go.ShowHidePageSettings">
             <svg viewBox="0 0 512 512"><path d="M64,144H290.75a48,48,0,0,0,90.5,0H448a16,16,0,0,0,0-32H381.25a48,48,0,0,0-90.5,0H64a16,16,0,0,0,0,32Z" /><path d="M448,368H381.25a48,48,0,0,0-90.5,0H64a16,16,0,0,0,0,32H290.75a48,48,0,0,0,90.5,0H448a16,16,0,0,0,0-32Z" /><path d="M448,240H221.25a48,48,0,0,0-90.5,0H64a16,16,0,0,0,0,32h66.75a48,48,0,0,0,90.5,0H448a16,16,0,0,0,0-32Z" /></svg>
         </button>
-        <!-- ko if: ShowSettings -->
-        <div class="settings-holder">
-            <div class="settings-group">
-                <h6>Search Settings</h6>
-                <hr />
-                <ul class="settings-list content">
-                    <li>
-                        <label for="MatchCompleteWordsOnly">Match Complete Words Only</label>
-                        <input type="checkbox" id="MatchCompleteWordsOnly" data-bind="checked: MatchCompleteWordsOnly" />
-                    </li>
-                    <li>
-                        <label for="MatchPartials">Include Partial Matches</label>
-                        <input type="checkbox" id="MatchPartials" data-bind="checked: MatchPartials" />
-                    </li>
-                </ul>
-            </div>
-            <div class="settings-group">
-                <h6>Search In</h6>
-                <hr />
-                <ul class="settings-list content">
-                    <li>
-                        <label for="SearchInOldTestament">Old Testament</label>
-                        <input type="checkbox" id="SearchInOldTestament" data-bind="checked: SearchInOldTestament" />
-                    </li>
-                    <li>
-                        <label for="SearchInApocrypha">Apocrypha</label>
-                        <input type="checkbox" id="SearchInApocrypha" data-bind="checked: SearchInApocrypha" />
-                    </li>
-                    <li>
-                        <label for="SearchInNewTestament">New Testament</label>
-                        <input type="checkbox" id="SearchInNewTestament" data-bind="checked: SearchInNewTestament" />
-                    </li>
-                    <li>
-                    </li>
-                    <li>
-                        <label for="SearchInOtherBooks">Other Books</label>
-                        <input type="checkbox" id="SearchInOtherBooks" data-bind="checked: SearchInOtherBooks" />
-                    </li>
-                </ul>
-            </div>
-            <div class="settings-group">
-                <h6>Show</h6>
-                <hr />
-                <ul class="settings-list content">
-                    <li>
-                        <label for="ShowStrongs">Selected Strong / Lexicon</label>
-                        <input type="checkbox" id="ShowStrongs" data-bind="checked: ShowStrongs" />
-                    </li>
-                    <li>
-                        <label for="ShowNamesPlaces">Names / Places</label>
-                        <input type="checkbox" id="ShowNamesPlaces" data-bind="checked: ShowNamesPlaces" />
-                    </li>
-                    <li>
-                        <label for="ShowProphecy">Prophecy Legends</label>
-                        <input type="checkbox" id="ShowProphecy" data-bind="checked: ShowProphecy" />
-                    </li>
-                    <!--<li>
-        <label>Uncommon Word Meaning</label>
-        <input type="checkbox" disabled="disabled" data-bind="checked: ShowWordMeaning" />
-    </li>-->
-                    <li>
-                    </li>
-                    <li>
-                        <label for="ShowAllStrongs">All Strongs</label>
-                        <input type="checkbox" id="ShowAllStrongs" data-bind="checked: ShowAllStrongs" />
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- /ko -->
     </div>
 
     <!-- ko if: ExactMatchesCount() + PartialMatchesCount() == 0 -->
@@ -134,6 +64,86 @@
 </div>
 
 <template id="PageTitle">Search</template>
+
+<template id="PageSettings">
+    <div class="settings-holder">
+        <div class="settings-group">
+            <h6>Search Settings</h6>
+            <hr />
+            <ul class="settings-list content">
+                <li>
+                    <label for="MatchCompleteWordsOnly">Match Complete Words Only</label>
+                    <span></span>
+                    <input type="checkbox" id="MatchCompleteWordsOnly" data-bind="checked: MatchCompleteWordsOnly" />
+                </li>
+                <li>
+                    <label for="MatchPartials">Include Partial Matches</label>
+                    <span></span>
+                    <input type="checkbox" id="MatchPartials" data-bind="checked: MatchPartials" />
+                </li>
+            </ul>
+        </div>
+        <div class="settings-group">
+            <h6>Search In</h6>
+            <hr />
+            <ul class="settings-list content">
+                <li>
+                    <label for="SearchInOldTestament">Old Testament</label>
+                    <span class="bib old"></span>
+                    <input type="checkbox" id="SearchInOldTestament" data-bind="checked: SearchInOldTestament" />
+                </li>
+                <li>
+                    <label for="SearchInApocrypha">Apocrypha</label>
+                    <span class="bib apo"></span>
+                    <input type="checkbox" id="SearchInApocrypha" data-bind="checked: SearchInApocrypha" />
+                </li>
+                <li>
+                    <label for="SearchInNewTestament">New Testament</label>
+                    <span class="bib new"></span>
+                    <input type="checkbox" id="SearchInNewTestament" data-bind="checked: SearchInNewTestament" />
+                </li>
+                <li>
+                    <label for="SearchInOtherBooks">Other Books</label>
+                    <span class="bib other"></span>
+                    <input type="checkbox" id="SearchInOtherBooks" data-bind="checked: SearchInOtherBooks" />
+                </li>
+            </ul>
+        </div>
+        <div class="settings-group">
+            <h6>Show</h6>
+            <hr />
+            <ul class="settings-list content">
+                <li>
+                    <label for="ShowStrongs">Selected Strong / Lexicon</label>
+                    <span class="div sto"></span>
+                    <input type="checkbox" id="ShowStrongs" data-bind="checked: ShowStrongs" />
+                </li>
+                <li>
+                    <label for="ShowDictionary">Dictionary</label>
+                    <span class="div dictionary"></span>
+                    <input type="checkbox" id="ShowDictionary" data-bind="checked: ShowDictionary" />
+                </li>
+                <li>
+                    <label for="ShowNamesPlaces">Names / Places</label>
+                    <span class="div names"></span>
+                    <input type="checkbox" id="ShowNamesPlaces" data-bind="checked: ShowNamesPlaces" />
+                </li>
+                <li>
+                    <label for="ShowProphecy">Prophecy Legends</label>
+                    <span class="div leg"></span>
+                    <input type="checkbox" id="ShowProphecy" data-bind="checked: ShowProphecy" />
+                </li>
+                <li>
+                </li>
+                <li>
+                    <label for="ShowAllStrongs">All Strongs</label>
+                    <span></span>
+                    <input type="checkbox" id="ShowAllStrongs" data-bind="checked: ShowAllStrongs" />
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>
 
 <template id="PageHelp">
 
@@ -222,8 +232,41 @@
                     <div class="description">
                         <p>Highlights words that might have an alternate or at least a more consistent translation. Mostly used to show an alternative meaning in prophecy or because of a study that was done that involved a specific word. But can also be shown simply to highlight words that is translated differently.</p>
                         <b>Examples:</b><br />
-                        <go-strongs params="{ Strongs: 'G999', Alt: ''}">Original word</go-strongs><br /><br/>
+                        <go-strongs params="{ Strongs: 'G999', Alt: ''}">Original word</go-strongs><br /><br />
                         <go-strongs params="{ Strongs: 'G999', Alt: 'Other possible translation'}">Original word</go-strongs>
+                    </div>
+                </li>
+                <li>
+                    <div class="heading">
+                        <label for="ShowDictionaryHelp">Dictionary</label>
+                        <input type="checkbox" id="ShowDictionaryHelp" data-bind="checked: ShowDictionary" />
+                    </div>
+                    <div class="description">
+                        <p>Dictionary to show the meaning of words that are not always clear.</p>
+                        <b>Example:</b><br />
+                        <div>
+                            <div data-bind="click:ShowHideDictionaryInfo" class="legend">Original word <span class="div dictionary"></span> Other word</div>
+                            <go-dialog params="{ Title: 'Dictionary', Show: ShowDictionaryInfo }">
+                                <p>Dictionary definition.</p>
+                            </go-dialog>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="heading">
+                        <label for="ShowNamesPlacesHelp">Names / Places</label>
+                        <input type="checkbox" id="ShowNamesPlacesHelp" data-bind="checked: ShowNamesPlaces" />
+                    </div>
+                    <div class="description">
+                        <p>Sometimes one place or person can have more than one name, for instance Abram became Abraham.</p>
+                        <b>Example:</b><br />
+                        <div>
+                            <div data-bind="click:ShowHideNamesPlacesInfo" class="legend">Original name/place <span class="div names"></span> Actual/Other name/place</div>
+                            <go-dialog params="{ Title: 'Names / Places', Show: ShowNamesPlacesInfo }">
+                                <p>Example verse below:</p>
+                                <go-bible-ref params="{ Ref: 'Gen 17:5', Bold: [{From:42, To:46}, {From:71, To:77}] }"></go-bible-ref>
+                            </go-dialog>
+                        </div>
                     </div>
                 </li>
                 <li>

@@ -8,6 +8,7 @@ var GO;
         eRefTypeShow[eRefTypeShow["Prophesy"] = 2] = "Prophesy";
         eRefTypeShow[eRefTypeShow["WordMeaning"] = 4] = "WordMeaning";
         eRefTypeShow[eRefTypeShow["NamesPlaces"] = 8] = "NamesPlaces";
+        eRefTypeShow[eRefTypeShow["Dictionary"] = 16] = "Dictionary";
         eRefTypeShow[eRefTypeShow["Most"] = 63] = "Most";
         eRefTypeShow[eRefTypeShow["AllStrongs"] = 64] = "AllStrongs";
         eRefTypeShow[eRefTypeShow["All"] = 255] = "All";
@@ -43,7 +44,7 @@ var GO;
                 { ID: 'go-basic-page-didYouKnow', Title: 'Did You Know', Url: '/did-you-know' },
                 { ID: 'go-study-landing', Title: 'Study', Url: '/bible-study' },
                 { ID: 'go-torah-landing', Title: 'Torah', Url: '/torah-study' },
-                { ID: 'go-prophesy-landing', Title: 'Prophesy', Url: '/prophesy-study' },
+                { ID: 'go-prophesy-landing', Title: 'Prophecy', Url: '/prophesy-study' },
                 { ID: 'go-tools-landing', Title: 'Tools', Url: '/tools' },
                 { ID: 'go-page-search', Title: 'Search', Url: '/search' },
                 { ID: 'go-basic-page-about', Title: 'About', Url: '/about' }
@@ -108,10 +109,12 @@ var GO;
             //#region ********************************************************************
             this.LoadDataFiles = async () => {
                 //Load data files.
+                this.DictionaryObject = JSON.parse(await GO.LoadFileData('../../data/dictionary.json'));
                 this.LegendsObject = JSON.parse(await GO.LoadFileData('../../data/legends.json'));
                 this.NamesPlacesObject = JSON.parse(await GO.LoadFileData('../../data/namesplaces.json'));
                 this.StrongsObject = JSON.parse(await GO.LoadFileData('../../data/strongs.json'));
                 //Ensure propeties exists as Knockout needs them for binding.
+                this.EnsureLegendProperties(this.DictionaryObject);
                 this.EnsureLegendProperties(this.LegendsObject);
                 this.EnsureLegendProperties(this.NamesPlacesObject);
             };

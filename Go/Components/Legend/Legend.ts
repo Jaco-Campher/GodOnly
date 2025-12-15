@@ -25,6 +25,11 @@
                     this.TypeClass = 'names';
                     break;
 
+                case eRefTypeShow.Dictionary:
+                    this.Title = 'Dictionary';
+                    this.TypeClass = 'dictionary';
+                    break;
+
                 //case eRefTypeShow.Prophesy:
                 default:
                     this.Title = 'Prophecy Legend';

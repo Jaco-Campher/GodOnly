@@ -51,7 +51,6 @@
 
 
         //Settings
-        ShowSettings: KnockoutObservable<boolean> = ko.observable<boolean>(false);
 
         //Search In
         SearchInOldTestament: KnockoutObservable<boolean> = ko.observable<boolean>(true);
@@ -61,6 +60,7 @@
 
         //Show
         ShowStrongs: KnockoutObservable<boolean> = ko.observable<boolean>(false);
+        ShowDictionary: KnockoutObservable<boolean> = ko.observable<boolean>(false);
         ShowNamesPlaces: KnockoutObservable<boolean> = ko.observable<boolean>(false);
         ShowProphecy: KnockoutObservable<boolean> = ko.observable<boolean>(false);
         ShowWordMeaning: KnockoutObservable<boolean> = ko.observable<boolean>(false);
@@ -72,6 +72,7 @@
             if (this.ShowStrongs()) { show += eRefTypeShow.Strongs; }
             if (this.ShowNamesPlaces()) { show += eRefTypeShow.NamesPlaces; }
             if (this.ShowProphecy()) { show += eRefTypeShow.Prophesy; }
+            if (this.ShowDictionary()) { show += eRefTypeShow.Dictionary; }
             if (this.ShowWordMeaning()) { show += eRefTypeShow.WordMeaning; }
 
             if (this.ShowAllStrongs()) { show += eRefTypeShow.AllStrongs; }
@@ -79,6 +80,8 @@
             return show;
         }, this);
 
+        ShowDictionaryInfo: KnockoutObservable<boolean> = ko.observable<boolean>(false);
+        ShowNamesPlacesInfo: KnockoutObservable<boolean> = ko.observable<boolean>(false);
         ShowProphecyLegendInfo: KnockoutObservable<boolean> = ko.observable<boolean>(false);
 
         //Seacrh Settings
@@ -305,8 +308,12 @@
 
         }
 
-        ShowHideSettings = () => {
-            this.ShowSettings(!this.ShowSettings());
+        ShowHideDictionaryInfo = () => {
+            this.ShowDictionaryInfo(!this.ShowDictionaryInfo());
+        }
+
+        ShowHideNamesPlacesInfo = () => {
+            this.ShowNamesPlacesInfo(!this.ShowNamesPlacesInfo());
         }
 
         ShowHideProphecyLegendInfo = () => {

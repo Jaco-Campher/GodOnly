@@ -7,6 +7,7 @@
         Prophesy = 2,
         WordMeaning = 4,
         NamesPlaces = 8,
+        Dictionary = 16,
         Most = 63,
 
         AllStrongs = 64,
@@ -90,6 +91,7 @@
     export class Start extends Router {
 
         Bible: Bible = new Bible();
+        DictionaryObject!: iLegendsJson;
         LegendsObject!: iLegendsJson;
         NamesPlacesObject!: iLegendsJson;
         StrongsObject!: iStrongsJson;
@@ -219,7 +221,7 @@
             { ID: 'go-basic-page-didYouKnow', Title: 'Did You Know', Url: '/did-you-know' },
             { ID: 'go-study-landing', Title: 'Study', Url: '/bible-study' },
             { ID: 'go-torah-landing', Title: 'Torah', Url: '/torah-study' },
-            { ID: 'go-prophesy-landing', Title: 'Prophesy', Url: '/prophesy-study' },
+            { ID: 'go-prophesy-landing', Title: 'Prophecy', Url: '/prophesy-study' },
             { ID: 'go-tools-landing', Title: 'Tools', Url: '/tools' },
             { ID: 'go-page-search', Title: 'Search', Url: '/search' },
             { ID: 'go-basic-page-about', Title: 'About', Url: '/about' }
@@ -307,11 +309,13 @@
 
         private LoadDataFiles = async () => {
             //Load data files.
+            this.DictionaryObject = JSON.parse(await GO.LoadFileData('../../data/dictionary.json'));
             this.LegendsObject = JSON.parse(await GO.LoadFileData('../../data/legends.json'));
             this.NamesPlacesObject = JSON.parse(await GO.LoadFileData('../../data/namesplaces.json'));
             this.StrongsObject = JSON.parse(await GO.LoadFileData('../../data/strongs.json'));
 
             //Ensure propeties exists as Knockout needs them for binding.
+            this.EnsureLegendProperties(this.DictionaryObject);
             this.EnsureLegendProperties(this.LegendsObject);
             this.EnsureLegendProperties(this.NamesPlacesObject);
         }

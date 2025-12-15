@@ -9,8 +9,8 @@ var GO;
             constructor() {
                 this.Sections = ko.observableArray([]);
                 this.SearchRefs = ko.observable('').syncWith('BibleRefs');
-                this.ShowSettings = ko.observable(false);
                 this.ShowStrongs = ko.observable(true);
+                this.ShowDictionary = ko.observable(true);
                 this.ShowProphecy = ko.observable(true);
                 this.ShowNamesPlaces = ko.observable(true);
                 this.ShowWordMeaning = ko.observable(false);
@@ -23,6 +23,9 @@ var GO;
                     if (this.ShowProphecy()) {
                         show += GO.eRefTypeShow.Prophesy;
                     }
+                    if (this.ShowDictionary()) {
+                        show += GO.eRefTypeShow.Dictionary;
+                    }
                     if (this.ShowNamesPlaces()) {
                         show += GO.eRefTypeShow.NamesPlaces;
                     }
@@ -34,6 +37,8 @@ var GO;
                     }
                     return show;
                 }, this);
+                this.ShowDictionaryInfo = ko.observable(false);
+                this.ShowNamesPlacesInfo = ko.observable(false);
                 this.ShowProphecyLegendInfo = ko.observable(false);
                 //****************************************************************************
                 //#region Functions
@@ -90,8 +95,11 @@ var GO;
                 this.GetFromHash = (hashString) => {
                     return hashString.replace(/_/g, ' ').replace(/\|/g, ':').replace(/\+/g, ',');
                 };
-                this.ShowHideSettings = () => {
-                    this.ShowSettings(!this.ShowSettings());
+                this.ShowHideDictionaryInfo = () => {
+                    this.ShowDictionaryInfo(!this.ShowDictionaryInfo());
+                };
+                this.ShowHideNamesPlacesInfo = () => {
+                    this.ShowNamesPlacesInfo(!this.ShowNamesPlacesInfo());
                 };
                 this.ShowHideProphecyLegendInfo = () => {
                     this.ShowProphecyLegendInfo(!this.ShowProphecyLegendInfo());

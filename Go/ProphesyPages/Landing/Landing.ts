@@ -23,7 +23,7 @@
         SetupLinks() {
             //Studies
             this.Studies.push(new StudyLink('Day of the LORD', '/prophesy-study/dayofthelord'));
-            this.Studies.push(new StudyLink('Iran in Prophesy', '/prophesy-study/iran'));
+            this.Studies.push(new StudyLink('Iran in Prophecy', '/prophesy-study/iran'));
             this.Studies.push(new StudyLink('No One Knows the Day or the Hour?', '/prophesy-study/NoOneKnowstheDayortheHour'));
             this.Studies.push(new StudyLink('Tribulation', '/prophesy-study/tribulation'));
 

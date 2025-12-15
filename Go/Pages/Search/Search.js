@@ -35,7 +35,6 @@ var GO;
                 this.ExactPages = ko.observableArray([]);
                 this.PartialPages = ko.observableArray([]);
                 //Settings
-                this.ShowSettings = ko.observable(false);
                 //Search In
                 this.SearchInOldTestament = ko.observable(true);
                 this.SearchInApocrypha = ko.observable(true);
@@ -43,6 +42,7 @@ var GO;
                 this.SearchInOtherBooks = ko.observable(true);
                 //Show
                 this.ShowStrongs = ko.observable(false);
+                this.ShowDictionary = ko.observable(false);
                 this.ShowNamesPlaces = ko.observable(false);
                 this.ShowProphecy = ko.observable(false);
                 this.ShowWordMeaning = ko.observable(false);
@@ -58,6 +58,9 @@ var GO;
                     if (this.ShowProphecy()) {
                         show += GO.eRefTypeShow.Prophesy;
                     }
+                    if (this.ShowDictionary()) {
+                        show += GO.eRefTypeShow.Dictionary;
+                    }
                     if (this.ShowWordMeaning()) {
                         show += GO.eRefTypeShow.WordMeaning;
                     }
@@ -66,6 +69,8 @@ var GO;
                     }
                     return show;
                 }, this);
+                this.ShowDictionaryInfo = ko.observable(false);
+                this.ShowNamesPlacesInfo = ko.observable(false);
                 this.ShowProphecyLegendInfo = ko.observable(false);
                 //Seacrh Settings
                 this.MatchCompleteWordsOnly = ko.observable(true);
@@ -168,8 +173,11 @@ var GO;
                             this.PartialPages(pages);
                     }
                 };
-                this.ShowHideSettings = () => {
-                    this.ShowSettings(!this.ShowSettings());
+                this.ShowHideDictionaryInfo = () => {
+                    this.ShowDictionaryInfo(!this.ShowDictionaryInfo());
+                };
+                this.ShowHideNamesPlacesInfo = () => {
+                    this.ShowNamesPlacesInfo(!this.ShowNamesPlacesInfo());
                 };
                 this.ShowHideProphecyLegendInfo = () => {
                     this.ShowProphecyLegendInfo(!this.ShowProphecyLegendInfo());

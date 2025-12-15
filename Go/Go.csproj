@@ -128,6 +128,7 @@
     <Content Include="Data\Layouts.xlsx" />
     <Content Include="Data\NamesPlaces.json" />
     <Content Include="Data\Documents\Nakedness in the OT.pdf" />
+    <Content Include="Data\Dictionary.json" />
     <None Include="Images\Background\ReflectiveGlow.psd" />
     <None Include="Images\Controlls\Context-Icon.psd" />
     <None Include="app.webmanifest" />
