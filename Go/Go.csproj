@@ -142,12 +142,17 @@
     <Content Include="Images\ImgLinks\RevTimeline.jpg" />
     <Content Include="Images\Other\SiteOG.jpg" />
     <Content Include="Images\Pages\Home\RevTimeline.jpg" />
-    <Content Include="Images\Rev\BloodMoon40.png" />
+    <Content Include="Images\Rev\BloodMoon40-Est.webp" />
+    <Content Include="Images\Rev\BloodMoon40.webp" />
+    <Content Include="Images\Rev\BloodMoonPartial40-Est.webp" />
     <Content Include="Images\Rev\BloodMoon_Original.jpg" />
+    <Content Include="Images\Rev\lunarelcipse40-Est.webp" />
     <Content Include="Images\Rev\SolarEclipse40.png" />
     <Content Include="Images\Rev\SolarEclipse_Original.jpg" />
     <Content Include="Images\Rev\StockCrash40.png" />
     <Content Include="Images\Rev\StockCrash_Origial.jpg" />
+    <Content Include="Images\Rev\Tab-Trumpet-2.webp" />
+    <Content Include="Images\Rev\Tab-Trumpet-5.webp" />
     <Content Include="Pages\About\About.html" />
     <Content Include="Pages\Bible\Bible.css" />
     <Content Include="Pages\Bible\Bible.html" />
@@ -254,7 +259,7 @@
     <Content Include="Images\Rev\Tab-Trumpet-3.webp" />
     <Content Include="Images\Rev\Tab-Seal-7.webp" />
     <Content Include="Images\Rev\Tab-Seal-6.webp" />
-    <Content Include="Images\Rev\Tab-Trumpet-2.webp" />
+    <Content Include="Images\Rev\Tab-Trumpet-4.webp" />
     <Content Include="Images\Rev\Tab-Trumpet-1.webp" />
     <Content Include="Images\Rev\lunarelcipse40.webp" />
     <Content Include="Images\Rev\BloodMoonPartial40.webp" />

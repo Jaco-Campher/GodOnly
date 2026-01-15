@@ -260,7 +260,8 @@ nav .bib {
         z-index:10000;
     }
 
-    header .btn-help {
+    header .btn-help,
+    .page-settings-open header .btn-help {
         right:75px;
         top:6px;
     }
@@ -542,6 +543,12 @@ go-dialog .box:after {
     position: fixed;
     inset: 0;
     padding: 15px 20px;
+}
+
+@media (max-width:800px) {
+    .main-settings-holder {
+        overflow-y: scroll;
+    }
 }
 
 .settings-holder {

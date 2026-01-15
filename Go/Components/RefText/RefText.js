@@ -37,6 +37,9 @@ var GO;
                 if (this.params.Show() & GO.eRefTypeShow.NamesPlaces) {
                     newSections = go.AddLegend(newSections, go.NamesPlacesObject, GO.eRefTypeShow.NamesPlaces);
                 }
+                if (this.params.Show() & GO.eRefTypeShow.Dictionary) {
+                    newSections = go.AddLegend(newSections, go.DictionaryObject, GO.eRefTypeShow.Dictionary);
+                }
                 //console.log(newSections);
                 this.Sections(newSections);
             }

@@ -117,12 +117,21 @@
       }
     ]
   },
-  "Shabbat": {
+    "Shabbat": {
     "Meaning": "Sabbath",
     "Refs": [
       {
         "Ref": "",
         "Html": "<p>Original name. Used in the 'Book of the Natsarim and the Enlightened Ones'</p>"
+      }
+    ]
+  },
+  "Sivan": {
+    "Meaning": "3rd",
+    "Refs": [
+      {
+        "Ref": "Est 8:9",
+        "Bold": [{"From":56, "To":92}]
       }
     ]
   },
