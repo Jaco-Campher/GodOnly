@@ -1066,7 +1066,9 @@ go-accordion:last-child {
     margin: 0;
 }
 
-go-accordion h3 {
+go-accordion h3,
+.help go-accordion > h3,
+.help go-accordion > h3:first-child{
     background: linear-gradient(45deg, #0000 0, #0000 var(--corner-cut), #222029 var(--corner-cut), #1c1d26 calc(100% - var(--corner-cut)), #0000 calc(100% - var(--corner-cut)), #0000 100%);
     padding: 10px 0 0 14px;
     margin:0;

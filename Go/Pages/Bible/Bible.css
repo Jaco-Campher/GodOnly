@@ -8,7 +8,7 @@
 
 .bible .bible-nav {
     position: sticky;
-    bottom: 15px;
+    bottom: 50px;
     padding: 8px;
     display: grid;
     grid: auto/50px 1fr 50px;

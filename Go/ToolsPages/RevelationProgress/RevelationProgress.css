@@ -1,0 +1,238 @@
+﻿.timeline-holder {
+    position:relative;
+    display: grid;
+    align-items: start;
+    grid-template-columns: 1fr 20px 20px 1fr;
+    grid-template-areas:
+"seal1-date seal1-dot year1-dot year1-date"
+"seal1 . . year1"
+"seal2-date seal2-dot . year1"
+"seal2 . year2-dot year2-date"
+"seal2 . . year2"
+"seal3-date seal3-dot . year2"
+"seal3 . . year2"
+"seal4-date seal4-dot . year2"
+"seal4 . year3-dot year3-date"
+"seal4 . . year3"
+"seal5-date seal5-dot . year3"
+"seal5 . . year3"
+"seal6-date seal6-dot . year3"
+"seal6 . year4-dot year4-date"
+"seal6 . . year4"
+"rapture . . year4"
+"seal7-date seal7-dot . year4"
+"seal7 . year5-dot year5-date"
+"seal7 . . year5"
+"trumpet1-date trumpet1-dot . year5"
+"trumpet1 . . year5"
+"trumpet2-date trumpet2-dot . year5"
+"trumpet2 . year6-dot year6-date"
+"trumpet2 . . year6"
+"trumpet3-date trumpet3-dot . year6"
+"trumpet3 . . year6"
+"trumpet4-date trumpet4-dot . year6"
+"trumpet4 . year7-dot year7-date"
+"trumpet4 . . year7"
+"trumpet5-date trumpet5-dot . year7"
+"trumpet5 . . year7"
+"trumpet6-date trumpet6-dot year8-dot year8-date"
+"trumpet6 . . year8"
+"ascension . . year8"
+"trumpet7-date trumpet7-dot . year8"
+"trumpet7 . year9-dot year9-date"
+"vial1-date vial1-dot . year9"
+"vial1 . . year9"
+"vial2-date vial2-dot . year9"
+"vial2 . year10-dot year10-date"
+"vial3-date vial3-dot . year10"
+"vial3 . . year10"
+"vial4-date vial4-dot . year10"
+"vial4 . year11-dot year11-date"
+"vial5-date vial5-dot . year11"
+"vial5 . year12-dot year12-date"
+"vial6-date vial6-dot . year12"
+"vial6 . . year12"
+"day-of-Yah . . year12"
+"vial7-date vial7-dot . year12"
+"vial7 . year13-dot year13-date"
+". line1-end line2-end ."
+}
+
+.line1 {
+    grid-area: seal1-dot / seal1-dot / line1-end / line1-end;
+}
+
+.line2 {
+    grid-area: year1-dot / year1-dot / line2-end / line2-end;
+}
+
+.event-date {
+    text-align: right;
+    padding:8px 16px;
+}
+
+.year-date {
+    text-align: left;
+    padding:8px 16px;
+}
+
+.details-holder {
+    background-color: #1a1a1a;
+    box-shadow: -2px -2px 10px #7775 inset;
+    border: 1px solid #333;
+}
+
+.details-holder.year {
+    align-self:stretch;
+}
+
+.details-holder.confirmed {
+    background-color: #00770022;
+    border: 1px solid #373;
+    box-shadow: -1px -1px 10px #0909 inset;
+}
+
+.details-holder.in-progress {
+    box-shadow: -1px -1px 10px #07d9 inset;
+    background-color: #08d2;
+    border: 1px solid #06d;
+}
+
+.details-holder.not-sure {
+    box-shadow: -1px -1px 10px #fd69 inset;
+    background-color: #cc994422;
+    border: 1px solid #b84;
+}
+
+.details-holder.confirmed go-accordion > h3 span,
+.details-holder.in-progress go-accordion > h3 span,
+.details-holder.not-sure go-accordion > h3 span {
+    color:inherit;
+}
+
+/* Title */
+.timeline-holder .title {
+    /*border-left: 7px solid #004ffc;*/
+}
+
+.timeline-holder .line1,
+.timeline-holder .line2 {
+    position: relative;
+    background: #eee;
+    box-shadow: 0 0 5px #eee, 0 0 7px #eee;
+    width: 1px;
+    margin: -1px 0;
+    align-self: stretch;
+    justify-self: center;
+}
+
+/*.timeline-holder .event:first-child .line {
+    margin: 13px 0 -1px;
+}*/
+
+.timeline-holder .dot {
+    position: absolute;
+    left: 8px;
+    top: 14px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #eee;
+    box-shadow: 0 0 7px #fff, 0 0 11px #fff;
+}
+
+go-accordion h3 {
+    background:none;
+}
+
+go-accordion > h3 svg {
+    top:5px;
+    right:7px;
+}
+
+go-accordion .accordion-content {
+    background:none;
+    margin:0;
+}
+
+go-accordion > h3 span {
+    color:#555;
+}
+
+
+/*********************************************************************
+    Help
+*********************************************************************/
+.sections-demo {
+    display:grid;
+    grid-gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    margin:20px 5px;
+}
+
+@media (max-width:600px) {
+    .sections-demo {
+        grid-gap: 20px;
+        grid-template-columns: 1fr;
+        margin:20px 0;
+    }
+}
+
+.help go-accordion > h3,
+.help go-accordion > h3:first-child {
+    background:none;
+}
+
+
+
+/*********************************************************************
+    Timeline (Details)
+*********************************************************************/
+.timeline .event {
+    display: grid;
+    grid-template-columns: 100px 16px 1fr;
+}
+
+.timeline div.date {
+    text-align: right;
+    padding:8px 16px 0 0;
+}
+
+.timeline .line {
+    position: relative;
+    width: 1px;
+    margin: -1px 0;
+    background: #99d;
+    box-shadow: 0 0 5px #99d, 0 0 7px #99d;
+}
+
+.timeline .event:first-child .line {
+    margin: 13px 0 -1px;
+}
+
+.timeline .title {
+    padding:8px 0;
+}
+
+.timeline .attempted {
+    color:#999;
+}
+
+.timeline .attempted sup {
+    font-style: italic;
+}
+
+.line div {
+    position: absolute;
+    left: -2px;
+    top: 14px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #ccf;
+    box-shadow: 0 0 7px #fff, 0 0 11px #fff;
+}
+
+.timeline .event:first-child .line div {
+    top: 0px;
+}

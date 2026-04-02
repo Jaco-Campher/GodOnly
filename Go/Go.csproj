@@ -185,6 +185,9 @@
     <Content Include="StudyPages\WithholdingKnowledge\WithholdingKnowledge.html" />
     <Content Include="ToolsPages\NamesPlaces\NamesPlaces.html" />
     <Content Include="ToolsPages\NamesPlaces\NamesPlaces.js" />
+    <Content Include="ToolsPages\RevelationProgress\RevelationProgress.css" />
+    <Content Include="ToolsPages\RevelationProgress\RevelationProgress.html" />
+    <Content Include="ToolsPages\RevelationProgress\RevelationProgress.js" />
     <Content Include="ToolsPages\RevelationTimeline\RevelationTimeline.js" />
     <Content Include="ToolsPages\RevelationTimeline\RevelationTimeline.css" />
     <Content Include="ToolsPages\RevelationTimeline\RevelationTimeline.html" />
@@ -292,6 +295,7 @@
     <TypeScriptCompile Include="ProphesyPages\Landing\Landing.ts" />
     <TypeScriptCompile Include="RevPages\Landing\Landing.ts" />
     <TypeScriptCompile Include="ToolsPages\NamesPlaces\NamesPlaces.ts" />
+    <TypeScriptCompile Include="ToolsPages\RevelationProgress\RevelationProgress.ts" />
     <TypeScriptCompile Include="ToolsPages\RevelationTimeline\RevelationTimeline.ts" />
     <TypeScriptCompile Include="Pages\Start\Start.ts" />
     <TypeScriptCompile Include="Scripts\Bible\Bible.ts" />

@@ -217,10 +217,8 @@
 
             //Dan 11
             item = new Item(Color.Dan, 'dan-11-1', '1st Year', '', 'Dan 11:1', 'Dan 11:1', 'Darius the Mede', '', FirstLast.First);
-            item.Flag(Flag.NotSureLocation);
             tab.Items.push(item);
             item = new Item(Color.Dan, 'dan-11-2a', 'There Shall Stand Up Yet 3 Kings in Persia', '', 'Dan 11:2a', 'Dan 11:2', 'and by his strength through his riches', '');
-            item.Flag(Flag.NotSureLocation);
             tab.Items.push(item);
             tab.Joins.push(new Join(Color.Dan, 'j-dan-11-2a'));
             this.TabJoins.push(new TabJoin(Color.Dan, 'tj-dan-11-2a', FirstLast.GoUnder));
@@ -282,7 +280,7 @@
 
             // Seal 3
             //#region *******************************
-            tab = new Tab('seal', 'tab-seal-3', 'Seal 3', '-', true);
+            tab = new Tab('seal', 'tab-seal-3', 'Seal 3', 'Food Inflation?', true);
             tab.DetailsPage = 'go-prophesypage-seal3';
 
             //Rev 6
@@ -314,19 +312,15 @@
 
             //Dan 8
             item = new Item(Color.Dan, 'dan-8-1', '3rd Year', 'A Vision Appeared Unto Me', 'Dan 8:1-2', 'Dan 8:1-2', '', '', FirstLast.First);
-            item.Flag(Flag.NotSureLocation);
             tab.Items.push(item);
             item = new Item(Color.Dan, 'dan-8-3', 'I Saw the Ram Pushing (from?)', ' Stood Before the River a Ram Which Had Horns', 'Dan 8:3-4', 'Dan 8:3-4', 'Westward (Gaza?), and Northward (Lebanon?),', 'and Southward (Yemen?)');
             item.Flag(Flag.NotSureLocation);
             tab.Items.push(item);
             item = new Item(Color.Dan, 'dan-8-5', 'On The Face of the Whole Earth & Touched Not the Ground', 'An He Goat Came from the West', 'Dan 8:5', 'Dan 8:5', 'The goat had a notable horn', 'between his eyes.');
-            item.Flag(Flag.NotSureLocation);
             tab.Items.push(item);
             item = new Item(Color.Dan, 'dan-8-6', 'Ran Unto Him in the Fury of His Power', 'And He Came to the Ram', 'Dan 8:6', 'Dan 8:6', 'Which I had seen standing before the river.', '');
-            item.Flag(Flag.NotSureLocation);
             tab.Items.push(item);
             item = new Item(Color.Dan, 'dan-8-7', 'He Cast Him Down to the Ground', 'Smote the Ram & Brake His Two Horns', 'Dan 8:7', 'Dan 8:7', 'and stamped upon him', 'and there was none that could deliver');
-            item.Flag(Flag.NotSureLocation);
             tab.Items.push(item);
             tab.Joins.push(new Join(Color.Dan, 'j-dan-8-7'));
             this.TabJoins.push(new TabJoin(Color.Dan, 'tj-dan-8-7', FirstLast.GoUnder));
@@ -336,10 +330,8 @@
 
             tab.Joins.push(new Join(Color.Dan, 'j-dan-8-19b', FirstLast.First));
             item = new Item(Color.Dan, 'dan-8-20', 'Are the Kings of Media and Persia', 'The Ram Which Thou Sawest Having Horns', 'Dan 8:20', 'Dan 8:20', '', '');
-            item.Flag(Flag.NotSureLocation);
             tab.Items.push(item);
             item = new Item(Color.Dan, 'dan-8-21', '', 'The Rough Goat is the King of Grecia', 'Dan 8:21', 'Dan 8:21', 'and the great horn that is between', 'his eyes is the first king.');
-            item.Flag(Flag.NotSureLocation);
             tab.Items.push(item);
             tab.Joins.push(new Join(Color.Dan, 'j-dan-8-21'));
             this.TabJoins.push(new TabJoin(Color.Dan, 'tj-dan-8-21', FirstLast.GoUnder));
@@ -1268,7 +1260,6 @@
             tab.Joins.push(new Join(Color.Ba2, 'j-ba2-48-32-s'));
             item = new Item(Color.Ba2, 'ba2-48-32', 'One Against Another', 'All the Inhabitants of the Earth Shall be Moved', '2Ba 48:32', '2Ba 48:32', 'because they know not that My judgment', 'has drawn nigh.');
             tab.Items.push(item);
-            tab.Joins.push(new Join(Color.Ba2, 'j-ba2-48-32'));
 
             this.TabJoins.push(new TabJoin(Color.Ba2, 'tj-ba2-48-32'));
 
@@ -1278,7 +1269,6 @@
             tab.Items.push(item);
             item = new Item(Color.Ba2, 'ba2-70-3', 'And Provoke One Another to Fight', 'They Shall Hate One Another', '2Ba 70:3', '2Ba 70:3', 'And the mean shall rule over the honorable,', 'And those of low degree shall be extolled above the famous.');
             tab.Items.push(item);
-            tab.Joins.push(new Join(Color.Ba2, 'j-ba2-70-3'));
 
             this.TabJoins.push(new TabJoin(Color.Ba2, 'tj-ba2-70-3'));
 
@@ -1333,10 +1323,9 @@
             tab.Joins.push(new Join(Color.Es2, 'j-es2-15-13b'));
             item = new Item(Color.Es2, 'es2-15-14', 'Woe to the World', '', '2Es 15:14', '2Es 15:14', ' and Them that dwell therein!', '');
             tab.Items.push(item);
-            tab.Joins.push(new Join(Color.Es2, 'j-es2-15-14'));
-            item = new Item(Color.Es2, 'es2-15-15', 'Fight Against Another', 'One People Shall Stand Up', '2Es 15:15', '2Es 15:15', 'and swords in their hands.', '');
+            item = new Item(Color.Es2, 'es2-15-15a', 'And Their Destruction Draweth Nigh', 'For the Sword  (Word / Mouth)', '2Es 15:15a', '2Es 15:15', '', '');
             tab.Items.push(item);
-            item = new Item(Color.Es2, 'es2-15-16', 'Invading One Another', 'Shall be Sedition Among Men', '2Es 15:16', '2Es 15:16', 'They shall not regard their kings nor princes,', 'and the course of their actions shall stand in their power.');
+            item = new Item(Color.Es2, 'es2-15-15b', 'Shall be Sedition Among Men, and Invading One Another', 'One People Shall Stand Up and Fight Against Another', '2Es 15:15b-16', '2Es 15:16', 'they shall not regard their kings nor princes,', 'and the course of their actions shall stand in their power.');
             tab.Items.push(item);
 
             this.TabJoins.push(new TabJoin(Color.Es2, 'tj-es2-15-16'));
@@ -1346,8 +1335,6 @@
             item = new Item(Color.Es2, 'es2-16-17', 'Woe is Me! Woe is Me!', '', '2Es 16:17', '2Es 16:17', 'Who will deliver me in those days?', '');
             tab.Items.push(item);
             tab.Joins.push(new Join(Color.Es2, 'j-es2-16-17'));
-            item = new Item(Color.Es2, 'es2-16-18', 'And Great Mournings', 'The Beginning of Sorrows', '2Es 16:18', '2Es 16:18', 'The beginning of famine and great death;', 'the beginning of wars, and the powers shall stand in fear;');
-            tab.Items.push(item);
 
             this.TabJoins.push(new TabJoin(Color.Es2, 'tj-es2-16-18'));
 
@@ -1375,8 +1362,6 @@
             tab.Joins.push(new Join(Color.Luk, 'j-luke-21-10-s', FirstLast.First));
             item = new Item(Color.Luk, 'luke-21-10', 'And Kingdom Against Kingdom', 'Nation Shall Rise Against Nation', 'Luk 21:10', 'Luk 21:10', '', '');
             tab.Items.push(item);
-            item = new Item(Color.Luk, 'luke-21-11a', 'And Famines and Pestilences', 'Great Earthquakes Shall be in Divers Blaces', 'Luk 21:11a', 'Luk 21:11', '', '');
-            tab.Items.push(item);
             
             this.TabJoins.push(new TabJoin(Color.Luk, 'tj-luke-21-11a'));
 
@@ -1384,16 +1369,12 @@
             tab.Joins.push(new Join(Color.Mat, 'j-mat-24-7a-s', FirstLast.First));
             item = new Item(Color.Mat, 'mat-24-7a', 'And Kingdom Against Kingdom', 'Nation Shall Rise Against Nation', 'Mat 24:7a', 'Mat 24:7', '', '');
             tab.Items.push(item);
-            item = new Item(Color.Mat, 'mat-24-7b', 'And Earthquakes in Divers Places', 'There Shall be Famines and Pestilences', 'Mat 24:7b-8', 'Mat 24:7-8', 'All these are the beginning of sorrows.', '');
-            tab.Items.push(item);
             
             this.TabJoins.push(new TabJoin(Color.Mat, 'tj-mat-24-7b'));
 
             //Mrk 13
             tab.Joins.push(new Join(Color.Mrk, 'j-mrk-13-8a-s', FirstLast.First));
-            item = new Item(Color.Mrk, 'mark-13-8a', 'And Kingdom Against Kingdom', 'Nation Shall Rise Against Nation', 'Mrk 13:8a', 'Mrk 13:8', 'and there shall be earthquakes in divers places,', 'and there shall be famines and troubles:');
-            tab.Items.push(item);
-            item = new Item(Color.Mrk, 'mark-13-8b', 'And There Shall be Famines and Troubles', 'There Shall be Earthquakes in Divers Places', 'Mrk 13:8b', 'Mrk 13:8', 'these are the beginnings of sorrows.', '');
+            item = new Item(Color.Mrk, 'mark-13-8a', 'And Kingdom Against Kingdom', 'Nation Shall Rise Against Nation', 'Mrk 13:8a', 'Mrk 13:8', '', '');
             tab.Items.push(item);
             
             this.TabJoins.push(new TabJoin(Color.Mrk, 'tj-mark-13-8a'));
@@ -1429,8 +1410,6 @@
             tab.Items.push(item);
             item = new Item(Color.Rev, 'rev-18-7', 'Fight Against Another', 'One People Shall Stand Up', 'Rev 18:7', 'Rev 18:7', 'or she saith in her heart, I sit a queen,', 'and am no widow, and shall see no sorrow.');
             tab.Items.push(item);
-            item = new Item(Color.Rev, 'rev-18-8', 'Death and Mourning and Famine', 'Therefore Shall Her Plagues Come in 1 Day', 'Rev 18:8', 'Rev 18:8', 'and she shall be utterly burned with fire: ', 'for strong is the Lord God who judgeth her.');
-            tab.Items.push(item);
 
             this.TabJoins.push(new TabJoin(Color.Rev, 'tj-rev-18-8'));
 
@@ -1440,7 +1419,33 @@
 
             //#region Trumpet 5
             //*******************************
-            tab = new Tab('', 'tab-trumpet-5', 'Trumpet 5', '-', true); //trumpet
+            tab = new Tab('', 'tab-trumpet-5', 'Trumpet 5', 'Plague?', true); //trumpet
+
+            //2 Esdras 16
+            tab.Joins.push(new Join(Color.Es2, 'j-es2-16-18-s'));
+            item = new Item(Color.Es2, 'es2-16-18', 'And Great Mournings', 'The Beginning of Sorrows', '2Es 16:18', '2Es 16:18', 'The beginning of famine and great death;', 'the beginning of wars, and the powers shall stand in fear;');
+            tab.Items.push(item);
+
+            //Luk 21
+            tab.Joins.push(new Join(Color.Luk, 'j-luke-21-11a-s'));
+            item = new Item(Color.Luk, 'luke-21-11a', 'And Famines and Pestilences', 'Great Earthquakes Shall be in Divers Blaces', 'Luk 21:11a', 'Luk 21:11', '', '');
+            tab.Items.push(item);
+
+            //Mat 24
+            tab.Joins.push(new Join(Color.Mat, 'j-mat-24-7b-s'));
+            item = new Item(Color.Mat, 'mat-24-7b', 'And Earthquakes in Divers Places', 'There Shall be Famines and Pestilences', 'Mat 24:7b-8', 'Mat 24:7-8', 'All these are the beginning of sorrows.', '');
+            tab.Items.push(item);
+
+            //Mrk 13
+            tab.Joins.push(new Join(Color.Mrk, 'j-mrk-13-8b-s'));
+            item = new Item(Color.Mrk, 'mark-13-8b', 'And There Shall be Famines and Troubles', 'There Shall be Earthquakes in Divers Places', 'Mrk 13:8b', 'Mrk 13:8', 'these are the beginnings of sorrows.', '');
+            tab.Items.push(item);
+
+            //Rev 18
+            tab.Joins.push(new Join(Color.Rev, 'j-rev-18-8-s'));
+            item = new Item(Color.Rev, 'rev-18-8', 'Death and Mourning and Famine', 'Therefore Shall Her Plagues Come in 1 Day', 'Rev 18:8', 'Rev 18:8', 'and she shall be utterly burned with fire: ', 'for strong is the Lord God who judgeth her.');
+            tab.Items.push(item);
+
 
             this.Tabs.push(tab);
             //#endregion

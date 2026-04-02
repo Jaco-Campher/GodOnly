@@ -380,6 +380,39 @@
       }
     ]
   },
+  "Locust": {
+    "Meaning": "Plague",
+    "Lookup": "Locusts"
+  },
+  "Locusts": {
+    "Meaning": "Plagues",
+    "Refs": [
+      {
+        "Ref": "",
+        "Html": "<p>1 of the 10 plagues of Egypt was locusts.</p>"
+      },
+      {
+        "Ref": "Exo 9:14",
+        "Bold": [{"From":36, "To":42}]
+      },
+      {
+        "Ref": "Exo 10:4",
+        "Bold": [{"From":77, "To":83}]
+      },
+      {
+        "Ref": "",
+        "Html": "<p>Other:</p>"
+      },
+      {
+        "Ref": "1Ki 8:37",
+        "Bold": [{"From":74, "To":79}, {"From":167, "To":204}]
+      },
+      {
+        "Ref": "2Ch 6:28",
+        "Bold": [{"From":89, "To":95}, {"From":174, "To":211}]
+      }
+    ]
+  },
   "Mountain": {
     "Meaning": "Kingdom",
     "Lookup": "Mountains"
