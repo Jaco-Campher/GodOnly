@@ -126,6 +126,10 @@
     justify-self: center;
 }
 
+.timeline-holder .line2 {
+    margin: -1px 0 -1px 1px;
+}
+
 /*.timeline-holder .event:first-child .line {
     margin: 13px 0 -1px;
 }*/

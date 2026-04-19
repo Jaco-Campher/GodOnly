@@ -174,12 +174,14 @@
     <Content Include="ProphesyPages\Rapture\Rapture.html" />
     <Content Include="ProphesyPages\Rev12Sign\Rev12Sign.html" />
     <Content Include="ProphesyPages\Seal1\Seal1.html" />
+    <Content Include="ProphesyPages\Seal2\Seal2.html" />
     <Content Include="ProphesyPages\Seal3\Seal3.html" />
     <Content Include="ProphesyPages\TimelineDatesExplanation\TimelineDatesExplanation.html" />
     <Content Include="ProphesyPages\Tribulation\Tribulation.html" />
     <Content Include="ProphesyPages\Year1\Year1.html" />
     <Content Include="ProphesyPages\Year2\Year2.css" />
     <Content Include="ProphesyPages\Year2\Year2.html" />
+    <Content Include="ProphesyPages\Year3\Year3.html" />
     <Content Include="ProphesyPages\Year4\Year4.html" />
     <Content Include="RevPages\Landing\Landing.css" />
     <Content Include="RevPages\Landing\Landing.html" />

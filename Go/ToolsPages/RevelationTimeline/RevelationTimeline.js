@@ -66,17 +66,17 @@ var GO;
             LoadTimeline() {
                 //Years
                 this.Years.push(new Year(2023, '1st Year (Apr 2024)', 'go-prophesypage-year1', 0, 'Apr 2024 - Tribulation Year 1'));
-                this.Years.push(new Year(2024, '2nd Year (Mar 2025)', 'go-prophesypage-year2', 4, 'Mar 2025 - Tribulation Year 2'));
-                this.Years.push(new Year(2025, '3rd Year (Mar/Apr 2026)', '2Ba 27:4', 3));
-                this.Years.push(new Year(2026, '4th Year (Mar/Apr 2027)', 'go-prophesypage-year4', 0, 'Mar/Apr 2027 - Tribulation Year 4'));
-                this.Years.push(new Year(2027, '5th Year (Mar/Apr 2028)', '2Ba 27:6', 7));
-                this.Years.push(new Year(2028, '6th Year (Mar/Apr 2029)', '2Ba 27:7', 3));
-                this.Years.push(new Year(2029, '7th Year (Mar/Apr 2030)', '2Ba 27:8', 1));
-                this.Years.push(new Year(2030, '8th Year (Mar/Apr 2031)', '2Ba 27:9', 0));
-                this.Years.push(new Year(2031, '9th Year (Mar/Apr 2032)', '2Ba 27:10', 7));
-                this.Years.push(new Year(2032, '10th Year (Mar/Apr 2033)', '2Ba 27:11', 3));
-                this.Years.push(new Year(2033, '11th Year (Mar/Apr 2034)', '2Ba 27:12', 2));
-                this.Years.push(new Year(2034, '12th Year (Mar/Apr 2035)', '2Ba 27:13', 0));
+                this.Years.push(new Year(2024, '2nd Year (Apr 2025)', 'go-prophesypage-year2', 4, 'Apr 2025 - Tribulation Year 2'));
+                this.Years.push(new Year(2025, '3rd Year (Mar 2026)', 'go-prophesypage-year3', 3, 'Mar 2026 - Tribulation Year 3'));
+                this.Years.push(new Year(2026, '4th Year (Mar 2027)', 'go-prophesypage-year4', 0, 'Mar 2027 - Tribulation Year 4'));
+                this.Years.push(new Year(2027, '5th Year (Mar 2028)', '2Ba 27:6', 6));
+                this.Years.push(new Year(2028, '6th Year (Mar 2029)', '2Ba 27:7', 3));
+                this.Years.push(new Year(2029, '7th Year (Mar 2030)', '2Ba 27:8', 1));
+                this.Years.push(new Year(2030, '8th Year (Mar 2031)', '2Ba 27:9', 0));
+                this.Years.push(new Year(2031, '9th Year (Feb 2032)', '2Ba 27:10', 6));
+                this.Years.push(new Year(2032, '10th Year (Feb 2033)', '2Ba 27:11', 3));
+                this.Years.push(new Year(2033, '11th Year (Feb 2034)', '2Ba 27:12', 2));
+                this.Years.push(new Year(2034, '12th Year (Feb 2035)', '2Ba 27:13', 0));
                 //Months
                 this.Months.push(new Month('m-tab-seal-1', 'Apr 2024'));
                 this.Months.push(new Month('m-tab-seal-2', 'Nov 2024'));
@@ -91,7 +91,7 @@ var GO;
                 this.Months.push(new Month('m-tab-trumpet-4', 'Jan 2030'));
                 this.Months.push(new Month('m-tab-trumpet-5', 'Aug 2030'));
                 this.Months.push(new Month('m-tab-trumpet-6', 'Mar 2031'));
-                this.Months.push(new Month('m-tab-trumpet-7', 'Sep 2031'));
+                this.Months.push(new Month('m-tab-trumpet-7', 'Oct 2031'));
                 this.Months.push(new Month('m-tab-vial-1', 'Apr 2032'));
                 this.Months.push(new Month('m-tab-vial-2', 'Nov 2032'));
                 this.Months.push(new Month('m-tab-vial-3', 'Jun 2033'));
@@ -206,6 +206,7 @@ var GO;
                 // Seal 2
                 //#region *******************************
                 tab = new Tab('seal', 'tab-seal-2', 'Seal 2', 'Take Peace from Earth', true);
+                tab.DetailsPage = 'go-prophesypage-seal2';
                 //Dan
                 item = new Item(Color.Dan, 'dan-12-1b', 'There Shall be a Time of Trouble', '', 'Dan 12:1b', 'Dan 12:1', 'such as never was since there was a nation', 'even to that same time:');
                 item.Flag(Flag.NotSureLocation);
