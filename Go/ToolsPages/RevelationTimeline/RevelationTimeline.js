@@ -611,6 +611,7 @@ var GO;
                 // Seal 7
                 //#region *******************************
                 tab = new Tab('seal', 'tab-seal-7', 'Seal 7', '144K', true);
+                tab.DetailsPage = 'go-prophesypage-seal7';
                 //2 Baruk 30
                 tab.Joins.push(new Join(Color.Ba2, 'j-ba2-30-2aa'));
                 item = new Item(Color.Ba2, 'ba2-30-2b', 'Number of the Souls of the Righteous', '', '2Ba 30:2b', '2Ba 30:2', '', '');
